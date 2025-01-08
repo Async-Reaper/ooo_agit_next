@@ -1,0 +1,152 @@
+@use "@shared/styles/_mixins.scss" as mixins;
+
+.text {
+    font-weight: inherit;
+    font-size: inherit;
+    padding: 0;
+    margin: 0;
+
+    &.bold {
+        font-weight: bold;
+    }
+
+    &.inline {
+        display: inline-block;
+    }
+
+    &.noWrap {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    &.uppercase {
+        text-transform: uppercase;
+    }
+
+    &.align {
+        &--left {
+            text-align: left;
+        }
+
+        &--right {
+            text-align: right;
+        }
+
+        &--center {
+            text-align: center;
+        }
+    }
+
+    /* VARIANT */
+    &.variant {
+        &--h1 {
+            @include mixins.adaptive("font-size", 120, 28);
+            @include mixins.adaptive("line-height", 150, 33);
+
+            font-weight: 800;
+
+            &.bold {
+                font-weight: 800;
+            }
+        }
+
+        &--h2 {
+            @include mixins.adaptive("font-size", 40, 21);
+            @include mixins.adaptive("line-height", 38, 28);
+
+            font-weight: 500;
+
+            &.bold {
+                font-weight: 800;
+            }
+        }
+
+        &--h3 {
+            @include mixins.adaptive("font-size", 18, 14);
+            @include mixins.adaptive("line-height", 28, 22);
+
+            font-weight: 500;
+
+            &.bold {
+                font-weight: 700;
+            }
+        }
+
+        &--p {
+            @include mixins.adaptive("font-size", 24, 14);
+            @include mixins.adaptive("line-height", 30, 18);
+
+            font-weight: 400;
+
+            &.bold {
+                font-weight: 600;
+            }
+        }
+
+        &--span {
+            @include mixins.adaptive("font-size", 20, 14);
+            @include mixins.adaptive("line-height", 19, 16);
+
+            font-weight: 400;
+
+            &.bold {
+                font-weight: 600;
+            }
+        }
+
+        &--small {
+            @include mixins.adaptive("font-size", 18, 12);
+            @include mixins.adaptive("line-height", 20, 16);
+
+            font-weight: 400;
+
+            &.bold {
+                font-weight: 600;
+            }
+        }
+    }
+
+    /* COLOR */
+    &.color {
+        &--primary {
+            color: var(--color-primary);
+        }
+
+        &--primary-hover {
+            color: var(--color-primary-hover);
+        }
+
+        &--secondary {
+            color: var(--color-secondary);
+        }
+
+        &--black {
+            color: var(--color-black);
+        }
+
+        &--gray-primary {
+            color: var(--color-gray-primary);
+        }
+
+        &--gray-secondary {
+            color: var(--color-gray-secondary);
+        }
+
+        &--white-primary {
+            color: var(--color-white-primary);
+        }
+
+        &--white-secondary {
+            color: var(--color-white-secondary);
+        }
+
+        &--gray-dark {
+            color: var(--color-gray-dark);
+        }
+
+        &--inherit {
+            color: inherit;
+        }
+    }
+}

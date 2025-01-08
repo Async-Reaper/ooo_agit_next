@@ -1,0 +1,42 @@
+@use "@shared/styles/_mixins.scss" as mixins;
+
+.size {
+    &--xs {
+        @include mixins.adaptive("width", 60, 40);
+    }
+
+    &--s {
+        @include mixins.adaptive("padding-block", 10, 5);
+        @include mixins.adaptive("padding-inline", 10, 5);
+    }
+
+    &--l {
+        //@include mixins.adaptive("padding-block", 18, 14);
+        //@include mixins.adaptive("padding-inline", 24, 18);
+        padding-block: 10px;
+        padding-inline: 25px;
+    }
+
+    &--xl {
+        padding-block: 15px;
+        padding-inline: 30px;
+
+        //@include mixins.adaptive("padding-block", 28, 18);
+        //@include mixins.adaptive("padding-inline", 32, 18);
+    }
+
+    //&--xxl {
+    //    @include mixins.adaptive("padding-block", 33, 24);
+    //    @include mixins.adaptive("padding-inline", 44, 18);
+    //}
+
+    //&--login {
+    //    @include mixins.adaptive("padding-block", 18, 14);
+    //    @include mixins.adaptive("padding-inline", 44, 24);
+    //}
+
+    //&--logout {
+    //    @include mixins.adaptive("padding-block", 18, 14);
+    //    @include mixins.adaptive("padding-inline", 24, 18);
+    //}
+}

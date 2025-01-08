@@ -1,0 +1,95 @@
+@use "@shared/styles/_mixins.scss" as mixin;
+
+.activity {
+    position: relative;
+    border-top: 1px solid var(--color-gray-secondary);
+    background: var(--color-white-secondary);
+    padding: 0 20px;
+
+    @include mixin.adaptive("padding-block", 100, 30);
+
+    b {
+        color: var(--color-primary);
+    }
+
+    .activity__wrapper {
+        position: relative;
+        z-index: 2;
+
+        @include mixin.flex-column;
+
+        gap: 20px;
+        border-radius: 20px;
+        background: var(--color-secondary);
+        box-shadow: 0 0 30px var(--color-secondary);
+        max-width: 1800px;
+        width: 100%;
+        margin: 0 auto;
+
+        @include mixin.adaptive("padding-block", 100, 20);
+        @include mixin.adaptive("padding-inline", 80, 20);
+        @include mixin.adaptive("gap", 30, 20);
+
+        .activity__header {
+            @include mixin.adaptive("gap", 50, 20);
+            @include mixin.flex-column;
+        }
+
+        .activity__list {
+            @include mixin.flex-column;
+            @include mixin.adaptive("gap", 30, 20)
+    }
+
+        .activity__item {
+            @include mixin.flex-row;
+
+            gap: 10px;
+            position: relative;
+
+            .dot {
+                flex-shrink: 0;
+                width: 10px;
+                height: 10px;
+                border-radius: 50px;
+                background: var(--color-primary);
+            }
+        }
+
+        .activity__footer {
+            @include mixin.flex-column;
+            @include mixin.adaptive("gap", 100, 20);
+
+            @include mixin.tablets {
+                @include mixin.flex-row;
+            }
+        }
+
+        hr {
+            height: 1px;
+            width: 100%;
+            border: none;
+            background: var(--color-white-primary);
+
+            @include mixin.tablets {
+                width: 1px;
+                height: 100px;
+            }
+        }
+    }
+
+    .activity__background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: max-content;
+        height: 100%;
+        z-index: 1;
+
+        img {
+            position: relative;
+            height: 100%;
+            width: max-content;
+            object-fit: contain;
+        }
+    }
+}

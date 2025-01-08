@@ -1,0 +1,7 @@
+@use "@shared/styles/_mixins.scss" as mixin;
+
+.social__icons {
+    @include mixin.flex-row;
+
+    gap: 10px;
+}

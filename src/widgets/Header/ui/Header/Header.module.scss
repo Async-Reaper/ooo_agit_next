@@ -1,0 +1,144 @@
+@use "@shared/styles/_mixins.scss" as mixin;
+
+.header {
+    width: 100%;
+    height: max-content;
+
+    .header__inner {
+        @include mixin.flex-row;
+
+        z-index: 9;
+        margin: 0 auto;
+        position: relative;
+        gap: 20px;
+        max-width: mixin.$maxContainer + px;
+        width: 100%;
+        padding: 36px 20px;
+        color: var(--color-black);
+
+        .header__nav {
+            position: absolute;
+            transform: translateY(-500px);
+
+            @include mixin.flex-column;
+
+            transition: all .3s;
+            width: 100%;
+
+            &.active {
+                transform: translateY(0);
+                align-items: center;
+                background: var(--color-white-secondary);
+                top: 0;
+                left: 0;
+                width: 100%;
+                padding: 20px 0;
+            }
+
+            @include mixin.tablets {
+                position: relative;
+                transform: translateY(0);
+
+                @include mixin.flex-row;
+            }
+        }
+
+        .header__burger__wrapper {
+            cursor: pointer;
+            display: block;
+            margin: 0 0 0 auto;
+            z-index: 1;
+            height: 16px;
+
+            @include mixin.tablets {
+                display: none;
+            }
+        }
+
+        .header__burger {
+            position: relative;
+            width: 25px;
+            height: 2px;
+            background: var(--color-primary);
+            border-radius: 10px;
+            transition: all .3s;
+
+            &::before {
+                position: absolute;
+                transition: all .3s;
+                content: "";
+                top: 5px;
+                left: 0;
+                width: 25px;
+                height: 2px;
+                background: var(--color-primary);
+                border-radius: 10px;
+            }
+
+            &::after {
+                position: absolute;
+                transition: all .3s;
+                content: "";
+                top: 10px;
+                left: 0;
+                width: 25px;
+                height: 2px;
+                background: var(--color-primary);
+                border-radius: 10px;
+            }
+
+            &.active {
+                background: transparent;
+
+                &::before {
+                    position: absolute;
+                    content: "";
+                    transform: rotate(45deg);
+                    top: 5px;
+                    left: 0;
+                    width: 25px;
+                    height: 2px;
+                    background: var(--color-primary);
+                    border-radius: 10px;
+                }
+
+                &::after {
+                    position: absolute;
+                    content: "";
+                    top: 5px;
+                    left: 0;
+                    width: 25px;
+                    height: 2px;
+                    background: var(--color-primary);
+                    border-radius: 10px;
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+
+        .header__links {
+            @include mixin.flex-column;
+
+            align-items: center;
+            width: 100%;
+
+            @include mixin.adaptive("gap", 70, 10);
+
+            margin: 0 0 20px;
+
+            @include mixin.tablets {
+                @include mixin.flex-row;
+
+                margin: 0;
+            }
+        }
+
+        .header__button {
+            z-index: 1;
+
+            @include mixin.tablets {
+                margin: 0 0 0 auto;
+            }
+        }
+    }
+}

@@ -1,0 +1,97 @@
+@use "@shared/styles/_mixins.scss" as mixins;
+@use './styles/colors.styles.module';
+
+.Modal {
+    position: fixed;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    z-index: -1;
+    color: var(--color-neutral);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(#276E6656 10%, #1c4e5156) ;
+    backdrop-filter: blur(20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    padding: 20px;
+    margin: 20px;
+    border-radius: 25px;
+    transition: 0.3s transform;
+    transform: scale(0.5);
+    width: fit-content;
+
+    @include mixins.desktop {
+        padding: 46px 40px;
+    }
+}
+
+.opened {
+    pointer-events: auto;
+    z-index: 99999;
+    animation: opened 0.2s ease-in-out forwards;
+
+    .content {
+        transform: scale(1);
+    }
+
+    &.size {
+        &--xs {
+            width: 310px;
+            height: 30vh;
+        }
+
+        &--l {
+            width: 543px;
+            height: fit-content;
+        }
+
+        &--xl {
+            width: 360px;
+            height: 50vh;
+        }
+
+        &--slider {
+            width: max-content;
+            max-width: 90vw;
+            height: max-content;
+            max-height: 90vh;
+        }
+    }
+
+    &.color {
+        &--inherit {
+            color: inherit;
+        }
+
+        &--light {
+            border-radius: 25px;
+            background: var(--color-secondary);
+        }
+    }
+}
+
+.isClosing {
+    .content {
+        transform: scale(0.0);
+    }
+}
+
+@keyframes opened {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

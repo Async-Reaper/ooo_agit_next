@@ -1,0 +1,27 @@
+@use "@shared/styles/_mixins.scss" as mixin;
+
+.vacancies__screen {
+    border-top: 1px solid var(--color-gray-secondary);
+    background: var(--color-white-secondary);
+    padding: 0 20px;
+
+    @include mixin.adaptive("padding-block", 80, 30);
+
+    b {
+        color: var(--color-primary);
+    }
+
+    .vacancies__wrapper {
+        @include mixin.flex-column;
+
+        gap: 20px;
+        border-radius: 20px;
+        background: var(--color-secondary);
+        box-shadow: 0 0 30px var(--color-secondary);
+        width: 100%;
+        margin: 0 auto;
+
+        @include mixin.adaptive("padding-block", 100, 20);
+        @include mixin.adaptive("padding-inline", 80, 20);
+    }
+}

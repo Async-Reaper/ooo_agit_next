@@ -1,0 +1,31 @@
+@use "@shared/styles/_mixins.scss" as mixin;
+
+.AppLink {
+    @include mixin.adaptive("font-size", 20, 14);
+    @include mixin.adaptive("line-height", 19, 16);
+
+    font-weight: 400;
+    font-family: var(--font-primary);
+    transition: all .3s;
+
+    &.primary {
+        color: var(--color-secondary);
+    }
+
+    &:hover {
+        color: var(--color-black);
+    }
+
+    &.inherit {
+        color: inherit;
+    }
+
+    &.blue {
+        color: var(--color-tiffany-blue);
+        transition: all .3s;
+
+        &:hover {
+            opacity: 0.9;
+        }
+    }
+}

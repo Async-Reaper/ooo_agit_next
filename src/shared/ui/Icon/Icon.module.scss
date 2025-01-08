@@ -1,0 +1,20 @@
+.icon__wrapper {
+    cursor: pointer;
+    transition: all .5s;
+
+    * {
+        transition: all .5s;
+
+        &:hover {
+            * {
+                stroke: var(--color-primary);
+            }
+        }
+    }
+
+    //&:hover {
+    //    * {
+    //        stroke: var(--color-primary);
+    //    }
+    //}
+}

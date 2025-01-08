@@ -1,0 +1,25 @@
+@use "@shared/styles/_mixins.scss" as mixin;
+@import "react-alice-carousel/lib/scss/alice-carousel";
+
+.vacancies__list__wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    .vacancies__item {
+        min-width: 250px;
+        max-width: 500px;
+        transition: all .3s;
+
+        @include mixin.laptop {
+            &:hover {
+                transform: translateY(-10px);
+            }
+        }
+
+        img {
+            border-radius: 5px;
+            width: 100%;
+        }
+    }
+}

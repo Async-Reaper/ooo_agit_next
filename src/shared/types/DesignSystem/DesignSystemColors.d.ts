@@ -1,0 +1,10 @@
+type DesignSystemColors =
+ | "primary"
+ | "primary-hover"
+ | "secondary"
+ | "black"
+ | "gray-primary"
+ | "gray-secondary"
+ | "white-primary"
+ | "white-secondary"
+ | "gray-dark"

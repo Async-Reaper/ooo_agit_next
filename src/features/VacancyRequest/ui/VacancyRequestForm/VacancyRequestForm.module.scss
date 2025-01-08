@@ -1,0 +1,13 @@
+@use "@shared/styles/_mixins.scss" as mixin;
+
+.vacancy__request__form {
+    @include mixin.flex-column;
+
+    gap: 10px;
+
+    .vacancy__request__button__wrapper {
+        text-align: center;
+        width: 100%;
+        height: 80px;
+    }
+}

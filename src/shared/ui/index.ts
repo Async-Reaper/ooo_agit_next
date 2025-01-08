@@ -1,0 +1,10 @@
+export { Button } from "./Button/Button";
+export { Input } from "./Input/Input";
+export { InputPhone } from "./Input/InputPhone";
+export { Loader } from "./Loaders/Loader/Loader";
+export { PageLoader } from "./Loaders/PageLoader/PageLoader";
+export { Typography } from "./Typography/Typography";
+export { TextArea } from "./TextArea/TextArea";
+export { Select } from "./Select/Select";
+export { Social } from "./Social/Social";
+export { Icon } from "./Icon/Icon";

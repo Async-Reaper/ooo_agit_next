@@ -1,0 +1,112 @@
+"use client"
+import React, { useEffect, useState } from "react";
+import { motion } from "motion/react";
+import { useViewBox } from "@shared/hooks";
+import { Button, Loader, Typography } from "@shared/ui";
+import {
+   collection, DocumentData, getDocs, limit, query, startAfter,
+} from "firebase/firestore";
+import { db } from "@main/FirebaseProvider";
+import { AppImage } from "@shared/ui/AppImage";
+import cls from "./NewsScreen.module.scss";
+
+export const NewsScreen = React.memo(() => {
+   const [news, setNews] = useState<DocumentData[]>([]);
+   const [lastVisible, setLastVisible] = useState<DocumentData | null>(null);
+   const [isLoading, setIsLoading] = useState<boolean>(false);
+   const { ref, isVisible } = useViewBox(0.1);
+
+   const fetchData = async () => {
+      setIsLoading(true);
+      const itemsRef = collection(db, "news");
+      let q;
+
+      if (lastVisible) {
+         q = query(itemsRef, startAfter(lastVisible), limit(5));
+      } else {
+         q = query(itemsRef, limit(5));
+      }
+
+      const documentSnapshots = await getDocs(q);
+
+      if (documentSnapshots.empty) {
+         setIsLoading(false);
+         return;
+      }
+
+      const newItems = documentSnapshots.docs.map((doc) => ({
+         id: doc.id,
+         ...doc.data(),
+      }));
+
+      setNews((prevItems) => {
+         const existingIds = new Set(prevItems.map((item) => item.id));
+         const filteredNewItems = newItems.filter((item) => !existingIds.has(item.id));
+         return [...prevItems, ...filteredNewItems];
+      });
+
+      setLastVisible(documentSnapshots.docs[documentSnapshots.docs.length - 1]);
+      setIsLoading(false);
+   };
+
+   useEffect(() => {
+      fetchData();
+   }, []);
+
+   return (
+      <motion.div
+         id="news"
+         ref={ref}
+         initial={{ opacity: 0 }}
+         animate={{ opacity: 1 }}
+         className={cls.news}
+      >
+         <div className={cls.news__wrapper}>
+            <motion.div
+               initial={{ y: 1000, opacity: 0 }}
+               animate={isVisible && { y: 0, opacity: 1 }}
+               transition={{
+                  type: "spring", duration: 0.5, stiffness: 150, bounce: 0.5,
+               }}
+               className={cls.news__title__wrapper}
+            >
+               <Typography variant="h1" color="secondary" uppercase>
+                  <b>Новости</b>
+                  {" "}
+                  от нас
+               </Typography>
+            </motion.div>
+            {
+               isLoading
+                  ? <Loader />
+                  : (
+                     <>
+                        <ul className={cls.news__list}>
+                           {news?.map((newsItem) => (
+                              <li key={newsItem.todoId} className={cls.news__item__wrapper}>
+                                 <div className={cls.news__item__img}>
+                                    <AppImage src={newsItem.img} alt="" />
+                                 </div>
+                                 <div className={cls.news__item__text}>
+                                    <Typography color="primary" variant="p" bold>
+                                       {newsItem.title}
+                                    </Typography>
+                                    <Typography color="secondary" variant="span">
+                                       {newsItem.description}
+                                    </Typography>
+                                 </div>
+                              </li>
+                           ))}
+                        </ul>
+                        <Button variant="outlined" onClick={fetchData}>
+                           <Typography color="primary" variant="p" bold uppercase>
+                              Еще
+                           </Typography>
+                        </Button>
+                     </>
+                  )
+            }
+         </div>
+      </motion.div>
+   );
+});

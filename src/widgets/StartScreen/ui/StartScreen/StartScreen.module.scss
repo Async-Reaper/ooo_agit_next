@@ -1,0 +1,48 @@
+@use "@shared/styles/_mixins.scss" as mixin;
+
+.start_screen {
+    padding: 0 20px;
+    border-top: 1px solid var(--color-gray-secondary);
+    position: relative;
+
+    .start__wrapper {
+        max-width: 1800px;
+        margin: 0 auto;
+
+        @include mixin.adaptive("padding-block", 148, 40);
+
+        .start__content {
+            @include mixin.flex-column;
+            @include mixin.adaptive("gap", 40, 20);
+
+            b {
+                color: var(--color-primary);
+            }
+        }
+
+        .start__content__text {
+            @include mixin.flex-column;
+            @include mixin.adaptive("gap", 40, 20);
+
+            .start__content__desc {
+                max-width: 500px;
+            }
+        }
+    }
+
+    .start__background {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: max-content;
+        height: 100%;
+        z-index: -1;
+
+        img {
+            position: relative;
+            height: 100%;
+            width: max-content;
+            object-fit: contain;
+        }
+    }
+}

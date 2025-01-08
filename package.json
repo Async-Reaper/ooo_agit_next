@@ -1,0 +1,41 @@
+{
+  "name": "AGIT-Plus",
+  "private": "true",
+  "version": "2.1.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint:ts": "eslint . --ext .ts,.tsx",
+    "lint:ts:fix": "eslint **/*.{ts,tsx} --fix",
+    "icons:optimise": "yarn svgo -f src/shared/libs/icon/__sources --recursive",
+    "icons:transpile": "yarn svgr src/shared/libs/icon/__sources -d src/shared/libs/icon/__generated --config-file scripts/svgr/svgr.config.js --typescript",
+    "icons": "yarn icons:optimise && yarn icons:transpile"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "firebase": "^11.1.0",
+    "motion": "^11.16.0",
+    "next": "^15.1.4",
+    "react": "^19.0.0",
+    "react-alice-carousel": "^2.9.1",
+    "react-dom": "^19.0.0",
+    "react-swipeable": "^7.0.2",
+    "sass": "^1.83.1"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.2.0",
+    "@types/node": "^22.10.5",
+    "@types/react": "^19.0.3",
+    "@types/react-dom": "^19.0.2",
+    "@types/react-input-mask": "^3.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "eslint": "^8.0.0",
+    "eslint-config-next": "^13.0.0",
+    "eslint-define-config": "^2.1.0",
+    "stylelint": "^16.12.0",
+    "stylelint-config-standard-scss": "^14.0.0",
+    "typescript": "^5.7.2"
+  }
+}

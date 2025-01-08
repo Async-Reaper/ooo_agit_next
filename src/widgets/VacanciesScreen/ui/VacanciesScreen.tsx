@@ -1,0 +1,19 @@
+import { Typography } from "@shared/ui";
+import "react-alice-carousel/lib/alice-carousel.css";
+import { VacanciesList } from "@entities/Vacancy";
+import cls from "./VacanciesScreen.module.scss";
+
+export const VacanciesScreen = () => (
+   <div id="vacancies" className={cls.vacancies__screen}>
+      <div className={cls.vacancies__wrapper}>
+         <div>
+            <Typography variant="h1" uppercase>
+               Наши
+               {" "}
+               <b>вакансии</b>
+            </Typography>
+         </div>
+         <VacanciesList />
+      </div>
+   </div>
+);
