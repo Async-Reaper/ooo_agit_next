@@ -1,12 +1,6 @@
 "use client";
 
-import {
-   type ImgHTMLAttributes,
-   memo,
-   type ReactElement,
-   useLayoutEffect,
-   useState,
-} from "react";
+import {type ImgHTMLAttributes, memo, type ReactElement, useEffect, useRef, useState,} from "react";
 
 interface AppImageProps extends ImgHTMLAttributes<HTMLImageElement> {
    className?: string;
@@ -23,28 +17,42 @@ export const AppImage = memo((props: AppImageProps) => {
       fallback,
       ...otherProps
    } = props;
-   const [isLoading, setIsLoading] = useState(true);
-   const [hasError, setHasError] = useState(false);
+   const [isVisible, setIsVisible] = useState(false);
+   const imgRef = useRef(null);
 
-   useLayoutEffect(() => {
-      const img = new Image();
-      img.src = src ?? "";
-      img.onload = () => {
-         setIsLoading(false);
+   useEffect(() => {
+      const observer = new IntersectionObserver(
+         (entries) => {
+            entries.forEach((entry) => {
+               if (entry.isIntersecting) {
+                  setIsVisible(true);
+                  observer.unobserve(entry.target); // Прекращаем наблюдение за элементом
+               }
+            });
+         },
+         { threshold: 0.1 } // 10% видимости
+      );
+
+      if (imgRef.current) {
+         observer.observe(imgRef.current); // Начинаем наблюдение
+      }
+
+      return () => {
+         if (imgRef.current) {
+            observer.unobserve(imgRef.current); // Убираем наблюдение при размонтировании
+         }
       };
-      img.onerror = () => {
-         setIsLoading(false);
-         setHasError(true);
-      };
-   }, [src]);
+   }, []);
 
-   if (isLoading && fallback) {
-      return fallback;
-   }
-
-   if (hasError && errorFallback) {
-      return errorFallback;
-   }
-
-   return <img className={className} src={src} alt={alt} {...otherProps} />;
+   return (
+      <div ref={imgRef} style={{ position: "relative", height: "100%" }}>
+         {isVisible
+            ? (
+               <img src={src} alt={alt} style={{ width: "100%" }} />
+            )
+            : (
+               <img alt="Loading..." style={{ width: "100%", filter: "blur(20px)" }} />
+            )}
+      </div>
+   );
 });
