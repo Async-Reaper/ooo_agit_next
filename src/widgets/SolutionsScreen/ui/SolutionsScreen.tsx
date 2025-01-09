@@ -46,7 +46,6 @@ export const SolutionsScreen = React.memo(() => {
                {
                   solutions.map((solution) => (
                      <li
-                        id="solution__item"
                         key={solution.id}
                         className={cls.solution__item}
                      >

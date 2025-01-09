@@ -6,12 +6,11 @@ import {NewsScreen} from "@widgets/NewsScreen";
 
 export const metadata: Metadata = {
    title: "О нас",
-   description: "Какой-то текст о нас",
    openGraph: {
       type: "website",
-      description: "О нас",
-      url: "https://ooo-agit.onrender.com/",
-      images: "public/logo.svg"
+      description: "мы крутые типы! у нас есть новости и вакансии",
+      url: "https://ooo-agit-next.vercel.app/about",
+      images: "logo.svg"
    }
 };
 

@@ -6,6 +6,12 @@ import {Metadata} from "next";
 export const metadata: Metadata = {
    title: "Главная",
    description: "Главная страница",
+   openGraph: {
+      type: "website",
+      description: "Автоматизация различных областей учёта и предоставление сервиса самого высокого уровня обслуживания!",
+      url: "https://ooo-agit-next.vercel.app/",
+      images: "logo.svg"
+   }
 };
 
 export default function Home() {
