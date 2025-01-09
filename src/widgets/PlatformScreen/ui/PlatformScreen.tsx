@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useLayoutEffect, useState } from "react";
 import { Typography } from "@shared/ui";
 import { AppLink } from "@shared/ui/AppLink";
@@ -72,7 +72,7 @@ export const PlatformScreen = React.memo(() => {
    }, [isVisible]);
 
    return (
-      <motion.div
+      <motion.section
          id="platform"
          initial={{ opacity: 0 }}
          animate={isVisible && { opacity: 1 }}
@@ -117,7 +117,7 @@ export const PlatformScreen = React.memo(() => {
                }
             </div>
          </div>
-      </motion.div>
+      </motion.section>
    );
 });
 

@@ -10,15 +10,19 @@
         @include mixin.adaptive("padding-block", 80, 20);
 
         padding-inline: 20px;
-        row-gap: 20px;
-        max-width: mixin.$maxContainer + px;
-        width: 100%;
+        @include mixin.adaptive("gap", 60, 20);
 
-        @include mixin.desktop {
-            @include mixin.flex-row;
-            @include mixin.adaptive("column-gap", 140, 20);
+        .default__info {
+            row-gap: 20px;
+            max-width: mixin.$maxContainer + px;
+            width: 100%;
 
-            justify-self: center;
+            @include mixin.desktop {
+                @include mixin.flex-row;
+                @include mixin.adaptive("column-gap", 140, 20);
+
+                justify-self: center;
+            }
         }
 
         .footer__logo {

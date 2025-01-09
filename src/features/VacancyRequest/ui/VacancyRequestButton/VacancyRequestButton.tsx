@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import { useModal } from "@shared/hooks";
 import { Button, Typography } from "@shared/ui";

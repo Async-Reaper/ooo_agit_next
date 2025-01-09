@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import type React from "react";
 import {
    type MutableRefObject, useCallback, useEffect, useRef, useState,
@@ -19,6 +19,7 @@ export function useViewModal(
 ): viewProps {
    const [isClosing, setIsClosing] = useState(false);
    const [isMounted, setIsMounted] = useState(false);
+   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
    // @ts-ignore
    const timerRef = useRef() as MutableRefObject<
    ReturnType<typeof setTimeout>

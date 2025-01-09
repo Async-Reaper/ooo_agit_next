@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useCallback, useMemo, useState } from "react";
 import {
    Button, Input, InputPhone, Loader, Select, Typography,

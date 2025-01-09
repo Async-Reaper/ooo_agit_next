@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import { motion } from "motion/react";
 import { useViewBox } from "@shared/hooks";
@@ -9,7 +9,7 @@ import cls from "./CasesScreen.module.scss";
 export const CasesScreen = React.memo(() => {
    const { ref, isVisible } = useViewBox();
    return (
-      <motion.div
+      <motion.section
          id="cases"
          ref={ref}
          initial={{ opacity: 0 }}
@@ -53,8 +53,6 @@ export const CasesScreen = React.memo(() => {
                <Slider />
             </motion.div>
          </div>
-      </motion.div>
+      </motion.section>
    );
 });
-
-CasesScreen.displayName = "CasesScreen";

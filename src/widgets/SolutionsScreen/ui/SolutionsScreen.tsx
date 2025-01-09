@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import { Typography } from "@shared/ui";
 import { motion } from "motion/react";
@@ -20,7 +20,7 @@ export const SolutionsScreen = React.memo(() => {
 
    const { ref, isVisible } = useViewBox();
    return (
-      <motion.div
+      <motion.section
          initial={{ opacity: 0 }}
          animate={isVisible && { opacity: 1 }}
          transition={{ type: "spring", duration: 0.5 }}
@@ -59,7 +59,7 @@ export const SolutionsScreen = React.memo(() => {
                }
             </ul>
          </div>
-      </motion.div>
+      </motion.section>
    );
 });
 

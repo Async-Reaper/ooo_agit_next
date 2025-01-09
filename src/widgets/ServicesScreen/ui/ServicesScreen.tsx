@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useLayoutEffect, useState } from "react";
 import { Typography } from "@shared/ui";
 import { AppLink } from "@shared/ui/AppLink";
@@ -48,7 +48,7 @@ export const ServicesScreen = React.memo(() => {
    }, [isVisible]);
 
    return (
-      <motion.div
+      <motion.section
          id="services"
          initial={{ opacity: 0 }}
          animate={isVisible && { opacity: 1 }}
@@ -93,7 +93,7 @@ export const ServicesScreen = React.memo(() => {
                <AppImage src="/reviews__bg.webp" alt="Services background" />
             </div>
          </div>
-      </motion.div>
+      </motion.section>
    );
 });
 

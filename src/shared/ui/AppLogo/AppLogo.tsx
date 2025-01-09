@@ -19,7 +19,7 @@ const Component = (props: AppLogoProps) => {
          {
             isName
                ? <Image src={LogoName} alt="" width={80} />
-                : <Image src={Logo} alt="" width={80} />
+               : <Image src={Logo} alt="" width={80} />
          }
       </AppLink>
    );

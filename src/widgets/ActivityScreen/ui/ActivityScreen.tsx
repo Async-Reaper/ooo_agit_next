@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useLayoutEffect, useState } from "react";
 import { Typography } from "@shared/ui";
 import { motion } from "motion/react";
@@ -46,7 +46,7 @@ export const ActivityScreen = React.memo(() => {
    }, [isVisible]);
 
    return (
-      <motion.div
+      <motion.section
          id="activity"
          initial={{ opacity: 0 }}
          animate={isVisible && { opacity: 1 }}
@@ -121,7 +121,7 @@ export const ActivityScreen = React.memo(() => {
          <div className={cls.activity__background}>
             <AppImage src="/wave.webp" alt="bg" />
          </div>
-      </motion.div>
+      </motion.section>
    );
 });
 

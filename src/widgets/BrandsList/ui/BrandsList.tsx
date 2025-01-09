@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useLayoutEffect, useState } from "react";
 import { animate, stagger } from "motion";
 import { useViewBox } from "@shared/hooks";
@@ -46,7 +46,7 @@ export const BrandsList = React.memo(() => {
    }, [isVisible]);
 
    return (
-      <div id="brands" ref={ref} className={cls.brands_list}>
+      <section id="brands" ref={ref} className={cls.brands_list}>
          <ul className={cls.brands_list__wrapper}>
             {
                brandsList.map((brandItem) => (
@@ -56,8 +56,6 @@ export const BrandsList = React.memo(() => {
                ))
             }
          </ul>
-      </div>
+      </section>
    );
 });
-
-BrandsList.displayName = "BrandsList";

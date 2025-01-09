@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import { Typography } from "@shared/ui";
 import { motion } from "motion/react";
@@ -7,7 +7,7 @@ import { AppImage } from "@shared/ui/AppImage";
 import cls from "./StartScreen.module.scss";
 
 export const StartScreen = React.memo(() => (
-   <div id="start" className={cls.start_screen}>
+   <section id="start" className={cls.start_screen}>
       <div className={cls.start__wrapper}>
          <div className={cls.start__content}>
             <div className={cls.start__content__text}>
@@ -47,7 +47,5 @@ export const StartScreen = React.memo(() => (
       >
          <AppImage src="/wave.webp" alt="bg" />
       </motion.div>
-   </div>
+   </section>
 ));
-
-StartScreen.displayName = "StartScreen";

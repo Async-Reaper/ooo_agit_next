@@ -7,7 +7,7 @@ import { SolutionsScreen } from "@widgets/SolutionsScreen";
 import { CasesScreen } from "@widgets/CasesScreen";
 
 export const MainPage = () => (
-   <div>
+   <>
       <StartScreen />
       <BrandsList />
       <SolutionsScreen />
@@ -15,5 +15,5 @@ export const MainPage = () => (
       <ActivityScreen />
       <ServicesScreen />
       <PlatformScreen />
-   </div>
+   </>
 );

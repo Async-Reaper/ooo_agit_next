@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useCallback, useState } from "react";
 import { classNames } from "@shared/libs/classNames/classNames";
 import { AppLogo } from "@shared/ui/AppLogo/AppLogo";
@@ -19,46 +19,46 @@ export const Header = React.memo(() => {
    }, [isActiveBurger, setIsActiveBurger]);
 
    return (
-       <header id="header" className={cls.header}>
-          <div className={cls.header__inner}>
-             <div className={cls.header__logo}>
-                <AppLogo/>
-             </div>
-             <div className={classNames(cls.header__nav, {[cls.active]: isActiveBurger})}>
-                <div className={cls.header__links}>
-                   <motion.div
-                       initial={{y: -500, opacity: 0}}
-                       animate={{y: 0, opacity: 1}}
-                       transition={{type: "spring", duration: 0.3}}
-                       className="header__link"
-                   >
-                      <AppLink href="/">
-                         Главная
-                      </AppLink>
-                   </motion.div>
-                   <motion.div
-                       initial={{y: -100, opacity: 0}}
-                       animate={{y: 0, opacity: 1}}
-                       transition={{type: "spring", duration: 0.3, delay: 0.2}}
-                       className="header__link"
-                   >
-                      <SelectLinks/>
-                   </motion.div>
-                </div>
-                <div className={cls.header__button}>
-                   <Button onClick={open}>
-                      <Typography color="white-primary" variant="small" uppercase noWrap>
-                         контакты
-                      </Typography>
-                   </Button>
-                </div>
-             </div>
-             <div className={cls.header__burger__wrapper} onClick={onHandleClickBurger}>
-                <div className={classNames(cls.header__burger, {[cls.active]: isActiveBurger})}/>
-             </div>
-             <HeaderModal isOpen={isOpen} onClose={close}/>
-          </div>
-       </header>
+      <header id="header" className={cls.header}>
+         <div className={cls.header__inner}>
+            <div className={cls.header__logo}>
+               <AppLogo/>
+            </div>
+            <div className={classNames(cls.header__nav, {[cls.active]: isActiveBurger})}>
+               <div className={cls.header__links}>
+                  <motion.div
+                     initial={{y: -500, opacity: 0}}
+                     animate={{y: 0, opacity: 1}}
+                     transition={{type: "spring", duration: 0.3}}
+                     className="header__link"
+                  >
+                     <AppLink href="/">
+                        Главная
+                     </AppLink>
+                  </motion.div>
+                  <motion.div
+                     initial={{y: -100, opacity: 0}}
+                     animate={{y: 0, opacity: 1}}
+                     transition={{type: "spring", duration: 0.3, delay: 0.2}}
+                     className="header__link"
+                  >
+                     <SelectLinks/>
+                  </motion.div>
+               </div>
+               <div className={cls.header__button}>
+                  <Button onClick={open}>
+                     <Typography color="white-primary" variant="small" uppercase noWrap>
+                        контакты
+                     </Typography>
+                  </Button>
+               </div>
+            </div>
+            <div className={cls.header__burger__wrapper} onClick={onHandleClickBurger}>
+               <div className={classNames(cls.header__burger, {[cls.active]: isActiveBurger})}/>
+            </div>
+            <HeaderModal isOpen={isOpen} onClose={close}/>
+         </div>
+      </header>
    );
 });
 

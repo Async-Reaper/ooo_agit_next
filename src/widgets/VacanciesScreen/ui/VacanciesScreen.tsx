@@ -4,7 +4,7 @@ import { VacanciesList } from "@entities/Vacancy";
 import cls from "./VacanciesScreen.module.scss";
 
 export const VacanciesScreen = () => (
-   <div id="vacancies" className={cls.vacancies__screen}>
+   <section id="vacancies" className={cls.vacancies__screen}>
       <div className={cls.vacancies__wrapper}>
          <div>
             <Typography variant="h1" uppercase>
@@ -15,5 +15,5 @@ export const VacanciesScreen = () => (
          </div>
          <VacanciesList />
       </div>
-   </div>
+   </section>
 );

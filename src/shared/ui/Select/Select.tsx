@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useCallback, useState } from "react";
 import { Icon, Typography } from "@shared/ui";
 import { classNames } from "@shared/libs/classNames/classNames";

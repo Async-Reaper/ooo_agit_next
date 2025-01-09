@@ -1,6 +1,6 @@
-"use client"
+"use client";
 import {HTMLAttributeAnchorTarget, memo, type ReactNode} from "react";
-import Link, {LinkProps} from 'next/link'
+import Link, {LinkProps} from "next/link";
 import cls from "./AppLink.module.scss";
 
 export type AppLinkVariant = "primary" | "inherit";
@@ -20,7 +20,7 @@ export const AppLink = memo((props: AppLinkProps) => {
       className,
       children,
       variant = "primary",
-       target,
+      target,
       activeClassName = "",
       ...otherProps
    } = props;

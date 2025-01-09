@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, {
    type TextareaHTMLAttributes, type ReactNode, useCallback, useRef,
 } from "react";

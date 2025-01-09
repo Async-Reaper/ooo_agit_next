@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { useViewBox } from "@shared/hooks";
@@ -54,7 +54,7 @@ export const NewsScreen = React.memo(() => {
    }, []);
 
    return (
-      <motion.div
+      <motion.section
          id="news"
          ref={ref}
          initial={{ opacity: 0 }}
@@ -107,6 +107,6 @@ export const NewsScreen = React.memo(() => {
                   )
             }
          </div>
-      </motion.div>
+      </motion.section>
    );
 });
