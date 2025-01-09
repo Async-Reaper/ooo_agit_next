@@ -6,6 +6,7 @@ import {Metadata} from "next";
 export const metadata: Metadata = {
    title: "Главная",
    description: "Главная страница",
+   keywords: ["автоматизация, 1с, 1:с, 1:С, 1c, 1:c, 1:C"],
    openGraph: {
       type: "website",
       description: "Автоматизация различных областей учёта и предоставление сервиса самого высокого уровня обслуживания!",

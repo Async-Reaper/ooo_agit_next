@@ -1,4 +1,3 @@
-import Head from "next/head";
 import React from "react";
 import {Metadata} from "next";
 import {VacanciesScreen} from "@widgets/VacanciesScreen";
@@ -6,6 +5,7 @@ import {NewsScreen} from "@widgets/NewsScreen";
 
 export const metadata: Metadata = {
    title: "О нас",
+   keywords: ["Новости, вакансии, работа, работа новокузнецк"],
    openGraph: {
       type: "website",
       description: "мы крутые типы! у нас есть новости и вакансии",
