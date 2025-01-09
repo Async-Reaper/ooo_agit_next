@@ -1,7 +1,8 @@
-import React from "react";
+import React, {Suspense} from "react";
 import {Metadata} from "next";
 import {VacanciesScreen} from "@widgets/VacanciesScreen";
 import {NewsScreen} from "@widgets/NewsScreen";
+import {PageLoader} from "@shared/ui";
 
 export const metadata: Metadata = {
    title: "О нас",
@@ -11,16 +12,16 @@ export const metadata: Metadata = {
       description: "мы крутые типы! у нас есть новости и вакансии",
       url: "https://ooo-agit-next.vercel.app/about",
       images: "logo.svg"
-   }
+   },
 };
 
 
 const Page = async () => {
    return (
-      <div>
+      <Suspense fallback={<PageLoader />}>
          <VacanciesScreen />
          <NewsScreen />
-      </div>
+      </Suspense>
    );
 };
 

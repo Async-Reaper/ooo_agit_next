@@ -3,7 +3,10 @@ import {PrivacyPage} from "@pagesTemplate/PrivacyPage";
 import {Metadata} from "next";
 
 export const metadata: Metadata = {
-   title: "Политика конфиденциальности"
+   title: "Политика конфиденциальности",
+   robots: {
+      index: false
+   }
 };
 
 const Page = () => {

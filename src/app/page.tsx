@@ -1,10 +1,11 @@
 import {MainPage} from "@pagesTemplate/MainPage";
 import Head from "next/head";
-import React from "react";
+import React, {Suspense} from "react";
 import {Metadata} from "next";
+import {PageLoader} from "@shared/ui";
 
 export const metadata: Metadata = {
-   title: "Главная",
+   title: "АГИТ-Плюс",
    description: "Главная страница",
    keywords: ["автоматизация, 1с, 1:с, 1:С, 1c, 1:c, 1:C"],
    openGraph: {
@@ -26,7 +27,9 @@ export default function Home() {
             <meta property="og:url" content="https://ooo-agit.onrender.com/"/>
             <meta property="og:image" content="./public/logo.svg"/>
          </Head>
-         <MainPage />
+         <Suspense fallback={<PageLoader />}>
+            <MainPage />
+         </Suspense>
       </>
    );
 }
