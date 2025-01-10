@@ -12,7 +12,7 @@ export const metadata: Metadata = {
       type: "website",
       description: "Автоматизация различных областей учёта и предоставление сервиса самого высокого уровня обслуживания!",
       url: "https://ooo-agit-next.vercel.app/",
-      images: "logo.svg"
+      images: "https://ooo-agit-next.vercel.app/logo.svg"
    }
 };
 

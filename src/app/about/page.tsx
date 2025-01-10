@@ -11,7 +11,7 @@ export const metadata: Metadata = {
       type: "website",
       description: "мы крутые типы! у нас есть новости и вакансии",
       url: "https://ooo-agit-next.vercel.app/about",
-      images: "logo.svg"
+      images: "https://ooo-agit-next.vercel.app/logo.svg"
    },
 };
 
