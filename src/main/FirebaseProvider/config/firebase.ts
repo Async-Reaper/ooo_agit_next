@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-   apiKey: "AIzaSyBsFdEQHLpmbDupsKR1Zm0FB2fSoh4SoF8",
-   authDomain: "agit-base.firebaseapp.com",
-   projectId: "agit-base",
-   storageBucket: "agit-base.firebasestorage.app",
-   messagingSenderId: "793237998424",
-   appId: "1:793237998424:web:749aa9e392c4c530fab32d",
+   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+   authDomain: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+   projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+   storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+   messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
 export const app = initializeApp(firebaseConfig);
