@@ -1,16 +1,19 @@
 import {IVacancy, VacancyCard} from "@entities/Vacancy";
 import {VacancyRequestButton} from "@features/VacancyRequest";
-import React from "react";
+import React, {FC} from "react";
+import { Metadata, NextPage } from "next";
 import cls from "./page.module.scss";
-import {doc, getDoc} from "@node_modules/firebase/firestore";
+import {doc, getDoc} from "firebase/firestore";
 import {db} from "@main/FirebaseProvider";
 
 interface Params {
-   id: string;
+   params: {
+      id: string;
+   };
 }
 
-export async function generateMetadata({ params }: { params: Params }) {
-   const { id } = params;
+export async function generateMetadata({ params }: Params): Promise<Metadata> {
+   const { id } = await params;
 
    const responseVacancy = doc(db, "vacancies", id);
    const result = await getDoc(responseVacancy);
@@ -27,8 +30,9 @@ export async function generateMetadata({ params }: { params: Params }) {
    };
 }
 
-const DynamicPage = async ({ params }: { params: Params }) => {
-   const responseVacancy = doc(db, "vacancies", params.id);
+const DynamicPage: FC<{ params: Params["params"] }> = async ({ params }) => {
+   const { id } = await params;
+   const responseVacancy = doc(db, "vacancies", id);
    const result = await getDoc(responseVacancy);
    const vacancy = result.data() as IVacancy;
 
