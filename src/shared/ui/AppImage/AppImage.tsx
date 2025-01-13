@@ -48,7 +48,7 @@ export const AppImage = memo((props: AppImageProps) => {
       <div ref={imgRef} style={{ position: "relative", height: "100%" }}>
          {isVisible
             ? (
-               <img src={src} alt={alt} style={{ width: "100%" }} />
+               <img src={src} alt={alt} />
             )
             : (
                <img alt="Loading..." style={{ width: "100%", filter: "blur(20px)" }} />
