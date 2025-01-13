@@ -32,14 +32,16 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 
 const DynamicPage: FC<{ params: Params["params"] }> = async ({ params }) => {
    const { id } = await params;
+   let isLoading = true;
    const responseVacancy = doc(db, "vacancies", id);
    const result = await getDoc(responseVacancy);
    const vacancy = result.data() as IVacancy;
+   isLoading = false;
 
    return (
       <div className={cls.vacancy}>
          <div className={cls.vacancy__wrapper}>
-            <VacancyCard vacancy={vacancy}/>
+            <VacancyCard vacancy={vacancy} isLoading={isLoading}/>
             <VacancyRequestButton/>
          </div>
       </div>
