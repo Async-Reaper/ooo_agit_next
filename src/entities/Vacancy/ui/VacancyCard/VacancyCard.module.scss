@@ -3,4 +3,15 @@
 .vacancy__card__wrapper {
     @include mixin.flex-column;
     @include mixin.adaptive("gap", 40, 20);
+
+    .vacancy__card__img {
+        img {
+            width: 100%;
+        }
+        @include mixin.tablets {
+            img {
+                width: auto;
+            }
+        }
+    }
 }
