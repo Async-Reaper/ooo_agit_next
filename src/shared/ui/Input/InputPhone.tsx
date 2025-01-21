@@ -1,5 +1,5 @@
 "use client";
-import React, { useCallback } from "react";
+import React, {useCallback, useRef} from "react";
 import InputMask from "react-input-mask";
 import { classNames } from "@shared/libs/classNames/classNames";
 import cls from "./styles.module.scss";
@@ -23,6 +23,8 @@ const Component = (props: InputPhoneProps) => {
       placeholder = "Номер телефона",
    } = props;
 
+   const ref = useRef<any>();
+
    const mods = {
       [cls.full_width]: fullWidth,
    };
@@ -35,13 +37,13 @@ const Component = (props: InputPhoneProps) => {
 
    return (
       <div className={classNames(cls.input_wrapper, mods, classes)}>
-         {/*<InputMask*/}
-         {/*   mask="+7 (999) 999-99-99"*/}
-         {/*   placeholder={placeholder}*/}
-         {/*   value={value}*/}
-         {/*   onChange={onChangeHandler}*/}
-         {/*   className={cls.input}*/}
-         {/*/>*/}
+         <InputMask
+            mask="+7 (999) 999-99-99"
+            placeholder={placeholder}
+            value={value}
+            onChange={onChangeHandler}
+            className={cls.input}
+         />
          <input/>
       </div>
    );

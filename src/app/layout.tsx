@@ -3,6 +3,7 @@ import "@shared/styles/index.scss";
 import {Header} from "@widgets/Header";
 import {Footer} from "@widgets/Footer";
 import "./layout.scss";
+import {ConsultationFlag} from "@features/Consultation/ui/ConsultationFlag/ConsultationFlag";
 
 interface RootLayoutProps {
    children: React.ReactNode;
@@ -22,6 +23,7 @@ const RootLayout = (props: RootLayoutProps) => {
                <Header/>
                <div className="content">{children}</div>
                <Footer/>
+               <ConsultationFlag />
             </Suspense>
          </body>
       </html>

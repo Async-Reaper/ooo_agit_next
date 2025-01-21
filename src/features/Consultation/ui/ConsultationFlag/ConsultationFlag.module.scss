@@ -1,0 +1,24 @@
+.consultation__flag {
+  position: fixed;
+  bottom: 50px;
+  right: 30px;
+  border-radius: 100px;
+  background: var(--color-primary);
+  padding: 5px;
+  display: flex;
+  cursor: pointer;
+  z-index: 9;
+  transition: all .3s;
+
+  &:hover {
+    background: var(--color-primary-hover);
+  }
+
+  .consultation__flag__wrapper {
+    display: flex;
+    background: var(--color-primary-hover);
+    border-radius: 100px;
+    padding: 10px;
+    position: relative;
+  }
+}
