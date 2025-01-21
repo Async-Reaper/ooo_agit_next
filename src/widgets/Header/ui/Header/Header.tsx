@@ -30,17 +30,18 @@ export const Header = React.memo(() => {
                      initial={{y: -500, opacity: 0}}
                      animate={{y: 0, opacity: 1}}
                      transition={{type: "spring", duration: 0.3}}
-                     className="header__link"
+                     className={cls.header__link}
                   >
                      <AppLink href="/">
-                        Главная
+                        <Typography variant="span">
+                           Главная
+                        </Typography>
                      </AppLink>
                   </motion.div>
                   <motion.div
                      initial={{y: -100, opacity: 0}}
                      animate={{y: 0, opacity: 1}}
                      transition={{type: "spring", duration: 0.3, delay: 0.2}}
-                     className="header__link"
                   >
                      <SelectLinks/>
                   </motion.div>

@@ -6,13 +6,18 @@ import { AppLink } from "@shared/ui/AppLink";
 import cls from "./Footer.module.scss";
 
 export const Footer = React.memo(() => {
-   const scrollToSection = (event: React.MouseEvent<HTMLAnchorElement,
-   MouseEvent>, sectionId: string) => {
-      event.preventDefault();
+   
+   const scrollToSection = (
+      event: React.MouseEvent<HTMLAnchorElement, MouseEvent>, 
+      sectionId: string
+   ) => {
+      if (location.pathname === "/") {
+         event.preventDefault();
 
-      const section = document.getElementById(sectionId);
-      if (section) {
-         section.scrollIntoView({ behavior: "smooth", block: "start" });
+         const section = document.getElementById(sectionId);
+         if (section) {
+            section.scrollIntoView({ behavior: "smooth", block: "start" });
+         }
       }
    };
 
@@ -86,9 +91,8 @@ export const Footer = React.memo(() => {
                   </div>
                   <div className={cls.footer__link__wrapper}>
                      <AppLink
-                        href="/about/#vacancies"
+                        href="/about#vacancies"
                         className={cls.footer__link}
-                        onClick={(e) => scrollToSection(e, "vacancies")}
                      >
                         <Typography color="white-primary" variant="span" noWrap>
                            Вакансии

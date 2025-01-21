@@ -18,7 +18,7 @@ export const StartScreen = React.memo(() => (
                   className={cls.start__content__title}
                >
                   <Typography variant="h1" uppercase color="black">
-                     <b>Мы -эксперты</b>
+                     <b>Мы - эксперты</b>
                      {" "}
                      в области Автоматизации бизнеса.
                   </Typography>

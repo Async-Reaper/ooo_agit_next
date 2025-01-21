@@ -119,16 +119,15 @@
         .header__links {
             @include mixin.flex-column;
 
-            align-items: center;
-            width: 100%;
+            align-items: flex-start;
+            width: max-content;
 
             @include mixin.adaptive("gap", 70, 10);
 
-            margin: 0 0 20px;
-
+            margin: 0 auto 20px;
             @include mixin.tablets {
                 @include mixin.flex-row;
-
+                align-items: center;
                 margin: 0;
             }
         }

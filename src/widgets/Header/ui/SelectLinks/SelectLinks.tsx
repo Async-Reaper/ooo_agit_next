@@ -5,6 +5,7 @@ import { classNames } from "@shared/libs/classNames/classNames";
 import ArrowIcon from "@shared/libs/icons/source/arrow.svg";
 import {usePathname} from "next/navigation";
 import cls from "./SelectLinks.module.scss";
+import Image from "@node_modules/next/image";
 
 const Component = () => {
    const pathname = usePathname();
@@ -27,21 +28,25 @@ const Component = () => {
       }
    };
    return (
-      <div className={cls.select__wrapper}>
+      <div className={classNames(cls.select__wrapper, {[cls.active]: isVisibleSelect})}>
          <div className={cls.select__name} onClick={onHandleVisibleSelect}>
             <Typography variant="span">
                О нас
             </Typography>
-            <div className={classNames(cls.select__arrow, { [cls.active]: isVisibleSelect })}>
-
+            <div className={classNames(cls.select__arrow, {[cls.active]: isVisibleSelect})}>
+               <Image src={ArrowIcon} alt={""}/>
             </div>
          </div>
-         <div className={classNames(cls.select__items, { [cls.active]: isVisibleSelect })}>
+         <div className={classNames(cls.select__items, {[cls.active]: isVisibleSelect})}>
             <AppLink href="/about#vacancies" onClick={(e) => scrollToSection(e, "vacancies")}>
-               Вакансии
+               <Typography variant="span">
+                  Вакансии
+               </Typography>
             </AppLink>
             <AppLink href="/about#news" onClick={(e) => scrollToSection(e, "news")}>
-               Новости
+               <Typography variant="span">
+                  Новости
+               </Typography>
             </AppLink>
          </div>
       </div>

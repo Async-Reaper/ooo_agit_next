@@ -81,7 +81,9 @@ export const ServicesScreen = React.memo(() => {
                            </div>
                            <div className={cls.service__link__wrapper}>
                               <AppLink href={service.link}>
-                                 Подробнее
+                                 <Typography variant="span" color="secondary">
+                                    Подробнее
+                                 </Typography>
                               </AppLink>
                            </div>
                         </div>
