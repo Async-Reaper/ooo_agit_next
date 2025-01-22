@@ -6,6 +6,7 @@ import {PageLoader} from "@shared/ui";
 
 export const metadata: Metadata = {
    title: "О нас",
+   description: "мы крутые типы! у нас есть новости и вакансии",
    keywords: ["Новости, вакансии, работа, работа новокузнецк"],
    openGraph: {
       type: "website",

@@ -33,6 +33,10 @@ const Component = (props: ConsultationFormProps) => {
          id: 4,
          content: "Анализ и оптимизация бизнес-процессов",
       },
+      {
+         id: 5,
+         content: "Другое",
+      },
    ]);
    const [fullName, setFullName] = useState<string>("");
    const [phoneNumber, setPhoneNumber] = useState<string>("");
@@ -64,7 +68,7 @@ const Component = (props: ConsultationFormProps) => {
 
    return (
       <div className={cls.consultation__form}>
-         <Input fullWidth placeholder="Ваше ФИО" value={fullName} onChange={setFullName} />
+         <Input fullWidth placeholder="Ваше ФИО" value={fullName} onChange={setFullName} onlyRu />
          <InputPhone value={phoneNumber} onChange={setPhoneNumber} />
          <Select
             fullWidth

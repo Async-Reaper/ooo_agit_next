@@ -40,9 +40,7 @@
     }
 
     .select__items {
-        @include mixin.flex-column;
-
-        //background: rgb(135 128 128 / 55%);
+        display: none;
         gap: 10px;
         opacity: 0;
         transition: all .3s;
@@ -52,18 +50,18 @@
 
         @include mixin.tablets {
             position: absolute;
-            top: 40px;
+            top: 23px;
         }
 
         &.active {
+            @include mixin.flex-column;
             color: var(--color-secondary);
             padding: 10px 5px;
             opacity: 1;
             width: 100%;
             height: max-content;
-            border-radius: 5px;
-            background: var(--color-white-secondary);
-            box-shadow: 0 3px 10px var(--color-gray-secondary);
+            border-radius: 0 0 5px 5px;
+            background: var(--color-gray-primary);
         }
     }
 }

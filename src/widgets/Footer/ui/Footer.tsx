@@ -34,8 +34,9 @@ export const Footer = React.memo(() => {
                         href="/#start"
                         className={cls.footer__link}
                         onClick={(e) => scrollToSection(e, "start")}
+                        variant="secondary"
                      >
-                        <Typography color="white-primary" variant="span" noWrap>
+                        <Typography variant="span" noWrap>
                            О нас
                         </Typography>
                      </AppLink>
@@ -43,8 +44,9 @@ export const Footer = React.memo(() => {
                         href="/#brands"
                         className={cls.footer__link}
                         onClick={(e) => scrollToSection(e, "brands")}
+                        variant="secondary"
                      >
-                        <Typography color="white-primary" variant="span" noWrap>
+                        <Typography variant="span" noWrap>
                            Наши клиенты
                         </Typography>
                      </AppLink>
@@ -54,8 +56,9 @@ export const Footer = React.memo(() => {
                         href="/#solutions"
                         className={cls.footer__link}
                         onClick={(e) => scrollToSection(e, "solutions")}
+                        variant="secondary"
                      >
-                        <Typography color="white-primary" variant="span" noWrap>
+                        <Typography variant="span" noWrap>
                            Чем занимаемся?
                         </Typography>
                      </AppLink>
@@ -63,8 +66,9 @@ export const Footer = React.memo(() => {
                         href="/#activity"
                         className={cls.footer__link}
                         onClick={(e) => scrollToSection(e, "activity")}
+                        variant="secondary"
                      >
-                        <Typography color="white-primary" variant="span" noWrap>
+                        <Typography variant="span" noWrap>
                            Деятельность
                         </Typography>
                      </AppLink>
@@ -74,8 +78,9 @@ export const Footer = React.memo(() => {
                         href="/#services"
                         className={cls.footer__link}
                         onClick={(e) => scrollToSection(e, "services")}
+                        variant="secondary"
                      >
-                        <Typography color="white-primary" variant="span" noWrap>
+                        <Typography variant="span" noWrap>
                            Услуги
                         </Typography>
                      </AppLink>
@@ -83,8 +88,9 @@ export const Footer = React.memo(() => {
                         href="/#platform"
                         className={cls.footer__link}
                         onClick={(e) => scrollToSection(e, "platform")}
+                        variant="secondary"
                      >
-                        <Typography color="white-primary" variant="span" noWrap>
+                        <Typography variant="span" noWrap>
                            Товары
                         </Typography>
                      </AppLink>
@@ -93,8 +99,9 @@ export const Footer = React.memo(() => {
                      <AppLink
                         href="/about#vacancies"
                         className={cls.footer__link}
+                        variant="secondary"
                      >
-                        <Typography color="white-primary" variant="span" noWrap>
+                        <Typography variant="span" noWrap>
                            Вакансии
                         </Typography>
                      </AppLink>
@@ -102,8 +109,9 @@ export const Footer = React.memo(() => {
                         href="/#cases"
                         className={cls.footer__link}
                         onClick={(e) => scrollToSection(e, "cases")}
+                        variant="secondary"
                      >
-                        <Typography color="white-primary" variant="span" noWrap>
+                        <Typography variant="span" noWrap>
                            Кейсы
                         </Typography>
                      </AppLink>
@@ -121,15 +129,15 @@ export const Footer = React.memo(() => {
                </div>
             </div>
             <div className={cls.other__info}>
-               <AppLink href="/privacy" target="_blank">
-                  <Typography variant="span" color="white-primary" noWrap>
+               <AppLink href="/privacy" target="_blank" variant="secondary">
+                  <Typography variant="span" noWrap>
                      Политика конфиденциальности
                   </Typography>
                </AppLink>
                <Typography variant="span">
                   © 2024 654005, ООО «АГИТ-Плюс», г. Новокузнецк, пр-т Строителей, д. 19.
                   Все указанные на сайте цены носят информационный характер и не являются публичной офертой
-                  (ст. 437 ГК РФ)
+                  (ст. 437 ГК РФ),  если явно не указано иное.
                </Typography>
             </div>
          </div>

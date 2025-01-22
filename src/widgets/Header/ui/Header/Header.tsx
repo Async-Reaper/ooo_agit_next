@@ -18,6 +18,20 @@ export const Header = React.memo(() => {
       setIsActiveBurger(!isActiveBurger);
    }, [isActiveBurger, setIsActiveBurger]);
 
+   const scrollToSection = (
+      event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+      sectionId: string
+   ) => {
+      if (location.pathname === "/") {
+         event.preventDefault();
+
+         const section = document.getElementById(sectionId);
+         if (section) {
+            section.scrollIntoView({ behavior: "smooth", block: "start" });
+         }
+      }
+   };
+   
    return (
       <header id="header" className={cls.header}>
          <div className={cls.header__inner}>
@@ -32,9 +46,25 @@ export const Header = React.memo(() => {
                      transition={{type: "spring", duration: 0.3}}
                      className={cls.header__link}
                   >
-                     <AppLink href="/">
+                     <AppLink href="/" variant="secondary">
                         <Typography variant="span">
                            Главная
+                        </Typography>
+                     </AppLink>
+                  </motion.div>
+                  <motion.div
+                     initial={{y: -500, opacity: 0}}
+                     animate={{y: 0, opacity: 1}}
+                     transition={{type: "spring", duration: 0.3}}
+                     className={cls.header__link}
+                  >
+                     <AppLink 
+                        href="/#services" 
+                        variant="secondary" 
+                        onClick={(e) => scrollToSection(e, "services")}
+                     >
+                        <Typography variant="span">
+                           Продукты и услуги
                         </Typography>
                      </AppLink>
                   </motion.div>

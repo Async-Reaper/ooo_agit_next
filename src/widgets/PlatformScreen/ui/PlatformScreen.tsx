@@ -107,8 +107,8 @@ export const PlatformScreen = React.memo(() => {
                         <Typography color="primary" variant="p">
                            {platform.price}
                         </Typography>
-                        <AppLink href={platform.link} target="_blank">
-                           <Typography color="white-primary" variant="p">
+                        <AppLink href={platform.link} target="_blank" variant="secondary">
+                           <Typography variant="p">
                               Подробнее
                            </Typography>
                         </AppLink>

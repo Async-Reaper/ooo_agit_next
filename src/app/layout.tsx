@@ -2,7 +2,7 @@ import React, {Suspense} from "react";
 import "@shared/styles/index.scss";
 import {Header} from "@widgets/Header";
 import {Footer} from "@widgets/Footer";
-import "./layout.scss";
+import cls from "./layout.module.scss";
 import {ConsultationFlag} from "@features/Consultation/ui/ConsultationFlag/ConsultationFlag";
 
 interface RootLayoutProps {
@@ -21,7 +21,7 @@ const RootLayout = (props: RootLayoutProps) => {
          <body>
             <Suspense fallback={<h1>Loading...</h1>}>
                <Header/>
-               <div className="content">{children}</div>
+               <div className={cls.content}>{children}</div>
                <Footer/>
                <ConsultationFlag />
             </Suspense>

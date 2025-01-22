@@ -1,35 +1,63 @@
 @use "@shared/styles/_mixins.scss" as mixin;
 
 .AppLink {
-    @include mixin.adaptive("font-size", 20, 14);
-    @include mixin.adaptive("line-height", 19, 16);
+  position: relative;
+  @include mixin.adaptive("font-size", 20, 14);
+  @include mixin.adaptive("line-height", 19, 16);
+  width: max-content;
+  font-weight: 400;
+  font-family: var(--font-primary);
+  transition: all .3s;
+  display: flex;
+  align-items: center;
 
-    font-weight: 400;
-    font-family: var(--font-primary);
+
+  &.variant {
     transition: all .3s;
 
-    &.primary {
-        color: var(--color-secondary);
+    &--primary {
+      color: var(--color-secondary);
+      position: relative;
 
-        &:hover {
-            color: var(--color-black);
-        }
-    }
-
-    &.inherit {
-        color: inherit;
-
-        &:hover {
-            color: var(--color-gray-secondary);
-        }
-    }
-
-    &.blue {
-        color: var(--color-tiffany-blue);
+      &::before {
+        position: absolute;
+        content: "";
+        width: 0;
+        bottom: -3px;
+        height: 2px;
+        background: var(--color-secondary);
         transition: all .3s;
+      }
 
-        &:hover {
-            opacity: 0.9;
+      &:hover {
+        color: var(--color-black);
+        &::before {
+          width: 100%;
         }
+      }
     }
+
+    &--secondary {
+      color: var(--color-white-primary);
+      position: relative;
+
+      &::before {
+        position: absolute;
+        content: "";
+        width: 0;
+        bottom: -3px;
+        height: 2px;
+        background: var(--color-white-secondary);
+        transition: all .3s;
+      }
+
+      &:hover {
+        color: var(--color-white-secondary);
+
+        &::before {
+          width: 100%;
+        }
+      }
+    }
+  }
 }

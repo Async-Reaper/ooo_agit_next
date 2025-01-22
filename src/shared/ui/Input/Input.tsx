@@ -19,6 +19,7 @@ type Props = {
    readonly?: boolean;
    variant?: DesignSystemUiColors;
    fullWidth?: boolean;
+   onlyRu?: boolean;
 } & HTMLInputProps;
 
 export const Input = React.memo((props: Props) => {
@@ -33,6 +34,7 @@ export const Input = React.memo((props: Props) => {
       readonly,
       variant = "neutral",
       fullWidth = false,
+      onlyRu = false,
       ...otherProps
    } = props;
 
@@ -40,7 +42,11 @@ export const Input = React.memo((props: Props) => {
 
    const onChangeHandler = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
       onChange?.(e.target.value);
-   }, [onChange]);
+      if (onlyRu) {
+         const filteredValue = e.target.value.replace(/[^А-Яа-яЁё\s]/g, "");
+         onChange?.(filteredValue);
+      }
+   }, [onChange, onlyRu]);
 
    const mods = {
       [cls.full_width]: fullWidth,

@@ -1,9 +1,11 @@
 @use "@shared/styles/_mixins.scss" as mixin;
 
 .header {
+    position: fixed;
     width: 100%;
     height: max-content;
     background: var(--color-secondary);
+    z-index: 9999;
 
     .header__inner {
         @include mixin.flex-row;
@@ -29,7 +31,7 @@
             &.active {
                 transform: translateY(0);
                 align-items: center;
-                background: var(--color-white-secondary);
+                background: var(--color-secondary);
                 top: 0;
                 left: 0;
                 width: 100%;

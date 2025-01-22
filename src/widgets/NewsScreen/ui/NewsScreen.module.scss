@@ -20,13 +20,14 @@
         @include mixin.flex-column;
 
         .news__list {
-            @include mixin.flex-column;
-            @include mixin.adaptive("gap", 70, 40);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(auto, 800px));
+            justify-content: center;
+            gap: 50px;
         }
 
         .news__item__wrapper {
             @include mixin.flex-column;
-
             border-radius: 5px;
             padding: 10px;
             background: var(--color-white-secondary);

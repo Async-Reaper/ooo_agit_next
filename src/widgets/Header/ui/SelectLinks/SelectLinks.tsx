@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from "react";
 import { AppLink } from "@shared/ui/AppLink";
-import { Icon, Typography } from "@shared/ui";
+import { Typography } from "@shared/ui";
 import { classNames } from "@shared/libs/classNames/classNames";
 import ArrowIcon from "@shared/libs/icons/source/arrow.svg";
 import {usePathname} from "next/navigation";
@@ -27,9 +27,10 @@ const Component = () => {
          }
       }
    };
+
    return (
-      <div className={classNames(cls.select__wrapper, {[cls.active]: isVisibleSelect})}>
-         <div className={cls.select__name} onClick={onHandleVisibleSelect}>
+      <div className={classNames(cls.select__wrapper, {[cls.active]: isVisibleSelect})} onMouseOut={() => setIsVisibleSelect(false)}>
+         <div className={cls.select__name} onClick={onHandleVisibleSelect} onMouseOver={() => setIsVisibleSelect(true)}>
             <Typography variant="span">
                О нас
             </Typography>
@@ -37,13 +38,23 @@ const Component = () => {
                <Image src={ArrowIcon} alt={""}/>
             </div>
          </div>
-         <div className={classNames(cls.select__items, {[cls.active]: isVisibleSelect})}>
-            <AppLink href="/about#vacancies" onClick={(e) => scrollToSection(e, "vacancies")}>
+         <div 
+            className={classNames(cls.select__items, {[cls.active]: isVisibleSelect})}
+            onMouseOver={() => setIsVisibleSelect(true)}
+            onMouseOut={() => setIsVisibleSelect(false)}
+         >
+            <AppLink
+               href="/about#vacancies"
+               onClick={(e) => scrollToSection(e, "vacancies")}
+            >
                <Typography variant="span">
                   Вакансии
                </Typography>
             </AppLink>
-            <AppLink href="/about#news" onClick={(e) => scrollToSection(e, "news")}>
+            <AppLink
+               href="/about#news"
+               onClick={(e) => scrollToSection(e, "news")}
+            >
                <Typography variant="span">
                   Новости
                </Typography>

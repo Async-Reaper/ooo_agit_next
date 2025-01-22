@@ -30,7 +30,7 @@ export const VacanciesList = React.memo(() => {
 
    const items = vacancies.map((vacancy, index) => (
       <div key={vacancy.id} className={cls.vacancies__item} data-value={index}>
-         <AppLink href={`/vacancy/${vacancy.id}`} target="_blank">
+         <AppLink href={`/vacancy/${vacancy.id}`}>
             <AppImage src={vacancy.img} alt="" />
          </AppLink>
       </div>

@@ -2,8 +2,9 @@
 import {HTMLAttributeAnchorTarget, memo, type ReactNode} from "react";
 import Link, {LinkProps} from "next/link";
 import cls from "./AppLink.module.scss";
+import {classNames} from "@shared/libs/classNames/classNames";
 
-export type AppLinkVariant = "primary" | "inherit";
+export type AppLinkVariant = "primary" | "secondary";
 
 interface AppLinkProps extends LinkProps {
    href: string;
@@ -29,7 +30,7 @@ export const AppLink = memo((props: AppLinkProps) => {
       <Link
          href={href}
          target={target}
-         className={cls.AppLink}
+         className={classNames(cls.AppLink, {},  [cls[`variant--${variant}`]])}
          {...otherProps}
       >
          {children}

@@ -34,7 +34,7 @@ export const HeaderModal = ({ isOpen, onClose }: HeaderModalProps) => (
          </div>
          <div className={cls.contact__social__wrapper}>
             <Typography color="primary" variant="p" bold>Наши соцсети: </Typography>
-            {/*<Social />*/}
+            <Social />
          </div>
       </div>
    </Modal>

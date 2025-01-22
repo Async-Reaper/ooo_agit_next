@@ -11,12 +11,14 @@ const Component = () => {
 
    return (
       <>
-         <div className={cls.consultation__flag} onClick={open}>
-            <div className={cls.consultation__flag__wrapper}>
+         <div className={cls.circular__wrapper}>
+            <div className={cls.circular__main}>
                <Image width={35} src={ConsultationIcon} alt={""}/>
             </div>
+            <div className={cls.circular__beating}/>
          </div>
-         <ConsultationModal isOpen={isOpen} onClose={close} />
+
+         <ConsultationModal isOpen={isOpen} onClose={close}/>
       </>
    );
 };

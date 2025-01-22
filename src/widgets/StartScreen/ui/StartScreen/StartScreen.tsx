@@ -20,7 +20,7 @@ export const StartScreen = React.memo(() => (
                   <Typography variant="h1" uppercase color="black">
                      <b>Мы - эксперты</b>
                      {" "}
-                     в области Автоматизации бизнеса.
+                     в области Автоматизации бизнеса
                   </Typography>
                </motion.div>
                <motion.div
