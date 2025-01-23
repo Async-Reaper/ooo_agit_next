@@ -2,10 +2,10 @@
 import React, { useCallback, useState } from "react";
 import { Typography } from "@shared/ui";
 import { classNames } from "@shared/libs/classNames/classNames";
-import ArrowIcon from "@shared/libs/icons/source/arrow.svg";
 
 import cls from "./Select.module.scss";
 import Image from "next/image";
+import {Icon} from "@shared/libs/icon/icon";
 
 export interface SelectItem {
    id: number;
@@ -49,7 +49,7 @@ const Component = (props: SelectProps) => {
                {selectTitle}
             </Typography>
             <div className={classNames(cls.select__arrow, { [cls.active]: isVisibleSelect })}>
-               <Image src={ArrowIcon} alt={""} />
+               <Icon name="arrow_bottom" color="white-primary" />
             </div>
          </div>
          <div className={classNames(cls.select__items, { [cls.active]: isVisibleSelect })}>

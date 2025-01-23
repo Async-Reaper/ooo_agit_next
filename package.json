@@ -9,12 +9,13 @@
     "lint:ts": "eslint . --ext .ts,.tsx",
     "lint:ts:fix": "eslint **/*.{ts,tsx} --fix",
     "icons:optimise": "yarn svgo -f src/shared/libs/icon/__sources --recursive",
-    "icons:transpile": "yarn svgr src/shared/libs/icon/__sources -d src/shared/libs/icon/__generated --config-file scripts/svgr/svgr.config.js --typescript",
+    "icons:transpile": "yarn svgr src/shared/libs/icon/__sources -d src/shared/libs/icon/__generated --config-file src/shared/libs/icon/__svgr/configs/svgr.universal.js --typescript",
     "icons": "yarn icons:optimise && yarn icons:transpile"
   },
   "dependencies": {
     "ajv": "^8.17.1",
     "firebase": "^11.1.0",
+    "lodash": "^4.17.21",
     "motion": "^11.16.0",
     "next": "^13.5.8",
     "react": "^18.0.0",
@@ -26,6 +27,8 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",
+    "@svgr/cli": "5.5.0",
+    "@svgr/webpack": "^8.1.0",
     "@types/node": "^22.10.5",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",

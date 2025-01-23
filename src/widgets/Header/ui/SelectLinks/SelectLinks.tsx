@@ -6,6 +6,7 @@ import ArrowIcon from "@shared/libs/icons/source/arrow.svg";
 import {usePathname} from "next/navigation";
 import cls from "./SelectLinks.module.scss";
 import Image from "@node_modules/next/image";
+import {Icon} from "@shared/libs/icon/icon";
 
 const Component = () => {
    const pathname = usePathname();
@@ -41,9 +42,11 @@ const Component = () => {
             <Typography variant="span">
                О нас
             </Typography>
-            <div className={classNames(cls.select__arrow, {[cls.active]: isVisibleSelect})}>
-               <Image src={ArrowIcon} alt={""}/>
-            </div>
+            <Icon 
+               name="arrow_bottom" 
+               color="white-primary"
+               className={classNames(cls.select__arrow, {[cls.active]: isVisibleSelect})}
+            />
          </div>
          <div 
             className={classNames(cls.select__items, {[cls.active]: isVisibleSelect})}

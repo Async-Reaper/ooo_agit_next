@@ -7,4 +7,3 @@ export { Typography } from "./Typography/Typography";
 export { TextArea } from "./TextArea/TextArea";
 export { Select } from "./Select/Select";
 export { Social } from "./Social/Social";
-export { Icon } from "./Icon/Icon";

@@ -3,7 +3,6 @@ import {IVacancy} from "@entities/Vacancy";
 import {Loader, Typography} from "@shared/ui";
 import {AppImage} from "@shared/ui/AppImage";
 import cls from "./VacancyCard.module.scss";
-import {AppLink} from "@shared/ui/AppLink";
 
 interface VacancyCardProps {
    vacancy: IVacancy;

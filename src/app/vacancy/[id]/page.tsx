@@ -7,8 +7,7 @@ import {doc, getDoc} from "firebase/firestore";
 import {db} from "@main/FirebaseProvider";
 import {Typography} from "@shared/ui";
 import {AppLink} from "@shared/ui/AppLink";
-import Image from "next/image";
-import ArrowBack from "@shared/libs/icons/source/arrow_back.svg";
+import Container from "@shared/ui/Container/Container";
 
 interface Params {
    params: {
@@ -45,18 +44,19 @@ const DynamicPage: FC<{ params: Params["params"] }> = async ({ params }) => {
 
    return (
       <div className={cls.vacancy}>
-         <div className={cls.vacancy__link_back}>
-            <AppLink href="/about#vacancy" variant="primary">
-               <Image src={ArrowBack} alt="назад" width={20} />
-               <Typography variant="span">
-                  Назад
-               </Typography>
-            </AppLink>
-         </div>
-         <div className={cls.vacancy__wrapper}>
-            <VacancyCard vacancy={vacancy} isLoading={isLoading}/>
-            <VacancyRequestButton/>
-         </div>
+         <Container>
+            <div className={cls.vacancy__link_back}>
+               <AppLink href="/about#vacancy" variant="primary">
+                  <Typography variant="span">
+                     Назад
+                  </Typography>
+               </AppLink>
+            </div>
+            <div className={cls.vacancy__wrapper}>
+               <VacancyCard vacancy={vacancy} isLoading={isLoading}/>
+               <VacancyRequestButton/>
+            </div>
+         </Container>
       </div>
    );
 };

@@ -1,18 +1,15 @@
 import React from "react";
-import { Icon } from "@shared/ui";
-import TgIcon from "@shared/libs/icons/source/tg.svg";
-import VKIcon from "@shared/libs/icons/source/vk.svg";
-import { AppLink } from "@shared/ui/AppLink";
+import {AppLink} from "@shared/ui/AppLink";
+import {Icon} from "@shared/libs/icon/icon";
 import cls from "./Social.module.scss";
-import Image from "next/image";
 
 const Component = () => (
    <div className={cls.social__icons}>
       <AppLink href="/" target="_blank">
-
+         <Icon name="tg" size={50} color="primary" />
       </AppLink>
       <AppLink href="https://vk.com/agit.plus" target="_blank">
-         <Image src={TgIcon} width={50} alt="Ссылка в группу ВК" />
+         <Icon name="vk" size={50} color="primary" />
       </AppLink>
    </div>
 );
