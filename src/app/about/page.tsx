@@ -3,6 +3,7 @@ import {Metadata} from "next";
 import {VacanciesScreen} from "@widgets/VacanciesScreen";
 import {NewsScreen} from "@widgets/NewsScreen";
 import {PageLoader} from "@shared/ui";
+import {InternshipScreen} from "@widgets/InternshipScreen/ui/InternshipScreen";
 
 export const metadata: Metadata = {
    title: "О нас",
@@ -21,6 +22,7 @@ const Page = async () => {
    return (
       <Suspense fallback={<PageLoader />}>
          <VacanciesScreen />
+         <InternshipScreen />
          <NewsScreen />
       </Suspense>
    );

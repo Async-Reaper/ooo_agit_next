@@ -4,7 +4,7 @@ import { Button, Typography } from "@shared/ui";
 import { useModal } from "@shared/hooks";
 import { ConsultationModal } from "../ConsultationModal/ConsultationModal";
 
-const Component = () => {
+export const ConsultationButton = React.memo(() => {
    const { isOpen, open, close } = useModal();
    return (
       <>
@@ -16,6 +16,4 @@ const Component = () => {
          <ConsultationModal isOpen={isOpen} onClose={close} />
       </>
    );
-};
-
-export const ConsultationButton = React.memo(Component);
+});

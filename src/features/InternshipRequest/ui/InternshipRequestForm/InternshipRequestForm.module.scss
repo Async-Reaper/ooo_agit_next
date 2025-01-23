@@ -1,0 +1,13 @@
+@use "@shared/styles/_mixins.scss" as mixin;
+
+.internship__form {
+  @include mixin.flex-column;
+
+  gap: 10px;
+
+  .internship__button__wrapper {
+    text-align: center;
+    width: 100%;
+    height: 80px;
+  }
+}

@@ -29,8 +29,15 @@ const Component = () => {
    };
 
    return (
-      <div className={classNames(cls.select__wrapper, {[cls.active]: isVisibleSelect})} onMouseOut={() => setIsVisibleSelect(false)}>
-         <div className={cls.select__name} onClick={onHandleVisibleSelect} onMouseOver={() => setIsVisibleSelect(true)}>
+      <div
+         className={classNames(cls.select__wrapper, {[cls.active]: isVisibleSelect})}
+         onMouseOut={() => setIsVisibleSelect(false)}
+      >
+         <div
+            className={cls.select__name}
+            onClick={onHandleVisibleSelect}
+            onMouseOver={() => setIsVisibleSelect(true)}
+         >
             <Typography variant="span">
                О нас
             </Typography>
@@ -47,15 +54,23 @@ const Component = () => {
                href="/about#vacancies"
                onClick={(e) => scrollToSection(e, "vacancies")}
             >
-               <Typography variant="span">
+               <Typography variant="small">
                   Вакансии
+               </Typography>
+            </AppLink>
+            <AppLink
+               href="/about#internship"
+               onClick={(e) => scrollToSection(e, "vacancies")}
+            >
+               <Typography variant="small">
+                  Стажировка
                </Typography>
             </AppLink>
             <AppLink
                href="/about#news"
                onClick={(e) => scrollToSection(e, "news")}
             >
-               <Typography variant="span">
+               <Typography variant="small">
                   Новости
                </Typography>
             </AppLink>

@@ -3,7 +3,7 @@ import "@shared/styles/index.scss";
 import {Header} from "@widgets/Header";
 import {Footer} from "@widgets/Footer";
 import cls from "./layout.module.scss";
-import {ConsultationFlag} from "@features/Consultation/ui/ConsultationFlag/ConsultationFlag";
+import {ConsultationFlag} from "@features/Consultation";
 
 interface RootLayoutProps {
    children: React.ReactNode;

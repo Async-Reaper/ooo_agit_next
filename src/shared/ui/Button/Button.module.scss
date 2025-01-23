@@ -10,10 +10,8 @@
     text-align: center;
     cursor: pointer;
     border-radius: 5px;
-
-    &.max__width {
-        width: max-content;
-    }
+    width: max-content;
+    outline: none;
 
     &.full_width {
         width: 100%;
