@@ -14,8 +14,7 @@ export const VacancyCard = React.memo(({vacancy, isLoading}: VacancyCardProps) =
       <div className={cls.vacancy__card__wrapper}>
          {
             isLoading
-               ?
-               <Loader/>
+               ? <Loader/>
                :
                (
                   <>

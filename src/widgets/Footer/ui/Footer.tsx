@@ -5,6 +5,7 @@ import { Social, Typography } from "@shared/ui";
 import { AppLink } from "@shared/ui/AppLink";
 import Container from "@shared/ui/Container/Container";
 import cls from "./Footer.module.scss";
+import {MailingButton} from "@features/Mailing";
 
 export const Footer = React.memo(() => {
    
@@ -125,9 +126,8 @@ export const Footer = React.memo(() => {
                      <Typography variant="span" noWrap>г. Новокузнецк, пр-т Строителей, д. 19 </Typography>
                   </div>
                   <div className={cls.footer__social}>
-                     <div className={cls.social__wrapper}>
-                        <Social/>
-                     </div>
+                     <Social/>
+                     <MailingButton />
                   </div>
                </div>
                <div className={cls.other__info}>

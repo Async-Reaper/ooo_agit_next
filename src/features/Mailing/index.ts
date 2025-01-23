@@ -1,0 +1,1 @@
+export {MailingButton} from "./ui/MailingButton/MailingButton";

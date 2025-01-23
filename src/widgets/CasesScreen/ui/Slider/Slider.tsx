@@ -79,7 +79,7 @@ export const Slider = () => {
                <AppImage src={sliderItems[currentIndex].img} alt="" />
             </div>
             <div className={cls.slider__button}>
-               <AppLink href={sliderItems[currentIndex].link} variant="inherit" target="_blank">
+               <AppLink href={sliderItems[currentIndex].link} target="_blank">
                   <Button variant="outlined">
                      <Typography variant="span" color="primary" uppercase>
                         подробнее

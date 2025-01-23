@@ -81,17 +81,11 @@
 
         .footer__social {
             margin: 0 auto;
+            @include mixin.flex-column;
+            gap: 20px;
 
             @include mixin.desktop {
                 margin: 0 0 0 auto;
-            }
-
-            .social__wrapper {
-                @include mixin.flex-space;
-
-                & {
-                    color: red;
-                }
             }
         }
 

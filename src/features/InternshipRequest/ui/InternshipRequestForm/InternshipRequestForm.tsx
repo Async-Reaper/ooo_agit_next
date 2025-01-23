@@ -8,10 +8,7 @@ interface InternshipRequestFormProps {
    close: () => void;
 }
 
-export const InternshipRequestForm = (props: InternshipRequestFormProps) => {
-   const {
-      close,
-   } = props;
+export const InternshipRequestForm = ({close}: InternshipRequestFormProps) => {
    const [email, setEmail] = useState<string>("");
    const [fullName, setFullName] = useState<string>("");
    const [phoneNumber, setPhoneNumber] = useState<string>("");
