@@ -10,7 +10,7 @@ export const VacancyRequestButton = React.memo(() => {
    return (
       <div>
          <Button onClick={open}>
-            <Typography variant="span" bold uppercase>
+            <Typography variant="span" uppercase>
                Откликнуться
             </Typography>
          </Button>
