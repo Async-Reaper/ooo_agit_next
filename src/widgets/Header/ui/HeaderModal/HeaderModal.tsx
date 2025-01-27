@@ -5,6 +5,7 @@ import cls from "./HeaderModal.module.scss";
 import {Icon} from "@shared/libs/icon/icon";
 import {ColoredIcon} from "@shared/libs/icon/colored-icon";
 import {AppLink} from "@shared/ui/AppLink";
+import React from "react";
 
 interface HeaderModalProps {
    isOpen: boolean;
@@ -36,7 +37,9 @@ export const HeaderModal = ({ isOpen, onClose }: HeaderModalProps) => (
             </div>
             <div className={cls.contact__item}>
                <ColoredIcon name="maps" size={50} color="primary"/>
-               <Typography>г. Новокузнецк, пр-т Строителей, д. 19 </Typography>
+               <AppLink href="https://yandex.ru/maps/-/CHahIKmc" target="_blank" variant="secondary">
+                  <Typography>г. Новокузнецк, пр-т Строителей, д. 19 </Typography>
+               </AppLink>
             </div>
          </div>
          <div className={cls.contact__social__wrapper}>

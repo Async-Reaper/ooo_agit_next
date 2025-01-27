@@ -6,6 +6,8 @@ import { AppLink } from "@shared/ui/AppLink";
 import Container from "@shared/ui/Container/Container";
 import cls from "./Footer.module.scss";
 import {MailingButton} from "@features/Mailing";
+import {Icon} from "@shared/libs/icon/icon";
+import {ColoredIcon} from "@shared/libs/icon/colored-icon";
 
 export const Footer = React.memo(() => {
    
@@ -121,13 +123,28 @@ export const Footer = React.memo(() => {
                      </div>
                   </div>
                   <div className={cls.footer__contacts}>
-                     <Typography variant="span" noWrap>1c@agit.su</Typography>
-                     <Typography variant="span" noWrap>+7 (3843) 328-000</Typography>
-                     <Typography variant="span" noWrap>г. Новокузнецк, пр-т Строителей, д. 19 </Typography>
+                     <div className={cls.contact__item}>
+                        <Icon name="email" size={35} color="primary"/>
+                        <AppLink href="mailto:1c@agit.su" variant="secondary">
+                           <Typography>1c@agit.su</Typography>
+                        </AppLink>
+                     </div>
+                     <div className={cls.contact__item}>
+                        <Icon name="phone" size={35} color="primary"/>
+                        <AppLink href="tel:+7(3843)328-000" variant="secondary">
+                           <Typography>+7 (3843) 328-000</Typography>
+                        </AppLink>
+                     </div>
+                     <div className={cls.contact__item}>
+                        <ColoredIcon name="maps" size={45} color="primary"/>
+                        <AppLink href="https://yandex.ru/maps/-/CHahIKmc" target="_blank" variant="secondary">
+                           <Typography>г. Новокузнецк, пр-т Строителей, д. 19 </Typography>
+                        </AppLink>
+                     </div>
                   </div>
                   <div className={cls.footer__social}>
                      <Social/>
-                     <MailingButton />
+                     <MailingButton/>
                   </div>
                </div>
                <div className={cls.other__info}>

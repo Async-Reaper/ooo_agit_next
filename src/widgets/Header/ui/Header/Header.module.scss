@@ -3,7 +3,7 @@
 .header {
     position: fixed;
     width: 100%;
-    height: max-content;
+    height: mixin.$headerHeight + px;
     background: var(--color-secondary);
     z-index: 99;
 
@@ -14,9 +14,8 @@
         margin: 0 auto;
         position: relative;
         @include mixin.adaptive("column-gap", 140, 20);
-        max-width: mixin.$maxContainer + px;
         width: 100%;
-        padding: 36px 0;
+        padding: 25px 0;
         color: var(--color-white-secondary);
 
         .header__nav {

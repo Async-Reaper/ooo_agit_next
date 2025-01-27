@@ -2,12 +2,11 @@
 .footer {
     width: 100%;
     justify-self: center;
-    margin-top: auto;
     background: var(--color-secondary);
 
     .footer__inner {
         @include mixin.flex-column;
-        @include mixin.adaptive("padding-block", 80, 20);
+        @include mixin.adaptive("padding-block", 40, 20);
 
         //padding-inline: 20px;
         @include mixin.adaptive("gap", 60, 20);
@@ -18,7 +17,7 @@
             max-width: mixin.$maxContainer + px;
             width: 100%;
 
-            @include mixin.desktop {
+            @include mixin.laptop {
                 @include mixin.flex-row;
                 @include mixin.adaptive("column-gap", 140, 20);
 
@@ -44,7 +43,7 @@
             row-gap: 20px;
             max-width: 550px;
 
-            @include mixin.laptop {
+            @include mixin.tablets {
                 @include mixin.flex-row;
 
                 gap: 0 40px;
@@ -55,8 +54,9 @@
             }
 
             .footer__link__wrapper {
-                @include mixin.page-flex;
-
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
                 gap: 20px 0;
 
                 @include mixin.laptop {
@@ -72,11 +72,18 @@
         .footer__contacts {
             @include mixin.flex-column;
 
-            align-items: center;
+            width: max-content;
+            margin: 0 auto;
             gap: 20px;
 
             @include mixin.desktop {
                 align-items: self-start;
+            }
+
+            .contact__item {
+                @include mixin.flex-row;
+
+                gap: 15px;
             }
         }
 
