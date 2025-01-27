@@ -57,7 +57,7 @@ const Component = () => {
                href="/about#vacancies"
                onClick={(e) => scrollToSection(e, "vacancies")}
             >
-               <Typography variant="small">
+               <Typography variant="span">
                   Вакансии
                </Typography>
             </AppLink>
@@ -65,7 +65,7 @@ const Component = () => {
                href="/about#internship"
                onClick={(e) => scrollToSection(e, "vacancies")}
             >
-               <Typography variant="small">
+               <Typography variant="span">
                   Стажировка
                </Typography>
             </AppLink>
@@ -73,7 +73,7 @@ const Component = () => {
                href="/about#news"
                onClick={(e) => scrollToSection(e, "news")}
             >
-               <Typography variant="small">
+               <Typography variant="span">
                   Новости
                </Typography>
             </AppLink>
