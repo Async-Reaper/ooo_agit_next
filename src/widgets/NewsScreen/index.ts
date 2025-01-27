@@ -1,1 +1,1 @@
-export { NewsScreen } from "./ui/NewsScreen";
+export { NewsScreen } from "./ui/NewsScreen/NewsScreen";

@@ -1,0 +1,7 @@
+@use "@shared/styles/_mixins.scss" as mixin;
+
+.news__item__text {
+  @include mixin.flex-column;
+
+  gap: 10px;
+}

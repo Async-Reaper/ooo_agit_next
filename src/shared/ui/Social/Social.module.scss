@@ -1,7 +1,17 @@
 @use "@shared/styles/_mixins.scss" as mixin;
 
-.social__icons {
-    @include mixin.flex-row;
+.social__icons__wrapper {
+  @include mixin.flex-row;
 
-    gap: 10px;
+  gap: 10px;
+
+  .social__icon {
+    transition: all .3s;
+
+    &:hover {
+      path {
+        stroke: var(--color-primary-hover);
+      }
+    }
+  }
 }

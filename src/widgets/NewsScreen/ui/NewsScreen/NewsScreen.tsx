@@ -1,13 +1,12 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import { motion } from "motion/react";
-import { useViewBox } from "@shared/hooks";
-import { Button, Loader, Typography } from "@shared/ui";
-import {
-   collection, DocumentData, getDocs, limit, query, startAfter,
-} from "firebase/firestore";
-import { db } from "@main/FirebaseProvider";
-import { AppImage } from "@shared/ui/AppImage";
+import React, {useEffect, useState} from "react";
+import {motion} from "motion/react";
+import {useViewBox} from "@shared/hooks";
+import {Button, Loader, Typography} from "@shared/ui";
+import {collection, DocumentData, getDocs, limit, query, startAfter,} from "firebase/firestore";
+import {db} from "@main/FirebaseProvider";
+import {NewsItem} from "../NewsItem/NewsItem";
+import {INews} from "../../model/types/newsType";
 import cls from "./NewsScreen.module.scss";
 
 export const NewsScreen = React.memo(() => {
@@ -36,7 +35,7 @@ export const NewsScreen = React.memo(() => {
 
       const newItems = documentSnapshots.docs.map((doc) => ({
          id: doc.id,
-         ...doc.data(),
+         ...doc.data() as INews,
       }));
 
       setNews((prevItems) => {
@@ -83,23 +82,11 @@ export const NewsScreen = React.memo(() => {
                      <>
                         <ul className={cls.news__list}>
                            {news?.map((newsItem) => (
-                              <li key={newsItem.todoId} className={cls.news__item__wrapper}>
-                                 <div className={cls.news__item__img}>
-                                    <AppImage src={newsItem.img} alt="" />
-                                 </div>
-                                 <div className={cls.news__item__text}>
-                                    <Typography color="primary" variant="p" bold>
-                                       {newsItem.title}
-                                    </Typography>
-                                    <Typography color="secondary" variant="span">
-                                       {newsItem.description}
-                                    </Typography>
-                                 </div>
-                              </li>
+                              <NewsItem key={newsItem.img} newsItem={newsItem as INews} />
                            ))}
                         </ul>
                         <Button variant="outlined" onClick={fetchData}>
-                           <Typography color="primary" variant="p" bold uppercase>
+                           <Typography color="primary" variant="span" bold uppercase>
                               Еще
                            </Typography>
                         </Button>

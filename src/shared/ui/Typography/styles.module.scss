@@ -41,8 +41,8 @@
     /* VARIANT */
     &.variant {
         &--h1 {
-            @include mixins.adaptive("font-size", 75, 28);
-            @include mixins.adaptive("line-height", 100, 33);
+            @include mixins.adaptive("font-size", 48, 28);
+            @include mixins.adaptive("line-height", 32, 33);
 
             font-weight: 800;
 
@@ -52,8 +52,8 @@
         }
 
         &--h2 {
-            @include mixins.adaptive("font-size", 40, 21);
-            @include mixins.adaptive("line-height", 38, 28);
+            @include mixins.adaptive("font-size", 32, 29);
+            @include mixins.adaptive("line-height", 24, 28);
 
             font-weight: 500;
 
@@ -74,7 +74,7 @@
         }
 
         &--p {
-            @include mixins.adaptive("font-size", 24, 14);
+            @include mixins.adaptive("font-size", 20, 14);
             @include mixins.adaptive("line-height", 30, 18);
 
             font-weight: 400;
@@ -85,7 +85,7 @@
         }
 
         &--span {
-            @include mixins.adaptive("font-size", 20, 14);
+            @include mixins.adaptive("font-size", 16, 12);
             @include mixins.adaptive("line-height", 19, 16);
 
             font-weight: 400;
@@ -96,8 +96,8 @@
         }
 
         &--small {
-            @include mixins.adaptive("font-size", 18, 12);
-            @include mixins.adaptive("line-height", 20, 16);
+            @include mixins.adaptive("font-size", 12, 9);
+            @include mixins.adaptive("line-height", 14, 12);
 
             font-weight: 400;
 

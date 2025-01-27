@@ -9,7 +9,7 @@ export const ConsultationButton = React.memo(() => {
    return (
       <>
          <Button size="xl" maxWidth onClick={open}>
-            <Typography variant="small" uppercase>
+            <Typography variant="span" uppercase>
                Получить консультацию
             </Typography>
          </Button>

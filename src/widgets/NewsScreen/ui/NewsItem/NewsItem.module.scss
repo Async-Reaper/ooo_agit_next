@@ -1,0 +1,27 @@
+@use "@shared/styles/_mixins.scss" as mixin;
+
+.news__item__wrapper {
+  @include mixin.flex-column;
+  border-radius: 5px;
+  padding: 10px;
+  background: var(--color-white-secondary);
+  gap: 20px;
+
+  .news__item__img {
+    max-width: 1000px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .news__item__title {
+    cursor: pointer;
+    color: var(--color-primary);
+    transition: all .3s;
+
+    &:hover {
+      color: var(--color-primary-hover);
+    }
+  }
+}

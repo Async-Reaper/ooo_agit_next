@@ -49,7 +49,7 @@ export const InternshipRequestForm = ({close}: InternshipRequestFormProps) => {
                   ? <Loader />
                   : (
                      <Button fullWidth disabled={disabled} onClick={onHandleSendInternship}>
-                        <Typography variant="small" uppercase>
+                        <Typography variant="span" uppercase>
                            записаться
                         </Typography>
                      </Button>

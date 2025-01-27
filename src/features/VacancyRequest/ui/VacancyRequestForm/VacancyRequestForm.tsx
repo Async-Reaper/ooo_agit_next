@@ -63,7 +63,7 @@ export const VacancyRequestForm = React.memo((props: VacancyRequestFormProps) =>
                   ? <Loader />
                   : (
                      <Button fullWidth disabled={disabled} onClick={onHandleVacancyRequest}>
-                        <Typography variant="small" uppercase>
+                        <Typography variant="span" uppercase>
                            отправить
                         </Typography>
                      </Button>

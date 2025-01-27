@@ -82,7 +82,7 @@ const Component = (props: ConsultationFormProps) => {
                   ? <Loader />
                   : (
                      <Button fullWidth disabled={disabled} onClick={onHandleSendConsultation}>
-                        <Typography variant="small" uppercase>
+                        <Typography variant="span" uppercase>
                            отправить
                         </Typography>
                      </Button>

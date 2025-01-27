@@ -1,5 +1,13 @@
+@use "@shared/styles/mixins" as mixin;
+
 .container {
   max-width: 1800px;
   margin: 0 auto;
+  padding: 0 20px;
+
+  @include mixin.desktop {
+    padding: 0;
+  }
+
   position: relative;
 }
