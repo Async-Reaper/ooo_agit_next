@@ -18,20 +18,6 @@ export const Header = React.memo(() => {
    const onHandleClickBurger = useCallback(() => {
       setIsActiveBurger(!isActiveBurger);
    }, [isActiveBurger, setIsActiveBurger]);
-
-   const scrollToSection = (
-      event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
-      sectionId: string
-   ) => {
-      if (location.pathname === "/") {
-         event.preventDefault();
-
-         const section = document.getElementById(sectionId);
-         if (section) {
-            section.scrollIntoView({ behavior: "smooth", block: "start" });
-         }
-      }
-   };
    
    return (
       <header id="header" className={cls.header}>
@@ -61,9 +47,8 @@ export const Header = React.memo(() => {
                         className={cls.header__link}
                      >
                         <AppLink
-                           href="/#services"
+                           href="/products"
                            variant="secondary"
-                           onClick={(e) => scrollToSection(e, "services")}
                         >
                            <Typography variant="span">
                               Продукты и услуги
