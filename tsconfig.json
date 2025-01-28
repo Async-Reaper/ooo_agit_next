@@ -21,8 +21,8 @@
     "paths": {
       "react": [ "./node_modules/@types/react" ],
       "react-dom": ["./node_modules/preact/compat/"],
-      "@*": [
-        "./*"
+      "*": [
+        "./node_modules"
       ],
       "@main/*": [
         "./src/main/*"

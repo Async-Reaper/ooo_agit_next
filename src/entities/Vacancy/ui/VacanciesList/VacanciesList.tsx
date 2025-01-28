@@ -31,7 +31,7 @@ export const VacanciesList = React.memo(() => {
    const items = vacancies.map((vacancy, index) => (
       <div key={vacancy.id} className={cls.vacancies__item} data-value={index}>
          <AppLink href={`/vacancy/${vacancy.id}`}>
-            <AppImage src={vacancy.img} alt="" />
+            <img src={vacancy.img} alt="" className={cls.img} />
          </AppLink>
       </div>
    ));
@@ -39,7 +39,9 @@ export const VacanciesList = React.memo(() => {
    const responsive = {
       0: { items: 1 },
       750: { items: 2 },
-      1024: { items: 5 },
+      1024: { items: 3 },
+      1350: { items: 4 },
+      1800: { items: 5 },
    };
    return (
       <div className={cls.vacancies__list__wrapper}>

@@ -2,24 +2,28 @@
 @import "react-alice-carousel/lib/scss/alice-carousel";
 
 .vacancies__list__wrapper {
-    width: 100%;
-    display: flex;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
 
-    .vacancies__item {
-        min-width: 250px;
-        max-width: 500px;
-        transition: all .3s;
+  .vacancies__item {
+    min-width: 250px;
+    max-width: 350px;
+    transition: all 0.3s;
+    width: fit-content;
 
-        @include mixin.laptop {
-            &:hover {
-                transform: translateY(-10px);
-            }
-        }
-
-        img {
-            border-radius: 5px;
-            width: 100%;
-        }
+    @include mixin.laptop {
+      &:hover {
+        transform: translateY(-10px);
+      }
     }
+
+    .img {
+      border-radius: 5px;
+      min-width: 250px;
+      max-width: 350px;
+      width: max-content;
+    }
+  }
 }

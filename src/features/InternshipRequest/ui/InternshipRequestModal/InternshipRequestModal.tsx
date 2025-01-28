@@ -19,7 +19,7 @@ export const InternshipRequestModal = React.memo(
          >
             <div className={cls.internship__wrapper}>
                <div className={cls.internship__title}>
-                  <Typography variant="h3" bold uppercase noWrap>
+                  <Typography variant="h2" bold uppercase noWrap>
                      Запись на стажировку
                   </Typography>
                </div>

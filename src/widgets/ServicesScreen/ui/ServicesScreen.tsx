@@ -82,13 +82,13 @@ export const ServicesScreen = React.memo(() => {
                               </Typography>
                            </div>
                            <div className={cls.service__info}>
-                              <Typography color="primary" variant="span">
+                              <Typography color="primary" variant="p">
                                  {service.serviceInfo}
                               </Typography>
                            </div>
                            <div className={cls.service__link__wrapper}>
                               <AppLink href={service.link}>
-                                 <Typography variant="span" color="secondary">
+                                 <Typography color="secondary" variant="p">
                                     Подробнее
                                  </Typography>
                               </AppLink>
@@ -99,8 +99,8 @@ export const ServicesScreen = React.memo(() => {
                </ul>
             </div>
             <motion.div
-               initial={{ x: 100 }}
-               animate={isVisible && { x: 0 }}
+               initial={{ x: 100, opacity: 0 }}
+               animate={isVisible && { x: 0, opacity: 1 }}
                transition={{ type: "spring", duration: 0.3, delay: 0.3 }}
                className={cls.services__img}
             >

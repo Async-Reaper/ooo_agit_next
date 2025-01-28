@@ -52,7 +52,7 @@
         }
 
         &--h2 {
-            @include mixins.adaptive("font-size", 32, 29);
+            @include mixins.adaptive("font-size", 25, 17);
             @include mixins.adaptive("line-height", 24, 28);
 
             font-weight: 500;
