@@ -23,13 +23,18 @@ export const Header = React.memo(() => {
       <header id="header" className={cls.header}>
          <Container>
             <div className={cls.header__inner}>
-               <div className={cls.header__logo}>
+               <motion.div
+                  initial={{y: -100, opacity: 0}}
+                  animate={{y: 0, opacity: 1}}
+                  transition={{type: "spring", duration: 0.3}}
+                  className={cls.header__logo}
+               >
                   <AppLogo/>
-               </div>
+               </motion.div>
                <div className={classNames(cls.header__nav, {[cls.active]: isActiveBurger})}>
                   <div className={cls.header__links}>
                      <motion.div
-                        initial={{y: -500, opacity: 0}}
+                        initial={{y: -200, opacity: 0}}
                         animate={{y: 0, opacity: 1}}
                         transition={{type: "spring", duration: 0.3}}
                         className={cls.header__link}
@@ -41,7 +46,7 @@ export const Header = React.memo(() => {
                         </AppLink>
                      </motion.div>
                      <motion.div
-                        initial={{y: -500, opacity: 0}}
+                        initial={{y: -300, opacity: 0}}
                         animate={{y: 0, opacity: 1}}
                         transition={{type: "spring", duration: 0.3}}
                         className={cls.header__link}
@@ -56,24 +61,35 @@ export const Header = React.memo(() => {
                         </AppLink>
                      </motion.div>
                      <motion.div
-                        initial={{y: -100, opacity: 0}}
+                        initial={{y: -400, opacity: 0}}
                         animate={{y: 0, opacity: 1}}
-                        transition={{type: "spring", duration: 0.3, delay: 0.2}}
+                        transition={{type: "spring", duration: 0.3}}
                      >
                         <SelectLinks/>
                      </motion.div>
                   </div>
-                  <div className={cls.header__button}>
+                  <motion.div
+                     initial={{y: -500, opacity: 0}}
+                     animate={{y: 0, opacity: 1}}
+                     transition={{type: "spring", duration: 0.3}}
+                     className={cls.header__button}
+                  >
                      <Button onClick={open}>
                         <Typography color="white-primary" variant="span" uppercase noWrap>
                            контакты
                         </Typography>
                      </Button>
-                  </div>
+                  </motion.div>
                </div>
-               <div className={cls.header__burger__wrapper} onClick={onHandleClickBurger}>
+               <motion.div
+                  initial={{y: -200, opacity: 0}}
+                  animate={{y: 0, opacity: 1}}
+                  transition={{type: "spring", duration: 0.3}}
+                  className={cls.header__burger__wrapper}
+                  onClick={onHandleClickBurger}
+               >
                   <div className={classNames(cls.header__burger, {[cls.active]: isActiveBurger})}/>
-               </div>
+               </motion.div>
                <HeaderModal isOpen={isOpen} onClose={close}/>
             </div>
          </Container>

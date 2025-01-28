@@ -38,29 +38,31 @@ export const ActivityScreen = React.memo(() => {
 
    useLayoutEffect(() => {
       isVisible && animate([
-         ["ul", { opacity: 1 }],
-         ["li", { x: [-100, 0] }, {
+         [cls.activity__list, { opacity: 1 }],
+         [cls.activity__item, { x: [-100, 0] }, {
             duration: 0.3, delay: stagger(0.2), stiffness: 150, bounce: 0.5,
          }],
       ]);
    }, [isVisible]);
 
    return (
-      <motion.section
+      <section
          id="activity"
-         initial={{ opacity: 0 }}
-         animate={isVisible && { opacity: 1 }}
-         transition={{ type: "spring", duration: 2 }}
          className={cls.activity}
-         ref={ref}
       >
-         <div className={cls.activity__wrapper}>
+         <motion.div
+            ref={ref}
+            initial={{ opacity: 0, x: -100 }}
+            animate={isVisible && { opacity: 1, x: 0 }}
+            transition={{ type: "spring", duration: 2 }}
+            className={cls.activity__wrapper}
+         >
             <div className={cls.activity__header}>
                <motion.div
-                  initial={{ y: -1000 }}
+                  initial={{ y: -100 }}
                   animate={isVisible && { y: 0 }}
                   transition={{
-                     type: "spring", duration: 0.5, stiffness: 150, bounce: 0.5,
+                     type: "spring", duration: 0.5, stiffness: 150, bounce: 0.5, delay: 0.3
                   }}
                   className={cls.activity__title}
                >
@@ -83,10 +85,10 @@ export const ActivityScreen = React.memo(() => {
             </div>
             <div className={cls.activity__footer}>
                <motion.div
-                  initial={{ y: 1000 }}
-                  animate={isVisible && { y: 0 }}
+                  initial={{ opacity: 0, y: 100 }}
+                  animate={isVisible && { opacity: 1, y: 0 }}
                   transition={{
-                     type: "spring", duration: 0.5, stiffness: 150, bounce: 0.5,
+                     type: "spring", duration: 0.5, delay: 0.3
                   }}
                   className={cls.activity__desc}
                >
@@ -105,7 +107,7 @@ export const ActivityScreen = React.memo(() => {
                   initial={{ y: 1000 }}
                   animate={isVisible && { y: 0 }}
                   transition={{
-                     type: "spring", duration: 0.5, stiffness: 150, bounce: 0.5,
+                     type: "spring", duration: 0.5, delay: 0.3
                   }}
                   className={cls.activity__desc}
                >
@@ -117,11 +119,11 @@ export const ActivityScreen = React.memo(() => {
                   </Typography>
                </motion.div>
             </div>
-         </div>
+         </motion.div>
          <div className={cls.activity__background}>
             <AppImage src="/wave.webp" alt="bg" />
          </div>
-      </motion.section>
+      </section>
    );
 });
 

@@ -41,33 +41,40 @@ export const ServicesScreen = React.memo(() => {
    useLayoutEffect(() => {
       isVisible && animate([
          [`.${cls.services__list}`, { opacity: 1 }],
-         [`.${cls.services__item}`, { y: [-100, 0] }, {
+         [`.${cls.services__item}`, { y: [-100, 0], opacity: [0, 1] }, {
             duration: 0.3, delay: stagger(0.2), stiffness: 150, bounce: 0.5,
          }],
       ]);
    }, [isVisible]);
 
    return (
-      <motion.section
+      <section
          id="services"
-         initial={{ opacity: 0 }}
-         animate={isVisible && { opacity: 1 }}
-         transition={{ type: "spring", duration: 0.5 }}
-         ref={ref}
          className={cls.services}
       >
-         <div className={cls.services__wrapper}>
+         <motion.div
+            initial={{ opacity: 0, x: 100 }}
+            animate={isVisible && { opacity: 1, x: 0 }}
+            transition={{ type: "spring", duration: 2 }}
+            ref={ref}
+            className={cls.services__wrapper}
+         >
             <div className={cls.services__content}>
-               <div className={cls.services__title}>
+               <motion.div
+                  initial={{ x: -100 }}
+                  animate={isVisible && { x: 0 }}
+                  transition={{ type: "spring", duration: 0.3, delay: 0.3 }}
+                  className={cls.services__title}
+               >
                   <Typography color="secondary" variant="h1" uppercase>
                      <b>услуги</b>
                      {" "}
                      нашей компании
                   </Typography>
-               </div>
-               <div className={cls.services__list}>
+               </motion.div>
+               <ul className={cls.services__list}>
                   {services.map((service) => (
-                     <div className={cls.services__item} key={service.id}>
+                     <li className={cls.services__item} key={service.id}>
                         <div className={cls.review__content}>
                            <div className={cls.services__name}>
                               <Typography color="secondary" variant="p" bold>
@@ -87,15 +94,20 @@ export const ServicesScreen = React.memo(() => {
                               </AppLink>
                            </div>
                         </div>
-                     </div>
+                     </li>
                   ))}
-               </div>
+               </ul>
             </div>
-            <div className={cls.services__img}>
+            <motion.div
+               initial={{ x: 100 }}
+               animate={isVisible && { x: 0 }}
+               transition={{ type: "spring", duration: 0.3, delay: 0.3 }}
+               className={cls.services__img}
+            >
                <AppImage src="/reviews__bg.webp" alt="Services background" />
-            </div>
-         </div>
-      </motion.section>
+            </motion.div>
+         </motion.div>
+      </section>
    );
 });
 

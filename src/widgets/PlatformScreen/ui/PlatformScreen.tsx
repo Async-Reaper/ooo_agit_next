@@ -60,7 +60,7 @@ export const PlatformScreen = React.memo(() => {
       },
    ]);
 
-   const { ref, isVisible } = useViewBox(0.3);
+   const { ref, isVisible } = useViewBox(0.4);
 
    useLayoutEffect(() => {
       isVisible && animate([
@@ -72,17 +72,24 @@ export const PlatformScreen = React.memo(() => {
    }, [isVisible]);
 
    return (
-      <motion.section
+      <section
          id="platform"
-         initial={{ opacity: 0 }}
-         animate={isVisible && { opacity: 1 }}
-         transition={{ type: "spring", duration: 0.5 }}
-         ref={ref}
          className={cls.platform__screen}
       >
-         <div className={cls.platform__wrapper}>
+         <motion.div
+            initial={{ opacity: 0, x: -100 }}
+            animate={isVisible && { opacity: 1, x: 0 }}
+            transition={{ type: "spring", duration: 2 }}
+            ref={ref}
+            className={cls.platform__wrapper}
+         >
             <div className={cls.platform__left_part}>
-               <div className={cls.platform__left_part__title}>
+               <motion.div
+                  initial={{ opacity: 0, x: -100 }}
+                  animate={isVisible && { opacity: 1, x: 0 }}
+                  transition={{ type: "spring", duration: 0.5, delay: 0.3 }}
+                  className={cls.platform__left_part__title}
+               >
                   <Typography variant="h1" uppercase>
                      хотите
                      {" "}
@@ -90,12 +97,17 @@ export const PlatformScreen = React.memo(() => {
                      {" "}
                      платформу?
                   </Typography>
-               </div>
-               <div className={cls.platform__left_part__text}>
+               </motion.div>
+               <motion.div
+                  initial={{ opacity: 0, x: 100 }}
+                  animate={isVisible && { opacity: 1, x: 0 }}
+                  transition={{ type: "spring", duration: 0.5, delay: 0.3 }}
+                  className={cls.platform__left_part__text}
+               >
                   <Typography color="primary" variant="p" bold>
                      Наша компания распостраняет также продукты 1С
                   </Typography>
-               </div>
+               </motion.div>
             </div>
             <div className={cls.platform__right_part}>
                {
@@ -116,8 +128,8 @@ export const PlatformScreen = React.memo(() => {
                   ))
                }
             </div>
-         </div>
-      </motion.section>
+         </motion.div>
+      </section>
    );
 });
 

@@ -39,7 +39,7 @@ export const BrandsList = React.memo(() => {
    useLayoutEffect(() => {
       isVisible && animate([
          [`.${cls.brands_list__wrapper}`, { opacity: 1 }],
-         [`.${cls.brand__item}`, { y: [-100, 0] }, {
+         [`.${cls.brand__item}`, { y: [-100, 0], opacity: [0, 1] }, {
             duration: 0.3, delay: stagger(0.2), stiffness: 150, bounce: 0.5,
          }],
       ]);

@@ -7,21 +7,23 @@ import { Slider } from "./Slider/Slider";
 import cls from "./CasesScreen.module.scss";
 
 export const CasesScreen = React.memo(() => {
-   const { ref, isVisible } = useViewBox();
+   const { ref, isVisible } = useViewBox(0.5);
    return (
       <motion.section
          id="cases"
-         ref={ref}
-         initial={{ opacity: 0 }}
-         animate={isVisible && { opacity: 1 }}
          className={cls.cases}
       >
-         <div className={cls.cases__wrapper}>
+         <motion.div
+            ref={ref}
+            initial={{ opacity: 0, x: 150 }}
+            animate={isVisible && { opacity: 1, x: 0 }}
+            className={cls.cases__wrapper}
+         >
             <div className={cls.cases__text}>
                <motion.div
-                  initial={{ x: -100 }}
-                  animate={isVisible && { x: 0 }}
-                  transition={{ type: "spring" }}
+                  initial={{ opacity: 0, x: -100 }}
+                  animate={isVisible && { opacity: 1, x: 0 }}
+                  transition={{ type: "spring", delay: 0.3 }}
                >
                   <Typography color="secondary" variant="h1" uppercase>
                      <b>Наши</b>
@@ -30,9 +32,9 @@ export const CasesScreen = React.memo(() => {
                   </Typography>
                </motion.div>
                <motion.div
-                  initial={{ y: -100 }}
-                  animate={isVisible && { y: 0 }}
-                  transition={{ type: "spring" }}
+                  initial={{ opacity: 0, y: -100 }}
+                  animate={isVisible && { opacity: 1, y: 0 }}
+                  transition={{ type: "spring", delay: 0.3 }}
                >
                   <Typography color="secondary" variant="p" uppercase>
                      Наша компания обладает
@@ -44,15 +46,15 @@ export const CasesScreen = React.memo(() => {
                </motion.div>
             </div>
             <motion.div
-               initial={{ x: 100 }}
-               animate={isVisible && { x: 0 }}
+               initial={{ opacity: 0, x: 100 }}
+               animate={isVisible && { opacity: 1, x: 0 }}
                transition={{ type: "spring" }}
                id="Cases__slider"
                className={cls.cases__slider}
             >
                <Slider />
             </motion.div>
-         </div>
+         </motion.div>
       </motion.section>
    );
 });
