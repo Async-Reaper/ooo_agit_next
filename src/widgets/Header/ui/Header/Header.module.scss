@@ -6,6 +6,7 @@
     height: mixin.$headerHeight + px;
     background: var(--color-secondary);
     z-index: 99;
+    max-width: 1800px;
 
     .header__inner {
         @include mixin.flex-row;
@@ -15,7 +16,7 @@
         position: relative;
         @include mixin.adaptive("column-gap", 140, 20);
         width: 100%;
-        padding: 25px 0;
+        padding: 25px 20px;
         color: var(--color-white-secondary);
 
         .header__nav {

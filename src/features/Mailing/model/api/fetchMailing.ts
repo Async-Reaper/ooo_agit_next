@@ -1,4 +1,4 @@
-import {addDoc, collection} from "@node_modules/firebase/firestore";
+import {addDoc, collection} from "firebase/firestore";
 import {db} from "@main/FirebaseProvider";
 import {IMailing} from "../types/mailingTypes";
 

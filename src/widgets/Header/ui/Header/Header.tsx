@@ -21,78 +21,76 @@ export const Header = React.memo(() => {
    
    return (
       <header id="header" className={cls.header}>
-         <Container>
-            <div className={cls.header__inner}>
-               <motion.div
-                  initial={{y: -100, opacity: 0}}
-                  animate={{y: 0, opacity: 1}}
-                  transition={{type: "spring", duration: 0.3}}
-                  className={cls.header__logo}
-               >
-                  <AppLogo/>
-               </motion.div>
-               <div className={classNames(cls.header__nav, {[cls.active]: isActiveBurger})}>
-                  <div className={cls.header__links}>
-                     <motion.div
-                        initial={{y: -200, opacity: 0}}
-                        animate={{y: 0, opacity: 1}}
-                        transition={{type: "spring", duration: 0.3}}
-                        className={cls.header__link}
-                     >
-                        <AppLink href="/" variant="secondary">
-                           <Typography variant="span">
-                              Главная
-                           </Typography>
-                        </AppLink>
-                     </motion.div>
-                     <motion.div
-                        initial={{y: -300, opacity: 0}}
-                        animate={{y: 0, opacity: 1}}
-                        transition={{type: "spring", duration: 0.3}}
-                        className={cls.header__link}
-                     >
-                        <AppLink
-                           href="/products"
-                           variant="secondary"
-                        >
-                           <Typography variant="span">
-                              Продукты и услуги
-                           </Typography>
-                        </AppLink>
-                     </motion.div>
-                     <motion.div
-                        initial={{y: -400, opacity: 0}}
-                        animate={{y: 0, opacity: 1}}
-                        transition={{type: "spring", duration: 0.3}}
-                     >
-                        <SelectLinks/>
-                     </motion.div>
-                  </div>
+         <div className={cls.header__inner}>
+            <motion.div
+               initial={{y: -100, opacity: 0}}
+               animate={{y: 0, opacity: 1}}
+               transition={{type: "spring", duration: 0.3}}
+               className={cls.header__logo}
+            >
+               <AppLogo/>
+            </motion.div>
+            <div className={classNames(cls.header__nav, {[cls.active]: isActiveBurger})}>
+               <div className={cls.header__links}>
                   <motion.div
-                     initial={{y: -500, opacity: 0}}
+                     initial={{y: -200, opacity: 0}}
                      animate={{y: 0, opacity: 1}}
                      transition={{type: "spring", duration: 0.3}}
-                     className={cls.header__button}
+                     className={cls.header__link}
                   >
-                     <Button onClick={open}>
-                        <Typography color="white-primary" variant="span" uppercase noWrap>
-                           контакты
+                     <AppLink href="/" variant="secondary">
+                        <Typography variant="span">
+                           Главная
                         </Typography>
-                     </Button>
+                     </AppLink>
+                  </motion.div>
+                  <motion.div
+                     initial={{y: -300, opacity: 0}}
+                     animate={{y: 0, opacity: 1}}
+                     transition={{type: "spring", duration: 0.3}}
+                     className={cls.header__link}
+                  >
+                     <AppLink
+                        href="/products"
+                        variant="secondary"
+                     >
+                        <Typography variant="span">
+                           Продукты и услуги
+                        </Typography>
+                     </AppLink>
+                  </motion.div>
+                  <motion.div
+                     initial={{y: -400, opacity: 0}}
+                     animate={{y: 0, opacity: 1}}
+                     transition={{type: "spring", duration: 0.3}}
+                  >
+                     <SelectLinks/>
                   </motion.div>
                </div>
                <motion.div
-                  initial={{y: -200, opacity: 0}}
+                  initial={{y: -500, opacity: 0}}
                   animate={{y: 0, opacity: 1}}
                   transition={{type: "spring", duration: 0.3}}
-                  className={cls.header__burger__wrapper}
-                  onClick={onHandleClickBurger}
+                  className={cls.header__button}
                >
-                  <div className={classNames(cls.header__burger, {[cls.active]: isActiveBurger})}/>
+                  <Button onClick={open}>
+                     <Typography color="white-primary" variant="span" uppercase noWrap>
+                        контакты
+                     </Typography>
+                  </Button>
                </motion.div>
-               <HeaderModal isOpen={isOpen} onClose={close}/>
             </div>
-         </Container>
+            <motion.div
+               initial={{y: -200, opacity: 0}}
+               animate={{y: 0, opacity: 1}}
+               transition={{type: "spring", duration: 0.3}}
+               className={cls.header__burger__wrapper}
+               onClick={onHandleClickBurger}
+            >
+               <div className={classNames(cls.header__burger, {[cls.active]: isActiveBurger})}/>
+            </motion.div>
+            <HeaderModal isOpen={isOpen} onClose={close}/>
+         </div>
       </header>
    );
 });

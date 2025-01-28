@@ -2,10 +2,9 @@
 import React, { useCallback, useState } from "react";
 import { Typography } from "@shared/ui";
 import { classNames } from "@shared/libs/classNames/classNames";
+import {Icon} from "@shared/libs/icon/icon";
 
 import cls from "./Select.module.scss";
-import Image from "next/image";
-import {Icon} from "@shared/libs/icon/icon";
 
 export interface SelectItem {
    id: number;
@@ -45,7 +44,7 @@ const Component = (props: SelectProps) => {
    return (
       <div className={classNames(cls.select__wrapper, mods)}>
          <div className={cls.select__name} onClick={onHandleVisibleSelect}>
-            <Typography variant="span">
+            <Typography variant="p">
                {selectTitle}
             </Typography>
             <div className={classNames(cls.select__arrow, { [cls.active]: isVisibleSelect })}>
@@ -56,7 +55,7 @@ const Component = (props: SelectProps) => {
             {
                selectItems.map((selectItem) => (
                   <div key={selectItem.id} className={cls.select__item} onClick={() => onHandleSetCurrentValue(selectItem.content)}>
-                     <Typography variant="small" color="white-primary">
+                     <Typography variant="span" color="white-primary">
                         {selectItem.content}
                      </Typography>
                   </div>

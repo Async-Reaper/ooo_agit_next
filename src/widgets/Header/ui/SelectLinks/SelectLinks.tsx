@@ -2,10 +2,8 @@ import React, { useCallback, useState } from "react";
 import { AppLink } from "@shared/ui/AppLink";
 import { Typography } from "@shared/ui";
 import { classNames } from "@shared/libs/classNames/classNames";
-import ArrowIcon from "@shared/libs/icons/source/arrow.svg";
 import {usePathname} from "next/navigation";
 import cls from "./SelectLinks.module.scss";
-import Image from "@node_modules/next/image";
 import {Icon} from "@shared/libs/icon/icon";
 
 const Component = () => {

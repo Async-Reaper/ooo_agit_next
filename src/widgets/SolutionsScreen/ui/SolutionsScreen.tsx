@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 
 import { useViewBox } from "@shared/hooks";
 import cls from "./SolutionsScreen.module.scss";
-import {animate, stagger} from "@node_modules/motion";
+import {animate, stagger} from "motion";
 
 export const SolutionsScreen = React.memo(() => {
    const [solutions] = useState([

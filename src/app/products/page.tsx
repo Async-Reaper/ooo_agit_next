@@ -1,5 +1,5 @@
 import React from "react";
-import {Metadata} from "@node_modules/next";
+import {Metadata} from "next";
 
 export const metadata: Metadata = {
    title: "Продукты и услуги",
