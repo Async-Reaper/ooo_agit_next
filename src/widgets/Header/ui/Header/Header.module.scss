@@ -6,11 +6,12 @@
     height: mixin.$headerHeight + px;
     background: var(--color-secondary);
     z-index: 99;
-    max-width: 1800px;
+    
 
     .header__inner {
         @include mixin.flex-row;
 
+        max-width: 1800px;
         z-index: 9;
         margin: 0 auto;
         position: relative;
