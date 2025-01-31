@@ -11,6 +11,7 @@ interface AppLinkProps extends LinkProps {
    className?: string;
    target?: HTMLAttributeAnchorTarget;
    variant?: AppLinkVariant;
+   isUnderline?: boolean;
    children?: ReactNode;
    activeClassName?: string;
 }
@@ -21,6 +22,7 @@ export const AppLink = memo((props: AppLinkProps) => {
       className,
       children,
       variant = "primary",
+      isUnderline = true,
       target,
       activeClassName = "",
       ...otherProps
@@ -30,7 +32,7 @@ export const AppLink = memo((props: AppLinkProps) => {
       <Link
          href={href}
          target={target}
-         className={classNames(cls.AppLink, {},  [cls[`variant--${variant}`]])}
+         className={classNames(cls.AppLink, {[cls.underline]: isUnderline},  [cls[`variant--${variant}`], className])}
          {...otherProps}
       >
          {children}

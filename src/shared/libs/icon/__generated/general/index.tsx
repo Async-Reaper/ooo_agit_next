@@ -6,6 +6,7 @@ import {BurgerIcon as burger} from './Burger';
 import {ConsultationIcon as consultation} from './Consultation';
 import {EmailIcon as email} from './Email';
 import {LogoIcon as logo} from './Logo';
+import {MapIcon as map} from './Map';
 import {PhoneIcon as phone} from './Phone';
 import {PlusIcon as plus} from './Plus';
 import {TgIcon as tg} from './Tg';
@@ -18,6 +19,7 @@ export type IconName =
   | 'consultation'
   | 'email'
   | 'logo'
+  | 'map'
   | 'phone'
   | 'plus'
   | 'tg'
@@ -32,6 +34,7 @@ export const iconSet: {
   consultation,
   email,
   logo,
+  map,
   phone,
   plus,
   tg,

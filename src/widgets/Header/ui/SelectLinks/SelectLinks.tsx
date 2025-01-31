@@ -42,7 +42,7 @@ const Component = () => {
             </Typography>
             <Icon 
                name="arrow_bottom" 
-               color="white-primary"
+               color="primary"
                className={classNames(cls.select__arrow, {[cls.active]: isVisibleSelect})}
             />
          </div>
@@ -54,6 +54,7 @@ const Component = () => {
             <AppLink
                href="/about#vacancies"
                onClick={(e) => scrollToSection(e, "vacancies")}
+               isUnderline
             >
                <Typography variant="span">
                   Вакансии
@@ -62,6 +63,7 @@ const Component = () => {
             <AppLink
                href="/about#internship"
                onClick={(e) => scrollToSection(e, "vacancies")}
+               isUnderline
             >
                <Typography variant="span">
                   Стажировка
@@ -70,6 +72,7 @@ const Component = () => {
             <AppLink
                href="/about#news"
                onClick={(e) => scrollToSection(e, "news")}
+               isUnderline
             >
                <Typography variant="span">
                   Новости

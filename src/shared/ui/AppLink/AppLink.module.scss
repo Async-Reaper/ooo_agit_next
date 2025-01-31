@@ -19,20 +19,23 @@
       color: var(--color-secondary);
       position: relative;
 
-      &::before {
-        position: absolute;
-        content: "";
-        width: 0;
-        bottom: -3px;
-        height: 2px;
-        background: var(--color-secondary);
-        transition: all .3s;
-      }
-
-      &:hover {
-        color: var(--color-black);
+      &.underline {
         &::before {
-          width: 100%;
+          position: absolute;
+          content: "";
+          width: 0;
+          bottom: -3px;
+          height: 2px;
+          background: var(--color-secondary);
+          transition: all .3s;
+        }
+
+        &:hover {
+          color: var(--color-secondary);
+
+          &::before {
+            width: 100%;
+          }
         }
       }
     }
@@ -41,21 +44,23 @@
       color: var(--color-white-primary);
       position: relative;
 
-      &::before {
-        position: absolute;
-        content: "";
-        width: 0;
-        bottom: -3px;
-        height: 2px;
-        background: var(--color-white-secondary);
-        transition: all .3s;
-      }
-
-      &:hover {
-        color: var(--color-white-secondary);
-
+      &.underline {
         &::before {
-          width: 100%;
+          position: absolute;
+          content: "";
+          width: 0;
+          bottom: -3px;
+          height: 2px;
+          background: var(--color-white-secondary);
+          transition: all .3s;
+        }
+
+        &:hover {
+          color: var(--color-white-secondary);
+
+          &::before {
+            width: 100%;
+          }
         }
       }
     }

@@ -6,10 +6,10 @@ import cls from "./Social.module.scss";
 const Component = () => (
    <div className={cls.social__icons__wrapper}>
       <AppLink href="/" target="_blank">
-         <Icon name="tg" size={50} color="primary" className={cls.social__icon} />
+         <Icon name="tg" size={40} color="primary" className={cls.social__icon} />
       </AppLink>
       <AppLink href="https://vk.com/agit.plus" target="_blank">
-         <Icon name="vk" size={50} color="primary" className={cls.social__icon} />
+         <Icon name="vk" size={40} color="primary" className={cls.social__icon} />
       </AppLink>
    </div>
 );

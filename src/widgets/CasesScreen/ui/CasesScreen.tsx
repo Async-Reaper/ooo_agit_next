@@ -36,12 +36,13 @@ export const CasesScreen = React.memo(() => {
                   animate={isVisible && { opacity: 1, y: 0 }}
                   transition={{ type: "spring", delay: 0.3 }}
                >
-                  <Typography color="secondary" variant="p" uppercase>
-                     Наша компания обладает
+                  <Typography color="secondary" variant="p">
+                     Посмотрите на примеры успешного применения наших решений в различных сферах бизнеса.
+                  </Typography>
+                  <Typography color="secondary" variant="p">
+                     Каждый проект <b>иллюстрирует</b>, как мы помогли клиентам <b>справиться</b> с конкретными вызовами,
                      {" "}
-                     <b>множеством</b>
-                     {" "}
-                     кейсов
+                     <b>оптимизировать</b> рабочие процессы и <b>достичь</b> значительных результатов.
                   </Typography>
                </motion.div>
             </div>

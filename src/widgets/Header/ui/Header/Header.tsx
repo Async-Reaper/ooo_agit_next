@@ -3,17 +3,14 @@ import React, { useCallback, useState } from "react";
 import { classNames } from "@shared/libs/classNames/classNames";
 import { AppLogo } from "@shared/ui/AppLogo/AppLogo";
 import { motion } from "motion/react";
-import { Button, Typography } from "@shared/ui";
+import { Typography } from "@shared/ui";
 import { AppLink } from "@shared/ui/AppLink";
-import { useModal } from "@shared/hooks";
-import Container from "@shared/ui/Container/Container";
 import { SelectLinks } from "../SelectLinks/SelectLinks";
 import cls from "./Header.module.scss";
-import { HeaderModal } from "../HeaderModal/HeaderModal";
+import { HeaderContacts } from "../HeaderContacts/HeaderContacts";
 
 export const Header = React.memo(() => {
    const [isActiveBurger, setIsActiveBurger] = useState<boolean>(false);
-   const { open, isOpen, close } = useModal();
 
    const onHandleClickBurger = useCallback(() => {
       setIsActiveBurger(!isActiveBurger);
@@ -38,7 +35,10 @@ export const Header = React.memo(() => {
                      transition={{type: "spring", duration: 0.3}}
                      className={cls.header__link}
                   >
-                     <AppLink href="/" variant="secondary">
+                     <AppLink
+                        href="/"
+                        variant="primary"
+                     >
                         <Typography variant="span">
                            Главная
                         </Typography>
@@ -52,7 +52,7 @@ export const Header = React.memo(() => {
                   >
                      <AppLink
                         href="/products"
-                        variant="secondary"
+                        variant="primary"
                      >
                         <Typography variant="span">
                            Продукты и услуги
@@ -73,11 +73,7 @@ export const Header = React.memo(() => {
                   transition={{type: "spring", duration: 0.3}}
                   className={cls.header__button}
                >
-                  <Button onClick={open}>
-                     <Typography color="white-primary" variant="span" uppercase noWrap>
-                        контакты
-                     </Typography>
-                  </Button>
+                  <HeaderContacts />
                </motion.div>
             </div>
             <motion.div
@@ -89,8 +85,8 @@ export const Header = React.memo(() => {
             >
                <div className={classNames(cls.header__burger, {[cls.active]: isActiveBurger})}/>
             </motion.div>
-            <HeaderModal isOpen={isOpen} onClose={close}/>
          </div>
+         <hr/>
       </header>
    );
 });

@@ -16,7 +16,9 @@
         transition: all .3s;
 
         &:hover {
-            background: var(--color-gray-secondary);
+            border: 1px solid transparent;
+            background: var(--color-primary-hover);
+            color: var(--color-white-primary);
         }
     }
 }

@@ -7,7 +7,7 @@ import {Icon} from "@shared/libs/icon/icon";
 const Component = () => {
    return (
       <AppLink href="/" className={cls.logo}>
-         <Icon name="logo" size={115} color="white-primary" />
+         <Icon name="logo" size={115} color="primary" />
       </AppLink>
    );
 };

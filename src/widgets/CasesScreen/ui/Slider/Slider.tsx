@@ -79,9 +79,9 @@ export const Slider = () => {
                <AppImage src={sliderItems[currentIndex].img} alt="" />
             </div>
             <div className={cls.slider__button}>
-               <AppLink href={sliderItems[currentIndex].link} target="_blank">
+               <AppLink href={sliderItems[currentIndex].link} target="_blank" isUnderline={false}>
                   <Button variant="outlined">
-                     <Typography variant="span" color="primary" uppercase>
+                     <Typography variant="span" uppercase>
                         подробнее
                      </Typography>
                   </Button>

@@ -18,8 +18,14 @@ h1 {
 
 hr {
     box-sizing: content-box; /* 1 */
-    height: 0; /* 1 */
     overflow: visible; /* 2 */
+    border: none;
+    background: var(--color-gray-secondary);
+    outline: none;
+    height: 1px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 pre {

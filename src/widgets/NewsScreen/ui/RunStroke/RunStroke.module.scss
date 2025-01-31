@@ -1,0 +1,34 @@
+@use "@shared/styles/mixins" as mixin;
+
+.run_stroke__wrapper {
+  background: var(--color-primary);
+  overflow: hidden;
+  padding: 20px 0;
+  width: 100%;
+  @include mixin.flex-row;
+  gap: 20px;
+
+  &:hover {
+    .news__list {
+      animation-play-state: paused;
+    }
+  }
+
+  .news__list {
+    width: fit-content;
+    @include mixin.flex-row;
+    gap: 20px;
+    animation: run-stroke 20s linear infinite;
+    -webkit-transform-style: preserve-3d;
+  }
+}
+
+@keyframes run-stroke {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-100% + 120px));
+  }
+}

@@ -1,0 +1,59 @@
+"use client";
+import React, {useEffect, useState} from "react";
+import {collection, getDocs, query} from "firebase/firestore";
+import {db} from "@main/FirebaseProvider";
+import {INews} from "../../model/types/newsType";
+import {Typography} from "@shared/ui";
+import cls from "./RunStroke.module.scss";
+import {AppLink} from "@shared/ui/AppLink";
+
+export const RunStroke = React.memo(() => {
+   const [isLoading, setIsLoading] = useState(false);
+   const [news, setNews] = useState<INews[]>([]);
+
+   const fetchNewsList = async () => {
+      setIsLoading(true);
+      const responseNews = query(collection(db, "news"));
+      const querySnapshot = await getDocs(responseNews);
+
+      const newItems = querySnapshot.docs.map((doc) => (
+         { id: doc.id, ...doc.data() } as INews));
+      setNews(newItems);
+      setIsLoading(false);
+   };
+
+   useEffect(() => {
+      fetchNewsList();
+   }, []);
+
+   return (
+      <div className={cls.run_stroke__wrapper}>
+         <ul className={cls.news__list}>
+            {
+               news.map(newItem =>
+                  <li className={cls.news__item} key={newItem.id}>
+                     <AppLink href="/about#news" variant="secondary">
+                        <Typography variant="span" color="white-primary" noWrap>
+                           {newItem.title}
+                        </Typography>
+                     </AppLink>
+                  </li>
+               )
+            }
+         </ul>
+         <ul className={cls.news__list} aria-hidden="true">
+            {
+               news.map(newItem =>
+                  <li className={cls.news__item} key={newItem.id}>
+                     <AppLink href="/about#news" variant="secondary">
+                        <Typography variant="span" color="white-primary" noWrap>
+                           {newItem.title}
+                        </Typography>
+                     </AppLink>
+                  </li>
+               )
+            }
+         </ul>
+      </div>
+   );
+});

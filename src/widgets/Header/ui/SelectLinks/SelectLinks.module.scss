@@ -62,7 +62,8 @@
             width: 100%;
             height: max-content;
             border-radius: 0 0 5px 5px;
-            background: var(--color-gray-primary);
+            background: var(--color-white-secondary);
+            box-shadow: 0 0 10px var(--color-gray-secondary);
         }
     }
 }
