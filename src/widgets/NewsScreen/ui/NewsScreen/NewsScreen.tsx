@@ -35,8 +35,8 @@ export const NewsScreen = React.memo(() => {
 
       const newItems = documentSnapshots.docs.map((doc) => ({
          id: doc.id,
-         ...doc.data() as INews,
-      }));
+         ...doc.data(),
+      } as INews));
 
       setNews((prevItems) => {
          const existingIds = new Set(prevItems.map((item) => item.id));
@@ -86,7 +86,7 @@ export const NewsScreen = React.memo(() => {
                            ))}
                         </ul>
                         <Button variant="outlined" onClick={fetchData}>
-                           <Typography color="primary" variant="span" bold uppercase>
+                           <Typography variant="span" uppercase>
                               Еще
                            </Typography>
                         </Button>

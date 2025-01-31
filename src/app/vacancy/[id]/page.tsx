@@ -8,6 +8,7 @@ import {db} from "@main/FirebaseProvider";
 import {Typography} from "@shared/ui";
 import {AppLink} from "@shared/ui/AppLink";
 import Container from "@shared/ui/Container/Container";
+import {Icon} from "@shared/libs/icon/icon";
 
 interface Params {
    params: {
@@ -44,19 +45,18 @@ const DynamicPage: FC<{ params: Params["params"] }> = async ({ params }) => {
 
    return (
       <div className={cls.vacancy}>
-         <Container>
-            <div className={cls.vacancy__link_back}>
-               <AppLink href="/about#vacancy" variant="primary">
-                  <Typography variant="span">
-                     Назад
-                  </Typography>
-               </AppLink>
-            </div>
-            <div className={cls.vacancy__wrapper}>
-               <VacancyCard vacancy={vacancy} isLoading={isLoading}/>
-               <VacancyRequestButton/>
-            </div>
-         </Container>
+         <div className={cls.link__back__wrapper}>
+            <AppLink href="/about#vacancy" variant="primary" className={cls.link__back}>
+               <Icon name="arrow_left" />
+               <Typography variant="p">
+                  Назад
+               </Typography>
+            </AppLink>
+         </div>
+         <div className={cls.vacancy__wrapper}>
+            <VacancyCard vacancy={vacancy} isLoading={isLoading}/>
+            <VacancyRequestButton/>
+         </div>
       </div>
    );
 };

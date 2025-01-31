@@ -20,8 +20,14 @@
     @include mixin.adaptive("gap", 30, 10);
   }
 
-  .vacancy__link_back {
+  .link__back__wrapper {
     margin: 0 0 30px;
+
+    .link__back {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
   }
 }
 

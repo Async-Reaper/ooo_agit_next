@@ -38,7 +38,7 @@
                 padding: 20px 0;
             }
 
-            @include mixin.tablets {
+            @include mixin.laptop {
                 position: relative;
                 transform: translateY(0);
 
@@ -53,7 +53,7 @@
             z-index: 1;
             height: 16px;
 
-            @include mixin.tablets {
+            @include mixin.laptop {
                 display: none;
             }
         }

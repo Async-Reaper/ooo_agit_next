@@ -1,10 +1,14 @@
 @use "@shared/styles/_mixins.scss" as mixin;
 
-.vacancy__card__wrapper {
+.card__wrapper {
     @include mixin.flex-column;
     @include mixin.adaptive("gap", 40, 20);
 
-    .vacancy__card__img {
+    @include mixin.laptop {
+        @include mixin.flex-row;
+    }
+
+    .card__img {
         img {
             width: 100%;
         }
@@ -13,5 +17,15 @@
                 width: auto;
             }
         }
+    }
+
+    .card__content {
+        @include mixin.flex-column;
+        gap: 15px;
+    }
+
+    .content__point {
+        @include mixin.flex-column;
+        gap: 5px;
     }
 }
