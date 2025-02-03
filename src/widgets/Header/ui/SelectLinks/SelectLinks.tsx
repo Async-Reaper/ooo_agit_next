@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useState } from "react";
 import { AppLink } from "@shared/ui/AppLink";
 import { Typography } from "@shared/ui";
 import { classNames } from "@shared/libs/classNames/classNames";
@@ -10,9 +10,9 @@ const Component = () => {
    const pathname = usePathname();
    const [isVisibleSelect, setIsVisibleSelect] = useState<boolean>(false);
 
-   const onHandleVisibleSelect = useCallback(() => {
+   const onHandleVisibleSelect = () => {
       setIsVisibleSelect(!isVisibleSelect);
-   }, [isVisibleSelect, setIsVisibleSelect]);
+   };
 
    const scrollToSection = (event: React.MouseEvent<HTMLAnchorElement,
    MouseEvent>, sectionId: string) => {
@@ -30,26 +30,26 @@ const Component = () => {
    return (
       <div
          className={classNames(cls.select__wrapper, {[cls.active]: isVisibleSelect})}
-         onMouseOut={() => setIsVisibleSelect(false)}
+         // onMouseOut={() => setIsVisibleSelect(false)}
       >
          <div
             className={cls.select__name}
             onClick={onHandleVisibleSelect}
-            onMouseOver={() => setIsVisibleSelect(true)}
+            // onMouseOver={() => setIsVisibleSelect(true)}
          >
             <Typography variant="span">
                О нас
             </Typography>
-            <Icon 
-               name="arrow_bottom" 
+            <Icon
+               name="arrow_bottom"
                color="primary"
                className={classNames(cls.select__arrow, {[cls.active]: isVisibleSelect})}
             />
          </div>
-         <div 
+         <div
             className={classNames(cls.select__items, {[cls.active]: isVisibleSelect})}
-            onMouseOver={() => setIsVisibleSelect(true)}
-            onMouseOut={() => setIsVisibleSelect(false)}
+            // onMouseOver={() => setIsVisibleSelect(true)}
+            // onMouseOut={() => setIsVisibleSelect(false)}
          >
             <AppLink
                href="/about#vacancies"

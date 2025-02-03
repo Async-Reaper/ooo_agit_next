@@ -8,7 +8,7 @@ interface InternshipRequestFormProps {
    close: () => void;
 }
 
-export const InternshipRequestForm = ({close}: InternshipRequestFormProps) => {
+export const InternshipRequestForm = React.memo(({close}: InternshipRequestFormProps) => {
    const [email, setEmail] = useState<string>("");
    const [fullName, setFullName] = useState<string>("");
    const [phoneNumber, setPhoneNumber] = useState<string>("");
@@ -58,4 +58,4 @@ export const InternshipRequestForm = ({close}: InternshipRequestFormProps) => {
          </div>
       </div>
    );
-};
+});

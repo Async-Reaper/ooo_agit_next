@@ -5,7 +5,7 @@
     height: mixin.$headerHeight + px;
     background: var(--color-white-primary);
     z-index: 99;
-    
+
 
     .header__inner {
         @include mixin.flex-row;
@@ -18,6 +18,12 @@
         width: 100%;
         padding: 25px 20px;
         color: var(--color-secondary);
+
+        .header__logo,
+        .header__link,
+        .select__link {
+            will-change: transform, opacity;
+        }
 
         .header__nav {
             position: absolute;
@@ -137,6 +143,7 @@
 
         .header__button {
             z-index: 1;
+            will-change: transform, opacity;
 
             @include mixin.tablets {
                 margin: 0 0 0 auto;

@@ -42,7 +42,7 @@
     &.variant {
         &--h1 {
             @include mixins.adaptive("font-size", 48, 28);
-            @include mixins.adaptive("line-height", 32, 33);
+            @include mixins.adaptive("line-height", 48, 33);
 
             font-weight: 800;
 
@@ -53,7 +53,7 @@
 
         &--h2 {
             @include mixins.adaptive("font-size", 25, 17);
-            @include mixins.adaptive("line-height", 24, 28);
+            @include mixins.adaptive("line-height", 32, 28);
 
             font-weight: 500;
 

@@ -1,72 +1,69 @@
 "use client";
 import React, {useEffect, useState} from "react";
-import {motion} from "motion/react";
-import {useViewBox} from "@shared/hooks";
 import {Button, Loader, Typography} from "@shared/ui";
-import {collection, DocumentData, getDocs, limit, query, startAfter,} from "firebase/firestore";
-import {db} from "@main/FirebaseProvider";
+import {DocumentData,} from "firebase/firestore";
 import {NewsItem} from "../NewsItem/NewsItem";
 import {INews} from "../../model/types/newsType";
 import cls from "./NewsScreen.module.scss";
 
 export const NewsScreen = React.memo(() => {
-   const [news, setNews] = useState<DocumentData[]>([]);
-   const [lastVisible, setLastVisible] = useState<DocumentData | null>(null);
-   const [isLoading, setIsLoading] = useState<boolean>(false);
-   const { ref, isVisible } = useViewBox(0.1);
+   const news: DocumentData[] = [];
+   const lastVisible: DocumentData | null = null;
+   const isLoading = false;
+   // const { ref, isVisible } = useViewBox(0.1);
 
    const fetchData = async () => {
-      setIsLoading(true);
-      const itemsRef = collection(db, "news");
-      let q;
-
-      if (lastVisible) {
-         q = query(itemsRef, startAfter(lastVisible), limit(5));
-      } else {
-         q = query(itemsRef, limit(5));
-      }
-
-      const documentSnapshots = await getDocs(q);
-
-      if (documentSnapshots.empty) {
-         setIsLoading(false);
-         return;
-      }
-
-      const newItems = documentSnapshots.docs.map((doc) => ({
-         id: doc.id,
-         ...doc.data(),
-      } as INews));
-
-      setNews((prevItems) => {
-         const existingIds = new Set(prevItems.map((item) => item.id));
-         const filteredNewItems = newItems.filter((item) => !existingIds.has(item.id));
-         return [...prevItems, ...filteredNewItems];
-      });
-
-      setLastVisible(documentSnapshots.docs[documentSnapshots.docs.length - 1]);
-      setIsLoading(false);
+      // setIsLoading(true);
+      // const itemsRef = collection(db, "news");
+      // let q;
+      //
+      // if (lastVisible) {
+      //    q = query(itemsRef, startAfter(lastVisible), limit(5));
+      // } else {
+      //    q = query(itemsRef, limit(5));
+      // }
+      //
+      // const documentSnapshots = await getDocs(q);
+      //
+      // if (documentSnapshots.empty) {
+      //    setIsLoading(false);
+      //    return;
+      // }
+      //
+      // const newItems = documentSnapshots.docs.map((doc) => ({
+      //    id: doc.id,
+      //    ...doc.data(),
+      // } as INews));
+      //
+      // setNews((prevItems) => {
+      //    const existingIds = new Set(prevItems.map((item) => item.id));
+      //    const filteredNewItems = newItems.filter((item) => !existingIds.has(item.id));
+      //    return [...prevItems, ...filteredNewItems];
+      // });
+      //
+      // setLastVisible(documentSnapshots.docs[documentSnapshots.docs.length - 1]);
+      // setIsLoading(false);
    };
 
-   useEffect(() => {
-      fetchData();
-   }, []);
+   // useEffect(() => {
+   //    fetchData();
+   // }, []);
 
    return (
-      <motion.section
+      <section
          id="news"
-         ref={ref}
-         initial={{ opacity: 0 }}
-         animate={{ opacity: 1 }}
+         // ref={ref}
+         // initial={{ opacity: 0 }}
+         // animate={{ opacity: 1 }}
          className={cls.news}
       >
          <div className={cls.news__wrapper}>
-            <motion.div
-               initial={{ y: 1000, opacity: 0 }}
-               animate={isVisible && { y: 0, opacity: 1 }}
-               transition={{
-                  type: "spring", duration: 0.5, stiffness: 150, bounce: 0.5,
-               }}
+            <div
+               // initial={{ y: 1000, opacity: 0 }}
+               // animate={isVisible && { y: 0, opacity: 1 }}
+               // transition={{
+               //    type: "spring", duration: 0.5, stiffness: 150, bounce: 0.5,
+               // }}
                className={cls.news__title__wrapper}
             >
                <Typography variant="h1" color="secondary" uppercase>
@@ -74,7 +71,7 @@ export const NewsScreen = React.memo(() => {
                   {" "}
                   от нас
                </Typography>
-            </motion.div>
+            </div>
             {
                isLoading
                   ? <Loader />
@@ -94,6 +91,6 @@ export const NewsScreen = React.memo(() => {
                   )
             }
          </div>
-      </motion.section>
+      </section>
    );
 });

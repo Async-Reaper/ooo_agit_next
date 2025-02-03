@@ -1,15 +1,11 @@
-"use client";
-import React, { useLayoutEffect, useState } from "react";
-import { Typography } from "@shared/ui";
-import { AppLink } from "@shared/ui/AppLink";
-import { motion } from "motion/react";
-import { animate, stagger } from "motion";
-import { useViewBox } from "@shared/hooks";
-import { AppImage } from "@shared/ui/AppImage";
+import React, {useMemo} from "react";
+import {Typography} from "@shared/ui";
+import {AppLink} from "@shared/ui/AppLink";
+import {AppImage} from "@shared/ui/AppImage";
 import cls from "./ServicesScreen.module.scss";
 
 export const ServicesScreen = React.memo(() => {
-   const [services] = useState([
+   const services = useMemo(() => [
       {
          id: 1,
          serviceName: "Комплексная автоматизация бизнеса",
@@ -34,36 +30,36 @@ export const ServicesScreen = React.memo(() => {
          serviceInfo: "Проведение детального анализа существующих процессов с целью выявления узких мест и возможностей для улучшения.",
          link: "https://vk.com/market/product/analiz-i-optimizatsia-biznes-protsessov-183182511-10352203",
       },
-   ]);
+   ], []);
 
-   const { ref, isVisible } = useViewBox(0.2);
-
-   useLayoutEffect(() => {
-      isVisible && animate([
-         [`.${cls.services__list}`, { opacity: 1 }],
-         [`.${cls.services__item}`, { y: [-100, 0], opacity: [0, 1] }, {
-            duration: 0.3, delay: stagger(0.2), stiffness: 150, bounce: 0.5,
-         }],
-      ]);
-   }, [isVisible]);
+   // const { ref, isVisible } = useViewBox(0.2);
+   //
+   // useLayoutEffect(() => {
+   //    isVisible && animate([
+   //       [`.${cls.services__list}`, { opacity: 1 }],
+   //       [`.${cls.services__item}`, { y: [-100, 0], opacity: [0, 1] }, {
+   //          duration: 0.3, delay: stagger(0.2), stiffness: 150, bounce: 0.5,
+   //       }],
+   //    ]);
+   // }, [isVisible]);
 
    return (
       <section
          id="services"
          className={cls.services}
       >
-         <motion.div
-            initial={{ opacity: 0, x: 100 }}
-            animate={isVisible && { opacity: 1, x: 0 }}
-            transition={{ type: "spring", duration: 2 }}
-            ref={ref}
+         <div
+            // initial={{ opacity: 0, x: 100 }}
+            // animate={isVisible && { opacity: 1, x: 0 }}
+            // transition={{ type: "spring", duration: 2 }}
+            // ref={ref}
             className={cls.services__wrapper}
          >
             <div className={cls.services__content}>
-               <motion.div
-                  initial={{ x: -100 }}
-                  animate={isVisible && { x: 0 }}
-                  transition={{ type: "spring", duration: 0.3, delay: 0.3 }}
+               <div
+                  // initial={{ x: -100 }}
+                  // animate={isVisible && { x: 0 }}
+                  // transition={{ type: "spring", duration: 0.3, delay: 0.3 }}
                   className={cls.services__title}
                >
                   <Typography color="secondary" variant="h1" uppercase>
@@ -71,7 +67,7 @@ export const ServicesScreen = React.memo(() => {
                      {" "}
                      нашей компании
                   </Typography>
-               </motion.div>
+               </div>
                <ul className={cls.services__list}>
                   {services.map((service) => (
                      <li className={cls.services__item} key={service.id}>
@@ -98,15 +94,15 @@ export const ServicesScreen = React.memo(() => {
                   ))}
                </ul>
             </div>
-            <motion.div
-               initial={{ x: 100, opacity: 0 }}
-               animate={isVisible && { x: 0, opacity: 1 }}
-               transition={{ type: "spring", duration: 0.3, delay: 0.3 }}
+            <div
+               // initial={{ x: 100, opacity: 0 }}
+               // animate={isVisible && { x: 0, opacity: 1 }}
+               // transition={{ type: "spring", duration: 0.3, delay: 0.3 }}
                className={cls.services__img}
             >
-               <AppImage src="/reviews__bg.webp" alt="Services background" />
-            </motion.div>
-         </motion.div>
+               {/*<AppImage src="/reviews__bg.webp" alt="Services background" />*/}
+            </div>
+         </div>
       </section>
    );
 });

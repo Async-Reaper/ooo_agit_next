@@ -1,14 +1,10 @@
 "use client";
-import React, { useLayoutEffect, useState } from "react";
-import { Typography } from "@shared/ui";
-import { motion } from "motion/react";
-import { useViewBox } from "@shared/hooks";
-import { animate, stagger } from "motion";
-import { AppImage } from "@shared/ui/AppImage";
+import React, {useMemo} from "react";
+import {Typography} from "@shared/ui";
 import cls from "./ActivityScreen.module.scss";
 
 export const ActivityScreen = React.memo(() => {
-   const [activities] = useState([
+   const activities = useMemo(() => [
       {
          id: 1,
          text: "Горнодобывающая промышленность, металлургия.",
@@ -33,37 +29,30 @@ export const ActivityScreen = React.memo(() => {
          id: 6,
          text: "Учёт предоставления различных услуг и работы с клиентами (CRM).",
       },
-   ]);
-   const { ref, isVisible } = useViewBox(0.4);
+   ], []);
+   //
+   // const { ref, isVisible } = useViewBox(0.4);
 
-   useLayoutEffect(() => {
-      isVisible && animate([
-         [cls.activity__list, { opacity: 1 }],
-         [cls.activity__item, { x: [-100, 0] }, {
-            duration: 0.3, delay: stagger(0.2), stiffness: 150, bounce: 0.5,
-         }],
-      ]);
-   }, [isVisible]);
 
    return (
       <section
          id="activity"
          className={cls.activity}
       >
-         <motion.div
-            ref={ref}
-            initial={{ opacity: 0, x: -100 }}
-            animate={isVisible && { opacity: 1, x: 0 }}
-            transition={{ type: "spring", duration: 2 }}
+         <div
+            // ref={ref}
+            // initial={{ opacity: 0, x: -100 }}
+            // animate={isVisible && { opacity: 1, x: 0 }}
+            // transition={{ type: "spring", duration: 2 }}
             className={cls.activity__wrapper}
          >
             <div className={cls.activity__header}>
-               <motion.div
-                  initial={{ y: -100 }}
-                  animate={isVisible && { y: 0 }}
-                  transition={{
-                     type: "spring", duration: 0.5, stiffness: 150, bounce: 0.5, delay: 0.3
-                  }}
+               <div
+                  // initial={{ y: -100 }}
+                  // animate={isVisible && { y: 0 }}
+                  // transition={{
+                  //    type: "spring", duration: 0.5, stiffness: 150, bounce: 0.5, delay: 0.3
+                  // }}
                   className={cls.activity__title}
                >
                   <Typography variant="h1" uppercase>
@@ -71,7 +60,7 @@ export const ActivityScreen = React.memo(() => {
                      {" "}
                      <b> автоматизации: </b>
                   </Typography>
-               </motion.div>
+               </div>
                <ul className={cls.activity__list}>
                   {activities.map((activity) => (
                      <li key={activity.id} className={cls.activity__item}>
@@ -84,12 +73,12 @@ export const ActivityScreen = React.memo(() => {
                </ul>
             </div>
             <div className={cls.activity__footer}>
-               <motion.div
-                  initial={{ opacity: 0, y: 100 }}
-                  animate={isVisible && { opacity: 1, y: 0 }}
-                  transition={{
-                     type: "spring", duration: 0.5, delay: 0.3
-                  }}
+               <div
+                  // initial={{ opacity: 0, y: 100 }}
+                  // animate={isVisible && { opacity: 1, y: 0 }}
+                  // transition={{
+                  //    type: "spring", duration: 0.5, delay: 0.3
+                  // }}
                   className={cls.activity__desc}
                >
                   <Typography variant="p">
@@ -101,14 +90,14 @@ export const ActivityScreen = React.memo(() => {
                      {" "}
                      высокого уровня обслуживания!
                   </Typography>
-               </motion.div>
+               </div>
                <hr />
-               <motion.div
-                  initial={{ y: 1000 }}
-                  animate={isVisible && { y: 0 }}
-                  transition={{
-                     type: "spring", duration: 0.5, delay: 0.3
-                  }}
+               <div
+                  // initial={{ y: 1000 }}
+                  // animate={isVisible && { y: 0 }}
+                  // transition={{
+                  //    type: "spring", duration: 0.5, delay: 0.3
+                  // }}
                   className={cls.activity__desc}
                >
                   <Typography variant="p">
@@ -117,11 +106,8 @@ export const ActivityScreen = React.memo(() => {
                      <b>дистанционно</b>
                      , независимо от местонахождения Заказчика!
                   </Typography>
-               </motion.div>
+               </div>
             </div>
-         </motion.div>
-         <div className={cls.activity__background}>
-            <AppImage src="/wave.webp" alt="bg" />
          </div>
       </section>
    );

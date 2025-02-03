@@ -1,6 +1,7 @@
-import React from "react";
+import React, {Suspense} from "react";
 import {PrivacyPage} from "@pagesTemplate/PrivacyPage";
 import {Metadata} from "next";
+import {PageLoader} from "@shared/ui";
 
 export const metadata: Metadata = {
    title: "Политика конфиденциальности",
@@ -11,9 +12,9 @@ export const metadata: Metadata = {
 
 const Page = () => {
    return (
-      <>
-         <PrivacyPage />   
-      </>
+      <Suspense fallback={<PageLoader />}>
+         <PrivacyPage />
+      </Suspense>
    );
 };
 

@@ -1,5 +1,5 @@
 "use client";
-import React, {useEffect, useState} from "react";
+import React, {useCallback, useEffect, useState} from "react";
 import {collection, getDocs, query} from "firebase/firestore";
 import {db} from "@main/FirebaseProvider";
 import {INews} from "../../model/types/newsType";
@@ -11,7 +11,7 @@ export const RunStroke = React.memo(() => {
    const [isLoading, setIsLoading] = useState(false);
    const [news, setNews] = useState<INews[]>([]);
 
-   const fetchNewsList = async () => {
+   const fetchNewsList = useCallback(async () => {
       setIsLoading(true);
       const responseNews = query(collection(db, "news"));
       const querySnapshot = await getDocs(responseNews);
@@ -20,7 +20,7 @@ export const RunStroke = React.memo(() => {
          { id: doc.id, ...doc.data() } as INews));
       setNews(newItems);
       setIsLoading(false);
-   };
+   }, []);
 
    useEffect(() => {
       fetchNewsList();

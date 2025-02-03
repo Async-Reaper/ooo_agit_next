@@ -1,5 +1,4 @@
 import { Typography } from "@shared/ui";
-import "react-alice-carousel/lib/alice-carousel.css";
 import { VacanciesList } from "@entities/Vacancy";
 import cls from "./VacanciesScreen.module.scss";
 

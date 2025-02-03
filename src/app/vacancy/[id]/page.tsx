@@ -1,13 +1,12 @@
 import {IVacancy, VacancyCard} from "@entities/Vacancy";
 import {VacancyRequestButton} from "@features/VacancyRequest";
-import React, {FC} from "react";
+import React, {FC, Suspense} from "react";
 import {Metadata} from "next";
 import cls from "./page.module.scss";
 import {doc, getDoc} from "firebase/firestore";
 import {db} from "@main/FirebaseProvider";
-import {Typography} from "@shared/ui";
+import {PageLoader, Typography} from "@shared/ui";
 import {AppLink} from "@shared/ui/AppLink";
-import Container from "@shared/ui/Container/Container";
 import {Icon} from "@shared/libs/icon/icon";
 
 interface Params {
@@ -44,20 +43,22 @@ const DynamicPage: FC<{ params: Params["params"] }> = async ({ params }) => {
    isLoading = false;
 
    return (
-      <div className={cls.vacancy}>
-         <div className={cls.link__back__wrapper}>
-            <AppLink href="/about#vacancy" variant="primary" className={cls.link__back}>
-               <Icon name="arrow_left" />
-               <Typography variant="p">
-                  Назад
-               </Typography>
-            </AppLink>
+      <Suspense fallback={<PageLoader />}>
+         <div className={cls.vacancy}>
+            <div className={cls.link__back__wrapper}>
+               <AppLink href="/about#vacancy" variant="primary" className={cls.link__back}>
+                  <Icon name="arrow_left" />
+                  <Typography variant="p">
+                     Назад
+                  </Typography>
+               </AppLink>
+            </div>
+            <div className={cls.vacancy__wrapper}>
+               <VacancyCard vacancy={vacancy} isLoading={isLoading}/>
+               <VacancyRequestButton/>
+            </div>
          </div>
-         <div className={cls.vacancy__wrapper}>
-            <VacancyCard vacancy={vacancy} isLoading={isLoading}/>
-            <VacancyRequestButton/>
-         </div>
-      </div>
+      </Suspense>
    );
 };
 export default DynamicPage;

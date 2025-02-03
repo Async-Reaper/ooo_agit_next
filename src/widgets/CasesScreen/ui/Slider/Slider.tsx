@@ -1,8 +1,8 @@
+"use client";
 import { useCallback, useState } from "react";
 import { Button, Typography } from "@shared/ui";
 import { AppLink } from "@shared/ui/AppLink";
 import { classNames } from "@shared/libs/classNames/classNames";
-import { useSwipeable } from "react-swipeable";
 import { AppImage } from "@shared/ui/AppImage";
 import cls from "./Slider.module.scss";
 
@@ -32,46 +32,27 @@ export const Slider = () => {
    ]);
 
    const [currentIndex, setCurrentIndex] = useState<number>(0);
-   const [isTransitioning, setIsTransitioning] = useState(false);
 
    const onHandleNextSlide = useCallback(() => {
-      setIsTransitioning(true);
       setCurrentIndex(currentIndex + 1);
       if (currentIndex === sliderItems.length - 1) {
          setCurrentIndex(0);
       }
    }, [currentIndex, setCurrentIndex]);
 
-   const handleTransitionEnd = () => {
-      setIsTransitioning(false);
-   };
 
    const onHandlePrevSlide = useCallback(() => {
-      setIsTransitioning(true);
       setCurrentIndex(currentIndex - 1);
       if (currentIndex === 0) {
          setCurrentIndex(sliderItems.length - 1);
       }
    }, [currentIndex, setCurrentIndex]);
 
-   const handlers = useSwipeable({
-      onSwipedLeft: onHandleNextSlide,
-      onSwipedRight: onHandlePrevSlide,
-      trackMouse: true,
-   });
 
    return (
       <div className={cls.slider__wrapper}>
          <div
             className={classNames(cls.slide__item, {}, [cls.hidden])}
-            onTransitionEnd={handleTransitionEnd}
-            style={{
-               opacity: isTransitioning
-                  ? 0
-                  : 1,
-               transition: "all 0.2s",
-            }}
-            {...handlers}
          >
             <div
                className={cls.slide__info}

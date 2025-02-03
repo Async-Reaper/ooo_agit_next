@@ -1,8 +1,12 @@
-import {MainPage} from "@pagesTemplate/MainPage";
-import Head from "next/head";
-import React, {Suspense} from "react";
+import React from "react";
 import {Metadata} from "next";
-import {PageLoader} from "@shared/ui";
+import {StartScreen} from "@widgets/StartScreen";
+import {BrandsList} from "@widgets/BrandsList";
+import {SolutionsScreen} from "@widgets/SolutionsScreen";
+import {CasesScreen} from "@widgets/CasesScreen";
+import {ActivityScreen} from "@widgets/ActivityScreen";
+import {ServicesScreen} from "@widgets/ServicesScreen";
+import {PlatformScreen} from "@widgets/PlatformScreen";
 
 export const metadata: Metadata = {
    title: "АГИТ-Плюс",
@@ -20,14 +24,13 @@ export const metadata: Metadata = {
 export default function Home() {
    return (
       <>
-         <Head>
-            <meta charSet="UTF-8"/>
-            <link rel="icon" type="image/svg+xml" href="./favicon.ico"/>
-            <meta name="viewport" content="width=device-width, initial-scale=0"/>
-         </Head>
-         <Suspense fallback={<PageLoader />}>
-            <MainPage />
-         </Suspense>
+         <StartScreen />
+         <BrandsList />
+         <SolutionsScreen />
+         <CasesScreen />
+         <ActivityScreen />
+         <ServicesScreen />
+         <PlatformScreen />
       </>
    );
 }

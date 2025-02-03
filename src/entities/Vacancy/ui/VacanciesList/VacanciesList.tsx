@@ -7,6 +7,7 @@ import { AppLink } from "@shared/ui/AppLink";
 import cls from "./VacanciesList.module.scss";
 import { IVacancy } from "../../model/types/vacancyTypes";
 import {AppImage} from "@shared/ui/AppImage";
+import Image from "next/image";
 
 export const VacanciesList = React.memo(() => {
    const [vacancies, setVacancies] = useState<IVacancy[]>([]);
@@ -40,7 +41,7 @@ export const VacanciesList = React.memo(() => {
                   className={cls.vacancies__item}
                   isUnderline={false}
                >
-                  <AppImage src={vacancy.img} className={cls.vacancy_img} />
+                  <Image src={vacancy.img} alt="" width={150} height={150} />
                   <Typography variant="span">
                      {vacancy.name}
                   </Typography>
