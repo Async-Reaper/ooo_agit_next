@@ -3,7 +3,7 @@ import {Typography} from "@shared/ui";
 import cls from "./SolutionsScreen.module.scss";
 
 export const SolutionsScreen = React.memo(() => {
-   const solutions = useMemo(() => [
+   const solutions = [
       {
          id: 1,
          text: "Автоматизация бизнес-процессов компаний путем внедрения современных IT решений.",
@@ -12,7 +12,7 @@ export const SolutionsScreen = React.memo(() => {
          id: 2,
          text: "Разработка программного обеспечения под задачи заказчика, в том числе отраслевые.",
       },
-   ], []);
+   ];
 
    // const { ref, isVisible } = useViewBox(0.4);
    //

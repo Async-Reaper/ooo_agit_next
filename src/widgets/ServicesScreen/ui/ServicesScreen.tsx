@@ -5,7 +5,7 @@ import {AppImage} from "@shared/ui/AppImage";
 import cls from "./ServicesScreen.module.scss";
 
 export const ServicesScreen = React.memo(() => {
-   const services = useMemo(() => [
+   const services = [
       {
          id: 1,
          serviceName: "Комплексная автоматизация бизнеса",
@@ -30,7 +30,7 @@ export const ServicesScreen = React.memo(() => {
          serviceInfo: "Проведение детального анализа существующих процессов с целью выявления узких мест и возможностей для улучшения.",
          link: "https://vk.com/market/product/analiz-i-optimizatsia-biznes-protsessov-183182511-10352203",
       },
-   ], []);
+   ];
 
    // const { ref, isVisible } = useViewBox(0.2);
    //

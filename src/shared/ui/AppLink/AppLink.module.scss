@@ -7,13 +7,13 @@
   width: max-content;
   font-weight: 400;
   font-family: var(--font-primary);
-  transition: all .3s;
+  transition: ease-in-out .3s;
   display: flex;
   align-items: center;
 
 
   &.variant {
-    transition: all .3s;
+    transition: ease-in-out .3s;
 
     &--primary {
       color: var(--color-secondary);
@@ -27,7 +27,7 @@
           bottom: -3px;
           height: 2px;
           background: var(--color-secondary);
-          transition: all .3s;
+          transition: ease-in-out .3s;
         }
 
         &:hover {
@@ -52,7 +52,7 @@
           bottom: -3px;
           height: 2px;
           background: var(--color-white-secondary);
-          transition: all .3s;
+          transition: ease-in-out .3s;
         }
 
         &:hover {

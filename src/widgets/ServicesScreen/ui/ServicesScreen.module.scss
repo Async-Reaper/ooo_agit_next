@@ -42,7 +42,7 @@
                     align-items: start;
                     gap: 20px;
                     padding-block: 25px;
-                    transition: all .3s;
+                    transition: ease-in-out .3s;
 
                     @include mixin.adaptive("padding-inline", 30, 20);
 

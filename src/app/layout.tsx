@@ -1,8 +1,9 @@
-import React from "react";
+import React, {Suspense} from "react";
 import "@shared/styles/index.scss";
 import {Header} from "@widgets/Header";
 import {Footer} from "@widgets/Footer";
 import {RunStroke} from "@widgets/NewsScreen";
+import {ConsultationFlag} from "@features/Consultation";
 
 interface RootLayoutProps {
    children: React.ReactNode;
@@ -18,13 +19,13 @@ const RootLayout = (props: RootLayoutProps) => {
             <meta name="viewport" content="width=device-width, initial-scale=0" />
          </head>
          <body>
-            {/*<Suspense fallback={<h1>Loading...</h1>}>*/}
-            <RunStroke />
-            <Header/>
-            {children}
-            <Footer/>
-            {/*<ConsultationFlag />*/}
-            {/*</Suspense>*/}
+            <Suspense fallback={<h1>Loading...</h1>}>
+               <RunStroke />
+               <Header/>
+               {children}
+               <Footer/>
+               <ConsultationFlag />
+            </Suspense>
          </body>
       </html>
    );

@@ -4,7 +4,7 @@ import {Typography} from "@shared/ui";
 import cls from "./ActivityScreen.module.scss";
 
 export const ActivityScreen = React.memo(() => {
-   const activities = useMemo(() => [
+   const activities = [
       {
          id: 1,
          text: "Горнодобывающая промышленность, металлургия.",
@@ -29,7 +29,7 @@ export const ActivityScreen = React.memo(() => {
          id: 6,
          text: "Учёт предоставления различных услуг и работы с клиентами (CRM).",
       },
-   ], []);
+   ];
    //
    // const { ref, isVisible } = useViewBox(0.4);
 

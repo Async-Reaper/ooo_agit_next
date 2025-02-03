@@ -4,35 +4,33 @@ import cls from "./BrandsList.module.scss";
 import Image from "next/image";
 
 export const BrandsList = React.memo(() => {
-   const brandsList = useMemo(() =>
-      [
-         {
-            id: 1,
-            src: "/la-roshe.webp",
-            alt: "Alt name",
-         },
-         {
-            id: 2,
-            src: "/aliexpress.webp",
-            alt: "Alt name",
-         },
-         {
-            id: 3,
-            src: "/la-roshe.webp",
-            alt: "Alt name",
-         },
-         {
-            id: 4,
-            src: "/papa-johns.webp",
-            alt: "Alt name",
-         },
-         {
-            id: 5,
-            src: "/aliexpress.webp",
-            alt: "Alt name",
-         },
-      ], []
-   );
+   const brandsList = [
+      {
+         id: 1,
+         src: "/la-roshe.webp",
+         alt: "Alt name",
+      },
+      {
+         id: 2,
+         src: "/aliexpress.webp",
+         alt: "Alt name",
+      },
+      {
+         id: 3,
+         src: "/la-roshe.webp",
+         alt: "Alt name",
+      },
+      {
+         id: 4,
+         src: "/papa-johns.webp",
+         alt: "Alt name",
+      },
+      {
+         id: 5,
+         src: "/aliexpress.webp",
+         alt: "Alt name",
+      },
+   ];
 
    // const { ref, isVisible } = useViewBox(0.6);
    //

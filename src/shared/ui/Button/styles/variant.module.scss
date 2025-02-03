@@ -1,7 +1,7 @@
 .variant{
     &--contained {
         background-color: var(--color-primary);
-        transition: all .3s;
+        transition: ease-in-out .3s;
         color: var(--color-white-primary);
 
         &:hover {
@@ -13,7 +13,7 @@
         background-color: transparent;
         border: 1px solid var(--color-primary);
         color: var(--color-primary);
-        transition: all .3s;
+        transition: ease-in-out .3s;
 
         &:hover {
             border: 1px solid transparent;
