@@ -1,21 +1,38 @@
-FROM node:18.0.0-alpine AS build
+FROM node:18 AS builder
 
+# Устанавливаем рабочую директорию
 WORKDIR /app
 
-COPY package.json package-lock.json /app/
+# Копируем package.json и package-lock.json для установки зависимостей
+COPY package*.json ./
 
+# Устанавливаем зависимости
 RUN npm install
 
-COPY ./ /app/
+# Копируем все файлы приложения в контейнер
+COPY . .
 
+# Собираем проект
 RUN npm run build
 
-FROM nginx:alpine
+# Указываем базовый образ для продакшн-окружения
+FROM node:18 AS runner
 
-RUN rm -rf /usr/share/nginx/html/*
+# Устанавливаем рабочую директорию
+WORKDIR /app
 
-COPY --from=build /app/.next /usr/share/nginx/html
+# Копируем необходимые файлы из стадии сборки
+COPY --from=builder /app/next.config.js ./
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/package*.json ./
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/node_modules ./node_modules
 
-COPY nginx/nginx.conf /etc/nginx/nginx.conf
+# Указываем переменную окружения для Next.js
+ENV NODE_ENV production
 
-ENTRYPOINT ["nginx", "-g", "daemon off;"]
+# Открываем порт, на котором будет работать приложение
+EXPOSE 3000
+
+# Запускаем приложение
+CMD ["npm", "start"]
