@@ -4,11 +4,11 @@ WORKDIR /app
 
 COPY package.json package-lock.json /app/
 
-RUN yarn install
+RUN npm install
 
 COPY ./ /app/
 
-RUN yarn build
+RUN npm run build
 
 FROM nginx:alpine
 
