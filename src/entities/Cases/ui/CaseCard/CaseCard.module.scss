@@ -1,0 +1,82 @@
+@use "@shared/styles/mixins" as mixin;
+
+.case_card__wrapper {
+  position: relative;
+  border-radius: 5px;
+  padding: 25px;
+  min-height: 300px;
+  height: 100%;
+  width: 100%;
+  @include mixin.flex-column;
+
+  @include mixin.tablets {
+    @include mixin.flex-row;
+    justify-content: space-between;
+    background: black;
+  }
+
+  .case_type {
+    width: max-content;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 0;
+  }
+
+  &.primary {
+    background: linear-gradient(90deg, rgba(211,96,183,1) 0%, rgba(219,154,203,1) 100%);
+    color: var(--color-white-primary);
+
+    .case_type {
+      background: #c841a7;
+    }
+  }
+
+  &.secondary {
+    background: linear-gradient(90deg, rgba(0,147,218,1) 0%, rgba(170,234,238,1) 100%);
+    color: var(--color-white-primary);
+
+    .case_type {
+      background: #2478f7;
+    }
+  }
+
+  &.classic {
+    background: linear-gradient(90deg, rgba(218,161,0,1) 0%, rgba(226,238,170,1) 100%);
+    color: var(--color-white-primary);
+
+    .case_type {
+      background: #ffbd0e;
+    }
+  }
+
+  .case__text {
+    @include mixin.flex-column;
+    gap: 15px;
+    height: 100%;
+  }
+
+  .case__title {
+    max-width: 350px;
+  }
+
+  .case_result__wrapper {
+    @include mixin.flex-column;
+    margin-top: auto;
+    gap: 5px;
+    width: max-content;
+  }
+
+  .result__text {
+    border-radius: 3px;
+    max-width: 500px;
+  }
+
+  .case__img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 30px;
+    max-height: 300px;
+    height: 100%;
+  }
+}

@@ -12,7 +12,7 @@ const Component = () => {
       <>
          <div className={cls.circular__wrapper} onClick={open}>
             <div className={cls.circular__main}>
-               <Icon name="consultation" size={55} />
+               <Icon name="consultation" size={40} />
             </div>
             <div className={cls.circular__beating}/>
          </div>
