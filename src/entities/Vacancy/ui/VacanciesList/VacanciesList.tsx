@@ -36,7 +36,6 @@ export const VacanciesList = React.memo(() => {
                <AppLink
                   key={vacancy.id}
                   href={`/vacancy/${vacancy.id}`}
-                  variant="secondary"
                   className={cls.vacancies__item}
                   isUnderline={false}
                >

@@ -2,6 +2,11 @@ module.exports = {
    eslint: {
       ignoreDuringBuilds: true,
    },
+
+   images: {
+      domains: ["img.icons8.com", "img.freepik.com"],
+   },
+
    webpack(config) {
       const fileLoaderRule = config.module.rules.find((rule) =>
          rule.test?.test?.('.svg'),

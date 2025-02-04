@@ -37,6 +37,7 @@
             @include mixin.flex-row;
 
             gap: 10px;
+            color: var(--color-white-primary);
 
             .dot {
                 flex-shrink: 0;

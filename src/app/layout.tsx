@@ -5,6 +5,7 @@ import {RunStroke} from "@widgets/NewsScreen";
 import {Header} from "@widgets/Header";
 import {Footer} from "@widgets/Footer";
 import cls from "./layout.module.scss";
+import {PageLoader} from "@shared/ui";
 
 interface RootLayoutProps {
    children: React.ReactNode;
@@ -20,7 +21,7 @@ const RootLayout = (props: RootLayoutProps) => {
             <meta name="viewport" content="width=device-width, initial-scale=0" />
          </head>
          <body>
-            <Suspense fallback={<h1>Loading...</h1>}>
+            <Suspense fallback={<PageLoader />}>
                <RunStroke />
                <Header/>
                {children}

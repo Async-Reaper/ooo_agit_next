@@ -10,9 +10,9 @@ import {Icon} from "@shared/libs/icon/icon";
 import {ColoredIcon} from "@shared/libs/icon/colored-icon";
 
 export const Footer = React.memo(() => {
-   
+
    const scrollToSection = (
-      event: React.MouseEvent<HTMLAnchorElement, MouseEvent>, 
+      event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
       sectionId: string
    ) => {
       if (location.pathname === "/") {
@@ -111,9 +111,8 @@ export const Footer = React.memo(() => {
                            </Typography>
                         </AppLink>
                         <AppLink
-                           href="/#cases"
+                           href="/src/pages/зфпу"
                            className={cls.footer__link}
-                           onClick={(e) => scrollToSection(e, "cases")}
                            variant="secondary"
                         >
                            <Typography variant="span" noWrap>
@@ -153,7 +152,7 @@ export const Footer = React.memo(() => {
                         Политика конфиденциальности
                      </Typography>
                   </AppLink>
-                  <Typography variant="span">
+                  <Typography variant="span" color="secondary">
                      © 2024 654005, ООО «АГИТ-Плюс», г. Новокузнецк, пр-т Строителей, д. 19.
                      Все указанные на сайте цены носят информационный характер и не являются публичной офертой
                      (ст. 437 ГК РФ), если явно не указано иное.

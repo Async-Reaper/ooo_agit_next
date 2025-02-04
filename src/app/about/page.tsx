@@ -20,11 +20,11 @@ export const metadata: Metadata = {
 
 const Page = async () => {
    return (
-      <Suspense fallback={<PageLoader />}>
+      <>
          <VacanciesScreen />
          <InternshipScreen />
          <NewsScreen />
-      </Suspense>
+      </>
    );
 };
 

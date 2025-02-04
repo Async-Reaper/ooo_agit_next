@@ -15,7 +15,7 @@ export const Header = React.memo(() => {
    const onHandleClickBurger = useCallback(() => {
       setIsActiveBurger(!isActiveBurger);
    }, [isActiveBurger, setIsActiveBurger]);
-   
+
    return (
       <header id="header" className={cls.header}>
          <div className={cls.header__inner}>
@@ -63,17 +63,32 @@ export const Header = React.memo(() => {
                      initial={{y: -400, opacity: 0}}
                      animate={{y: 0, opacity: 1}}
                      transition={{type: "spring", duration: 0.3}}
+                     className={cls.header__link}
+                  >
+                     <AppLink
+                        href="/cases"
+                        variant="primary"
+                     >
+                        <Typography variant="span">
+                           Наши кейсы
+                        </Typography>
+                     </AppLink>
+                  </motion.div>
+                  <motion.div
+                     initial={{y: -500, opacity: 0}}
+                     animate={{y: 0, opacity: 1}}
+                     transition={{type: "spring", duration: 0.3}}
                   >
                      <SelectLinks/>
                   </motion.div>
                </div>
                <motion.div
-                  initial={{y: -500, opacity: 0}}
+                  initial={{y: -600, opacity: 0}}
                   animate={{y: 0, opacity: 1}}
                   transition={{type: "spring", duration: 0.3}}
                   className={cls.header__button}
                >
-                  <HeaderContacts />
+                  <HeaderContacts/>
                </motion.div>
             </div>
             <motion.div
