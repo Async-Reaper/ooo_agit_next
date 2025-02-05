@@ -53,6 +53,8 @@
     @include mixin.flex-column;
     gap: 15px;
     height: 100%;
+    z-index: 9;
+    //width: fit-content;
   }
 
   .case__title {
@@ -63,7 +65,7 @@
     @include mixin.flex-column;
     margin-top: auto;
     gap: 5px;
-    width: max-content;
+    //width: max-content;
   }
 
   .result__text {
@@ -72,10 +74,10 @@
   }
 
   .case__img {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 30px;
+    //position: absolute;
+    //top: 0;
+    //bottom: 0;
+    //right: 30px;
     max-height: 300px;
     height: 100%;
   }

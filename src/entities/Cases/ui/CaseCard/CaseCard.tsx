@@ -4,7 +4,6 @@ import {Typography} from "@shared/ui";
 import {classNames} from "@shared/libs/classNames/classNames";
 import {CaseTypes, ICase} from "../../model/types/casesTypes";
 import cls from "./CaseCard.module.scss";
-import Image from "next/image";
 
 interface CaseCardProps {
    caseItem: ICase;
