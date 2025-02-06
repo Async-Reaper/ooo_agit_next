@@ -13,7 +13,7 @@
     "icons:optimise": "yarn svgo -f src/shared/libs/icon/__sources --recursive",
     "icons:transpile": "yarn svgr src/shared/libs/icon/__sources -d src/shared/libs/icon/__generated --config-file src/shared/libs/icon/__svgr/configs/svgr.universal.js --typescript",
     "icons": "yarn icons:optimise && yarn icons:transpile",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "dependencies": {
     "ajv": "^8.17.1",
