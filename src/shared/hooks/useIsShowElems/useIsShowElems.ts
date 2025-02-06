@@ -2,14 +2,14 @@
 import { useCallback, useState } from "react";
 
 export const useIsShowElems = () => {
-   const [isShowBurgerMenu, setIsShowBurgerMenu] = useState<boolean>(false);
+  const [isShowBurgerMenu, setIsShowBurgerMenu] = useState<boolean>(false);
 
-   const toggleIsShowBurgerMenu = useCallback(() => {
-      setIsShowBurgerMenu(!isShowBurgerMenu);
-   }, [isShowBurgerMenu, setIsShowBurgerMenu]);
+  const toggleIsShowBurgerMenu = useCallback(() => {
+    setIsShowBurgerMenu(!isShowBurgerMenu);
+  }, [isShowBurgerMenu, setIsShowBurgerMenu]);
 
-   return {
-      isShowBurgerMenu,
-      toggleIsShowBurgerMenu,
-   };
+  return {
+    isShowBurgerMenu,
+    toggleIsShowBurgerMenu,
+  };
 };

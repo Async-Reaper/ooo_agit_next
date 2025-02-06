@@ -1,1 +1,1 @@
-export {MailingButton} from "./ui/MailingButton/MailingButton";
+export { MailingButton } from "./ui/MailingButton/MailingButton";

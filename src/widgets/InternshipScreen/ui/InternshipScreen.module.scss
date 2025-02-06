@@ -11,16 +11,18 @@
   .internship__content {
     @include mixin.flex-column;
     @include mixin.adaptive("gap", 30, 20);
+
     padding: 20px;
 
     .stage_internship__list {
       @include mixin.flex-column;
+
       gap: 10px;
 
       .stage_internship__item {
         @include mixin.flex-row;
-        gap: 10px;
 
+        gap: 10px;
         color: var(--color-white-primary);
 
         .dot {

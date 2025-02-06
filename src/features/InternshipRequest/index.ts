@@ -1,1 +1,1 @@
-export {InternshipRequestButton} from "./ui/InternshipRequestButton/InternshipRequestButton";
+export { InternshipRequestButton } from "./ui/InternshipRequestButton/InternshipRequestButton";

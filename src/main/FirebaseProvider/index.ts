@@ -1,1 +1,1 @@
-export { db, app } from "./config/firebase";
+export { app,db } from "./config/firebase";

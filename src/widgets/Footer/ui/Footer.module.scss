@@ -1,4 +1,5 @@
 @use "@shared/styles/_mixins.scss" as mixin;
+
 .footer {
     width: 100%;
     justify-self: center;
@@ -7,12 +8,11 @@
     .footer__inner {
         @include mixin.flex-column;
         @include mixin.adaptive("padding-block", 40, 20);
-
-        //padding-inline: 20px;
         @include mixin.adaptive("gap", 60, 20);
 
         .default__info {
             @include mixin.flex-column;
+
             row-gap: 20px;
             max-width: mixin.$maxContainer + px;
             width: 100%;
@@ -90,7 +90,9 @@
 
         .footer__social {
             margin: 0 auto;
+
             @include mixin.flex-column;
+
             gap: 20px;
 
             @include mixin.desktop {
@@ -100,6 +102,7 @@
 
         .other__info {
             @include mixin.flex-column;
+
             gap: 20px;
         }
     }

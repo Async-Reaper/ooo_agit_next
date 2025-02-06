@@ -1,5 +1,4 @@
 @use "@shared/styles/_mixins.scss" as mixins;
-@use './styles/colors.styles.module';
 
 .Modal {
     position: fixed;
@@ -8,15 +7,11 @@
     pointer-events: none;
     z-index: -1;
     color: var(--color-neutral);
-    //-webkit-backdrop-filter: blur(8px);
-    //backdrop-filter: blur(8px);
 }
 
 .overlay {
     width: 100%;
     height: 100%;
-    //background: radial-gradient(#276E6656 10%, #1c4e5156) ;
-    //backdrop-filter: blur(20px);
     display: flex;
     align-items: center;
     justify-content: center;

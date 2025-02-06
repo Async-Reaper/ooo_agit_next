@@ -39,7 +39,8 @@
     .activity__list {
       @include mixin.flex-wrap;
       @include mixin.adaptive("gap", 40, 20);
-      justify-content: space-between;
+
+      justify-content: center;
     }
 
     .activity__title {
@@ -48,6 +49,7 @@
 
     .activity__item {
       @include mixin.flex-column;
+
       align-items: center;
       color: var(--color-white-primary);
       position: relative;
@@ -88,22 +90,6 @@
         width: 1px;
         height: 100px;
       }
-    }
-  }
-
-  .activity__background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: max-content;
-    height: 100%;
-    z-index: 1;
-
-    img {
-      position: relative;
-      height: 100%;
-      width: max-content;
-      object-fit: contain;
     }
   }
 }

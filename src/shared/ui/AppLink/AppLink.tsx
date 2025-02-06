@@ -1,41 +1,42 @@
 "use client";
-import {HTMLAttributeAnchorTarget, memo, type ReactNode} from "react";
-import Link, {LinkProps} from "next/link";
+import { HTMLAttributeAnchorTarget, memo, type ReactNode } from "react";
+import { classNames } from "@shared/libs/classNames/classNames";
+import Link, { LinkProps } from "next/link";
+
 import cls from "./AppLink.module.scss";
-import {classNames} from "@shared/libs/classNames/classNames";
 
 export type AppLinkVariant = "primary" | "secondary";
 
 interface AppLinkProps extends LinkProps {
-   href: string;
-   className?: string;
-   target?: HTMLAttributeAnchorTarget;
-   variant?: AppLinkVariant;
-   isUnderline?: boolean;
-   children?: ReactNode;
-   activeClassName?: string;
+  href: string;
+  className?: string;
+  target?: HTMLAttributeAnchorTarget;
+  variant?: AppLinkVariant;
+  isUnderline?: boolean;
+  children?: ReactNode;
+  activeClassName?: string;
 }
 
 export const AppLink = memo((props: AppLinkProps) => {
-   const {
-      href,
-      className,
-      children,
-      variant = "primary",
-      isUnderline = true,
-      target,
-      activeClassName = "",
-      ...otherProps
-   } = props;
+  const {
+    href,
+    className,
+    children,
+    variant = "primary",
+    isUnderline = true,
+    target,
+    activeClassName = "",
+    ...otherProps
+  } = props;
 
-   return (
-      <Link
-         href={href}
-         target={target}
-         className={classNames(cls.AppLink, {[cls.underline]: isUnderline},  [cls[`variant--${variant}`], className])}
-         {...otherProps}
-      >
-         {children}
-      </Link>
-   );
+  return (
+    <Link
+      href={href}
+      target={target}
+      className={classNames(cls.AppLink, { [cls.underline]: isUnderline },  [cls[`variant--${variant}`], className])}
+      {...otherProps}
+    >
+      {children}
+    </Link>
+  );
 });

@@ -24,12 +24,7 @@
         text-align: center;
 
         @include mixin.flex-space;
-
         @include mixin.adaptive("gap", 35, 20);
-
-        //&:hover {
-        //    background: rgb(135 128 128 / 55%);
-        //}
 
         .select__arrow {
             transition: all .3s;
@@ -42,6 +37,7 @@
 
     .select__items {
         @include mixin.flex-column;
+
         gap: 10px;
         opacity: 0;
         transition: all .3s;
@@ -56,6 +52,7 @@
 
         &.active {
             @include mixin.flex-column;
+
             color: var(--color-secondary);
             padding: 10px 5px;
             opacity: 1;

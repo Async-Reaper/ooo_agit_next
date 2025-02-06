@@ -2,8 +2,10 @@
 
 .AppLink {
   position: relative;
+
   @include mixin.adaptive("font-size", 20, 14);
   @include mixin.adaptive("line-height", 19, 16);
+
   width: max-content;
   font-weight: 400;
   font-family: var(--font-primary);

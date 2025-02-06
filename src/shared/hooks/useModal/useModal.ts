@@ -2,19 +2,19 @@
 import React from "react";
 
 export const useModal = () => {
-   const [isOpen, setIsOpen] = React.useState<boolean>(false);
+  const [isOpen, setIsOpen] = React.useState<boolean>(false);
 
-   const open = React.useCallback(() => {
-      setIsOpen(true);
-   }, [setIsOpen]);
+  const open = React.useCallback(() => {
+    setIsOpen(true);
+  }, [setIsOpen]);
 
-   const close = React.useCallback(() => {
-      setIsOpen(false);
-   }, [setIsOpen]);
+  const close = React.useCallback(() => {
+    setIsOpen(false);
+  }, [setIsOpen]);
 
-   return {
-      isOpen,
-      open,
-      close,
-   };
+  return {
+    isOpen,
+    open,
+    close,
+  };
 };

@@ -16,7 +16,9 @@
     background: var(--color-white-primary);
     color: var(--color-primary);
     transition: all 0.3s;
+
     @include mixin.flex-column;
+
     gap: 10px;
 
     &:hover {

@@ -12,6 +12,7 @@
         img {
             width: 100%;
         }
+
         @include mixin.tablets {
             img {
                 width: auto;
@@ -21,11 +22,13 @@
 
     .card__content {
         @include mixin.flex-column;
+
         gap: 15px;
     }
 
     .content__point {
         @include mixin.flex-column;
+
         gap: 5px;
     }
 }

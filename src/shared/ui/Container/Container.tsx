@@ -1,16 +1,17 @@
-import React, {ReactNode} from "react";
+import React, { ReactNode } from "react";
+
 import cls from "./Container.module.scss";
 
 interface ContainerProps {
-   children: ReactNode;
+  children: ReactNode;
 }
 
-const Container = ({children}: ContainerProps) => {
-   return (
-      <div className={cls.container}>
-         {children}
-      </div>
-   );
+const Container = ({ children }: ContainerProps) => {
+  return (
+    <div className={cls.container}>
+      {children}
+    </div>
+  );
 };
 
 export default Container;

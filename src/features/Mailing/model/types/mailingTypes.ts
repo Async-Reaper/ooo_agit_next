@@ -1,4 +1,4 @@
 export interface IMailing {
-   email: string;
-   date: string;
+  email: string;
+  date: string;
 }

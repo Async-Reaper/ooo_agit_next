@@ -5,31 +5,5 @@
     align-items: center;
     gap: 15px;
     min-width: max-content;
-
-    //color: var(--color-white);
-
-    //@include mixins.adaptive('width', 120, 70);
-
-    img {
-        width: 100%;
-    }
-
-    .logo__text {
-        font-size: 35px;
-        font-weight: 800;
-        line-height: 38px;
-        text-transform: uppercase;
-        color: var(--color-white-primary);
-        text-shadow: 3px 0 var(--color-secondary);
-        text-stroke: .5px var(--color-secondary);
-        -webkit-text-stroke: 1px var(--color-secondary);
-
-        &.light {
-            color: var(--color-secondary);
-            text-shadow: 3px 0 var(--color-white-primary);
-            text-stroke: 1px var(--color-white-primary);
-            -webkit-text-stroke: .5px var(--color-white-primary);
-        }
-    }
 }
 

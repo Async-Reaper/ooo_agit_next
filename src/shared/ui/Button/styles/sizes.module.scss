@@ -11,8 +11,6 @@
     }
 
     &--l {
-        //@include mixins.adaptive("padding-block", 18, 14);
-        //@include mixins.adaptive("padding-inline", 24, 18);
         padding-block: 10px;
         padding-inline: 25px;
     }
@@ -20,23 +18,5 @@
     &--xl {
         padding-block: 15px;
         padding-inline: 30px;
-
-        //@include mixins.adaptive("padding-block", 28, 18);
-        //@include mixins.adaptive("padding-inline", 32, 18);
     }
-
-    //&--xxl {
-    //    @include mixins.adaptive("padding-block", 33, 24);
-    //    @include mixins.adaptive("padding-inline", 44, 18);
-    //}
-
-    //&--login {
-    //    @include mixins.adaptive("padding-block", 18, 14);
-    //    @include mixins.adaptive("padding-inline", 44, 24);
-    //}
-
-    //&--logout {
-    //    @include mixins.adaptive("padding-block", 18, 14);
-    //    @include mixins.adaptive("padding-inline", 24, 18);
-    //}
 }

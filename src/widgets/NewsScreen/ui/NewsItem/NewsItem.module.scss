@@ -2,6 +2,7 @@
 
 .news__item__wrapper {
   @include mixin.flex-column;
+
   border-radius: 5px;
   background: var(--color-white-secondary);
   gap: 20px;

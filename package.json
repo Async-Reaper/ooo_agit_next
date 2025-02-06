@@ -8,9 +8,12 @@
     "start": "next start",
     "lint:ts": "eslint . --ext .ts,.tsx",
     "lint:ts:fix": "eslint **/*.{ts,tsx} --fix",
+    "lint:scss": "npx stylelint \"**/*.scss\"",
+    "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
     "icons:optimise": "yarn svgo -f src/shared/libs/icon/__sources --recursive",
     "icons:transpile": "yarn svgr src/shared/libs/icon/__sources -d src/shared/libs/icon/__generated --config-file src/shared/libs/icon/__svgr/configs/svgr.universal.js --typescript",
-    "icons": "yarn icons:optimise && yarn icons:transpile"
+    "icons": "yarn icons:optimise && yarn icons:transpile",
+    "prepare": "husky install"
   },
   "dependencies": {
     "ajv": "^8.17.1",
@@ -36,8 +39,13 @@
     "eslint": "^8.0.0",
     "eslint-config-next": "^13.0.0",
     "eslint-define-config": "^2.1.0",
-    "stylelint": "^16.12.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "husky": "^9.1.7",
+    "stylelint": "^16.14.1",
     "stylelint-config-standard-scss": "^14.0.0",
+    "stylelint-scss": "^6.11.0",
     "typescript": "^5.7.2"
   }
 }

@@ -12,6 +12,7 @@
 
         .contact__item {
             @include mixin.flex-row;
+
             transition: filter 0.3s;
             gap: 15px;
 

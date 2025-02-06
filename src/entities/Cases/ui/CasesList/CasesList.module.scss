@@ -4,7 +4,9 @@
   border-top: 1px solid var(--color-gray-secondary);
   background: var(--color-white-secondary);
   padding: 0 20px;
+
   @include mixin.flex-wrap;
+
   gap: 20px;
 
   @include mixin.adaptive("padding-block", 80, 30);

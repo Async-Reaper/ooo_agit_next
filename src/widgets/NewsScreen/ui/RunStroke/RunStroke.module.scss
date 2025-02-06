@@ -5,21 +5,25 @@
   overflow: hidden;
   padding: 20px 0;
   width: 100%;
+
   @include mixin.flex-row;
+
   gap: 20px;
+
+  .news__list {
+    width: fit-content;
+
+    @include mixin.flex-row;
+
+    gap: 20px;
+    animation: run-stroke 20s linear infinite;
+    transform-style: preserve-3d;
+  }
 
   &:hover {
     .news__list {
       animation-play-state: paused;
     }
-  }
-
-  .news__list {
-    width: fit-content;
-    @include mixin.flex-row;
-    gap: 20px;
-    animation: run-stroke 20s linear infinite;
-    -webkit-transform-style: preserve-3d;
   }
 }
 
