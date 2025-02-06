@@ -2,7 +2,6 @@
 import React, { useLayoutEffect, useState } from "react";
 import { useViewBox } from "@shared/hooks";
 import { Typography } from "@shared/ui";
-import { AppImage } from "@shared/ui/AppImage";
 import { AppLink } from "@shared/ui/AppLink";
 import { animate, stagger } from "motion";
 import { motion } from "motion/react";
@@ -99,14 +98,6 @@ export const ServicesScreen = React.memo(() => {
             ))}
           </ul>
         </div>
-        <motion.div
-          initial={{ x: 100, opacity: 0 }}
-          animate={isVisible && { x: 0, opacity: 1 }}
-          transition={{ type: "spring", duration: 0.3, delay: 0.3 }}
-          className={cls.services__img}
-        >
-          <AppImage src="/reviews__bg.webp" alt="Services background" />
-        </motion.div>
       </motion.div>
     </section>
   );
