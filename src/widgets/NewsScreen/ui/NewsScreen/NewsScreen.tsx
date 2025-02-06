@@ -1,13 +1,14 @@
 "use client";
-import React, {useEffect, useState} from "react";
+import React, {useCallback, useEffect, useState} from "react";
 import {motion} from "motion/react";
 import {useViewBox} from "@shared/hooks";
-import {Button, Loader, Typography} from "@shared/ui";
+import {Button, Typography} from "@shared/ui";
 import {collection, DocumentData, getDocs, limit, query, startAfter,} from "firebase/firestore";
 import {db} from "@main/FirebaseProvider";
 import {NewsItem} from "../NewsItem/NewsItem";
 import {INews} from "../../model/types/newsType";
 import cls from "./NewsScreen.module.scss";
+import {Skeleton} from "@shared/ui/Skeleton";
 
 export const NewsScreen = React.memo(() => {
    const [news, setNews] = useState<DocumentData[]>([]);
@@ -15,7 +16,7 @@ export const NewsScreen = React.memo(() => {
    const [isLoading, setIsLoading] = useState<boolean>(false);
    const { ref, isVisible } = useViewBox(0.1);
 
-   const fetchData = async () => {
+   const fetchData = useCallback(async () => {
       setIsLoading(true);
       const itemsRef = collection(db, "news");
       let q;
@@ -46,11 +47,11 @@ export const NewsScreen = React.memo(() => {
 
       setLastVisible(documentSnapshots.docs[documentSnapshots.docs.length - 1]);
       setIsLoading(false);
-   };
+   }, [lastVisible]);
 
    useEffect(() => {
-      fetchData();
-   }, []);
+      isVisible && fetchData();
+   }, [fetchData, isVisible]);
 
    return (
       <motion.section
@@ -62,8 +63,8 @@ export const NewsScreen = React.memo(() => {
       >
          <div className={cls.news__wrapper}>
             <motion.div
-               initial={{ y: 1000, opacity: 0 }}
-               animate={isVisible && { y: 0, opacity: 1 }}
+               initial={{y: 1000, opacity: 0}}
+               animate={isVisible && {y: 0, opacity: 1}}
                transition={{
                   type: "spring", duration: 0.5, stiffness: 150, bounce: 0.5,
                }}
@@ -75,24 +76,22 @@ export const NewsScreen = React.memo(() => {
                   от нас
                </Typography>
             </motion.div>
-            {
-               isLoading
-                  ? <Loader />
-                  : (
-                     <>
-                        <ul className={cls.news__list}>
-                           {news?.map((newsItem) => (
-                              <NewsItem key={newsItem.img} newsItem={newsItem as INews} />
-                           ))}
-                        </ul>
-                        <Button variant="outlined" onClick={fetchData}>
-                           <Typography variant="span" uppercase>
-                              Еще
-                           </Typography>
-                        </Button>
-                     </>
-                  )
-            }
+            <ul className={cls.news__list}>
+               {
+                  isLoading
+                     ? new Array(2).fill("").map((_, index) => <Skeleton key={index} width={500} height={560} border={5} />)
+                     : (
+                        news?.map((newsItem) => (
+                           <NewsItem key={newsItem.img} newsItem={newsItem as INews}/>
+                        ))
+                     )
+               }
+            </ul>
+            <Button variant="outlined" onClick={fetchData}>
+               <Typography variant="span" uppercase>
+                  Еще
+               </Typography>
+            </Button>
          </div>
       </motion.section>
    );

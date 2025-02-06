@@ -90,7 +90,7 @@ export const PlatformScreen = React.memo(() => {
                   transition={{ type: "spring", duration: 0.5, delay: 0.3 }}
                   className={cls.platform__left_part__title}
                >
-                  <Typography variant="h1" uppercase>
+                  <Typography variant="h1" uppercase color="white-primary">
                      хотите
                      {" "}
                      <b>приобрести</b>

@@ -9,7 +9,7 @@ export const MailingButton = React.memo(() => {
    return (
       <>
          <Button variant="outlined" onClick={open}>
-            <Typography variant="span" color="primary">
+            <Typography variant="span">
                Подписаться на рассылку
             </Typography>
          </Button>

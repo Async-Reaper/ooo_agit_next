@@ -37,8 +37,9 @@
 
 
     .activity__list {
-      @include mixin.flex-column;
-      @include mixin.adaptive("gap", 30, 20)
+      @include mixin.flex-wrap;
+      @include mixin.adaptive("gap", 40, 20);
+      justify-content: space-between;
     }
 
     .activity__title {
@@ -46,10 +47,9 @@
     }
 
     .activity__item {
-      @include mixin.flex-row;
-
+      @include mixin.flex-column;
+      align-items: center;
       color: var(--color-white-primary);
-      gap: 10px;
       position: relative;
 
       .dot {
@@ -58,6 +58,10 @@
         height: 10px;
         border-radius: 50px;
         background: var(--color-primary);
+      }
+
+      img {
+        max-height: 300px;
       }
     }
 

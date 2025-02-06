@@ -47,9 +47,11 @@ const Component = (props: SelectProps) => {
             <Typography variant="p">
                {selectTitle}
             </Typography>
-            <div className={classNames(cls.select__arrow, { [cls.active]: isVisibleSelect })}>
-               <Icon name="arrow_bottom" color="white-primary" />
-            </div>
+            <Icon
+               name="arrow_bottom"
+               color="white-primary"
+               className={classNames(cls.select__arrow, { [cls.active]: isVisibleSelect })}
+            />
          </div>
          <div className={classNames(cls.select__items, { [cls.active]: isVisibleSelect })}>
             {

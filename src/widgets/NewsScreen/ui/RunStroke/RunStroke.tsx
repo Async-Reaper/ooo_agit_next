@@ -1,5 +1,5 @@
 "use client";
-import React, {useEffect, useState} from "react";
+import React, {useCallback, useEffect, useState} from "react";
 import {collection, getDocs, query} from "firebase/firestore";
 import {db} from "@main/FirebaseProvider";
 import {INews} from "../../model/types/newsType";
@@ -8,23 +8,20 @@ import cls from "./RunStroke.module.scss";
 import {AppLink} from "@shared/ui/AppLink";
 
 export const RunStroke = React.memo(() => {
-   const [isLoading, setIsLoading] = useState(false);
    const [news, setNews] = useState<INews[]>([]);
 
-   const fetchNewsList = async () => {
-      setIsLoading(true);
+   const fetchNewsList = useCallback(async () => {
       const responseNews = query(collection(db, "news"));
       const querySnapshot = await getDocs(responseNews);
 
       const newItems = querySnapshot.docs.map((doc) => (
          { id: doc.id, ...doc.data() } as INews));
       setNews(newItems);
-      setIsLoading(false);
-   };
+   }, []);
 
    useEffect(() => {
       fetchNewsList();
-   }, []);
+   }, [fetchNewsList]);
 
    return (
       <div className={cls.run_stroke__wrapper}>

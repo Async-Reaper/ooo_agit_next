@@ -5,49 +5,52 @@ import Container from "@shared/ui/Container/Container";
 import {InternshipRequestButton} from "@features/InternshipRequest";
 
 export const InternshipScreen = React.memo(() => {
+   const stageInternship = [
+      {
+         id: 1,
+         stageName: "Подай заявку."
+      },
+      {
+         id: 2,
+         stageName: "Получи обратную связь."
+      },
+      {
+         id: 3,
+         stageName: "Освой новую профессию."
+      },
+      {
+         id: 4,
+         stageName: "Получи офицальное трудоустройство."
+      },
+      {
+         id: 5,
+         stageName: "Зарабатывай."
+      },
+   ];
+
    return (
       <section id="internship" className={cls.internship__wrapper}>
          <Container>
             <div className={cls.internship__content}>
-               <Typography variant="h1" uppercase>
+               <Typography variant="h1" uppercase color="white-primary">
                   Запишись на нашу программу стажировки!
                </Typography>
                <Typography variant="h2" color="primary" bold uppercase>
                   Запусти свою карьеру в IT: учись, твори, вдохновляй!
                </Typography>
                <ul className={cls.stage_internship__list}>
-                  <li className={cls.stage_internship__item}>
-                     <div className={cls.dot} />
-                     <Typography variant="p">
-                        Подай заявку
-                     </Typography>
-                  </li>
-                  <li className={cls.stage_internship__item}>
-                     <div className={cls.dot} />
-                     <Typography variant="p">
-                        Получи обратную связь
-                     </Typography>
-                  </li>
-                  <li className={cls.stage_internship__item}>
-                     <div className={cls.dot} />
-                     <Typography variant="p">
-                        Освой новую профессию
-                     </Typography>
-                  </li>
-                  <li className={cls.stage_internship__item}>
-                     <div className={cls.dot} />
-                     <Typography variant="p">
-                        Получи офицальное трудоустройство
-                     </Typography>
-                  </li>
-                  <li className={cls.stage_internship__item}>
-                     <div className={cls.dot} />
-                     <Typography variant="p">
-                        Зарабатывай
-                     </Typography>
-                  </li>
+                  {
+                     stageInternship.map((internship) => (
+                        <li key={internship.id} className={cls.stage_internship__item}>
+                           <div className={cls.dot}/>
+                           <Typography variant="p">
+                              {internship.stageName}
+                           </Typography>
+                        </li>
+                     ))
+                  }
                </ul>
-               <InternshipRequestButton />
+               <InternshipRequestButton/>
             </div>
          </Container>
       </section>

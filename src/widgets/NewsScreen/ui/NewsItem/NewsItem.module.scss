@@ -3,9 +3,10 @@
 .news__item__wrapper {
   @include mixin.flex-column;
   border-radius: 5px;
-  padding: 10px;
   background: var(--color-white-secondary);
   gap: 20px;
+  max-width: 500px;
+  max-height: 560px;
 
   .news__item__img {
     max-width: 1000px;

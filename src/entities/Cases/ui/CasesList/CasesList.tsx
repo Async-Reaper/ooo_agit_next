@@ -6,6 +6,7 @@ import {Loader} from "@shared/ui";
 import {CaseCard} from "../CaseCard/CaseCard";
 import { ICase } from "../../model/types/casesTypes";
 import cls from "./CasesList.module.scss";
+import {Skeleton} from "@shared/ui/Skeleton";
 
 export const CasesList = React.memo(() => {
    const [casesList, setCases] = useState<ICase[]>([]);
@@ -28,7 +29,7 @@ export const CasesList = React.memo(() => {
    return (
       <section className={cls.cases__wrapper}>
          {isLoading
-            ? <Loader />
+            ? new Array(13).fill("").map((_, index) => <Skeleton key={index} className={cls.cases__skeleton}/>)
             : casesList.map((caseItem) => (
                <CaseCard key={caseItem.id} caseItem={caseItem} />
             ))

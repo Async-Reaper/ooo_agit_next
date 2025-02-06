@@ -8,4 +8,14 @@
   gap: 20px;
 
   @include mixin.adaptive("padding-block", 80, 30);
+
+  .cases__skeleton {
+    min-height: 300px;
+    height: calc(100% + 350px);
+    width: 100%;
+
+    @include mixin.tablets {
+      height: 100%;
+    }
+  }
 }

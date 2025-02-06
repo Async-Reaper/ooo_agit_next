@@ -1,18 +1,19 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import {Loader, Typography} from "@shared/ui";
+import React, {useCallback, useEffect, useState} from "react";
+import {Typography} from "@shared/ui";
 import { collection, getDocs, query } from "firebase/firestore";
 import { db } from "@main/FirebaseProvider";
 import { AppLink } from "@shared/ui/AppLink";
 import cls from "./VacanciesList.module.scss";
 import { IVacancy } from "../../model/types/vacancyTypes";
 import {AppImage} from "@shared/ui/AppImage";
+import {Skeleton} from "@shared/ui/Skeleton";
 
 export const VacanciesList = React.memo(() => {
    const [vacancies, setVacancies] = useState<IVacancy[]>([]);
    const [isLoading, setIsLoading] = useState(false);
 
-   const fetchVacanciesList = async () => {
+   const fetchVacanciesList = useCallback(async () => {
       setIsLoading(true);
       const responseVacancies = query(collection(db, "vacancies"));
       const querySnapshot = await getDocs(responseVacancies);
@@ -21,17 +22,17 @@ export const VacanciesList = React.memo(() => {
          { id: doc.id, ...doc.data() } as IVacancy));
       setVacancies(newItems);
       setIsLoading(false);
-   };
+   }, []);
 
    useEffect(() => {
       fetchVacanciesList();
-   }, []);
+   }, [fetchVacanciesList]);
 
 
    return (
       <div className={cls.vacancies__list__wrapper}>
          {isLoading
-            ? <Loader />
+            ? new Array(6).fill("").map((_, index) => <Skeleton key={index} width={270} height={230} border={5} />)
             : vacancies.map(vacancy =>
                <AppLink
                   key={vacancy.id}

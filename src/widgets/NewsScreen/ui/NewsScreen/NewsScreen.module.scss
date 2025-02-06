@@ -21,8 +21,8 @@
 
         .news__list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(auto, 800px));
-            justify-content: center;
+            grid-template-columns: repeat(auto-fit, minmax(auto, 500px));
+            justify-content: space-between;
             gap: 50px;
         }
     }
