@@ -75,7 +75,7 @@ export const ActivityScreen = React.memo(() => {
             <Typography variant="h1" uppercase>
               Направления
               {" "}
-              <b> автоматизации: </b>
+              <b> автоматизации</b>
             </Typography>
           </motion.div>
           <ul className={cls.activity__list}>
