@@ -1,13 +1,12 @@
 "use client";
 import React, { useCallback, useMemo, useState } from "react";
-import {
-  Button, Input, InputPhone, Loader, Select, Typography,
-} from "@shared/ui";
+import { Button, Input, InputPhone, Loader, Select, Typography, } from "@shared/ui";
 import { SelectItem } from "@shared/ui/Select/Select";
 
 import cls from "./ConsultationForm.module.scss";
 
 import { fetchSendConsultation } from "../../model/api/fetchSendConsultation";
+import { ThemeConsultationType } from "../../model/types/consultationTypes";
 
 interface ConsultationFormProps {
   close: () => void;
@@ -17,36 +16,32 @@ const Component = (props: ConsultationFormProps) => {
   const {
     close,
   } = props;
-  const [consultationSelectValue, setConsultationSelectValue] = useState("Интересующая услуга");
-  const [consultationSelectItems] = useState<SelectItem[]>([
+  const [consultationSelectValue, setConsultationSelectValue] = useState<ThemeConsultationType>(ThemeConsultationType.DEFAULT);
+  const [consultationSelectItems] = useState<SelectItem<ThemeConsultationType>[]>([
     {
       id: 1,
-      content: "Комплексная автоматизация бизнеса",
+      content: ThemeConsultationType.AUTOMATION,
     },
     {
       id: 2,
-      content: "Разработка ПО",
+      content: ThemeConsultationType.DEVELOPMENT_SOFTWARE,
     },
     {
       id: 3,
-      content: "Внедрение и сопровождение IT-систем",
+      content: ThemeConsultationType.IMPLEMENTATION_AND_SUPPORT,
     },
     {
       id: 4,
-      content: "Анализ и оптимизация бизнес-процессов",
+      content: ThemeConsultationType.ANALYSIS,
     },
     {
       id: 5,
-      content: "Другое",
+      content: ThemeConsultationType.OTHER,
     },
   ]);
   const [fullName, setFullName] = useState<string>("");
   const [phoneNumber, setPhoneNumber] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const date = new Date();
-  const [currentDateRequest] = useState(`
-   ${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}
-   `);
 
   const onHandleSendConsultation = useCallback(async () => {
     setIsLoading(true);
@@ -54,17 +49,17 @@ const Component = (props: ConsultationFormProps) => {
       full_name: fullName,
       phone_number: phoneNumber,
       theme: consultationSelectValue,
-      date: currentDateRequest,
     });
+    
     setFullName("");
     setPhoneNumber("");
-    setConsultationSelectValue("Интересующая услуга");
+    setConsultationSelectValue(ThemeConsultationType.DEFAULT);
     setIsLoading(false);
     close();
   }, [fullName, phoneNumber, consultationSelectValue]);
 
   const disabled = useMemo(
-    () => !fullName || !phoneNumber || consultationSelectValue === "Интересующая услуга",
+    () => !fullName || !phoneNumber || consultationSelectValue === ThemeConsultationType.DEFAULT,
     [fullName, phoneNumber, consultationSelectValue],
   );
 

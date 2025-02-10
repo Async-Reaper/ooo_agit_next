@@ -6,19 +6,19 @@ import { Typography } from "@shared/ui";
 
 import cls from "./Select.module.scss";
 
-export interface SelectItem {
+export interface SelectItem<T> {
   id: number;
-  content: string;
+  content: T;
 }
 
-interface SelectProps {
+interface SelectProps<T> {
   selectTitle: string
-  selectItems: SelectItem[];
+  selectItems: SelectItem<T>[];
   setSelectTitle: (value: string | any) => void;
   fullWidth?: boolean
 }
 
-const Component = (props: SelectProps) => {
+const Component = (props: SelectProps<string>) => {
   const {
     selectTitle,
     selectItems,

@@ -23,6 +23,7 @@
     .card__content {
         @include mixin.flex-column;
 
+        color: var(--color-white-primary);
         gap: 15px;
     }
 

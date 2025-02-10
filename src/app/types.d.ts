@@ -5,6 +5,8 @@ declare module "*.svg" {
   export default content;
 }
 
+declare module "nodemailer";
+
 declare module "*.svg?url" {
   const content: any;
   export default content;
