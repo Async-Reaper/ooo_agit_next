@@ -1,0 +1,96 @@
+@use "@shared/styles/mixins" as mixin;
+
+.platform {
+  border-top: 2px solid var(--color-primary);
+  position: relative;
+  @include mixin.adaptive("padding-block", 80, 30);
+
+  &:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 30%;
+    top: 50%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(151, 252, 240, 0.2);
+    z-index: -1;
+    border-radius: 100%;
+    filter: blur(175px);
+  }
+
+  .platform__run__stroke__wrapper {
+    display: none;
+
+    @include mixin.tablets {
+      display: block;
+    }
+  }
+
+  .platform__wrapper {
+    @include mixin.flex-column;
+
+    border-radius: 20px;
+    max-width: 1800px;
+    width: 100%;
+    margin: 0 auto;
+
+    @include mixin.adaptive("padding-inline", 80, 20);
+    @include mixin.adaptive("gap", 75, 20);
+
+    .platform__header__wrapper {
+      @include mixin.flex-row;
+    }
+
+    .platform__header__content {
+      @include mixin.flex-column;
+      flex-shrink: 0;
+      @include mixin.adaptive("padding-block", 60, 30);
+      @include mixin.adaptive("padding-inline", 100, 50);
+
+      position: relative;
+      background-image: url("/platform-bg.png");
+      background-size: cover;
+      border-radius: 10px;
+      gap: 10px;
+      max-width: max-content;
+
+      b {
+        color: var(--color-primary);
+      }
+    }
+
+    .platform__content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 382px));
+
+      @include mixin.adaptive("gap", 25, 10);
+
+      .platform__content__desc {
+        @include mixin.flex-column;
+        @include mixin.adaptive("gap", 10, 5);
+
+        position: relative;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all .5s;
+        padding: 25px;
+        background: var(--color-black-secondary);
+        border: 2px solid var(--color-white-primary);
+
+        &:before {
+          position: absolute;
+          content: "";
+          width: 28px;
+          height: 24px;
+          top: -10px;
+          left: -10px;
+          border-radius: 5px;
+          background: linear-gradient(45deg, rgba(108,207,207,1) 0%, rgba(49,253,224,1) 50%, rgba(108,207,207,1) 100%);
+          opacity: 80%;
+        }
+      }
+    }
+  }
+}

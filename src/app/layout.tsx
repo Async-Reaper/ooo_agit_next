@@ -3,10 +3,8 @@ import { ConsultationFlag } from "@features/Consultation";
 import { PageLoader } from "@shared/ui";
 import { Footer } from "@widgets/Footer";
 import { Header } from "@widgets/Header";
-import { RunStroke } from "@widgets/NewsScreen";
 
 import "@shared/styles/index.scss";
-import cls from "./layout.module.scss";
 
 interface RootLayoutProps {
   children: React.ReactNode;
@@ -23,7 +21,6 @@ const RootLayout = (props: RootLayoutProps) => {
       </head>
       <body>
         <Suspense fallback={<PageLoader />}>
-          <RunStroke />
           <Header/>
           {children}
           <Footer/>

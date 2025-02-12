@@ -2,14 +2,26 @@
 
 .activity {
   position: relative;
-  border-top: 1px solid var(--color-gray-secondary);
-  background: var(--color-white-secondary);
+  border-top: 2px solid var(--color-primary);
   padding: 0 20px;
 
   @include mixin.adaptive("padding-block", 100, 30);
 
   b {
     color: var(--color-primary);
+  }
+
+  &:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 60%;
+    height: 60%;
+    background: linear-gradient(45deg, rgba(108,227,213,1) 35%, rgba(185,243,187,1) 65%);
+    filter: blur(500px);
+    z-index: -1;
   }
 
   .activity__wrapper {
@@ -20,8 +32,8 @@
 
     gap: 20px;
     border-radius: 20px;
-    background: var(--color-secondary);
-    box-shadow: 0 0 30px var(--color-secondary);
+    background: var(--color-black-primary);
+    box-shadow: 0 4px 10px #00000025;
     max-width: 1800px;
     width: 100%;
     margin: 0 auto;
@@ -37,35 +49,33 @@
 
 
     .activity__list {
-      @include mixin.flex-wrap;
+      @include mixin.flex-column;
       @include mixin.adaptive("gap", 40, 20);
 
-      justify-content: center;
+      .activity__item {
+        @include mixin.flex-row;
+        gap: 23px;
+        position: relative;
+
+        .check_mark {
+          font-size: 45px;
+          line-height: 45px;
+          color: var(--color-primary);
+          text-shadow: 0 5px 4px #53DFCF22;
+        }
+
+        .activity__text {
+          padding: 20px;
+          border: 1px dotted var(--color-primary);
+          border-radius: 20px 0 20px 0;
+          color: var(--color-white-primary);
+          background: linear-gradient(90deg, rgba(80,80,80,1) 80%, rgba(172,165,165,0.2) 100%);
+        }
+      }
     }
 
     .activity__title {
       color: var(--color-white-primary);
-    }
-
-    .activity__item {
-      @include mixin.flex-column;
-
-      align-items: center;
-      color: var(--color-white-primary);
-      position: relative;
-
-      .dot {
-        flex-shrink: 0;
-        width: 10px;
-        height: 10px;
-        border-radius: 50px;
-        background: var(--color-primary);
-      }
-
-      img {
-        width: 100%;
-        max-height: 300px;
-      }
     }
 
     .activity__footer {
@@ -78,6 +88,12 @@
 
       .activity__desc {
         color: var(--color-white-primary);
+
+        &:nth-child(2) {
+          padding: 20px;
+          border: 1px solid var(--color-white-primary);
+          border-radius: 20px 0 20px 0;
+        }
       }
     }
 

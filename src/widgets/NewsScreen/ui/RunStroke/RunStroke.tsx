@@ -31,8 +31,8 @@ export const RunStroke = React.memo(() => {
         {
           news.map(newItem =>
             <li className={cls.news__item} key={newItem.id}>
-              <AppLink href="/about#news" variant="secondary">
-                <Typography variant="span" color="white-primary" noWrap>
+              <AppLink href="/about#news" variant="primary">
+                <Typography variant="span" noWrap>
                   {newItem.title}
                 </Typography>
               </AppLink>
@@ -44,8 +44,8 @@ export const RunStroke = React.memo(() => {
         {
           news.map(newItem =>
             <li className={cls.news__item} key={newItem.id}>
-              <AppLink href="/about#news" variant="secondary">
-                <Typography variant="span" color="white-primary" noWrap>
+              <AppLink href="/about#news" variant="primary">
+                <Typography variant="span" noWrap>
                   {newItem.title}
                 </Typography>
               </AppLink>

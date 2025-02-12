@@ -36,6 +36,7 @@ export const Footer = React.memo(() => {
             </div>
             <div className={cls.footer__links}>
               <div className={cls.footer__link__wrapper}>
+                <hr/>
                 <AppLink
                   href="/#start"
                   className={cls.footer__link}
@@ -58,6 +59,7 @@ export const Footer = React.memo(() => {
                 </AppLink>
               </div>
               <div className={cls.footer__link__wrapper}>
+                <hr/>
                 <AppLink
                   href="/#solutions"
                   className={cls.footer__link}
@@ -80,6 +82,7 @@ export const Footer = React.memo(() => {
                 </AppLink>
               </div>
               <div className={cls.footer__link__wrapper}>
+                <hr/>
                 <AppLink
                   href="/#services"
                   className={cls.footer__link}
@@ -102,6 +105,7 @@ export const Footer = React.memo(() => {
                 </AppLink>
               </div>
               <div className={cls.footer__link__wrapper}>
+                <hr/>
                 <AppLink
                   href="/about#vacancies"
                   className={cls.footer__link}
@@ -147,19 +151,19 @@ export const Footer = React.memo(() => {
               <MailingButton/>
             </div>
           </div>
-          <div className={cls.other__info}>
-            <AppLink href="/privacy" target="_blank" variant="secondary">
-              <Typography variant="span" noWrap>
-                Политика конфиденциальности
-              </Typography>
-            </AppLink>
-            <Typography variant="span" color="white-primary">
-              © 2024 654005, ООО «АГИТ-Плюс», г. Новокузнецк, пр-т Строителей, д. 19.
-              Все указанные на сайте цены носят информационный характер и не являются публичной офертой
-              (ст. 437 ГК РФ), если явно не указано иное.
-            </Typography>
-          </div>
         </div>
+      </Container>
+      <Container className={cls.other__info}>
+        <AppLink href="/privacy" target="_blank" variant="secondary">
+          <Typography variant="span" noWrap>
+            Политика конфиденциальности
+          </Typography>
+        </AppLink>
+        <Typography variant="span" color="white-primary">
+          © 2024 654005, ООО «АГИТ-Плюс», г. Новокузнецк, пр-т Строителей, д. 19.
+          Все указанные на сайте цены носят информационный характер и не являются публичной офертой
+          (ст. 437 ГК РФ), если явно не указано иное.
+        </Typography>
       </Container>
     </footer>
   );

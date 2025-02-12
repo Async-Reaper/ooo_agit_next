@@ -46,7 +46,7 @@ export const SolutionsScreen = React.memo(() => {
           className={cls.solutions__title}
           ref={ref}
         >
-          <Typography color="white-primary" variant="h1" uppercase>
+          <Typography color="white-primary" variant="h1" align="center" uppercase>
             Чем мы
             {" "}
             <b> Занимаемся? </b>
@@ -59,7 +59,6 @@ export const SolutionsScreen = React.memo(() => {
                 key={solution.id}
                 className={cls.solution__item}
               >
-                <div className={cls.dot} />
                 <Typography variant="p">
                   {solution.text}
                 </Typography>

@@ -18,7 +18,7 @@ export const StartScreen = React.memo(() => (
             transition={{ type: "spring" }}
             className={cls.start__content__title}
           >
-            <Typography variant="h1" uppercase color="black">
+            <Typography variant="h1" uppercase>
               <b>Мы - эксперты</b>
               {" "}
               в области Автоматизации бизнеса
@@ -30,7 +30,7 @@ export const StartScreen = React.memo(() => (
             transition={{ type: "spring", duration: 1 }}
             className={cls.start__content__desc}
           >
-            <Typography variant="p" color="black">
+            <Typography variant="p">
               Наши эксперты готовы разработать стратегии, которые приведут к результатам в вашем
               бизнесе уже сегодня.
               Закажите бесплатную консультацию и начините достигать целей уже сегодня!
@@ -46,13 +46,5 @@ export const StartScreen = React.memo(() => (
         </motion.div>
       </div>
     </div>
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ type: "spring", duration: 2 }}
-      className={cls.start__background}
-    >
-      <AppImage src="/wave.webp" alt="bg" />
-    </motion.div>
   </section>
 ));

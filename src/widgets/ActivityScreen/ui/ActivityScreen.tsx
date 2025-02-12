@@ -81,10 +81,14 @@ export const ActivityScreen = React.memo(() => {
           <ul className={cls.activity__list}>
             {activities.map((activity) => (
               <li key={activity.id} className={cls.activity__item}>
-                <img src={activity.img} alt=""/>
-                <Typography variant="p">
-                  {activity.text}
-                </Typography>
+                <div className={cls.check_mark}>
+                  ✔
+                </div>
+                <div className={cls.activity__text}>
+                  <Typography variant="p">
+                    {activity.text}
+                  </Typography>
+                </div>
               </li>
             ))}
           </ul>
@@ -108,7 +112,6 @@ export const ActivityScreen = React.memo(() => {
               высокого уровня обслуживания!
             </Typography>
           </motion.div>
-          <hr />
           <motion.div
             initial={{ y: 1000 }}
             animate={isVisible && { y: 0 }}

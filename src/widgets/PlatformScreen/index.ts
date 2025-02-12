@@ -1,1 +1,1 @@
-export { PlatformScreen } from "./ui/PlatformScreen";
+export { PlatformScreen } from "./ui/PlatformScreen/PlatformScreen";

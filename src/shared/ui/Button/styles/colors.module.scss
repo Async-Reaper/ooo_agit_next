@@ -24,7 +24,7 @@
     }
 
     &--black {
-        color: var(--color-black);
+        color: var(--color-black-primary);
     }
 
     &--red-primary {
@@ -85,9 +85,9 @@
     &--white-bg {
         background: var(--color-white-bg);
     }
-    
+
     &--black {
-        background: var(--color-black);
+        background: var(--color-black-primary);
     }
 
     &--red-primary {
@@ -109,7 +109,7 @@
     &--beige {
         background: var(--color-beige);
     }
-    
+
     &--brown {
         background: var(--color-brown);
     }

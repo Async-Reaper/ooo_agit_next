@@ -14,7 +14,7 @@ const Component = () => {
     <>
       <div className={cls.circular__wrapper} onClick={open}>
         <div className={cls.circular__main}>
-          <Icon name="consultation" size={40} />
+          <Icon name="consultation" size={40} color="black-primary" />
         </div>
         <div className={cls.circular__beating}/>
       </div>

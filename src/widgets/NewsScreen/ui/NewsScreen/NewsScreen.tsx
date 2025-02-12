@@ -72,7 +72,7 @@ export const NewsScreen = React.memo(() => {
           }}
           className={cls.news__title__wrapper}
         >
-          <Typography variant="h1" color="secondary" uppercase>
+          <Typography variant="h1" uppercase>
             <b>Новости</b>
             {" "}
             от нас

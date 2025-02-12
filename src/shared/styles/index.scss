@@ -24,15 +24,16 @@
     --border-radius-over: 100px;
 
     /* COLORS */
-    --color-primary: #276E66;
+    --color-primary: #61C7BB;
     --color-primary-hover: #1c5c56;
-    --color-secondary: #212121;
-    --color-black: #000;
+    --color-secondary: #464646;
+    --color-black-primary: #353434;
+    --color-black-secondary: #403D3D;
     --color-gray-primary: #C2C2C2;
     --color-gray-secondary: #D1D1D1;
     --color-white-primary: #fff;
     --color-white-secondary: #FAFAFA;
-    --color-gray-dark: #B6B6B6;
+    --color-gray-dark: #616161;
 
     /* SIZES */
     --header-heigth: 187px;
@@ -54,8 +55,8 @@
 body {
     font-family: var(--font-primary);
     font-size: var(--font-size-h3-min);
-    color: var(--color-secondary);
-    background-color: var(--color-white-primary);
+    color: var(--color-white-primary);
+    background-color: var(--color-secondary);
     position: relative;
     min-height: 100vh;
     overflow-x: hidden;

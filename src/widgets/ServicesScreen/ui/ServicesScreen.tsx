@@ -1,6 +1,7 @@
 "use client";
 import React, { useLayoutEffect, useState } from "react";
 import { useViewBox } from "@shared/hooks";
+import { Icon, IconName } from "@shared/libs/icon/icon";
 import { Typography } from "@shared/ui";
 import { AppLink } from "@shared/ui/AppLink";
 import { animate, stagger } from "motion";
@@ -8,28 +9,40 @@ import { motion } from "motion/react";
 
 import cls from "./ServicesScreen.module.scss";
 
+interface IService {
+  id: number;
+  iconName: IconName;
+  serviceName: string;
+  serviceInfo: string;
+  link: string;
+}
+
 export const ServicesScreen = React.memo(() => {
-  const [services] = useState([
+  const [services] = useState<IService[]>([
     {
       id: 1,
+      iconName: "gears",
       serviceName: "Комплексная автоматизация бизнеса",
       serviceInfo: "Внедрение автоматизированных систем управления, которые охватывают все аспекты бизнеса, включая финансы, склад, продажи, производство и другие.",
       link: "https://vk.com/market/product/komplexnaya-avtomatizatsia-biznesa-183182511-10352233",
     },
     {
       id: 2,
+      iconName: "gear_web",
       serviceName: "Разработка ПО",
       serviceInfo: "Индивидуальная разработка программных решений под специфические потребности бизнеса.",
       link: "https://vk.com/market/product/razrabotka-po-183182511-10352215",
     },
     {
       id: 3,
+      iconName: "gear_laptop",
       serviceName: "Внедрение и сопровождение IT-систем",
       serviceInfo: "Полный цикл внедрения и последующей поддержки информационных систем, включая обновления и техническое обслуживание.",
       link: "https://vk.com/market/product/vnedrenie-i-soprovozhdenie-it-sistem-183182511-10352208",
     },
     {
       id: 4,
+      iconName: "gear_processes",
       serviceName: "Анализ и оптимизация бизнес-процессов",
       serviceInfo: "Проведение детального анализа существующих процессов с целью выявления узких мест и возможностей для улучшения.",
       link: "https://vk.com/market/product/analiz-i-optimizatsia-biznes-protsessov-183182511-10352203",
@@ -66,7 +79,7 @@ export const ServicesScreen = React.memo(() => {
             transition={{ type: "spring", duration: 0.3, delay: 0.3 }}
             className={cls.services__title}
           >
-            <Typography color="secondary" variant="h1" uppercase>
+            <Typography variant="h1" uppercase>
               <b>услуги</b>
               {" "}
               нашей компании
@@ -75,25 +88,25 @@ export const ServicesScreen = React.memo(() => {
           <ul className={cls.services__list}>
             {services.map((service) => (
               <li className={cls.services__item} key={service.id}>
-                <div className={cls.review__content}>
-                  <div className={cls.services__name}>
-                    <Typography color="secondary" variant="p" bold>
-                      {service.serviceName}
-                    </Typography>
-                  </div>
-                  <div className={cls.service__info}>
-                    <Typography color="primary" variant="p">
-                      {service.serviceInfo}
-                    </Typography>
-                  </div>
-                  <div className={cls.service__link__wrapper}>
-                    <AppLink href={service.link}>
-                      <Typography color="secondary" variant="p">
-                        Подробнее
-                      </Typography>
-                    </AppLink>
-                  </div>
+                <div className={cls.service__icon__wrapper}>
+                  <Icon name={service.iconName} size={100} color="primary" className={cls.service__icon}/>
                 </div>
+                <div className={cls.services__name}>
+                  <Typography variant="p" color="primary" align="center">
+                    {service.serviceName}
+                  </Typography>
+                </div>
+                <div className={cls.service__info}>
+                  <Typography variant="p" align="center">
+                    {service.serviceInfo}
+                  </Typography>
+                </div>
+                <AppLink href={service.link} variant="secondary" isUnderline={false} className={cls.service__link}>
+                  <Icon name="arrow_bottom" size={23} color="primary" className={cls.icon__link} />
+                  <Typography variant="p">
+                    Подробнее
+                  </Typography>
+                </AppLink>
               </li>
             ))}
           </ul>

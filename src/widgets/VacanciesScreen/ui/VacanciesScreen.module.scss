@@ -1,8 +1,7 @@
 @use "@shared/styles/_mixins.scss" as mixin;
 
 .vacancies__screen {
-    border-top: 1px solid var(--color-gray-secondary);
-    background: var(--color-white-secondary);
+    border-top: 2px solid var(--color-primary);
 
     b {
         color: var(--color-primary);

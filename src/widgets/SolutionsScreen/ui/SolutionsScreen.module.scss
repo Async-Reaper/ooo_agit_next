@@ -1,55 +1,96 @@
 @use "@shared/styles/_mixins.scss" as mixin;
 
 .solutions {
-    border-top: 1px solid var(--color-gray-secondary);
-    background: var(--color-white-secondary);
-    padding: 0 20px;
+  border-top: 2px solid var(--color-primary);
+  padding: 0 20px;
+  position: relative;
 
-    @include mixin.adaptive("padding-block", 80, 30);
+  &:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    background: linear-gradient(10deg, #6CE3D5 35%, #B9F3BB 65%);
+    filter: blur(150px);
+    height: 46%;
+    width: 5%;
+  }
 
-    .solutions__wrapper {
-        @include mixin.flex-column;
+  @include mixin.adaptive("padding-block", 80, 30);
 
-        gap: 20px;
-        border-radius: 20px;
-        background: var(--color-secondary);
-        box-shadow: 0 0 30px var(--color-secondary);
-        max-width: 1800px;
-        width: 100%;
-        margin: 0 auto;
+  .solutions__wrapper {
+    @include mixin.flex-column;
+    @include mixin.adaptive("gap", 50, 20);
+    align-items: center;
+    border-radius: 20px;
+    max-width: 1800px;
+    width: 100%;
+    margin: 0 auto;
 
-        @include mixin.adaptive("padding-block", 100, 20);
-        @include mixin.adaptive("padding-inline", 80, 20);
+    @include mixin.adaptive("padding-block", 100, 20);
+    @include mixin.adaptive("padding-inline", 80, 20);
+    @include mixin.adaptive("gap", 50, 20);
 
-        @include mixin.tablets {
-            @include mixin.flex-space;
+    @include mixin.tablets {
+      @include mixin.flex-column;
 
-            flex-direction: row;
-        }
-
-        .solutions__list {
-            @include mixin.flex-column;
-
-            gap: 25px;
-        }
-
-        .solution__item {
-            @include mixin.flex-row;
-
-            gap: 10px;
-            color: var(--color-white-primary);
-
-            .dot {
-                flex-shrink: 0;
-                width: 10px;
-                height: 10px;
-                border-radius: 50px;
-                background: var(--color-primary);
-            }
-        }
-
-        b {
-            color: var(--color-primary);
-        }
+      flex-direction: row;
     }
+
+    .solutions__title {
+      @include mixin.adaptive("width", 500, 280);
+      @include mixin.adaptive("height", 500, 280);
+      @include mixin.adaptive("padding-block", 100, 30);
+      @include mixin.flex-center;
+      align-items: center;
+      flex-shrink: 0;
+      border-radius: 50%;
+      box-shadow: 0 0 100px #75F1E370;
+      background: linear-gradient(140deg, #414444 35%, #396964 65%);
+      position: relative;
+      z-index: 9;
+
+      &:after {
+        position: absolute;
+        content: "";
+        background-image: url("/galaxy-bg.png");
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        top: -136px;
+        left: -36px;
+        opacity: 0.4;
+      }
+    }
+
+    .solutions__list {
+      @include mixin.flex-column;
+      @include mixin.adaptive("gap", 150, 20);
+    }
+
+    .solution__item {
+      @include mixin.flex-row;
+      position: relative;
+      gap: 10px;
+      max-width: 450px;
+      color: var(--color-white-primary);
+
+      @include mixin.tablets {
+        &:before {
+          position: absolute;
+          content: "";
+          top: -16px;
+          left: -130px;
+          width: 662px;
+          height: 109px;
+          background-image: url('/line.svg');
+          background-size: cover;
+        }
+      }
+    }
+
+    b {
+      color: var(--color-primary);
+    }
+  }
 }
