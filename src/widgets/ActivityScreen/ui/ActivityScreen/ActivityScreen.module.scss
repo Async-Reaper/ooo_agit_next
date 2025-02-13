@@ -1,4 +1,4 @@
-@use "@shared/styles/_mixins.scss" as mixin;
+@use "@shared/styles/mixins" as mixin;
 
 .activity {
   position: relative;
@@ -47,6 +47,9 @@
       @include mixin.flex-column;
     }
 
+    .activity__content {
+      @include mixin.flex-space;
+    }
 
     .activity__list {
       @include mixin.flex-column;
@@ -65,6 +68,7 @@
         }
 
         .activity__text {
+          width: 100%;
           padding: 20px;
           border: 1px dotted var(--color-primary);
           border-radius: 20px 0 20px 0;

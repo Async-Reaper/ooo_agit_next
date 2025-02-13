@@ -7,6 +7,8 @@ import { motion } from "motion/react";
 
 import cls from "./ActivityScreen.module.scss";
 
+import { AnimationImages } from "../AnimationImages/AnimationImages";
+
 export const ActivityScreen = React.memo(() => {
   const [activities] = useState([
     {
@@ -78,20 +80,23 @@ export const ActivityScreen = React.memo(() => {
               <b> автоматизации</b>
             </Typography>
           </motion.div>
-          <ul className={cls.activity__list}>
-            {activities.map((activity) => (
-              <li key={activity.id} className={cls.activity__item}>
-                <div className={cls.check_mark}>
-                  ✔
-                </div>
-                <div className={cls.activity__text}>
-                  <Typography variant="p">
-                    {activity.text}
-                  </Typography>
-                </div>
-              </li>
-            ))}
-          </ul>
+          <div className={cls.activity__content}>
+            <ul className={cls.activity__list}>
+              {activities.map((activity) => (
+                <li key={activity.id} className={cls.activity__item}>
+                  <div className={cls.check_mark}>
+                    ✔
+                  </div>
+                  <div className={cls.activity__text}>
+                    <Typography variant="p">
+                      {activity.text}
+                    </Typography>
+                  </div>
+                </li>
+              ))}
+            </ul>
+            <AnimationImages />
+          </div>
         </div>
         <div className={cls.activity__footer}>
           <motion.div

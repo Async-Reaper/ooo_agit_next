@@ -52,8 +52,8 @@
         }
 
         &--h2 {
-            @include mixins.adaptive("font-size", 25, 17);
-            @include mixins.adaptive("line-height", 24, 28);
+            @include mixins.adaptive("font-size", 32, 20);
+            @include mixins.adaptive("line-height", 30, 28);
 
             font-weight: 500;
 
@@ -63,8 +63,8 @@
         }
 
         &--h3 {
-            @include mixins.adaptive("font-size", 18, 14);
-            @include mixins.adaptive("line-height", 28, 22);
+            @include mixins.adaptive("font-size", 20, 14);
+            @include mixins.adaptive("line-height", 21, 18);
 
             font-weight: 500;
 

@@ -23,29 +23,29 @@ export const CaseCard = React.memo(({ caseItem }: CaseCardProps) => {
     <div className={classNames(cls.case_card__wrapper, type)}>
       <div className={cls.case__text}>
         <div className={cls.case_type}>
-          <Typography variant="small" color="secondary" uppercase bold>
+          <Typography variant="span" color="secondary" uppercase bold>
             {caseItem?.type}
           </Typography>
         </div>
         <div className={cls.case__title}>
-          <Typography variant="h2" bold>
+          <Typography variant="h3" bold>
             {caseItem?.title}
           </Typography>
         </div>
         <div className={classNames(cls.case_result__wrapper, type)}>
-          <Typography variant="small" uppercase bold>
+          <Typography variant="p" uppercase bold>
             результат
           </Typography>
           <div className={cls.result__text}>
-            <Typography variant="span">
+            <Typography variant="p" color="white-primary">
               {caseItem?.result}
             </Typography>
           </div>
         </div>
       </div>
-      {
-        caseItem.img && <img src={caseItem.img} alt="" className={cls.case__img} />
-      }
+      {/*{*/}
+      {/*  caseItem.img && <img src={caseItem.img} alt="" className={cls.case__img} />*/}
+      {/*}*/}
     </div>
   );
 });

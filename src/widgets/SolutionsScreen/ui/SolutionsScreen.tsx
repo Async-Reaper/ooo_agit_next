@@ -1,6 +1,7 @@
 "use client";
 import React, { useLayoutEffect, useState } from "react";
 import { useViewBox } from "@shared/hooks";
+import { Icon } from "@shared/libs/icon/icon";
 import { Typography } from "@shared/ui";
 import { animate, stagger } from "motion";
 import { motion } from "motion/react";
@@ -16,6 +17,14 @@ export const SolutionsScreen = React.memo(() => {
     {
       id: 2,
       text: "Разработка программного обеспечения под задачи заказчика, в том числе отраслевые.",
+    },
+    {
+      id: 3,
+      text: "Экспертные консультации для компаний с целью оптимизации и эффективного использования их IT-инфраструктуры.",
+    },
+    {
+      id: 4,
+      text: "Обучение по использованию внедренных технологий, а также техническая поддержка пользователей для успешной интеграции и максимальной эффективности новых решений.",
     },
   ]);
 
@@ -46,11 +55,12 @@ export const SolutionsScreen = React.memo(() => {
           className={cls.solutions__title}
           ref={ref}
         >
-          <Typography color="white-primary" variant="h1" align="center" uppercase>
+          <Typography color="white-primary" variant="h2" align="center" uppercase>
             Чем мы
             {" "}
-            <b> Занимаемся? </b>
+            Занимаемся?
           </Typography>
+          <img src="/solutions-bg.png" alt="" className={cls.solutions__image} />
         </motion.div>
         <ul className={cls.solutions__list}>
           {
@@ -59,6 +69,9 @@ export const SolutionsScreen = React.memo(() => {
                 key={solution.id}
                 className={cls.solution__item}
               >
+                <div className={cls.solution__item__icon}>
+                  <Icon name="arrow_left" color="primary" size={50}/>
+                </div>
                 <Typography variant="p">
                   {solution.text}
                 </Typography>

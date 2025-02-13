@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { MailingButton } from "@features/Mailing";
-import { ColoredIcon } from "@shared/libs/icon/colored-icon";
 import { Icon } from "@shared/libs/icon/icon";
 import { Social, Typography } from "@shared/ui";
 import { AppLink } from "@shared/ui/AppLink";
@@ -128,19 +127,19 @@ export const Footer = React.memo(() => {
             </div>
             <div className={cls.footer__contacts}>
               <div className={cls.contact__item}>
-                <ColoredIcon name="email" size={40} color="primary"/>
+                <Icon name="email" size={45} color="gray-dark"/>
                 <AppLink href="mailto:1c@agit.su" variant="secondary">
                   <Typography>1c@agit.su</Typography>
                 </AppLink>
               </div>
               <div className={cls.contact__item}>
-                <ColoredIcon name="telephone" size={40} color="primary"/>
+                <Icon name="phone" size={35} color="gray-dark"/>
                 <AppLink href="tel:+7(3843)328-000" variant="secondary">
                   <Typography>+7 (3843) 328-000</Typography>
                 </AppLink>
               </div>
               <div className={cls.contact__item}>
-                <ColoredIcon name="maps" size={40} color="primary"/>
+                <Icon name="map" size={35} color="gray-dark"/>
                 <AppLink href="https://yandex.ru/maps/-/CHahIKmc" target="_blank" variant="secondary">
                   <Typography>г. Новокузнецк, пр-т Строителей, д. 19 </Typography>
                 </AppLink>

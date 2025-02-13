@@ -54,10 +54,14 @@
       background-size: cover;
       border-radius: 10px;
       gap: 10px;
-      max-width: max-content;
+      width: 100%;
 
       b {
         color: var(--color-primary);
+      }
+
+      @include mixin.tablets {
+        max-width: max-content;
       }
     }
 

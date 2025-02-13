@@ -1,1 +1,1 @@
-export { ActivityScreen } from "./ui/ActivityScreen";
+export { ActivityScreen } from "./ui/ActivityScreen/ActivityScreen";
