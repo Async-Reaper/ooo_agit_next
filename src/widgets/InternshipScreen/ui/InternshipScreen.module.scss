@@ -1,12 +1,29 @@
 @use "@shared/styles/mixins" as mixin;
 
 .internship__wrapper {
-  border-top: 2px solid var(--color-primary);
-  background: var(--color-black-primary);
-  padding: 0 20px;
-  width: 100%;
+  position: relative;
 
   @include mixin.adaptive("padding-block", 80, 30);
+
+  &:before {
+    position: absolute;
+    content: url("/gears-bg.svg");
+    top: 55px;
+    right: 0;
+    width: 132px;
+    height: 166px;
+  }
+
+  &:after {
+    position: absolute;
+    content: "";
+    top: 55px;
+    right: 16px;
+    width: 101px;
+    height: 105px;
+    background: linear-gradient(90deg, #97FCF0, #338A80);
+    filter: blur(100px);
+  }
 
   .internship__content {
     @include mixin.flex-column;
@@ -16,21 +33,55 @@
 
     .stage_internship__list {
       @include mixin.flex-column;
-
+      position: relative;
       gap: 10px;
+
+      @include mixin.laptop {
+        &:after {
+          position: absolute;
+          content: '';
+          top: 0;
+          left: 340px;
+          width: 75%;
+          height: 100%;
+          background-image: url("/stage-internship.svg");
+          background-repeat: no-repeat;
+          background-size: contain;
+        }
+      }
 
       .stage_internship__item {
         @include mixin.flex-row;
-
+        z-index: 9;
         gap: 10px;
         color: var(--color-white-primary);
 
-        .dot {
-          flex-shrink: 0;
-          width: 10px;
-          height: 10px;
-          border-radius: 50px;
-          background: var(--color-primary);
+        .check_mark {
+          font-size: 45px;
+          line-height: 45px;
+          color: var(--color-primary);
+          text-shadow: 0 5px 4px #53DFCF22;
+        }
+
+        .stage__name {
+          position: relative;
+          width: 100%;
+          max-width: 320px;
+          padding: 15px 0;
+          background: var(--color-black-primary);
+
+          &:before {
+            position: absolute;
+            content: "";
+            inset: 0;
+            border-radius: 5px;
+            border: 2px solid transparent;
+            background: linear-gradient(-45deg, #97FCF0, #87A19E) border-box;
+            -webkit-mask: linear-gradient(rgb(181, 83, 83) 0 0) padding-box, linear-gradient(rgb(214, 124, 124) 0 0);
+            mask: linear-gradient(rgb(181, 83, 83) 0 0) padding-box, linear-gradient(rgb(214, 124, 124) 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+          }
         }
       }
     }

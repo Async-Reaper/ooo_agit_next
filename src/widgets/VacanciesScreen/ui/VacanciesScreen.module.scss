@@ -1,8 +1,9 @@
 @use "@shared/styles/_mixins.scss" as mixin;
 
 .vacancies__screen {
-    border-top: 2px solid var(--color-primary);
-
+    background-image: url("/wave-vacancy.svg");
+    background-size: cover;
+    @include mixin.adaptive("margin-top", 80, 20);
     b {
         color: var(--color-primary);
     }

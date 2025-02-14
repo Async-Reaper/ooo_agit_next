@@ -10,7 +10,7 @@ export const VacanciesScreen = () => (
         <Typography variant="h1" uppercase>
           Наши
           {" "}
-          <b>вакансии</b>
+          вакансии
         </Typography>
       </div>
       <VacanciesList />

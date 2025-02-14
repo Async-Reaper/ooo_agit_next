@@ -36,17 +36,21 @@ export const InternshipScreen = React.memo(() => {
           <Typography variant="h1" uppercase color="white-primary">
             Запишись на нашу программу стажировки!
           </Typography>
-          <Typography variant="h2" color="primary" bold uppercase>
+          <Typography variant="h2" color="primary" uppercase>
             Запусти свою карьеру в IT: учись, твори, вдохновляй!
           </Typography>
           <ul className={cls.stage_internship__list}>
             {
               stageInternship.map((internship) => (
                 <li key={internship.id} className={cls.stage_internship__item}>
-                  <div className={cls.dot}/>
-                  <Typography variant="p">
-                    {internship.stageName}
-                  </Typography>
+                  <div className={cls.check_mark}>
+                    ✔
+                  </div>
+                  <div className={cls.stage__name}>
+                    <Typography variant="p" align="center">
+                      {internship.stageName}
+                    </Typography>
+                  </div>
                 </li>
               ))
             }

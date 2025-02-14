@@ -44,7 +44,7 @@
             @include mixins.adaptive("font-size", 48, 28);
             @include mixins.adaptive("line-height", 48, 33);
 
-            font-weight: 800;
+            font-weight: 500;
 
             &.bold {
                 font-weight: 800;
