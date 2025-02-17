@@ -13,54 +13,57 @@ export const SolutionsScreen = React.memo(() => {
     {
       id: 1,
       text: "Автоматизация бизнес-процессов компаний путем внедрения современных IT решений.",
+      img: "/solutions/automation.png",
     },
     {
       id: 2,
       text: "Разработка программного обеспечения под задачи заказчика, в том числе отраслевые.",
+      img: "/solutions/development.png",
     },
     {
       id: 3,
       text: "Экспертные консультации для компаний с целью оптимизации и эффективного использования их IT-инфраструктуры.",
+      img: "/solutions/consultation.png",
     },
     {
       id: 4,
       text: "Обучение по использованию внедренных технологий, а также техническая поддержка пользователей для успешной интеграции и максимальной эффективности новых решений.",
+      img: "/solutions/learning.png",
     },
   ]);
 
   const { ref, isVisible } = useViewBox(0.4);
 
   useLayoutEffect(() => {
-    isVisible && animate([
-      [`.${cls.solutions__list}`, { opacity: 1 }],
-      [`.${cls.solution__item}`, { x: [-100, 0], opacity: [0, 1] }, {
-        duration: 0.3, delay: stagger(0.2), stiffness: 150, bounce: 0.5,
-      }],
-    ]);
+    // isVisible && animate([
+    //   [`.${cls.solutions__list}`, { opacity: 1 }],
+    //   [`.${cls.solution__item}`, { x: [-100, 0], opacity: [0, 1] }, {
+    //     duration: 0.3, delay: stagger(0.2), stiffness: 150, bounce: 0.5,
+    //   }],
+    // ]);
   }, [isVisible]);
 
   return (
     <section id="solutions" className={cls.solutions}>
       <motion.div
-        initial={{ opacity: 0, x: -100 }}
-        animate={isVisible && { opacity: 1, x: 0 }}
-        transition={{ type: "spring", duration: 1 }}
+        // initial={{ opacity: 0, x: -100 }}
+        // animate={isVisible && { opacity: 1, x: 0 }}
+        // transition={{ type: "spring", duration: 1 }}
         className={cls.solutions__wrapper}
       >
         <motion.div
-          initial={{ opacity: 0, x: 100 }}
-          animate={isVisible && { opacity: 1, x: 0 }}
-          transition={{ type: "spring", duration: 1 }}
+          // initial={{ opacity: 0, x: 100 }}
+          // animate={isVisible && { opacity: 1, x: 0 }}
+          // transition={{ type: "spring", duration: 1 }}
           id="solutions__title"
           className={cls.solutions__title}
           ref={ref}
         >
-          <Typography color="white-primary" variant="h2" align="center" uppercase>
+          <Typography color="white-primary" variant="h1" align="center" uppercase>
             Чем мы
             {" "}
             Занимаемся?
           </Typography>
-          <img src="/solutions-bg.png" alt="" className={cls.solutions__image} />
         </motion.div>
         <ul className={cls.solutions__list}>
           {
@@ -69,8 +72,8 @@ export const SolutionsScreen = React.memo(() => {
                 key={solution.id}
                 className={cls.solution__item}
               >
-                <div className={cls.solution__item__icon}>
-                  <Icon name="arrow_left" color="primary" size={50}/>
+                <div className={cls.solution__item__img}>
+                  <img src={solution.img} alt="" />
                 </div>
                 <Typography variant="p">
                   {solution.text}

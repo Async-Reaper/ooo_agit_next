@@ -43,9 +43,9 @@ export const CaseCard = React.memo(({ caseItem }: CaseCardProps) => {
           </div>
         </div>
       </div>
-      {/*{*/}
-      {/*  caseItem.img && <img src={caseItem.img} alt="" className={cls.case__img} />*/}
-      {/*}*/}
+      {
+        caseItem.img && <img src={caseItem.img} alt="" className={cls.case__img} />
+      }
     </div>
   );
 });

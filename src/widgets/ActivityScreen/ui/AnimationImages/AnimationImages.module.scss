@@ -1,8 +1,14 @@
+@use "@shared/styles/mixins";
+
 .animation__images__wrapper {
   position: relative;
-  display: flex;
+  display: none;
   width: 600px;
   height: 520px;
+
+  @include mixins.laptop {
+    display: flex;
+  }
 
   .wrapper {
     position: relative;

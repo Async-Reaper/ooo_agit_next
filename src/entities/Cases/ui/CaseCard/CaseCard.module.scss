@@ -6,7 +6,9 @@
   padding: 25px;
   min-height: 300px;
   backdrop-filter: blur(80px);
-  --webkit-backdrop-filter: blur(80px);
+  pointer-events: none;
+  //--webkit-backdrop-filter: blur(80px);
+  //will-change: backdrop-filter;
 
   &:nth-child(n+3) {
     grid-column: span 1; /* Каждому элементу на последующих строках отводится одна колонка */

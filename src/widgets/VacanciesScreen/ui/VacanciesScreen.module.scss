@@ -1,7 +1,7 @@
 @use "@shared/styles/_mixins.scss" as mixin;
 
 .vacancies__screen {
-    background-image: url("/wave-vacancy.svg");
+    background-image: url("/wave-vacancy.webp");
     background-size: cover;
     @include mixin.adaptive("margin-top", 80, 20);
     b {
