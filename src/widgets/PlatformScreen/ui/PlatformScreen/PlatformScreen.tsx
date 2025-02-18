@@ -11,7 +11,7 @@ import cls from "./PlatformScreen.module.scss";
 import { RunStrokePlatform } from "../RunStrokePlatform/RunStrokePlatform";
 
 export const PlatformScreen = React.memo(() => {
-  const [platformList] = useState([
+  const platformList = [
     {
       id: 1,
       name: "1С:ERP Управление предприятием",
@@ -60,7 +60,7 @@ export const PlatformScreen = React.memo(() => {
       price: "8 200 ₽",
       link: "https://vk.com/market/product/1serp-upravlenie-predpriatiem-183182511-10653397",
     },
-  ]);
+  ];
 
   const { ref, isVisible } = useViewBox(0.2);
 

@@ -1,0 +1,34 @@
+@use "@shared/styles/mixins" as mixin;
+
+.services {
+    border-top: 2px solid var(--color-primary);
+    padding: 0 20px;
+
+    @include mixin.adaptive("padding-block", 80, 30);
+
+    .services__wrapper {
+        max-width: 1800px;
+        width: 100%;
+        margin: 0 auto;
+
+        @include mixin.flex-column;
+
+        @include mixin.desktop {
+            @include mixin.flex-space;
+
+            flex-direction: row;
+        }
+
+        b {
+            color: var(--color-primary)
+        }
+
+        .services__content {
+            margin: 0 0 50px;
+
+            .services__title {
+                @include mixin.adaptive("margin-bottom", 40, 20);
+            }
+        }
+    }
+}

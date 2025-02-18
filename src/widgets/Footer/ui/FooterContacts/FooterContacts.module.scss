@@ -1,0 +1,19 @@
+@use "@shared/styles/mixins" as mixin;
+
+.footer__contacts {
+  @include mixin.flex-column;
+
+  width: max-content;
+  margin: 0 auto;
+  gap: 20px;
+
+  @include mixin.desktop {
+    align-items: self-start;
+  }
+
+  .contact__item {
+    @include mixin.flex-row;
+
+    gap: 15px;
+  }
+}

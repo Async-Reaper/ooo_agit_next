@@ -1,13 +1,10 @@
-"use client";
-import React, { useLayoutEffect, useState } from "react";
-import { useViewBox } from "@shared/hooks";
+import React, { useLayoutEffect } from "react";
 import { Icon, IconName } from "@shared/libs/icon/icon";
 import { Typography } from "@shared/ui";
 import { AppLink } from "@shared/ui/AppLink";
 import { animate, stagger } from "motion";
-import { motion } from "motion/react";
 
-import cls from "./ServicesScreen.module.scss";
+import cls from "./ServicesList.module.scss";
 
 interface IService {
   id: number;
@@ -17,8 +14,12 @@ interface IService {
   link: string;
 }
 
-export const ServicesScreen = React.memo(() => {
-  const [services] = useState<IService[]>([
+interface ServicesListProps {
+  isVisible: boolean;
+}
+
+export const ServicesList = React.memo(({ isVisible }: ServicesListProps) => {
+  const services: IService[] = [
     {
       id: 1,
       iconName: "gears",
@@ -47,10 +48,8 @@ export const ServicesScreen = React.memo(() => {
       serviceInfo: "Проведение детального анализа существующих процессов с целью выявления узких мест и возможностей для улучшения.",
       link: "https://vk.com/market/product/analiz-i-optimizatsia-biznes-protsessov-183182511-10352203",
     },
-  ]);
-
-  const { ref, isVisible } = useViewBox(0.2);
-
+  ];
+  
   useLayoutEffect(() => {
     isVisible && animate([
       [`.${cls.services__list}`, { opacity: 1 }],
@@ -59,61 +58,32 @@ export const ServicesScreen = React.memo(() => {
       }],
     ]);
   }, [isVisible]);
-
+  
   return (
-    <section
-      id="services"
-      className={cls.services}
-    >
-      <motion.div
-        initial={{ opacity: 0, x: 100 }}
-        animate={isVisible && { opacity: 1, x: 0 }}
-        transition={{ type: "spring", duration: 2 }}
-        ref={ref}
-        className={cls.services__wrapper}
-      >
-        <div className={cls.services__content}>
-          <motion.div
-            initial={{ x: -100 }}
-            animate={isVisible && { x: 0 }}
-            transition={{ type: "spring", duration: 0.3, delay: 0.3 }}
-            className={cls.services__title}
-          >
-            <Typography variant="h1" uppercase>
-              <b>услуги</b>
-              {" "}
-              нашей компании
+    <ul className={cls.services__list}>
+      {services.map((service) => (
+        <li className={cls.services__item} key={service.id}>
+          <div className={cls.service__icon__wrapper}>
+            <Icon name={service.iconName} size={100} color="primary" className={cls.service__icon}/>
+          </div>
+          <div className={cls.services__name}>
+            <Typography variant="p" color="primary" align="center">
+              {service.serviceName}
             </Typography>
-          </motion.div>
-          <ul className={cls.services__list}>
-            {services.map((service) => (
-              <li className={cls.services__item} key={service.id}>
-                <div className={cls.service__icon__wrapper}>
-                  <Icon name={service.iconName} size={100} color="primary" className={cls.service__icon}/>
-                </div>
-                <div className={cls.services__name}>
-                  <Typography variant="p" color="primary" align="center">
-                    {service.serviceName}
-                  </Typography>
-                </div>
-                <div className={cls.service__info}>
-                  <Typography variant="p" align="center">
-                    {service.serviceInfo}
-                  </Typography>
-                </div>
-                <AppLink href={service.link} variant="secondary" isUnderline={false} className={cls.service__link}>
-                  <Icon name="arrow_bottom" size={23} color="primary" className={cls.icon__link} />
-                  <Typography variant="p">
-                    Подробнее
-                  </Typography>
-                </AppLink>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </motion.div>
-    </section>
+          </div>
+          <div className={cls.service__info}>
+            <Typography variant="p" align="center">
+              {service.serviceInfo}
+            </Typography>
+          </div>
+          <AppLink href={service.link} variant="secondary" isUnderline={false} className={cls.service__link}>
+            <Icon name="arrow_bottom" size={23} color="primary" className={cls.icon__link}/>
+            <Typography variant="p">
+              Подробнее
+            </Typography>
+          </AppLink>
+        </li>
+      ))}
+    </ul>
   );
 });
-
-ServicesScreen.displayName = "ServicesScreen";

@@ -1,1 +1,1 @@
-export { ServicesScreen } from "./ui/ServicesScreen";
+export { ServicesScreen } from "./ui/ServicesScreen/ServicesScreen";

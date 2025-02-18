@@ -51,54 +51,8 @@
       @include mixin.flex-space;
     }
 
-    .activity__list {
-      @include mixin.flex-column;
-      @include mixin.adaptive("gap", 40, 20);
-
-      .activity__item {
-        @include mixin.flex-row;
-        gap: 23px;
-        position: relative;
-
-        .check_mark {
-          font-size: 45px;
-          line-height: 45px;
-          color: var(--color-primary);
-          text-shadow: 0 5px 4px #53DFCF22;
-        }
-
-        .activity__text {
-          width: 100%;
-          padding: 20px;
-          border: 1px dotted var(--color-primary);
-          border-radius: 20px 0 20px 0;
-          color: var(--color-white-primary);
-          background: linear-gradient(90deg, rgba(80,80,80,1) 80%, rgba(172,165,165,0.2) 100%);
-        }
-      }
-    }
-
     .activity__title {
       color: var(--color-white-primary);
-    }
-
-    .activity__footer {
-      @include mixin.flex-column;
-      @include mixin.adaptive("gap", 100, 20);
-
-      @include mixin.tablets {
-        @include mixin.flex-row;
-      }
-
-      .activity__desc {
-        color: var(--color-white-primary);
-
-        &:nth-child(2) {
-          padding: 20px;
-          border: 1px solid var(--color-white-primary);
-          border-radius: 20px 0 20px 0;
-        }
-      }
     }
 
     hr {

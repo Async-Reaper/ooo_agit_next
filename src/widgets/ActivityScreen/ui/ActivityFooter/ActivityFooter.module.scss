@@ -1,0 +1,20 @@
+@use "@shared/styles/mixins" as mixin;
+
+.activity__footer {
+  @include mixin.flex-column;
+  @include mixin.adaptive("gap", 100, 20);
+
+  @include mixin.tablets {
+    @include mixin.flex-row;
+  }
+
+  .activity__desc {
+    color: var(--color-white-primary);
+
+    &:nth-child(2) {
+      padding: 20px;
+      border: 1px solid var(--color-white-primary);
+      border-radius: 20px 0 20px 0;
+    }
+  }
+}
