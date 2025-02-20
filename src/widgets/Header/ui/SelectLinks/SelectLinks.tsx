@@ -41,13 +41,13 @@ const Component = () => {
         <Typography variant="span">
           О нас
         </Typography>
-        <Icon 
-          name="arrow_bottom" 
+        <Icon
+          name="arrow_bottom"
           color="primary"
           className={classNames(cls.select__arrow, { [cls.active]: isVisibleSelect })}
         />
       </div>
-      <div 
+      <div
         className={classNames(cls.select__items, { [cls.active]: isVisibleSelect })}
         onMouseOver={() => setIsVisibleSelect(true)}
         onMouseOut={() => setIsVisibleSelect(false)}
@@ -55,6 +55,7 @@ const Component = () => {
         <AppLink
           href="/about#vacancies"
           onClick={(e) => scrollToSection(e, "vacancies")}
+          variant="primary-green"
           isUnderline
         >
           <Typography variant="span">
@@ -64,6 +65,7 @@ const Component = () => {
         <AppLink
           href="/about#internship"
           onClick={(e) => scrollToSection(e, "vacancies")}
+          variant="primary-green"
           isUnderline
         >
           <Typography variant="span">
@@ -73,6 +75,7 @@ const Component = () => {
         <AppLink
           href="/about#news"
           onClick={(e) => scrollToSection(e, "news")}
+          variant="primary-green"
           isUnderline
         >
           <Typography variant="span">

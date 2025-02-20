@@ -7,16 +7,15 @@
   min-height: 300px;
   backdrop-filter: blur(80px);
   pointer-events: none;
-  //--webkit-backdrop-filter: blur(80px);
-  //will-change: backdrop-filter;
 
   &:nth-child(n+3) {
     grid-column: span 1; /* Каждому элементу на последующих строках отводится одна колонка */
   }
 
   @include mixin.flex-column;
+  justify-content: space-between;
 
-  @include mixin.tablets {
+  @include mixin.laptop {
     @include mixin.flex-row;
 
     justify-content: space-between;
@@ -86,9 +85,7 @@
   }
 
   .case__img {
-    max-height: 300px;
     max-width: 300px;
     width: 100%;
-    height: 100%;
   }
 }

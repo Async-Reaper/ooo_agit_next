@@ -39,7 +39,7 @@ export const Header = React.memo(() => {
             >
               <AppLink
                 href="/"
-                variant="secondary"
+                variant="primary-green"
               >
                 <Typography variant="span">
                   Главная
@@ -54,7 +54,7 @@ export const Header = React.memo(() => {
             >
               <AppLink
                 href="/products"
-                variant="secondary"
+                variant="primary-green"
               >
                 <Typography variant="span">
                   Продукты и услуги
@@ -69,7 +69,7 @@ export const Header = React.memo(() => {
             >
               <AppLink
                 href="/cases"
-                variant="secondary"
+                variant="primary-green"
               >
                 <Typography variant="span">
                   Наши кейсы

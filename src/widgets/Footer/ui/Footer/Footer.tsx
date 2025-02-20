@@ -12,7 +12,7 @@ import { FooterContacts } from "../FooterContacts/FooterContacts";
 import { FooterLinks } from "../FooterLinks/FooterLinks";
 
 export const Footer = React.memo(() => {
-
+  
   return (
     <footer className={cls.footer}>
       <Container>
@@ -21,8 +21,8 @@ export const Footer = React.memo(() => {
             <div className={cls.footer__logo}>
               <AppLogo/>
             </div>
-            <FooterLinks />
-            <FooterContacts />
+            <FooterLinks/>
+            <FooterContacts/>
             <div className={cls.footer__social}>
               <Social/>
               <MailingButton/>

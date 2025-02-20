@@ -18,9 +18,11 @@
             max-width: mixin.$maxContainer + px;
             width: 100%;
 
-            @include mixin.desktop {
-                @include mixin.flex-row;
-                @include mixin.adaptive("column-gap", 140, 20);
+            @include mixin.laptop {
+                @include mixin.flex-wrap;
+                flex-direction: row;
+                align-items: self-start;
+                @include mixin.adaptive("column-gap", 60, 20);
 
                 justify-self: center;
             }

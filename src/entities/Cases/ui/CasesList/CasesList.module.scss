@@ -61,11 +61,13 @@
     max-width: 1800px;
     margin: 0 auto;
     position: relative;
-
-    @include mixin.flex-wrap;
-
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 20px;
 
+    @include mixin.laptop {
+      grid-template-columns: repeat(2, 1fr);
+    }
     @include mixin.adaptive("padding-block", 80, 30);
 
     .cases__skeleton {

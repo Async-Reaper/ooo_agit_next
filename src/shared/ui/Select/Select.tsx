@@ -49,7 +49,7 @@ const Component = (props: SelectProps<string>) => {
         </Typography>
         <Icon
           name="arrow_bottom"
-          color="white-primary"
+          color="primary"
           className={classNames(cls.select__arrow, { [cls.active]: isVisibleSelect })}
         />
       </div>

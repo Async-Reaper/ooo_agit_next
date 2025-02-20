@@ -1,6 +1,7 @@
 import React from "react";
 import { InternshipRequestButton } from "@features/InternshipRequest";
 import { Typography } from "@shared/ui";
+import { AppImage } from "@shared/ui/AppImage";
 import Container from "@shared/ui/Container/Container";
 
 import cls from "./InternshipScreen.module.scss";
@@ -31,6 +32,9 @@ export const InternshipScreen = React.memo(() => {
 
   return (
     <section id="internship" className={cls.internship__wrapper}>
+      <div className={cls.internship__background__img}>
+        <AppImage src="/gears-bg.svg" />
+      </div>
       <Container>
         <div className={cls.internship__content}>
           <Typography variant="h1" uppercase color="white-primary">

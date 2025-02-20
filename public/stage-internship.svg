@@ -1,27 +1,27 @@
-<svg width="607" height="189" viewBox="0 0 607 189" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<path d="M1.19897 1C49.3471 65.8827 85.4582 107.296 109.532 125.241C133.606 143.186 157.68 145.405 181.755 131.9C205.829 118.395 229.903 120.648 253.977 138.659C278.051 156.669 302.125 166.361 326.199 167.734C350.273 169.106 374.347 150.993 398.421 113.394C422.495 75.7952 446.569 67.1904 470.643 87.5799C494.717 107.969 518.792 122.403 542.866 130.881C566.94 139.359 575.926 143.392 600 133.5" stroke="#97FCF0" stroke-width="2"/>
+<svg width="1296" height="391" viewBox="0 0 1296 391" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<path d="M1 1C104.407 138.695 181.963 226.584 233.667 264.667C285.37 302.75 337.074 307.461 388.778 278.799C440.481 250.138 492.185 254.919 543.889 293.142C595.593 331.365 647.296 351.933 699 354.846C750.704 357.759 802.407 319.319 854.111 239.525C905.815 159.732 957.519 141.471 1009.22 184.742C1060.93 228.013 1112.63 258.644 1164.33 276.636C1216.04 294.628 1234.3 299.992 1286 279" stroke="#97FCF0" stroke-width="2"/>
 <g filter="url(#filter0_d_133_328)">
-<ellipse cx="96.1847" cy="106.314" rx="21.4183" ry="20.0262" fill="#C1EDE8"/>
+<ellipse cx="205" cy="224.5" rx="46" ry="42.5" fill="#C1EDE8"/>
 </g>
-<rect x="85.4099" y="95.3067" width="22.0149" height="22.0149" fill="url(#pattern0_133_328)"/>
+<rect x="182" y="201" width="47" height="47" fill="url(#pattern0_133_328)"/>
 <g filter="url(#filter1_d_133_328)">
-<ellipse cx="210.261" cy="126.576" rx="21.4183" ry="20.0262" fill="#C1EDE8"/>
+<ellipse cx="450" cy="267.5" rx="46" ry="42.5" fill="#C1EDE8"/>
 </g>
 <g filter="url(#filter2_d_133_328)">
-<ellipse cx="335.977" cy="160.974" rx="21.4183" ry="20.0262" fill="#C1EDE8"/>
+<ellipse cx="720" cy="340.5" rx="46" ry="42.5" fill="#C1EDE8"/>
 </g>
 <g filter="url(#filter3_d_133_328)">
-<ellipse cx="580.891" cy="132.702" rx="21.4183" ry="20.0262" fill="#C1EDE8"/>
+<ellipse cx="1246" cy="280.5" rx="46" ry="42.5" fill="#C1EDE8"/>
 </g>
 <g filter="url(#filter4_d_133_328)">
-<ellipse cx="445.397" cy="71.445" rx="21.4183" ry="20.0262" fill="#C1EDE8"/>
+<ellipse cx="955" cy="150.5" rx="46" ry="42.5" fill="#C1EDE8"/>
 </g>
-<rect x="199.018" y="114.629" width="22.9517" height="22.9517" fill="url(#pattern1_133_328)"/>
-<rect x="324.267" y="149.499" width="23.4201" height="23.4201" fill="url(#pattern2_133_328)"/>
-<rect x="432.75" y="59.0338" width="25.2937" height="25.2937" fill="url(#pattern3_133_328)"/>
-<rect x="568.244" y="120.29" width="25.2937" height="25.2937" fill="url(#pattern4_133_328)"/>
+<rect x="426" y="242" width="49" height="49" fill="url(#pattern1_133_328)"/>
+<rect x="695" y="316" width="50" height="50" fill="url(#pattern2_133_328)"/>
+<rect x="928" y="124" width="54" height="54" fill="url(#pattern3_133_328)"/>
+<rect x="1219" y="254" width="54" height="54" fill="url(#pattern4_133_328)"/>
 <defs>
-<filter id="filter0_d_133_328" x="70.7664" y="86.288" width="50.8367" height="48.0524" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_d_133_328" x="155" y="182" width="100" height="93" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dy="4"/>
@@ -34,7 +34,7 @@
 <pattern id="pattern0_133_328" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image0_133_328" transform="scale(0.00195312)"/>
 </pattern>
-<filter id="filter1_d_133_328" x="184.842" y="106.55" width="50.8367" height="48.0524" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter1_d_133_328" x="400" y="225" width="100" height="93" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dy="4"/>
@@ -44,7 +44,7 @@
 <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_133_328"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_133_328" result="shape"/>
 </filter>
-<filter id="filter2_d_133_328" x="310.559" y="140.948" width="50.8367" height="48.0524" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter2_d_133_328" x="670" y="298" width="100" height="93" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dy="4"/>
@@ -54,7 +54,7 @@
 <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_133_328"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_133_328" result="shape"/>
 </filter>
-<filter id="filter3_d_133_328" x="555.472" y="112.675" width="50.8367" height="48.0524" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter3_d_133_328" x="1196" y="238" width="100" height="93" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dy="4"/>
@@ -64,7 +64,7 @@
 <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_133_328"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_133_328" result="shape"/>
 </filter>
-<filter id="filter4_d_133_328" x="419.978" y="51.4189" width="50.8367" height="48.0524" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter4_d_133_328" x="905" y="108" width="100" height="93" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dy="4"/>

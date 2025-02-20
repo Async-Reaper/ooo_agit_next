@@ -2,7 +2,6 @@
 import React from "react";
 import { ConsultationButton } from "@features/Consultation";
 import { Typography } from "@shared/ui";
-import { AppImage } from "@shared/ui/AppImage";
 import { motion } from "motion/react";
 
 import cls from "./StartScreen.module.scss";
@@ -18,10 +17,8 @@ export const StartScreen = React.memo(() => (
             transition={{ type: "spring" }}
             className={cls.start__content__title}
           >
-            <Typography variant="h1" uppercase>
-              <b>Мы - эксперты</b>
-              {" "}
-              в области Автоматизации бизнеса
+            <Typography variant="h2" uppercase>
+              Комплексная <b>автоматизация бизнеса</b> на базе 1С: от стратегии до внедрения и сопровождения
             </Typography>
           </motion.div>
           <motion.div
@@ -31,8 +28,45 @@ export const StartScreen = React.memo(() => (
             className={cls.start__content__desc}
           >
             <Typography variant="p">
-              Наши эксперты готовы разработать стратегии, которые приведут к результатам в вашем
-              бизнесе уже сегодня.
+              Мы не просто внедряем 1С — мы создаем индивидуальные ИТ-экосистемы для вашего бизнеса. Наш опыт и
+              экспертиза позволяют автоматизировать любые бизнес-процессы: от бухгалтерского учета до управления
+              производством и логистикой.
+            </Typography>
+            <div className={cls.guarantees__wrapper}>
+              <Typography variant="p" color="primary">
+                Мы гарантируем:
+              </Typography>
+              <ul className={cls.guarantees__list}>
+                <li className={cls.guarantees__item}>
+                  <div className={cls.check_mark}>
+                    ✔
+                  </div>
+                  <Typography variant="p">
+                    бесшовную интеграцию с существующими системами;
+                  </Typography>
+                </li>
+                <li className={cls.guarantees__item}>
+                  <div className={cls.check_mark}>
+                    ✔
+                  </div>
+                  <Typography variant="p">
+                    повышение прозрачности бизнеса;
+                  </Typography>
+                </li>
+                <li className={cls.guarantees__item}>
+                  <div className={cls.check_mark}>
+                    ✔
+                  </div>
+                  <Typography variant="p">
+                    рост конкурентоспособности.
+                  </Typography>
+                </li>
+              </ul>
+            </div>
+            <Typography variant="p">
+              С нами вы получите стратегического партнера в сфере автоматизации, который поможет вам достичь новых высот!
+            </Typography>
+            <Typography variant="p">
               Закажите бесплатную консультацию и начините достигать целей уже сегодня!
             </Typography>
           </motion.div>

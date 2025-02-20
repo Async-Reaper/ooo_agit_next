@@ -16,7 +16,7 @@
         width: 100%;
         margin: 0 auto;
 
-        @include mixin.adaptive("padding-block", 100, 20);
+        @include mixin.adaptive("padding-block", 100, 70);
         @include mixin.adaptive("padding-inline", 80, 20);
     }
 }

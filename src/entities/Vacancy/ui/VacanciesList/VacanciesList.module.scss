@@ -35,7 +35,7 @@
 
     .vacancy_img {
       border-radius: 5px;
-      width: 150px;
+      @include mixin.adaptive("height", 141, 95);
     }
   }
 }

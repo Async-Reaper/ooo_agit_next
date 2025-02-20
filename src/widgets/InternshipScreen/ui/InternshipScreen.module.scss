@@ -5,13 +5,14 @@
 
   @include mixin.adaptive("padding-block", 80, 30);
 
-  &:before {
-    position: absolute;
-    content: url("/gears-bg.svg");
-    top: 55px;
-    right: 0;
-    width: 132px;
-    height: 166px;
+  .internship__background__img {
+    img {
+      position: absolute;
+      top: 55px;
+      right: 0;
+      @include mixin.adaptive("width", 183, 82);
+      @include mixin.adaptive("height", 166, 74);
+    }
   }
 
   &:after {
@@ -44,7 +45,7 @@
           left: 340px;
           width: 75%;
           height: 100%;
-          background-image: url("/stage-internship.webp");
+          background-image: url("/stage-internship.svg");
           background-repeat: no-repeat;
           background-size: contain;
         }

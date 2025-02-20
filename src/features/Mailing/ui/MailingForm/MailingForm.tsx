@@ -39,7 +39,7 @@ export const MailingForm = React.memo(({ close }: MailingFormProps) => {
             ? <Loader/>
             :
             (
-              <Button fullWidth disabled={disabled} onClick={onHandleSendInternship}>
+              <Button variant="outlined" fullWidth disabled={disabled} onClick={onHandleSendInternship}>
                 <Typography variant="span" uppercase>
                   подписаться
                 </Typography>

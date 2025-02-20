@@ -78,7 +78,7 @@ const Component = (props: ConsultationFormProps) => {
           isLoading
             ? <Loader />
             : (
-              <Button fullWidth disabled={disabled} onClick={onHandleSendConsultation}>
+              <Button fullWidth variant="outlined" disabled={disabled} onClick={onHandleSendConsultation}>
                 <Typography variant="span" uppercase>
                   отправить
                 </Typography>
