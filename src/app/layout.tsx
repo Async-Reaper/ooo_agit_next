@@ -3,6 +3,7 @@ import { ConsultationFlag } from "@features/Consultation";
 import { PageLoader } from "@shared/ui";
 import { Footer } from "@widgets/Footer";
 import { Header } from "@widgets/Header";
+import { RunStroke } from "@widgets/NewsScreen";
 
 import "@shared/styles/index.scss";
 
@@ -25,6 +26,7 @@ const RootLayout = (props: RootLayoutProps) => {
       <body>
         <Suspense fallback={<PageLoader />}>
           <ConsultationFlag />
+          <RunStroke/>
           <Header/>
           {children}
           <Footer/>
