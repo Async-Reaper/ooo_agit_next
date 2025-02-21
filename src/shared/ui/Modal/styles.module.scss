@@ -24,7 +24,7 @@
     transition: 0.3s transform;
     transform: scale(0.5);
     width: fit-content;
-    background: var(--color-secondary);
+    background: var(--color-black-primary);
 
     @include mixins.desktop {
         padding: 46px 40px;
@@ -35,6 +35,9 @@
     pointer-events: auto;
     z-index: 99999;
     animation: opened 0.2s ease-in-out forwards;
+    backdrop-filter: blur(5px);
+    will-change: filter, transform;
+    transform: translateZ(0);
 
     .content {
         transform: scale(1);
@@ -78,7 +81,7 @@
 
 .isClosing {
     .content {
-        transform: scale(0.0);
+        transform: scale(0);
     }
 }
 

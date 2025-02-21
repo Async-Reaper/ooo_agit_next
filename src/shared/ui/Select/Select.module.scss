@@ -44,21 +44,25 @@
 
         align-items: self-start;
         position: relative;
-        background: rgb(135 128 128 / 55%);
+        background: linear-gradient(145deg, #888383 60%, #69D4C8 100%);
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(84px);
         gap: 15px;
         opacity: 0;
-        transition: all .3s;
-        text-align: center;
         height: 0;
-        transform: translateY(-5000px);
+        transition: ease-in-out .3s;
+        text-align: center;
+        transform: scaleY(0);
 
         &.active {
-            transform: translateY(0);
+            transform: scaleY(1);
+            backdrop-filter: blur(84px);
             padding: 10px;
             opacity: 1;
             width: 100%;
-            height: max-content;
-            border-radius: 0 0 10px 10px;
+            height: 167px;
+            border-radius: 15px;
         }
     }
 

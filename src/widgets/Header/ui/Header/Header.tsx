@@ -39,7 +39,7 @@ export const Header = React.memo(() => {
             >
               <AppLink
                 href="/"
-                variant="primary"
+                variant="primary-green"
               >
                 <Typography variant="span">
                   Главная
@@ -54,7 +54,7 @@ export const Header = React.memo(() => {
             >
               <AppLink
                 href="/products"
-                variant="primary"
+                variant="primary-green"
               >
                 <Typography variant="span">
                   Продукты и услуги
@@ -69,7 +69,7 @@ export const Header = React.memo(() => {
             >
               <AppLink
                 href="/cases"
-                variant="primary"
+                variant="primary-green"
               >
                 <Typography variant="span">
                   Наши кейсы
@@ -103,7 +103,6 @@ export const Header = React.memo(() => {
           <div className={classNames(cls.header__burger, { [cls.active]: isActiveBurger })}/>
         </motion.div>
       </div>
-      <hr/>
     </header>
   );
 });

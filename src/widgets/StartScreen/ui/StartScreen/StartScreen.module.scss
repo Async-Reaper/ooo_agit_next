@@ -1,14 +1,25 @@
 @use "@shared/styles/_mixins.scss" as mixin;
 
 .start_screen {
-    padding: 0 20px;
     position: relative;
+    padding: 0 20px;
+
+    &:after {
+        position: absolute;
+        content: "";
+        top: 50%;
+        left: 0;
+        height: 20%;
+        width: 5%;
+        background: var(--color-white-primary);
+        filter: blur(90px);
+    }
 
     .start__wrapper {
         max-width: 1800px;
         margin: 0 auto;
 
-        @include mixin.adaptive("padding-block", 148, 40);
+        @include mixin.adaptive("padding-block", 84, 40);
 
         .start__content {
             @include mixin.flex-column;
@@ -22,10 +33,34 @@
         .start__content__text {
             @include mixin.flex-column;
             @include mixin.adaptive("gap", 40, 20);
+            max-width: 900px;
+        }
 
-            .start__content__desc {
-                max-width: 500px;
-            }
+        .start__content__desc {
+            @include mixin.flex-column;
+            @include mixin.adaptive("gap", 20, 10);
+        }
+
+        .guarantees__wrapper {
+            @include mixin.flex-column;
+            gap: 10px;
+        }
+
+        .guarantees__list {
+            @include mixin.flex-column;
+            gap: 7px;
+        }
+
+        .guarantees__item {
+            @include mixin.flex-row;
+            gap: 5px;
+        }
+
+        .check_mark {
+            font-size: 21px;
+            line-height: 21px;
+            color: var(--color-primary);
+            text-shadow: 0 5px 4px #53DFCF22;
         }
     }
 

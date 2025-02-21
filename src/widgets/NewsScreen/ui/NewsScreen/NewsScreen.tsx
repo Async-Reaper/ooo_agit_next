@@ -72,10 +72,8 @@ export const NewsScreen = React.memo(() => {
           }}
           className={cls.news__title__wrapper}
         >
-          <Typography variant="h1" color="secondary" uppercase>
-            <b>Новости</b>
-            {" "}
-            от нас
+          <Typography variant="h1" uppercase>
+            Новости от нас
           </Typography>
         </motion.div>
         <ul className={cls.news__list}>

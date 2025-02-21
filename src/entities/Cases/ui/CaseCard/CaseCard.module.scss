@@ -2,52 +2,63 @@
 
 .case_card__wrapper {
   position: relative;
-  border-radius: 5px;
+  border-radius: 40px;
   padding: 25px;
   min-height: 300px;
-  height: 100%;
-  width: 100%;
+  backdrop-filter: blur(80px);
+  pointer-events: none;
+
+  &:nth-child(n+3) {
+    grid-column: span 1; /* Каждому элементу на последующих строках отводится одна колонка */
+  }
 
   @include mixin.flex-column;
+  justify-content: space-between;
 
-  @include mixin.tablets {
+  @include mixin.laptop {
     @include mixin.flex-row;
 
     justify-content: space-between;
-    background: black;
   }
 
   .case_type {
     width: max-content;
-    padding: 5px;
+    padding: 6px 40px;
     border-radius: 5px;
     margin-bottom: 0;
   }
 
   &.primary {
-    background: linear-gradient(90deg, rgb(211 96 183 / 100%) 0%, rgb(219 154 203 / 100%) 100%);
     color: var(--color-white-primary);
+    border: 2px solid var(--color-white-primary);
 
     .case_type {
-      background: #c841a7;
+      background: linear-gradient(90deg, #E5E5E4 0%, #FFFFFF 100%);
     }
   }
 
   &.secondary {
-    background: linear-gradient(90deg, rgb(0 147 218 / 100%) 0%, rgb(170 234 238 / 100%) 100%);
     color: var(--color-white-primary);
+    border: 2px solid var(--color-primary);
 
     .case_type {
-      background: #2478f7;
+      background: linear-gradient(90deg, #FFFFFF 0%, #98E8DE 100%);
+    }
+
+    .case_result__wrapper {
+      color: var(--color-primary);
     }
   }
 
   &.classic {
-    background: linear-gradient(90deg, rgb(218 161 0 / 100%) 0%, rgb(226 238 170 / 100%) 100%);
     color: var(--color-white-primary);
-
+    border: 2px solid #DBEF83;
     .case_type {
-      background: #ffbd0e;
+      background: linear-gradient(90deg, #C5E18A 0%, #A0BC5E 100%);
+    }
+
+    .case_result__wrapper {
+      color: #DBEF83;
     }
   }
 
@@ -55,7 +66,6 @@
     @include mixin.flex-column;
 
     gap: 15px;
-    height: 100%;
     z-index: 9;
   }
 
@@ -66,7 +76,6 @@
   .case_result__wrapper {
     @include mixin.flex-column;
 
-    margin-top: auto;
     gap: 5px;
   }
 
@@ -76,7 +85,7 @@
   }
 
   .case__img {
-    max-height: 300px;
-    height: 100%;
+    max-width: 300px;
+    width: 100%;
   }
 }

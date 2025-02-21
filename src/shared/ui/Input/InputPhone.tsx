@@ -45,7 +45,6 @@ const Component = (props: InputPhoneProps) => {
         onChange={onChangeHandler}
         className={cls.input}
       />
-      <input/>
     </div>
   );
 };

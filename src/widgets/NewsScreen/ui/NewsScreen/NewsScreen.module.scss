@@ -1,28 +1,59 @@
 @use "@shared/styles/_mixins.scss" as mixin;
 
 .news {
-    border-top: 1px solid var(--color-gray-secondary);
+  border-top: 2px solid var(--color-primary);
+  position: relative;
+  background: var(--color-black-secondary);
+
+  @include mixin.adaptive("padding-block", 80, 30);
+
+  &:before {
+    position: absolute;
+    content: url("/bubble-for-news-left.png");
+    top: 20%;
+    left: 0;
+    width: 167px;
+    height: 525px;
+  }
+
+  &:after {
+    position: absolute;
+    content: url("/bubble-for-news-right.png");
+    top: 40%;
+    right: 0;
+    width: 210px;
+    height: 511px;
+  }
+
+  .news__wrapper {
+    max-width: 1800px;
+    width: 100%;
+    margin: 0 auto;
     padding: 0 20px;
 
-    @include mixin.adaptive("padding-block", 80, 30);
+    .news__title__wrapper {
+      position: relative;
+      width: max-content;
 
-    b {
-        color: var(--color-primary);
+      //&:before {
+      //  position: absolute;
+      //  content: '';
+      //  top: 0;
+      //  left: -105%;
+      //  height: 100%;
+      //  width: 100%;
+      //  background: linear-gradient(90deg, #97FCF0 23%, #97FCB2);
+      //}
     }
 
-    .news__wrapper {
-        max-width: 1800px;
-        width: 100%;
-        margin: 0 auto;
+    @include mixin.adaptive("gap", 50, 20);
+    @include mixin.flex-column;
 
-        @include mixin.adaptive("gap", 50, 20);
-        @include mixin.flex-column;
-
-        .news__list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(auto, 500px));
-            justify-content: space-between;
-            gap: 50px;
-        }
+    .news__list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(auto, 500px));
+      justify-content: space-between;
+      gap: 50px;
     }
+  }
 }

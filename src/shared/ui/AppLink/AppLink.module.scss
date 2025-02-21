@@ -66,5 +66,16 @@
         }
       }
     }
+
+    &--primary-green {
+      color: inherit;
+      position: relative;
+      transition: ease-in-out .3s;
+
+      &:hover {
+        color: var(--color-primary);
+        text-shadow: 0 0 2px var(--color-black-primary);
+      }
+    }
   }
 }

@@ -25,7 +25,8 @@
         @include mixin.adaptive("height", 53, 46);
 
         font-family: var(--font-primary);
-        background: var(--color-white-secondary);
+        background: var(--color-gray-secondary);
+        border: 2px solid var(--color-primary);
         border-radius: 5px;
         outline: none;
         width: 100%;

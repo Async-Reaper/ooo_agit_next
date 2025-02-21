@@ -1,0 +1,70 @@
+@use "@shared/styles/mixins" as mixin;
+
+.activity {
+  position: relative;
+  border-top: 2px solid var(--color-primary);
+  padding: 0 20px;
+
+  @include mixin.adaptive("padding-block", 100, 30);
+
+  b {
+    color: var(--color-primary);
+  }
+
+  &:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 60%;
+    height: 60%;
+    background: linear-gradient(45deg, rgba(108,227,213,1) 35%, rgba(185,243,187,1) 65%);
+    filter: blur(500px);
+    z-index: -1;
+  }
+
+  .activity__wrapper {
+    position: relative;
+    z-index: 2;
+    will-change: transform, opacity;
+    @include mixin.flex-column;
+
+    gap: 20px;
+    border-radius: 20px;
+    background: var(--color-black-primary);
+    box-shadow: 0 4px 10px #00000025;
+    max-width: 1800px;
+    width: 100%;
+    margin: 0 auto;
+
+    @include mixin.adaptive("padding-block", 100, 20);
+    @include mixin.adaptive("padding-inline", 80, 20);
+    @include mixin.adaptive("gap", 30, 20);
+
+    .activity__header {
+      @include mixin.adaptive("gap", 50, 20);
+      @include mixin.flex-column;
+    }
+
+    .activity__content {
+      @include mixin.flex-space;
+    }
+
+    .activity__title {
+      color: var(--color-white-primary);
+    }
+
+    hr {
+      height: 1px;
+      width: 100%;
+      border: none;
+      background: var(--color-white-primary);
+
+      @include mixin.tablets {
+        width: 1px;
+        height: 100px;
+      }
+    }
+  }
+}

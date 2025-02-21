@@ -10,8 +10,8 @@ export const InternshipRequestButton = React.memo(() => {
 
   return (
     <>
-      <Button onClick={open}>
-        <Typography variant="span" uppercase>
+      <Button onClick={open} variant="outlined">
+        <Typography variant="span" bold uppercase>
           Хочу на стажировку!
         </Typography>
       </Button>

@@ -1,9 +1,9 @@
 @use "@shared/styles/_mixins.scss" as mixin;
 
 .vacancies__screen {
-    border-top: 1px solid var(--color-gray-secondary);
-    background: var(--color-white-secondary);
-
+    background-image: url("/wave-vacancy.webp");
+    background-size: cover;
+    @include mixin.adaptive("margin-top", 80, 20);
     b {
         color: var(--color-primary);
     }
@@ -16,7 +16,7 @@
         width: 100%;
         margin: 0 auto;
 
-        @include mixin.adaptive("padding-block", 100, 20);
+        @include mixin.adaptive("padding-block", 100, 70);
         @include mixin.adaptive("padding-inline", 80, 20);
     }
 }

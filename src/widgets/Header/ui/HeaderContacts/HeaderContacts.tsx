@@ -1,6 +1,5 @@
 import React from "react";
-import { ColoredIcon } from "@shared/libs/icon/colored-icon";
-import { Social, Typography } from "@shared/ui";
+import { Icon } from "@shared/libs/icon/icon";
 import { AppLink } from "@shared/ui/AppLink";
 
 import cls from "./HeaderContacts.module.scss";
@@ -10,14 +9,13 @@ export const HeaderContacts = () => (
   <div className={cls.contacts__wrapper}>
     <div className={cls.contacts__list}>
       <AppLink className={cls.contact__item} href="mailto:1c@agit.su" variant="secondary" isUnderline={false}>
-        <ColoredIcon name="email" size={40} color="primary"/>
+        <Icon name="email" size={45} color="gray-dark"/>
       </AppLink>
       <AppLink className={cls.contact__item} href="tel:+7(3843)328-000" variant="secondary" isUnderline={false}>
-        <ColoredIcon name="telephone" size={40} color="primary"/>
+        <Icon name="phone" size={35} color="gray-dark"/>
       </AppLink>
       <AppLink className={cls.contact__item} href="https://yandex.ru/maps/-/CHahIKmc" target="_blank" variant="primary" isUnderline={false}>
-        <ColoredIcon name="maps" size={40} color="primary"/>
-        <Typography variant="span">г. Новокузнецк</Typography>
+        <Icon name="map" size={35} color="gray-dark"/>
       </AppLink>
     </div>
   </div>

@@ -3,9 +3,7 @@
 .header {
     width: 100%;
     height: mixin.$headerHeight + px;
-    background: var(--color-white-primary);
     z-index: 99;
-
 
     .header__inner {
         @include mixin.flex-row;
@@ -19,7 +17,7 @@
 
         width: 100%;
         padding: 25px 20px;
-        color: var(--color-secondary);
+        color: var(--color-white-primary);
 
         .header__nav {
             position: absolute;
@@ -33,7 +31,7 @@
             &.active {
                 transform: translateY(0);
                 align-items: center;
-                background: var(--color-white-primary);
+                background: var(--color-secondary);
                 top: 0;
                 left: 0;
                 width: 100%;
@@ -124,6 +122,10 @@
         .header__links {
             @include mixin.flex-column;
 
+            background: #717574;
+            border: 2px solid var(--color-primary);
+            border-radius: 10px;
+            padding: 20px 108px;
             align-items: flex-start;
             width: max-content;
 

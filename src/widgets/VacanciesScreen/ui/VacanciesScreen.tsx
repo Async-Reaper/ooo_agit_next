@@ -7,10 +7,10 @@ export const VacanciesScreen = () => (
   <section id="vacancies" className={cls.vacancies__screen}>
     <div className={cls.vacancies__wrapper}>
       <div>
-        <Typography variant="h1" color="secondary" uppercase>
+        <Typography variant="h1" uppercase>
           Наши
           {" "}
-          <b>вакансии</b>
+          вакансии
         </Typography>
       </div>
       <VacanciesList />

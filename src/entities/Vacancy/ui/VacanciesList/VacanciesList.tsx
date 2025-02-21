@@ -43,9 +43,11 @@ export const VacanciesList = React.memo(() => {
             isUnderline={false}
           >
             <AppImage src={vacancy.img} className={cls.vacancy_img} />
-            <Typography variant="span">
-              {vacancy.name}
-            </Typography>
+            <div className={cls.vacancy__name}>
+              <Typography variant="span" uppercase>
+                {vacancy.name}
+              </Typography>
+            </div>
           </AppLink>
         )
       }

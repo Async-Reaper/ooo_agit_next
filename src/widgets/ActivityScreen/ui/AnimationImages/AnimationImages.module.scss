@@ -1,0 +1,109 @@
+@use "@shared/styles/mixins";
+
+.animation__images__wrapper {
+  position: relative;
+  display: none;
+  width: 600px;
+  height: 520px;
+
+  @include mixins.laptop {
+    display: flex;
+  }
+
+  .wrapper {
+    position: relative;
+
+    &:nth-child(1) {
+      width: 196px;
+    }
+
+    &:nth-child(2) {
+      width: 238px;
+    }
+
+    &:nth-child(3) {
+      width: 509px;
+    }
+  }
+
+  .sphere__white__m__left {
+    position: absolute;
+    top: 72px;
+    left: 23px;
+    //transform: translate(, );
+    width: 32px;
+  }
+
+  .sphere__blue__l__left {
+    position: absolute;
+    top: 234px;
+    left: 48px;
+    //transform: translate(, );
+    width: 41px;
+  }
+
+  .sphere__white__xs__left {
+    position: absolute;
+    bottom: 43px;
+    right: 0;
+    //transform: translate(, );
+    width: 16px;
+  }
+
+  .flight__center {
+    position: absolute;
+    top: 31px;
+    left: 7px;
+    width: 150px;
+  }
+
+  .sphere__white__m__center {
+    position: absolute;
+    top: 252px;
+    right: 0;
+  }
+
+  .comment__center {
+    position: absolute;
+    bottom: 90px;
+    left: 14px;
+    width: 120px;
+    transform: rotate(-10deg);
+  }
+
+  .gear__center {
+    position: absolute;
+    bottom: 90px;
+    left: 14px;
+    width: 210px;
+    transform: rotate(-12deg);
+  }
+
+  .sphere__white__xl__right {
+    position: absolute;
+    top: 21px;
+    left: 44px;
+    width: 31px;
+  }
+
+  .star__right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 170px;
+  }
+
+  .circular__right {
+    position: absolute;
+    bottom: 100px;
+    left: 75px;
+    width: 170px;
+  }
+
+  .sphere__blue__xs__right {
+    position: absolute;
+    bottom: 44px;
+    right: 38px;
+    width: 12px;
+  }
+}

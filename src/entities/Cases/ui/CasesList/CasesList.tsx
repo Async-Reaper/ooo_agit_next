@@ -1,7 +1,6 @@
 "use client";
 import React, { useCallback, useEffect, useState } from "react";
 import { db } from "@main/FirebaseProvider";
-import { Loader } from "@shared/ui";
 import { Skeleton } from "@shared/ui/Skeleton";
 import { collection, getDocs, query } from "firebase/firestore";
 
@@ -29,13 +28,18 @@ export const CasesList = React.memo(() => {
   }, [fetchGetCases]);
 
   return (
-    <section className={cls.cases__wrapper}>
-      {isLoading
-        ? new Array(13).fill("").map((_, index) => <Skeleton key={index} className={cls.cases__skeleton}/>)
-        : casesList.map((caseItem) => (
-          <CaseCard key={caseItem.id} caseItem={caseItem} />
-        ))
-      }
+    <section className={cls.cases}>
+      <div className={cls.cases__wrapper}>
+        {isLoading
+          ? new Array(13).fill("").map((_, index) => <Skeleton key={index} className={cls.cases__skeleton}/>)
+          : casesList.map((caseItem) => (
+            <CaseCard key={caseItem.id} caseItem={caseItem} />
+          ))
+        }
+      </div>
+      <div className={cls.cases__background__wrapper}>
+        <div className={cls.cases__background}></div>
+      </div>
     </section>
   );
 });

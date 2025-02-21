@@ -44,7 +44,7 @@
             @include mixins.adaptive("font-size", 48, 28);
             @include mixins.adaptive("line-height", 48, 33);
 
-            font-weight: 800;
+            font-weight: 500;
 
             &.bold {
                 font-weight: 800;
@@ -52,8 +52,8 @@
         }
 
         &--h2 {
-            @include mixins.adaptive("font-size", 25, 17);
-            @include mixins.adaptive("line-height", 24, 28);
+            @include mixins.adaptive("font-size", 35, 20);
+            @include mixins.adaptive("line-height", 30, 28);
 
             font-weight: 500;
 
@@ -63,8 +63,8 @@
         }
 
         &--h3 {
-            @include mixins.adaptive("font-size", 18, 14);
-            @include mixins.adaptive("line-height", 28, 22);
+            @include mixins.adaptive("font-size", 20, 14);
+            @include mixins.adaptive("line-height", 21, 18);
 
             font-weight: 500;
 
@@ -122,7 +122,7 @@
         }
 
         &--black {
-            color: var(--color-black);
+            color: var(--color-black-primary);
         }
 
         &--gray-primary {

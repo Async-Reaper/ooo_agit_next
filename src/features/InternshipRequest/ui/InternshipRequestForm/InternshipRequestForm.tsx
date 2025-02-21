@@ -10,15 +10,13 @@ interface InternshipRequestFormProps {
   close: () => void;
 }
 
-export const InternshipRequestForm = ({ close }: InternshipRequestFormProps) => {
+export const InternshipRequestForm = (props: InternshipRequestFormProps) => {
+  const { close } = props;
+  
   const [email, setEmail] = useState<string>("");
   const [fullName, setFullName] = useState<string>("");
   const [phoneNumber, setPhoneNumber] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const date = new Date();
-  const [currentDateRequest] = useState(`
-   ${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}
-   `);
 
   const onHandleSendInternship = useCallback(async () => {
     setIsLoading(true);
@@ -26,7 +24,6 @@ export const InternshipRequestForm = ({ close }: InternshipRequestFormProps) => 
       email: email,
       full_name: fullName,
       phone_number: phoneNumber,
-      date: currentDateRequest,
     });
     setFullName("");
     setPhoneNumber("");
@@ -50,7 +47,7 @@ export const InternshipRequestForm = ({ close }: InternshipRequestFormProps) => 
           isLoading
             ? <Loader />
             : (
-              <Button fullWidth disabled={disabled} onClick={onHandleSendInternship}>
+              <Button variant="outlined" fullWidth disabled={disabled} onClick={onHandleSendInternship}>
                 <Typography variant="span" uppercase>
                   записаться
                 </Typography>
