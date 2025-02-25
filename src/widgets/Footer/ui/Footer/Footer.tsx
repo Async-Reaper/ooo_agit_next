@@ -30,18 +30,20 @@ export const Footer = React.memo(() => {
           </div>
         </div>
       </Container>
-      <Container className={cls.other__info}>
-        <AppLink href="/privacy" target="_blank" variant="secondary">
-          <Typography variant="span" noWrap>
-            Политика конфиденциальности
+      <div className={cls.other__info}>
+        <Container>
+          <AppLink href="/privacy" target="_blank" variant="secondary">
+            <Typography variant="span" noWrap>
+              Политика конфиденциальности
+            </Typography>
+          </AppLink>
+          <Typography variant="span" color="white-primary">
+            © 2024 654005, ООО «АГИТ-Плюс», г. Новокузнецк, пр-т Строителей, д. 19.
+            Все указанные на сайте цены носят информационный характер и не являются публичной офертой
+            (ст. 437 ГК РФ), если явно не указано иное.
           </Typography>
-        </AppLink>
-        <Typography variant="span" color="white-primary">
-          © 2024 654005, ООО «АГИТ-Плюс», г. Новокузнецк, пр-т Строителей, д. 19.
-          Все указанные на сайте цены носят информационный характер и не являются публичной офертой
-          (ст. 437 ГК РФ), если явно не указано иное.
-        </Typography>
-      </Container>
+        </Container>
+      </div>
     </footer>
   );
 });
