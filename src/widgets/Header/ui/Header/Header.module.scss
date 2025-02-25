@@ -24,7 +24,7 @@
             transform: translateY(-500px);
 
             @include mixin.flex-column;
-
+            gap: 10px;
             transition: all .3s;
             width: 100%;
 
@@ -122,14 +122,14 @@
         .header__links {
             @include mixin.flex-column;
 
-            background: #3C3D3C;
             border: 2px solid var(--color-primary);
-            border-radius: 10px;
-            padding: 20px 108px;
+            border-radius: 25px;
+            @include mixin.adaptive("padding-block", 20, 5);
+            @include mixin.adaptive("padding-inline", 75, 10);
             align-items: flex-start;
             width: max-content;
 
-            @include mixin.adaptive("gap", 70, 10);
+            @include mixin.adaptive("gap", 50, 10);
 
             margin: 0 auto 20px;
 

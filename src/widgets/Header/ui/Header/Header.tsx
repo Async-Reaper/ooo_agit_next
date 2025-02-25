@@ -1,14 +1,13 @@
 "use client";
 import React, { useCallback, useState } from "react";
 import { classNames } from "@shared/libs/classNames/classNames";
-import { Typography } from "@shared/ui";
+import { Contacts, Typography } from "@shared/ui";
 import { AppLink } from "@shared/ui/AppLink";
 import { AppLogo } from "@shared/ui/AppLogo/AppLogo";
 import { motion } from "motion/react";
 
 import cls from "./Header.module.scss";
 
-import { HeaderContacts } from "../HeaderContacts/HeaderContacts";
 import { SelectLinks } from "../SelectLinks/SelectLinks";
 
 export const Header = React.memo(() => {
@@ -90,7 +89,7 @@ export const Header = React.memo(() => {
             transition={{ type: "spring", duration: 0.3 }}
             className={cls.header__button}
           >
-            <HeaderContacts/>
+            <Contacts />
           </motion.div>
         </div>
         <motion.div

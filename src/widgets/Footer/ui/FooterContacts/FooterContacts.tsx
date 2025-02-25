@@ -9,7 +9,7 @@ export const FooterContacts = React.memo(() => {
   return (
     <div className={cls.footer__contacts}>
       <div className={cls.contact__item}>
-        <Icon name="email" size={45} color="gray-dark"/>
+        <Icon name="email" size={35} color="gray-dark"/>
         <AppLink href="mailto:1c@agit.su" variant="secondary">
           <Typography>1c@agit.su</Typography>
         </AppLink>

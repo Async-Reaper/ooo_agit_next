@@ -1,4 +1,5 @@
 export { Button } from "./Button/Button";
+export { Contacts } from "./Contacts/Contacts";
 export { Input } from "./Input/Input";
 export { InputPhone } from "./Input/InputPhone";
 export { Loader } from "./Loaders/Loader/Loader";
