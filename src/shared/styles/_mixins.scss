@@ -2,7 +2,7 @@
 
 $maxContainer: 1780;
 $minScreen: 320;
-$headerHeight: 105;
+$headerHeight: 100;
 $footerHeight: 175;
 
 @mixin adaptive($property, $maxSize, $minSize) {

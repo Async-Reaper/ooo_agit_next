@@ -103,8 +103,8 @@ export const PlatformScreen = React.memo(() => {
               transition={{ type: "spring", duration: 0.5, delay: 0.3 }}
               className={cls.platform__header__text}
             >
-              <Typography variant="p">
-                Наша компания распостраняет также продукты 1С
+              <Typography variant="p" uppercase>
+                ПРОГРАММНЫе ПРОДУКТЫ
               </Typography>
             </motion.div>
           </div>

@@ -46,8 +46,8 @@
     .platform__header__content {
       @include mixin.flex-column;
       flex-shrink: 0;
-      @include mixin.adaptive("padding-block", 60, 30);
-      @include mixin.adaptive("padding-inline", 100, 50);
+      @include mixin.adaptive("padding-block", 65, 30);
+      @include mixin.adaptive("padding-inline", 137, 80);
 
       position: relative;
       background-image: url("/platform-bg.png");
@@ -60,8 +60,10 @@
         color: var(--color-primary);
       }
 
-      @include mixin.tablets {
+      @include mixin.phones-xl {
         max-width: max-content;
+        background-size: contain;
+        background-repeat: no-repeat;
       }
     }
 

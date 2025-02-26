@@ -7,17 +7,17 @@
 
   @include mixin.laptop {
     @include mixin.flex-row;
-    align-items: self-start;
+    align-items: stretch;
     flex-wrap: nowrap;
   }
 
   .services__item {
-    gap: 20px;
     padding-block: 25px;
     transition: ease-in-out .3s;
 
     @include mixin.flex-column;
     align-items: center;
+    @include mixin.adaptive("gap", 20, 10);
     @include mixin.adaptive("padding-inline", 30, 20);
 
     &:hover .service__icon__wrapper {
@@ -42,6 +42,7 @@
     }
 
     .service__link {
+      margin: auto 0 0;
       transition: ease-in-out .3s;
     }
 

@@ -38,7 +38,7 @@ const Component = () => {
         onClick={onHandleVisibleSelect}
         onMouseOver={() => setIsVisibleSelect(true)}
       >
-        <Typography variant="span">
+        <Typography variant="span" noWrap>
           О нас
         </Typography>
         <Icon

@@ -82,7 +82,7 @@ export const NewsScreen = React.memo(() => {
               ? new Array(2).fill("").map((_, index) => <Skeleton key={index} width={500} height={560} border={5} />)
               : (
                 news?.map((newsItem) => (
-                  <NewsItem key={newsItem.img} newsItem={newsItem as INews}/>
+                  <NewsItem key={newsItem.path} newsItem={newsItem as INews}/>
                 ))
               )
           }

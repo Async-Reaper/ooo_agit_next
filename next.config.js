@@ -4,7 +4,7 @@ module.exports = {
    },
 
    images: {
-      domains: ["img.icons8.com", "img.freepik.com"],
+      domains: ["img.icons8.com", "img.freepik.com", "static-agit.onrender.com"],
    },
 
    webpack(config) {

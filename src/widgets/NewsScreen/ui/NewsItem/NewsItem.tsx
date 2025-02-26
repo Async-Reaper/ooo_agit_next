@@ -16,9 +16,9 @@ export const NewsItem = React.memo(({ newsItem }: NewsItemProps) => {
   const { isOpen, open, close } = useModal();
 
   return (
-    <li key={newsItem.img} className={cls.news__item__wrapper}>
+    <li key={newsItem.path} className={cls.news__item__wrapper}>
       <div className={cls.news__item__img}>
-        <AppImage src={newsItem.img} alt=""/>
+        <AppImage src={newsItem.path} alt=""/>
       </div>
       <div className={cls.news__item__title} onClick={open}>
         <Typography variant="p" bold>

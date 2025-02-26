@@ -2,5 +2,5 @@ export interface INews {
   id: string;
   title: string;
   description: string;
-  img: string;
+  path: string;
 }

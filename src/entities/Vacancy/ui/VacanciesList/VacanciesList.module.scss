@@ -3,13 +3,13 @@
 .vacancies__list__wrapper {
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
 
   .vacancies__item {
-    width: 270px;
+    @include mixin.adaptive("width", 320, 270);
     border-radius: 5px;
     border: 3px solid var(--color-black-primary);
     color: var(--color-black-primary);
@@ -27,7 +27,7 @@
 
     .vacancy__name {
       border-top: 3px solid var(--color-black-primary);
-      padding: 15px 0;
+      padding: 15px 12px;
       width: 100%;
       background: linear-gradient(90deg, #AAE1DB, #49F1DD);
       text-align: center;

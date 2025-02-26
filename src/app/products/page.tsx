@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: "АГИТ-Плюс",
     description: "Автоматизация различных областей учёта и предоставление сервиса самого высокого уровня обслуживания!",
     url: "https://ooo-agit-next.vercel.app/",
-    images: "https://ooo-agit-next.vercel.app/logoForSeo.png"
+    images: "https://static-agit.onrender.com/other/logoForSeo.png"
   }
 };
 
