@@ -11,7 +11,7 @@
     left: 0;
     height: 883px;
     width: 500px;
-    background-image: url("/bubble-first.png");
+    background-image: url("/bubbleDecoration/bubble-first.webp");
     background-repeat: no-repeat;
     z-index: -1;
   }
@@ -24,7 +24,7 @@
     left: 0;
     height: 100%;
     width: 500px;
-    background-image: url("/bubble-second.png");
+    background-image: url("/bubbleDecoration/bubble-second.webp");
     background-repeat: no-repeat;
     z-index: -1;
   }
@@ -49,7 +49,7 @@
         left: 0;
         height: 100%;
         width: 100%;
-        background-image: url("/bubble-third.webp");
+        background-image: url("/bubbleDecoration/bubble-third.webp");
         background-repeat: no-repeat;
         z-index: -1;
       }
