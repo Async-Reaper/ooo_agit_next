@@ -2,7 +2,6 @@
 
 .internship__wrapper {
   position: relative;
-
   @include mixin.adaptive("padding-block", 80, 30);
 
   .internship__background__img {
@@ -62,6 +61,7 @@
           line-height: 45px;
           color: var(--color-primary);
           text-shadow: 0 5px 4px #53DFCF22;
+          transform: rotate(-90deg);
         }
 
         .stage__name {

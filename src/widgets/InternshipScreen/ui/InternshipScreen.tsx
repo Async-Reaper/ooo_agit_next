@@ -1,5 +1,6 @@
 import React from "react";
 import { InternshipRequestButton } from "@features/InternshipRequest";
+import { Icon } from "@shared/libs/icon/icon";
 import { Typography } from "@shared/ui";
 import { AppImage } from "@shared/ui/AppImage";
 import Container from "@shared/ui/Container/Container";
@@ -48,7 +49,7 @@ export const InternshipScreen = React.memo(() => {
               stageInternship.map((internship) => (
                 <li key={internship.id} className={cls.stage_internship__item}>
                   <div className={cls.check_mark}>
-                    ✔
+                    <Icon name="arrow_bottom" color="primary" size={33} />
                   </div>
                   <div className={cls.stage__name}>
                     <Typography variant="p" align="center">

@@ -14,15 +14,25 @@
   .services__item {
     padding-block: 25px;
     transition: ease-in-out .3s;
-
+    min-height: 465px;
     @include mixin.flex-column;
+    justify-content: space-between;
     align-items: center;
-    @include mixin.adaptive("gap", 20, 10);
     @include mixin.adaptive("padding-inline", 30, 20);
 
     &:hover .service__icon__wrapper {
       border: 2px solid var(--color-primary);
       box-shadow: 0 0 5px var(--color-primary);
+    }
+
+    .service__icon__wrapper {
+      border: 2px solid var(--color-white-primary);
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      @include mixin.flex-center;
+      flex-shrink: 1;
+      transition: ease-in-out .3s;
     }
 
     .service__icon {
@@ -31,6 +41,21 @@
       path {
         transition: ease-in-out .3s;
       }
+    }
+
+    .services__name {
+      margin: 0 0 10px;
+      text-align: center;
+    }
+
+    .service__info {
+      margin: 0 0 10px;
+      text-align: center;
+      align-self: end;
+    }
+
+    .icon__link {
+      transform: rotate(-90deg);
     }
 
     &:hover .service__icon {
@@ -42,36 +67,11 @@
     }
 
     .service__link {
-      margin: auto 0 0;
       transition: ease-in-out .3s;
     }
 
     &:hover .service__link {
       color: var(--color-primary);
     }
-  }
-
-  .service__icon__wrapper {
-    border: 2px solid var(--color-white-primary);
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    @include mixin.flex-center;
-    flex-shrink: 1;
-    transition: ease-in-out .3s;
-  }
-
-  .services__name {
-    margin: 0 0 10px;
-    text-align: center;
-  }
-
-  .service__info {
-    margin: 0 0 10px;
-    text-align: center;
-  }
-
-  .icon__link {
-    transform: rotate(-90deg);
   }
 }

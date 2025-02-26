@@ -3,6 +3,8 @@ import React from "react";
 import { useModal } from "@shared/hooks";
 import { Button, Typography } from "@shared/ui";
 
+import cls from "./InternshipRequestButton.module.scss";
+
 import { InternshipRequestModal } from "../InternshipRequestModal/InternshipRequestModal";
 
 export const InternshipRequestButton = React.memo(() => {
@@ -10,11 +12,13 @@ export const InternshipRequestButton = React.memo(() => {
 
   return (
     <>
-      <Button onClick={open} variant="outlined">
-        <Typography variant="span" bold uppercase>
-          Хочу на стажировку!
-        </Typography>
-      </Button>
+      <div className={cls.internship__request__button}>
+        <Button onClick={open} variant="outlined" size="xl" fullWidth>
+          <Typography variant="p" bold uppercase>
+            Хочу на стажировку!
+          </Typography>
+        </Button>
+      </div>
       <InternshipRequestModal isOpen={isOpen} onClose={close} />
     </>
   );

@@ -3,7 +3,7 @@ import { classNames } from "@shared/libs/classNames/classNames";
 
 import styles from "./Button.module.scss";
 
-type ButtonSize = "xs" | "s" | "l" | "xl" | "xxl" | "login" | "logout"
+type ButtonSize = "xs" | "s" | "l" | "xl"
 type ButtonBC = ""
 
 interface ButtonProps {
@@ -24,7 +24,7 @@ const Component = (props: ButtonProps) => {
     variant = "contained",
     fullWidth = false,
     color,
-    children, 
+    children,
     onClick,
     isLoading = false,
     disabled = false,
@@ -48,7 +48,7 @@ const Component = (props: ButtonProps) => {
 
   return (
     <button
-      disabled={disabled}   
+      disabled={disabled}
       className={classNames(styles.button, mods, add)}
       onClick={onClick}
     >

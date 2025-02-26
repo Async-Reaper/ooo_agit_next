@@ -13,12 +13,6 @@
 
         @include mixin.flex-column;
 
-        @include mixin.desktop {
-            @include mixin.flex-space;
-
-            flex-direction: row;
-        }
-
         b {
             color: var(--color-primary)
         }

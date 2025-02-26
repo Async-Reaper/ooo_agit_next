@@ -67,18 +67,18 @@ export const ServicesList = React.memo(({ isVisible }: ServicesListProps) => {
             <Icon name={service.iconName} size={100} color="primary" className={cls.service__icon}/>
           </div>
           <div className={cls.services__name}>
-            <Typography variant="p" color="primary" align="center">
+            <Typography variant="span" bold color="primary" align="center">
               {service.serviceName}
             </Typography>
           </div>
           <div className={cls.service__info}>
-            <Typography variant="p" align="center">
+            <Typography variant="span" align="center">
               {service.serviceInfo}
             </Typography>
           </div>
           <AppLink href={service.link} variant="secondary" isUnderline={false} className={cls.service__link}>
             <Icon name="arrow_bottom" size={23} color="primary" className={cls.icon__link}/>
-            <Typography variant="p">
+            <Typography variant="span">
               Подробнее
             </Typography>
           </AppLink>
