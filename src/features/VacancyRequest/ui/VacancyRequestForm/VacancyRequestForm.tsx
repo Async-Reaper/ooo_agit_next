@@ -3,10 +3,10 @@ import React, { useCallback, useMemo, useState } from "react";
 import {
   Button, Input, InputPhone, Loader, TextArea, Typography,
 } from "@shared/ui";
+import Alert from "@shared/ui/Alert/Alert";
+import axios from "axios";
 
 import cls from "./VacancyRequestForm.module.scss";
-
-import { fetchVacancyRequest } from "../../model/api/fetchVacancyRequest";
 
 interface VacancyRequestFormProps {
   close: () => void;
@@ -21,31 +21,37 @@ export const VacancyRequestForm = React.memo((props: VacancyRequestFormProps) =>
   const [phoneNumber, setPhoneNumber] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [aboutMyself, setAboutMyself] = useState<string>("");
-
-  const date = new Date();
-  const [currentDateRequest] = useState(`
-   ${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}
-   `);
-
+  const [isError, setIsError] = useState<boolean>(false);
+  const [isSuccess, setIsSuccess] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const onHandleVacancyRequest = useCallback(async () => {
     setIsLoading(true);
-
-    await fetchVacancyRequest({
-      full_name: fullName,
-      phone: phoneNumber,
-      email,
-      about_myself: aboutMyself,
-      date_request: currentDateRequest,
-    });
-
-    setFullName("");
-    setPhoneNumber("");
-    setEmail("");
-    setAboutMyself("");
+    setIsSuccess(false);
+    setIsError(false);
+    
+    try {
+      const response = await axios.post("/api/request-vacancy", {
+        full_name: fullName,
+        phone: phoneNumber,
+        email,
+        about_myself: aboutMyself,
+      });
+      setFullName("");
+      setPhoneNumber("");
+      setEmail("");
+      setAboutMyself("");
+      if (response.status === 200) {
+        setIsSuccess(true);
+        close();
+      }
+    } catch (e) {
+      setIsError(true);
+      console.log(e);
+    }
+    
     setIsLoading(false);
-    close();
+    
   }, [fullName, phoneNumber, aboutMyself, email]);
 
   const disabled = useMemo(
@@ -64,7 +70,7 @@ export const VacancyRequestForm = React.memo((props: VacancyRequestFormProps) =>
           isLoading
             ? <Loader />
             : (
-              <Button variant="outlined" fullWidth onClick={onHandleVacancyRequest}>
+              <Button disabled={disabled} variant="outlined" fullWidth onClick={onHandleVacancyRequest}>
                 <Typography variant="span" uppercase>
                   отправить
                 </Typography>
@@ -72,6 +78,12 @@ export const VacancyRequestForm = React.memo((props: VacancyRequestFormProps) =>
             )
         }
       </div>
+      {
+        isError && <Alert variant="error" message="Ууупс... Произошла ошибка, повторите позже :(" />
+      }
+      {
+        isSuccess && <Alert variant="success" message="Ваша заявка на консультацию успешно отправлена!" />
+      }
     </div>
   );
 });

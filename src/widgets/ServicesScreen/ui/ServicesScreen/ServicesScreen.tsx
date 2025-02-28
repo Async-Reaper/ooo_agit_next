@@ -2,11 +2,11 @@
 import React, { useLayoutEffect } from "react";
 import { useViewBox } from "@shared/hooks";
 import { Typography } from "@shared/ui";
+import { ServicesList } from "@widgets/ServicesScreen/ui/ServicesList/ServicesList";
 import { animate, stagger } from "motion";
 import { motion } from "motion/react";
 
 import cls from "./ServicesScreen.module.scss";
-import {ServicesList} from "@widgets/ServicesScreen/ui/ServicesList/ServicesList";
 
 export const ServicesScreen = React.memo(() => {
   const { ref, isVisible } = useViewBox(0.2);

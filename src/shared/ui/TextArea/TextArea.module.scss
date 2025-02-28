@@ -23,7 +23,8 @@
     .textarea {
         height: 150px;
         font-family: var(--font-primary);
-        background: var(--color-white-secondary);
+        background: var(--color-gray-secondary);
+        border: 2px solid var(--color-primary);
         border-radius: 5px;
         outline: none;
         resize: none;
@@ -31,7 +32,7 @@
 
         @include mixin.adaptive("font-size", 17, 14);
 
-        font-weight: 300;
+        font-weight: 500;
 
         @include mixin.adaptive("padding-inline", 30, 10);
 
@@ -42,7 +43,7 @@
 
             @include mixin.adaptive("font-size", 17, 14);
 
-            font-weight: 300;
+            font-weight: 500;
         }
 
         &:focus {

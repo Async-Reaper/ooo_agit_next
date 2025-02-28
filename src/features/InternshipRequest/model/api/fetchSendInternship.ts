@@ -1,23 +1,15 @@
+import axios from "axios";
+
 import { IInternshipRequest } from "../types/internshipRequestTypes";
 
 export const fetchSendInternship = async (data: IInternshipRequest) => {
   try {
-    fetch("/api/request-internship", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        full_name: data.full_name,
-        phone_number: data.phone_number,
-        email: data.email,
-      })
-    })
-      .then(r => r.json())
-      .then(d => {
-        console.log(d);
-      })
-      .catch(e => console.log(e.message));
+    const response = await axios.post("/api/request-internship", {
+      full_name: data.full_name,
+      phone_number: data.phone_number,
+      email: data.email,
+    });
+    console.log(response.data);
   } catch (e) {
     console.log(e);
   }

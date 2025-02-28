@@ -1,11 +1,12 @@
 "use client";
 import React, { useCallback, useMemo, useState } from "react";
 import { Button, Input, InputPhone, Loader, Select, Typography, } from "@shared/ui";
+import Alert from "@shared/ui/Alert/Alert";
 import { SelectItem } from "@shared/ui/Select/Select";
+import axios from "axios";
 
 import cls from "./ConsultationForm.module.scss";
 
-import { fetchSendConsultation } from "../../model/api/fetchSendConsultation";
 import { ThemeConsultationType } from "../../model/types/consultationTypes";
 
 interface ConsultationFormProps {
@@ -42,20 +43,33 @@ const Component = (props: ConsultationFormProps) => {
   const [fullName, setFullName] = useState<string>("");
   const [phoneNumber, setPhoneNumber] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isError, setIsError] = useState<boolean>(false);
+  const [isSuccess, setIsSuccess] = useState<boolean>(false);
 
   const onHandleSendConsultation = useCallback(async () => {
     setIsLoading(true);
-    await fetchSendConsultation({
-      full_name: fullName,
-      phone_number: phoneNumber,
-      theme: consultationSelectValue,
-    });
+    setIsSuccess(false);
+    setIsError(false);
     
-    setFullName("");
-    setPhoneNumber("");
-    setConsultationSelectValue(ThemeConsultationType.DEFAULT);
+    try {
+      const response = await axios.post("/api/request-consultation", {
+        full_name: fullName,
+        phone_number: phoneNumber,
+        theme: consultationSelectValue,
+      });
+      setFullName("");
+      setPhoneNumber("");
+      setConsultationSelectValue(ThemeConsultationType.DEFAULT);
+      if (response.status === 200) {
+        setIsSuccess(true);
+        close();
+      }
+    } catch (e) {
+      setIsError(true);
+      console.log(e);
+    }
+    
     setIsLoading(false);
-    close();
   }, [fullName, phoneNumber, consultationSelectValue]);
 
   const disabled = useMemo(
@@ -86,6 +100,12 @@ const Component = (props: ConsultationFormProps) => {
             )
         }
       </div>
+      {
+        isError && <Alert variant="error" message="Ууупс... Произошла ошибка, повторите позже :(" />
+      }
+      {
+        isSuccess && <Alert variant="success" message="Ваша заявка на консультацию успешно отправлена!" />
+      }
     </div>
   );
 };

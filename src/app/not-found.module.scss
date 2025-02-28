@@ -1,0 +1,15 @@
+@use "@shared/styles/mixins" as mixin;
+
+.not_found__wrapper {
+  @include mixin.adaptive("margin-block", 60, 30);
+  padding: 20px;
+
+  .not_found__message {
+    @include mixin.adaptive("padding", 60, 30);
+    border: 1px solid var(--color-primary);
+    color: var(--color-gray-dark);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+  }
+}
