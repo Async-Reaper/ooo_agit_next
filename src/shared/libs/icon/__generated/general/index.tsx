@@ -2,6 +2,7 @@ import * as React from 'react';
 import {SVGAttributes} from 'react';
 import {ArrowLeftIcon as arrow_left} from './ArrowLeft';
 import {ArrowBottomIcon as arrow_bottom} from './ArrowBottom';
+import {ArrowCircularIcon as arrow_circular} from './ArrowCircular';
 import {BurgerIcon as burger} from './Burger';
 import {ConsultationIcon as consultation} from './Consultation';
 import {EmailIcon as email} from './Email';
@@ -19,6 +20,7 @@ import {VkIcon as vk} from './Vk';
 export type IconName =
   | 'arrow_left'
   | 'arrow_bottom'
+  | 'arrow_circular'
   | 'burger'
   | 'consultation'
   | 'email'
@@ -38,6 +40,7 @@ export const iconSet: {
 } = {
   arrow_left,
   arrow_bottom,
+  arrow_circular,
   burger,
   consultation,
   email,

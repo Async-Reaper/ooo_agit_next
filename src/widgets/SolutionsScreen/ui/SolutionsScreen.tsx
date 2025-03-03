@@ -1,6 +1,7 @@
 "use client";
 import React, { useLayoutEffect, useState } from "react";
 import { useViewBox } from "@shared/hooks";
+import { Icon } from "@shared/libs/icon/icon";
 import { Typography } from "@shared/ui";
 import { animate, stagger } from "motion";
 import { motion } from "motion/react";
@@ -12,22 +13,18 @@ export const SolutionsScreen = React.memo(() => {
     {
       id: 1,
       text: "Автоматизация бизнес-процессов компаний путем внедрения современных IT решений.",
-      path: "https://static-agit.onrender.com/solutions/automation.webp",
     },
     {
       id: 2,
       text: "Разработка программного обеспечения под задачи заказчика, в том числе отраслевые.",
-      path: "https://static-agit.onrender.com/solutions/development.webp",
     },
     {
       id: 3,
       text: "Экспертные консультации для компаний с целью оптимизации и эффективного использования их IT-инфраструктуры.",
-      path: "https://static-agit.onrender.com/solutions/consultation.webp",
     },
     {
       id: 4,
       text: "Обучение по использованию внедренных технологий, а также техническая поддержка пользователей для успешной интеграции и максимальной эффективности новых решений.",
-      path: "https://static-agit.onrender.com/solutions/learning.webp",
     },
   ]);
 
@@ -72,12 +69,12 @@ export const SolutionsScreen = React.memo(() => {
                 className={cls.solution__item}
               >
                 <div className={cls.solution__item__text}>
-                  <Typography variant="p" align="center">
+                  <Typography variant="p" bold align="center">
                     {solution.text}
                   </Typography>
                 </div>
-                <div className={cls.solution__item__img}>
-                  <img src={solution.path} alt="" />
+                <div className={cls.solution__item__icon}>
+                  <Icon name="arrow_circular" size={51} color="primary" />
                 </div>
               </li>
             ))
