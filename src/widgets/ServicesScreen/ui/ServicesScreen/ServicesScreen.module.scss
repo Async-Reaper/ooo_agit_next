@@ -3,6 +3,9 @@
 .services {
     border-top: 2px solid var(--color-primary);
     padding: 0 20px;
+    clip-path: inset(0);
+    will-change: transform;
+    overflow-x: hidden;
 
     @include mixin.adaptive("padding-block", 80, 30);
 

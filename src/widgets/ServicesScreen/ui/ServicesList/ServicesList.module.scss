@@ -4,6 +4,7 @@
   @include mixin.flex-wrap;
   justify-content: center;
   @include mixin.adaptive("gap", 30, 20);
+  clip-path: inset(0);
 
   @include mixin.laptop {
     @include mixin.flex-row;

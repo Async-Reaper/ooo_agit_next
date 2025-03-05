@@ -28,45 +28,6 @@ export const StartScreen = React.memo(() => (
             className={cls.start__content__desc}
           >
             <Typography variant="p">
-              Мы не просто внедряем 1С — мы создаем индивидуальные ИТ-экосистемы для вашего бизнеса. Наш опыт и
-              экспертиза позволяют автоматизировать любые бизнес-процессы: от бухгалтерского учета до управления
-              производством и логистикой.
-            </Typography>
-            <div className={cls.guarantees__wrapper}>
-              <Typography variant="p" color="primary">
-                Мы гарантируем:
-              </Typography>
-              <ul className={cls.guarantees__list}>
-                <li className={cls.guarantees__item}>
-                  <div className={cls.check_mark}>
-                    ✔
-                  </div>
-                  <Typography variant="p">
-                    бесшовную интеграцию с существующими системами;
-                  </Typography>
-                </li>
-                <li className={cls.guarantees__item}>
-                  <div className={cls.check_mark}>
-                    ✔
-                  </div>
-                  <Typography variant="p">
-                    повышение прозрачности бизнеса;
-                  </Typography>
-                </li>
-                <li className={cls.guarantees__item}>
-                  <div className={cls.check_mark}>
-                    ✔
-                  </div>
-                  <Typography variant="p">
-                    рост конкурентоспособности.
-                  </Typography>
-                </li>
-              </ul>
-            </div>
-            <Typography variant="p">
-              С нами вы получите стратегического партнера в сфере автоматизации, который поможет вам достичь новых высот!
-            </Typography>
-            <Typography variant="p">
               Закажите бесплатную консультацию и начините достигать целей уже сегодня!
             </Typography>
           </motion.div>

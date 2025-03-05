@@ -8,6 +8,7 @@
     height: mixin.$headerHeight + px;
     z-index: 99;
     transition: ease-in-out .3s;
+
     &.active {
         background: var(--color-secondary);
     }

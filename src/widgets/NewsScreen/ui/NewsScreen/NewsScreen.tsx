@@ -79,7 +79,7 @@ export const NewsScreen = React.memo(() => {
         <ul className={cls.news__list}>
           {
             isLoading
-              ? new Array(2).fill("").map((_, index) => <Skeleton key={index} width={500} height={560} border={5} />)
+              ? new Array(2).fill("").map((_, index) => <Skeleton key={index} border={5} />)
               : (
                 news?.map((newsItem) => (
                   <NewsItem key={newsItem.path} newsItem={newsItem as INews}/>
