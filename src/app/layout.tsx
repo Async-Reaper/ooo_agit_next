@@ -1,5 +1,6 @@
 import React, { Suspense } from "react";
 import { ConsultationFlag } from "@features/Consultation";
+import { ScrollButton } from "@features/ScrollButton";
 import { PageLoader } from "@shared/ui";
 import { Footer } from "@widgets/Footer";
 import { Header } from "@widgets/Header";
@@ -26,6 +27,7 @@ const RootLayout = (props: RootLayoutProps) => {
       <body>
         <Suspense fallback={<PageLoader />}>
           <ConsultationFlag />
+          <ScrollButton />
           <RunStroke/>
           <Header/>
           {children}

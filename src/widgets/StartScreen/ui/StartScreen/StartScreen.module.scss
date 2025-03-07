@@ -29,7 +29,6 @@
         .start__content {
             @include mixin.flex-column;
             @include mixin.adaptive("gap", 30, 15);
-            @include mixin.adaptive("height", 405, 305);
 
             b {
                 color: var(--color-primary);
