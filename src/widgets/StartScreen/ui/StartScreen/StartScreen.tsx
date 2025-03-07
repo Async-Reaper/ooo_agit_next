@@ -20,6 +20,11 @@ export const StartScreen = React.memo(() => (
             <Typography variant="h2" uppercase>
               Комплексная <b>автоматизация бизнеса</b> на базе 1С: от стратегии до внедрения и сопровождения
             </Typography>
+            <Typography variant="p">
+              Мы не просто внедряем 1С — мы создаем индивидуальные ИТ-экосистемы для вашего бизнеса. Наш опыт и
+              экспертиза позволяют автоматизировать любые бизнес-процессы: от бухгалтерского учета до управления
+              производством и логистикой.
+            </Typography>
           </motion.div>
           <motion.div
             initial={{ x: 150, opacity: 0 }}
@@ -36,6 +41,7 @@ export const StartScreen = React.memo(() => (
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ type: "spring", duration: 2 }}
+          className={cls.consultation__button__wrapper}
         >
           <ConsultationButton/>
         </motion.div>

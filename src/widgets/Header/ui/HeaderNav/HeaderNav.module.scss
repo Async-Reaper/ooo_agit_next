@@ -38,7 +38,7 @@
     align-items: flex-start;
     width: max-content;
 
-    @include mixin.adaptive("gap", 65, 15);
+    @include mixin.adaptive("gap", 40, 15);
 
     margin: 0 auto 20px;
 
@@ -51,7 +51,7 @@
 
     .header__link {
       @include mixin.flex-row;
-      @include mixin.adaptive("gap", 65, 15);
+      @include mixin.adaptive("gap", 40, 15);
     }
 
     .header__vertical_line {

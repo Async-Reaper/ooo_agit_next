@@ -21,9 +21,15 @@
 
         @include mixin.adaptive("padding-block", 84, 40);
 
+        .start__content__title {
+            @include mixin.flex-column;
+            @include mixin.adaptive("gap", 30, 15);
+        }
+
         .start__content {
             @include mixin.flex-column;
-            @include mixin.adaptive("gap", 40, 20);
+            @include mixin.adaptive("gap", 30, 15);
+            @include mixin.adaptive("height", 405, 305);
 
             b {
                 color: var(--color-primary);
@@ -39,6 +45,11 @@
         .start__content__desc {
             @include mixin.flex-column;
             @include mixin.adaptive("gap", 20, 10);
+            margin-top: auto;
+        }
+
+        .consultation__button__wrapper {
+            margin-top: auto;
         }
     }
 
