@@ -5,6 +5,28 @@
   padding: 0 20px;
   position: relative;
 
+  .solution__vector__left {
+    background-image: url("/vectors/vector.svg");
+    background-size: cover;
+    position: absolute;
+    left: -325px;
+    top: 15%;
+    transform: rotate(90deg);
+    width: 725px;
+    height: 311px;
+  }
+
+  .solution__vector__right {
+    background-image: url("/vectors/vector.svg");
+    background-size: cover;
+    position: absolute;
+    right: -205px;
+    bottom: 5%;
+    transform: rotate(-80deg);
+    width: 541px;
+    height: 261px;
+  }
+
   &:after {
     position: absolute;
     content: '';

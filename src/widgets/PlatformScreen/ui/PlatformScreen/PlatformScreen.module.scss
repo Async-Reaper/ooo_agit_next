@@ -5,6 +5,28 @@
   position: relative;
   @include mixin.adaptive("padding-block", 80, 30);
 
+  .platform__vector__left {
+    background-image: url("/vectors/vector.svg");
+    background-size: cover;
+    position: absolute;
+    left: -243px;
+    top: 15%;
+    transform: rotate(90deg);
+    width: 541px;
+    height: 261px;
+  }
+
+  .platform__vector__right {
+    background-image: url("/vectors/vector.svg");
+    background-size: cover;
+    position: absolute;
+    right: -272px;
+    bottom: 10%;
+    transform: rotate(-80deg);
+    width: 541px;
+    height: 261px;
+  }
+
   &:after {
     position: absolute;
     content: "";
@@ -96,6 +118,19 @@
           background: linear-gradient(45deg, rgba(108,207,207,1) 0%, rgba(49,253,224,1) 50%, rgba(108,207,207,1) 100%);
           opacity: 80%;
         }
+      }
+    }
+
+    .platform__link {
+      padding: 10px 18px;
+      border: 2px solid var(--color-primary);
+      border-radius: 15px;
+      transition: ease-in 0.3s;
+      color: var(--color-white-primary);
+
+      &:hover {
+        box-shadow: 0 0 10px var(--color-primary);
+        color: var(--color-gray-primary);
       }
     }
   }

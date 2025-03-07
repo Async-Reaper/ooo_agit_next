@@ -1,6 +1,7 @@
 @use "@shared/styles/_mixins.scss" as mixin;
 
 .brands_list {
+    border-top: 2px solid var(--color-primary);
 
     .brands_list__wrapper {
         max-width: 1800px;

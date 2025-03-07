@@ -78,6 +78,8 @@ export const PlatformScreen = React.memo(() => {
       id="platform"
       className={cls.platform}
     >
+      <div className={cls.platform__vector__left}/>
+      <div className={cls.platform__vector__right}/>
       <motion.div
         initial={{ opacity: 0, x: -100 }}
         animate={isVisible && { opacity: 1, x: 0 }}
@@ -122,7 +124,7 @@ export const PlatformScreen = React.memo(() => {
                 <Typography color="primary" variant="p">
                   {platform.price}
                 </Typography>
-                <AppLink href={platform.link} target="_blank" variant="secondary">
+                <AppLink className={cls.platform__link} href={platform.link} target="_blank" isUnderline={false}>
                   <Typography variant="p">
                     Подробнее
                   </Typography>

@@ -4,6 +4,8 @@
   position: relative;
   border-top: 2px solid var(--color-primary);
   padding: 0 20px;
+  background: var(--color-secondary);
+  z-index: 1;
 
   @include mixin.adaptive("padding-block", 100, 30);
 
@@ -21,7 +23,7 @@
     height: 60%;
     background: linear-gradient(45deg, rgba(108,227,213,1) 35%, rgba(185,243,187,1) 65%);
     filter: blur(500px);
-    z-index: -1;
+    z-index: 0;
   }
 
   .activity__wrapper {
