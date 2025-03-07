@@ -13,7 +13,7 @@ const Component = () => {
         variant="secondary"
         isUnderline={false}
       >
-        <Icon name="email" size={35} color="white-primary"/>
+        <Icon name="email" size={27} color="white-primary"/>
       </AppLink>
       <AppLink
         className={cls.contact__item}
@@ -21,7 +21,7 @@ const Component = () => {
         variant="secondary"
         isUnderline={false}
       >
-        <Icon name="phone" size={35} color="white-primary"/>
+        <Icon name="phone" size={27} color="white-primary"/>
       </AppLink>
       <AppLink
         className={cls.contact__item}
@@ -29,7 +29,7 @@ const Component = () => {
         target="_blank"
         variant="primary" isUnderline={false}
       >
-        <Icon name="map" size={35} color="white-primary"/>
+        <Icon name="map" size={27} color="white-primary"/>
       </AppLink>
     </div>
   );

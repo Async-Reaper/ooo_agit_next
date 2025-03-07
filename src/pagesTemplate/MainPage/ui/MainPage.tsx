@@ -9,7 +9,6 @@ import { StartScreen } from "@widgets/StartScreen";
 export const MainPage = () => (
   <>
     <StartScreen/>
-    <BrandsList/>
     <SolutionsScreen/>
     <ActivityScreen/>
     <ServicesScreen/>

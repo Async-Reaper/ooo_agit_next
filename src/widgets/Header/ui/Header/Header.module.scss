@@ -21,7 +21,7 @@
         margin: 0 auto;
         position: relative;
 
-        @include mixin.adaptive("gap", 65, 15);
+        @include mixin.adaptive("gap", 40, 15);
 
         width: 100%;
         padding: 5px 20px;
@@ -29,7 +29,7 @@
 
         .header__logo {
             @include mixin.flex-row;
-            @include mixin.adaptive("gap", 45, 15);
+            @include mixin.adaptive("gap", 40, 15);
         }
 
         .header__vertical_line {
