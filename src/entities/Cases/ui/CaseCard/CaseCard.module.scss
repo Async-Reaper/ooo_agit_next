@@ -2,90 +2,62 @@
 
 .case_card__wrapper {
   position: relative;
-  border-radius: 40px;
-  padding: 25px;
-  min-height: 300px;
-  backdrop-filter: blur(80px);
-  pointer-events: none;
-
-  &:nth-child(n+3) {
-    grid-column: span 1; /* Каждому элементу на последующих строках отводится одна колонка */
-  }
-
+  padding: 25px 0;
   @include mixin.flex-column;
-  justify-content: space-between;
+  @include mixin.adaptive("gap", 22, 15);
+  @include mixin.adaptive("min-height", 545, 440);
+  align-items: center;
 
-  @include mixin.laptop {
+
+  &:nth-child(odd) {
+    &:after {
+      position: absolute;
+      content: "";
+      top: 30%;
+      right: -280px;
+      background-image: url("/vectors/vector.svg");
+      background-size: cover;
+      transform: rotate(-90deg);
+      width: 541px;
+      height: 261px;
+      z-index: -1;
+    }
+  }
+
+  &:nth-child(even) {
+    &:after {
+      position: absolute;
+      content: "";
+      top: 30%;
+      right: -330px;
+      background-image: url("/vectors/vector.svg");
+      background-size: cover;
+      transform: rotate(75deg) scaleY(-1);
+      width: 541px;
+      height: 261px;
+      z-index: -1;
+    }
+  }
+
+  @include mixin.tablets {
     @include mixin.flex-row;
-
-    justify-content: space-between;
   }
 
-  .case_type {
-    width: max-content;
-    padding: 6px 40px;
-    border-radius: 5px;
-    margin-bottom: 0;
-  }
-
-  &.primary {
-    color: var(--color-white-primary);
-    border: 2px solid var(--color-white-primary);
-
-    .case_type {
-      background: linear-gradient(90deg, #E5E5E4 0%, #FFFFFF 100%);
-    }
-  }
-
-  &.secondary {
-    color: var(--color-white-primary);
-    border: 2px solid var(--color-primary);
-
-    .case_type {
-      background: linear-gradient(90deg, #FFFFFF 0%, #98E8DE 100%);
-    }
-
-    .case_result__wrapper {
-      color: var(--color-primary);
-    }
-  }
-
-  &.classic {
-    color: var(--color-white-primary);
-    border: 2px solid #DBEF83;
-    .case_type {
-      background: linear-gradient(90deg, #C5E18A 0%, #A0BC5E 100%);
-    }
-
-    .case_result__wrapper {
-      color: #DBEF83;
-    }
-  }
-
-  .case__text {
-    @include mixin.flex-column;
-
-    gap: 15px;
-    z-index: 9;
-  }
-
-  .case__title {
-    max-width: 350px;
-  }
-
-  .case_result__wrapper {
-    @include mixin.flex-column;
-
-    gap: 5px;
-  }
-
-  .result__text {
-    border-radius: 3px;
-    max-width: 500px;
+  &+.case_card__wrapper {
+    border-top: 2px solid var(--color-primary);
   }
 
   .case__img {
-    max-width: 300px;
+    @include mixin.adaptive("max-width", 400, 250);
     width: 100%;
+  }
+
+  .case__content {
+    @include mixin.flex-column;
+    @include mixin.adaptive("gap", 22, 15);
+  }
+
+  .case__title {
+    color: var(--color-primary);
   }
 }

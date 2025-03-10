@@ -7,7 +7,8 @@ type ButtonSize = "xs" | "s" | "l" | "xl"
 type ButtonBC = ""
 
 interface ButtonProps {
-  variant?: "text" | "contained" | "outlined";
+  active?: boolean;
+  variant?: "text" | "contained" | "outlined" | "toggle";
   fullWidth?: boolean;
   maxWidth?: boolean;
   color?: DesignSystemColors;
@@ -17,10 +18,12 @@ interface ButtonProps {
   isLoading?: boolean;
   disabled?: boolean;
   size?: ButtonSize
+  boxShadow?: boolean;
 }
 
 const Component = (props: ButtonProps) => {
   const {
+    active = false,
     variant = "contained",
     fullWidth = false,
     color,
@@ -37,6 +40,7 @@ const Component = (props: ButtonProps) => {
     [styles.isLoading]: isLoading,
     [styles.full_width]: fullWidth,
     [styles.max__width]: maxWidth,
+    [styles.active]: active,
   };
 
   const add = [
@@ -45,7 +49,7 @@ const Component = (props: ButtonProps) => {
     styles[`size--${size}`],
     styles[`background--${background}`],
   ];
-
+  
   return (
     <button
       disabled={disabled}

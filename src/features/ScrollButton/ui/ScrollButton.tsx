@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useLayoutEffect } from "react";
+import React, { useEffect } from "react";
 import { classNames } from "@shared/libs/classNames/classNames";
 import { Icon } from "@shared/libs/icon/icon";
 import { Button } from "@shared/ui";
@@ -17,7 +17,6 @@ const Component = () => {
   };
   
   useEffect(() => {
-    console.log(window.scrollY);
     window.addEventListener("scroll", onHandleScroll);
   }, []);
   
