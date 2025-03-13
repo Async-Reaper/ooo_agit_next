@@ -64,21 +64,21 @@ export const AnimationImages = React.memo(() => {
   return (
     <div ref={ref} className={cls.animation__images__wrapper}>
       <div className={cls.wrapper}>
-        <img src="/animationParts/activity/sphere-white.png" className={cls.sphere__white__m__left}/>
-        <img src="/animationParts/activity/sphere-blue.png" className={cls.sphere__blue__l__left}/>
-        <img src="/animationParts/activity/sphere-white.png" className={cls.sphere__white__xs__left}/>
+        <img src="/animationParts/activity/sphere-white.webp" className={cls.sphere__white__m__left}/>
+        <img src="/animationParts/activity/sphere-blue.webp" className={cls.sphere__blue__l__left}/>
+        <img src="/animationParts/activity/sphere-white.webp" className={cls.sphere__white__xs__left}/>
       </div>
       <div className={cls.wrapper}>
-        <img src="/animationParts/activity/flight.png" className={cls.flight__center}/>
-        <img src="/animationParts/activity/sphere-white.png" className={cls.sphere__white__m__center}/>
-        <img src="/animationParts/activity/comment.png" className={cls.comment__center}/>
-        <img src="/animationParts/activity/gear.png" className={cls.gear__center}/>
+        <img src="/animationParts/activity/flight.webp" className={cls.flight__center}/>
+        <img src="/animationParts/activity/sphere-white.webp" className={cls.sphere__white__m__center}/>
+        <img src="/animationParts/activity/comment.webp" className={cls.comment__center}/>
+        <img src="/animationParts/activity/gear.webp" className={cls.gear__center}/>
       </div>
       <div className={cls.wrapper}>
-        <img src="/animationParts/activity/sphere-white.png" className={cls.sphere__white__xl__right}/>
-        <img src="/animationParts/activity/star.png" className={cls.star__right}/>
-        <img src="/animationParts/activity/circular.png" className={cls.circular__right}/>
-        <img src="/animationParts/activity/sphere-blue.png" className={cls.sphere__blue__xs__right}/>
+        <img src="/animationParts/activity/sphere-white.webp" className={cls.sphere__white__xl__right}/>
+        <img src="/animationParts/activity/star.webp" className={cls.star__right}/>
+        <img src="/animationParts/activity/circular.webp" className={cls.circular__right}/>
+        <img src="/animationParts/activity/sphere-blue.webp" className={cls.sphere__blue__xs__right}/>
       </div>
     </div>
   );

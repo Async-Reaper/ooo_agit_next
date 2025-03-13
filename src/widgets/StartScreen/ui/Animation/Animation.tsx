@@ -27,9 +27,9 @@ export const Animation = React.memo(() => {
   
   return (
     <div className={cls.images}>
-      <img className={cls.main__before} src="/animationParts/start/main_before.png" alt=""/>
-      <img className={cls.main__after} src="/animationParts/start/main_after.png" alt=""/>
-      <img className={cls.circular} src="/animationParts/start/circular.png" alt=""/>
+      <img className={cls.main__before} src="/animationParts/start/main_before.webp" alt=""/>
+      <img className={cls.main__after} src="/animationParts/start/main_after.webp" alt=""/>
+      <img className={cls.circular} src="/animationParts/start/circular.webp" alt=""/>
     </div>
   );
 });
