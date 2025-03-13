@@ -32,7 +32,7 @@ export const Modal = (props: ModalProps) => {
   } = props;
 
   const {
-    isClosing, isMounted, closeHandler, onContentClick, 
+    isClosing, isMounted, closeHandler, onContentClick,
   } = useViewModal(
     isOpen,
     onClose,

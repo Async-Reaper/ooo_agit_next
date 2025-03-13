@@ -1,0 +1,33 @@
+.images {
+  width: 800px;
+  height: 580px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .main__before, .main__after {
+    position: absolute;
+    width: 800px;
+    height: 440px;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  .circular {
+    position: absolute;
+    right: 60px;
+    z-index: 0;
+    opacity: 0.5;
+  }
+
+  .main__after {
+    opacity: 0;
+  }
+
+  .cheap {
+    position: absolute;
+    left: 17%;
+    top: 12%;
+  }
+
+}

@@ -6,6 +6,8 @@ import { motion } from "motion/react";
 
 import cls from "./StartScreen.module.scss";
 
+import { Animation } from "../Animation/Animation";
+
 export const StartScreen = React.memo(() => (
   <section id="start" className={cls.start_screen}>
     <div className={cls.start__wrapper}>
@@ -45,6 +47,9 @@ export const StartScreen = React.memo(() => (
         >
           <ConsultationButton/>
         </motion.div>
+      </div>
+      <div className={cls.start__animation__wrapper}>
+        <Animation />
       </div>
     </div>
   </section>

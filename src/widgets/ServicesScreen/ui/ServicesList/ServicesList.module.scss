@@ -3,23 +3,22 @@
 .services__list {
   @include mixin.flex-wrap;
   justify-content: center;
-  @include mixin.adaptive("gap", 30, 20);
+  gap: 40px;
   clip-path: inset(0);
 
   @include mixin.laptop {
     @include mixin.flex-row;
     align-items: stretch;
     flex-wrap: nowrap;
+    gap: 10px;
   }
 
   .services__item {
-    padding-block: 25px;
     transition: ease-in-out .3s;
-    min-height: 465px;
+    @include mixin.adaptive("min-height", 400, 285);
     @include mixin.flex-column;
     justify-content: space-between;
     align-items: center;
-    @include mixin.adaptive("padding-inline", 30, 20);
 
     &:hover .service__icon__wrapper {
       border: 2px solid var(--color-primary);
