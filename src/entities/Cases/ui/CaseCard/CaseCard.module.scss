@@ -2,11 +2,67 @@
 
 .case_card__wrapper {
   position: relative;
-  padding: 25px 0;
   @include mixin.flex-column;
   @include mixin.adaptive("gap", 22, 15);
-  @include mixin.adaptive("min-height", 545, 440);
   align-items: center;
+  min-height: 504px;
+
+  &:nth-child(odd) {
+    &:after {
+      position: absolute;
+      content: "";
+      top: 0;
+      right: 0;
+      background-image: url("/vectors/vector-secondary.webp");
+      background-size: cover;
+      //transform: rotate(-90deg);
+      width: 196px;
+      height: 504px;
+      z-index: 1;
+    }
+  }
+
+  &:nth-child(even) {
+    &:after {
+      position: absolute;
+      content: "";
+      top: 0;
+      right: 0;
+      background-image: url("/vectors/vector-secondary.webp");
+      background-size: cover;
+      transform: scaleY(-1);
+      width: 196px;
+      height: 504px;
+      z-index: 1;
+    }
+  }
+
+  &.primary .case__img:before,
+  &.secondary .case__img:before,
+  &.tertiary .case__img:before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include mixin.adaptive("width", 215, 180);
+    @include mixin.adaptive("height", 215, 180);
+    border-radius: 50px;
+    filter: blur(40px);
+    z-index: -1;
+  }
+
+  &.primary .case__img:before {
+    background: var(--color-primary);
+  }
+
+  &.secondary .case__img:before {
+    background: #FCFCFC;
+  }
+
+  &.tertiary .case__img:before {
+    background: #96BBB7;
+  }
 
   @include mixin.tablets {
     @include mixin.flex-row;
@@ -17,13 +73,23 @@
   }
 
   .case__img {
-    @include mixin.adaptive("max-width", 400, 250);
+    @include mixin.adaptive("max-width", 350, 250);
     width: 100%;
+    position: relative;
+
+    img {
+      width: 100%;
+    }
   }
 
   .case__content {
     @include mixin.flex-column;
     @include mixin.adaptive("gap", 22, 15);
+    padding: 0 20px;
+
+    @include mixin.tablets {
+      padding: 0;
+    }
   }
 
   .case__title {

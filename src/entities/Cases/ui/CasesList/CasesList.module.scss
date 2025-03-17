@@ -2,18 +2,19 @@
 
 .cases {
   position: relative;
-  padding: 0 20px;
-  max-width: 1800px;
-  margin: 70px 0 0;
+  margin: 70px auto 0;
 
   .cases__title__wrapper {
-    margin: 0 0 50px;
+    max-width: 1800px;
+    margin: 0 20px 50px;
   }
 
   .buttons__group {
     @include mixin.flex-row;
     flex-wrap: wrap;
     gap: 15px;
+    max-width: 1800px;
+    padding: 0 20px;
   }
 
   .cases__background__wrapper {
