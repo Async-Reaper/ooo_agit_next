@@ -8,37 +8,6 @@
   @include mixin.adaptive("min-height", 545, 440);
   align-items: center;
 
-
-  &:nth-child(odd) {
-    &:after {
-      position: absolute;
-      content: "";
-      top: 30%;
-      right: -280px;
-      background-image: url("/vectors/vector.svg");
-      background-size: cover;
-      transform: rotate(-90deg);
-      width: 541px;
-      height: 261px;
-      z-index: -1;
-    }
-  }
-
-  &:nth-child(even) {
-    &:after {
-      position: absolute;
-      content: "";
-      top: 30%;
-      right: -330px;
-      background-image: url("/vectors/vector.svg");
-      background-size: cover;
-      transform: rotate(75deg) scaleY(-1);
-      width: 541px;
-      height: 261px;
-      z-index: -1;
-    }
-  }
-
   @include mixin.tablets {
     @include mixin.flex-row;
   }

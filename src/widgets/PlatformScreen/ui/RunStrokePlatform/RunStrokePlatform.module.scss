@@ -1,6 +1,9 @@
 @use "@shared/styles/mixins" as mixin;
 
 .run_stroke__wrapper {
+  position: absolute;
+  top: 25%;
+  left: 34%;
   background: var(--color-primary);
   overflow: hidden;
   padding: 5px 0;

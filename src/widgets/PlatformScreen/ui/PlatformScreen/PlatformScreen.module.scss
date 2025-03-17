@@ -63,10 +63,12 @@
 
     .platform__header__wrapper {
       @include mixin.flex-row;
+      position: relative;
     }
 
     .platform__header__content {
       @include mixin.flex-column;
+      z-index: 1;
       flex-shrink: 0;
       @include mixin.adaptive("padding-block", 65, 30);
       @include mixin.adaptive("padding-inline", 137, 80);

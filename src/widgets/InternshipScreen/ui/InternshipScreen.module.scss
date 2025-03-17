@@ -4,25 +4,38 @@
   position: relative;
   @include mixin.adaptive("padding-block", 80, 30);
 
-  .internship__background__img {
-    img {
-      position: absolute;
-      top: 55px;
-      right: 0;
-      @include mixin.adaptive("width", 183, 82);
-      @include mixin.adaptive("height", 166, 74);
-    }
+  &:before {
+    position: absolute;
+    content: "";
+    top: 15px;
+    left: 5px;
+    width: 18px;
+    height: 95%;
+    background: linear-gradient(to bottom, #97FCF0, #338A80);
+    border-radius: 50px;
+    filter: blur(100px);
   }
 
   &:after {
     position: absolute;
     content: "";
-    top: 55px;
-    right: 16px;
-    width: 101px;
-    height: 105px;
-    background: linear-gradient(90deg, #97FCF0, #338A80);
-    filter: blur(100px);
+    top: 15px;
+    right: 5px;
+    width: 45px;
+    height: 95%;
+    background: linear-gradient(to bottom, #97FCF0, #338A80);
+    border-radius: 100px;
+    filter: blur(150px);
+  }
+
+  .internship__background__img {
+    img {
+      position: absolute;
+      top: 55px;
+      right: 0;
+      @include mixin.adaptive("width", 95, 61);
+      @include mixin.adaptive("height", 120, 77);
+    }
   }
 
   .internship__content {
@@ -57,9 +70,6 @@
         color: var(--color-white-primary);
 
         .check_mark {
-          font-size: 45px;
-          line-height: 45px;
-          color: var(--color-primary);
           text-shadow: 0 5px 4px #53DFCF22;
           transform: rotate(-90deg);
         }

@@ -7,7 +7,6 @@ import { animate, stagger } from "motion";
 import { motion } from "motion/react";
 
 import cls from "./SolutionsScreen.module.scss";
-import {AppImage} from "@shared/ui/AppImage";
 
 export const SolutionsScreen = React.memo(() => {
   const [solutions] = useState([
@@ -32,12 +31,12 @@ export const SolutionsScreen = React.memo(() => {
   const { ref, isVisible } = useViewBox(0.2);
 
   useLayoutEffect(() => {
-    // isVisible && animate([
-    //   [`.${cls.solutions__list}`, { opacity: 1 }],
-    //   [`.${cls.solution__item}`, { x: [-100, 0], opacity: [0, 1] }, {
-    //     duration: 0.3, delay: stagger(0.2), stiffness: 150, bounce: 0.5,
-    //   }],
-    // ]);
+    isVisible && animate([
+      [`.${cls.solutions__list}`, { opacity: 1 }],
+      [`.${cls.solution__item}`, { x: [-100, 0], opacity: [0, 1] }, {
+        duration: 0.3, delay: stagger(0.2), stiffness: 150, bounce: 0.5,
+      }],
+    ]);
   }, [isVisible]);
 
   return (
@@ -45,15 +44,15 @@ export const SolutionsScreen = React.memo(() => {
       <div className={cls.solution__vector__left}/>
       <div className={cls.solution__vector__right}/>
       <motion.div
-        // initial={{ opacity: 0, x: -100 }}
-        // animate={isVisible && { opacity: 1, x: 0 }}
-        // transition={{ type: "spring", duration: 1 }}
+        initial={{ opacity: 0, x: -100 }}
+        animate={isVisible && { opacity: 1, x: 0 }}
+        transition={{ type: "spring", duration: 1 }}
         className={cls.solutions__wrapper}
       >
         <motion.div
-          // initial={{ opacity: 0, x: 100 }}
-          // animate={isVisible && { opacity: 1, x: 0 }}
-          // transition={{ type: "spring", duration: 1 }}
+          initial={{ opacity: 0, x: 100 }}
+          animate={isVisible && { opacity: 1, x: 0 }}
+          transition={{ type: "spring", duration: 1 }}
           id="solutions__title"
           className={cls.solutions__title}
           ref={ref}
@@ -72,7 +71,7 @@ export const SolutionsScreen = React.memo(() => {
                 className={cls.solution__item}
               >
                 <div className={cls.solution__item__text}>
-                  <Typography variant="p" bold align="center">
+                  <Typography variant="span" bold align="center">
                     {solution.text}
                   </Typography>
                 </div>
