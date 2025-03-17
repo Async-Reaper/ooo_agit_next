@@ -7,36 +7,6 @@
   align-items: center;
   min-height: 504px;
 
-  &:nth-child(odd) {
-    &:after {
-      position: absolute;
-      content: "";
-      top: 0;
-      right: 0;
-      background-image: url("/vectors/vector-secondary.webp");
-      background-size: cover;
-      //transform: rotate(-90deg);
-      width: 196px;
-      height: 504px;
-      z-index: 1;
-    }
-  }
-
-  &:nth-child(even) {
-    &:after {
-      position: absolute;
-      content: "";
-      top: 0;
-      right: 0;
-      background-image: url("/vectors/vector-secondary.webp");
-      background-size: cover;
-      transform: scaleY(-1);
-      width: 196px;
-      height: 504px;
-      z-index: 1;
-    }
-  }
-
   &.primary .case__img:before,
   &.secondary .case__img:before,
   &.tertiary .case__img:before {
@@ -74,6 +44,7 @@
 
   .case__img {
     @include mixin.adaptive("max-width", 350, 250);
+    padding: 0 20px;
     width: 100%;
     position: relative;
 
