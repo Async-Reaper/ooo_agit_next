@@ -103,7 +103,7 @@ export const FooterLinks = React.memo(() => {
           </Typography>
         </AppLink>
         <AppLink
-          href="/src/pages/зфпу"
+          href="/cases"
           className={cls.footer__link}
           variant="secondary"
         >

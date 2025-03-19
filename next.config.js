@@ -25,9 +25,9 @@ module.exports = {
             use: ['@svgr/webpack'],
          },
       )
-
       fileLoaderRule.exclude = /\.svg$/i
 
       return config
    },
+
 }
