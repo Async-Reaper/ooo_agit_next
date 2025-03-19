@@ -73,8 +73,7 @@ const Component = () => {
           </Typography>
         </AppLink>
         <AppLink
-          href="/about#news"
-          onClick={(e) => scrollToSection(e, "news")}
+          href="/news"
           variant="primary-green"
           isUnderline
         >

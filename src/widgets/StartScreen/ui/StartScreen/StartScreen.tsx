@@ -35,7 +35,7 @@ export const StartScreen = React.memo(() => (
             className={cls.start__content__desc}
           >
             <Typography variant="p">
-              Закажите бесплатную консультацию и начните достигать целей уже сегодня!
+              Закажите <b>бесплатную консультацию</b> и начните достигать целей уже сегодня!
             </Typography>
           </motion.div>
         </div>

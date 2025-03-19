@@ -3,6 +3,7 @@ import { Typography } from "@shared/ui";
 import { motion } from "motion/react";
 
 import cls from "./ActivityFooter.module.scss";
+import { ConsultationButton } from "@features/Consultation";
 
 interface ActivityFooterProps {
   isVisible: boolean;
@@ -36,8 +37,9 @@ export const ActivityFooter = React.memo(({ isVisible }: ActivityFooterProps) =>
         className={cls.activity__desc}
       >
         <Typography variant="p">
-          Закажите бесплатную консультацию и начните достигать целей уже сегодня!
+          Закажите <b>бесплатную консультацию</b> и начните достигать целей уже сегодня!
         </Typography>
+        <ConsultationButton />
       </motion.div>
     </div>
   );

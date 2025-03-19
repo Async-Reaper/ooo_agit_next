@@ -1,7 +1,5 @@
-import React, { Suspense } from "react";
-import { PageLoader } from "@shared/ui";
+import React from "react";
 import { InternshipScreen } from "@widgets/InternshipScreen/ui/InternshipScreen";
-import { NewsScreen } from "@widgets/NewsScreen";
 import { VacanciesScreen } from "@widgets/VacanciesScreen";
 import { Metadata } from "next";
 
@@ -23,7 +21,6 @@ const Page = async () => {
     <>
       <VacanciesScreen />
       <InternshipScreen />
-      <NewsScreen />
     </>
   );
 };

@@ -6,6 +6,7 @@
 
   @include mixin.tablets {
     @include mixin.flex-row;
+    align-items: self-start;
   }
 
   .activity__desc {
@@ -15,6 +16,11 @@
       padding: 20px;
       border: 1px solid var(--color-white-primary);
       border-radius: 20px 0 20px 0;
+    }
+
+    &:nth-child(2) {
+      @include mixin.flex-column;
+      gap: 10px;
     }
   }
 }

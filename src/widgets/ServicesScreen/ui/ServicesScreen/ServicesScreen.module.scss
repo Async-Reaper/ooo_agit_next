@@ -1,7 +1,6 @@
 @use "@shared/styles/mixins" as mixin;
 
 .services {
-    border-top: 2px solid var(--color-primary);
     padding: 0 20px;
     clip-path: inset(0);
     will-change: transform;
