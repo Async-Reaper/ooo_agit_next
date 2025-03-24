@@ -70,6 +70,23 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: Montserrat;
+  src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'),
+  url('../styles/fonts/Montserrat-Bold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: local('Montserrat SemiBoldItalic'), local('Montserrat-SemiBoldItalic'),
+  url('../styles/fonts/Montserrat-BoldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
 
 @font-face {
   font-family: Montserrat;

@@ -1,0 +1,6 @@
+@use "@shared/styles/mixins" as mixin;
+
+.platform__list__wrapper {
+  @include mixin.flex-column;
+  @include mixin.adaptive("gap", 40, 20);
+}

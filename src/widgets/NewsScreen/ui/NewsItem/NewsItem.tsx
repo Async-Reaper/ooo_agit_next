@@ -17,8 +17,8 @@ export const NewsItem = React.memo(({ newsItem }: NewsItemProps) => {
 
   return (
     <li key={newsItem.path} className={cls.news__item__wrapper}>
-      <div className={cls.news__item__img}>
-        <AppImage src={newsItem.path} alt=""/>
+      <div className={cls.news__item__img__wrapper}>
+        <AppImage className={cls.news__item__img} src={newsItem.path} alt=""/>
       </div>
       <div className={cls.news__item__title} onClick={open}>
         <Typography variant="p" bold>

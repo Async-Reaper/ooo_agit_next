@@ -3,7 +3,7 @@ import { classNames, Mods } from "@shared/libs/classNames/classNames";
 
 import cls from "./styles.module.scss";
 
-export type Variant = "h1" | "h2" | "h3" | "p" | "span" | "small";
+export type Variant = "h1" | "h2" | "h3" | "body" | "p" | "span" | "small";
 
 type Align = "center" | "right" | "left";
 
@@ -11,6 +11,7 @@ const mapTag = {
   h1: "h1",
   h2: "h2",
   h3: "h3",
+  body: "h4",
   p: "p",
   span: "span",
   small: "small",

@@ -87,11 +87,13 @@ export const NewsScreen = React.memo(() => {
               )
           }
         </ul>
-        <Button variant="outlined" onClick={fetchData}>
-          <Typography variant="span" uppercase>
-            Еще
-          </Typography>
-        </Button>
+        <div className={cls.news__button__wrapper}>
+          <Button variant="outlined" onClick={fetchData}>
+            <Typography variant="span" uppercase>
+              Еще
+            </Typography>
+          </Button>
+        </div>
       </div>
     </motion.section>
   );

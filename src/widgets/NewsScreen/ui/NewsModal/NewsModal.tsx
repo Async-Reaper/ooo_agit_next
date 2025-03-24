@@ -23,7 +23,7 @@ export const NewsModal = React.memo((props: NewsModalProps) => {
     <Modal
       isOpen={isOpen}
       onClose={onClose}
-
+      size="slider"
     >
       <div className={cls.news__item__text}>
         <Typography color="primary" variant="p" bold>
