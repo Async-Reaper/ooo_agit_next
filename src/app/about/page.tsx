@@ -1,5 +1,5 @@
 import React from "react";
-import { InternshipScreen } from "@widgets/InternshipScreen/ui/InternshipScreen";
+import { InternshipScreen } from "@widgets/InternshipScreen/ui/InternshipScreen/InternshipScreen";
 import { VacanciesScreen } from "@widgets/VacanciesScreen";
 import { Metadata } from "next";
 

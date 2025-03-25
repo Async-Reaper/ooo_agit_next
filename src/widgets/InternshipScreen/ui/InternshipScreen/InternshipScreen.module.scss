@@ -49,20 +49,6 @@
       position: relative;
       gap: 10px;
 
-      @include mixin.laptop {
-        &:after {
-          position: absolute;
-          content: '';
-          top: 0;
-          left: 340px;
-          width: 75%;
-          height: 100%;
-          background-image: url("/stage-internship.svg");
-          background-repeat: no-repeat;
-          background-size: contain;
-        }
-      }
-
       .stage_internship__item {
         @include mixin.flex-row;
         z-index: 9;

@@ -21,16 +21,14 @@
     @include mixin.flex-column;
 
     border-radius: 20px;
-    max-width: 1800px;
-    width: 100%;
-    margin: 0 auto;
-
-    @include mixin.adaptive("padding-inline", 80, 20);
     @include mixin.adaptive("gap", 75, 20);
 
     .platform__header__wrapper {
       @include mixin.flex-row;
       position: relative;
+      max-width: 1800px;
+      width: 100%;
+      margin: 0 auto;
     }
 
     .platform__header__content {

@@ -87,7 +87,7 @@ module.exports = {
     "react/require-default-props": "off",
     "react/jsx-props-no-spreading": "off",
     "react/jsx-indent": ["error", 2],
-    "react/jsx-indent-props": ["error", "first"],
+    // "react/jsx-indent-props": ["error", "first"],
     "react/jsx-filename-extension": [2, { extensions: [".js", ".jsx", ".tsx"] }],
     "react/jsx-no-useless-fragment": "off",
     "jsx-a11y/click-events-have-key-events": "off",

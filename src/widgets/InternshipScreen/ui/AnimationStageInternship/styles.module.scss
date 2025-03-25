@@ -1,0 +1,55 @@
+@use "@shared/styles/mixins" as mixin;
+
+.stage__animation {
+  display: none;
+
+  @include mixin.laptop {
+    display: block;
+  }
+
+  .line__before,
+  .line__after {
+    position: absolute;
+    top: 0;
+    left: 340px;
+    object-fit: cover;
+    @include mixin.adaptive("width", 1300, 150);
+  }
+
+  .line__after {
+    opacity: 0;
+  }
+
+  .change_experience,
+  .book,
+  .contract,
+  .bag,
+  .money {
+    position: absolute;
+  }
+
+  .change_experience {
+    @include mixin.adaptive("top", 80, 65);
+    @include mixin.adaptive("left", 385, 380);
+  }
+
+  .book {
+    @include mixin.adaptive("top", 250, 15);
+    @include mixin.adaptive("left", 595, 375);
+  }
+
+  .contract {
+    @include mixin.adaptive("top", 310, 20);
+    @include mixin.adaptive("left", 970, 375);
+  }
+
+  .bag {
+    @include mixin.adaptive("top", 130, 15);
+    @include mixin.adaptive("left", 1160, 460);
+  }
+
+  .money {
+    @include mixin.adaptive("top", 245, 5);
+    @include mixin.adaptive("left", 1450, 375);
+  }
+}

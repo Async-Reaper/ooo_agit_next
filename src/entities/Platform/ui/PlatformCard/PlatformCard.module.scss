@@ -1,156 +1,236 @@
 @use "@shared/styles/mixins" as mixin;
 
 .platform__card__wrapper {
-  @include mixin.flex-column;
-  gap: 19px;
   position: relative;
 
-  //&:after {
-  //  position: absolute;
-  //  content: "";
-  //  top: 25%;
-  //  right: -20%;
-  //  background-image: url("/vectors/vector-third.png");
-  //  width: 209px;
-  //  height: 100%;
-  //  background-size: contain;
-  //}
-
-  .platform__header {
+  .platform__card {
     @include mixin.flex-column;
-    align-items: self-start;
-    gap: 28px;
+    gap: 19px;
+    position: relative;
+    max-width: 1840px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
 
-    @include mixin.tablets {
-      @include mixin.flex-row;
+    .platform__header {
+      @include mixin.flex-column;
+      align-items: self-start;
+      gap: 28px;
+
+      @include mixin.tablets {
+        @include mixin.flex-row;
+      }
+
+      .platform__start__info {
+        @include mixin.flex-column;
+        justify-content: space-between;
+        border-radius: 30px;
+        padding: 30px;
+        background: #2D2C2C;
+        @include mixin.adaptive("height", 368, 244);
+        @include mixin.adaptive("width", 467, 270);
+        position: relative;
+
+        &:before {
+          position: absolute;
+          content: "";
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          @include mixin.adaptive("height", 218, 100);
+          @include mixin.adaptive("width", 169, 50);
+          height: 218px;
+          width: 169px;
+          background: #97FCF0;
+          filter: blur(100px);
+          z-index: -1;
+        }
+      }
+
+      .start__info__img {
+        @include mixin.adaptive("width", 267, 177);
+        margin: auto;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .start__info__name {
+        color: #97FCF0;
+      }
+
+      .platform__main__info {
+        @include mixin.flex-column;
+        gap: 40px;
+        position: relative;
+
+        &:after {
+          position: absolute;
+          content: "";
+          width: 100vw;
+          top: 70px;
+          right: 0;
+          left: 0;
+          height: 2px;
+          outline: none;
+          border: none;
+          background: var(--color-gray-dark);
+        }
+      }
+
+      .platform__name {
+        @include mixin.flex-column;
+        position: relative;
+      }
+
+      .platform__description {
+        max-width: 1000px;
+        @include mixin.flex-column;
+        gap: 20px;
+      }
     }
 
-    .platform__start__info {
-      @include mixin.flex-column;
-      justify-content: space-between;
-      border-radius: 30px;
-      padding: 8px 30px;
-      background: #2D2C2C;
-      @include mixin.adaptive("height", 368, 244);
-      @include mixin.adaptive("width", 467, 270);
+    .platform__footer__wrapper {
+      padding: 18px;
       position: relative;
+      max-width: 980px;
+      z-index: 2;
 
       &:before {
         position: absolute;
         content: "";
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        @include mixin.adaptive("height", 218, 100);
-        @include mixin.adaptive("width", 169, 50);
-        height: 218px;
-        width: 169px;
-        background: #97FCF0;
-        filter: blur(100px);
-        z-index: -1;
-      }
-    }
-
-    .start__info__img {
-      @include mixin.adaptive("width", 267, 177);
-      margin: auto;
-
-      img {
-        width: 100%;
-      }
-    }
-
-    .start__info__name {
-      color: #97FCF0;
-    }
-
-    .platform__main__info {
-      @include mixin.flex-column;
-      gap: 40px;
-      position: relative;
-
-      &:after {
-        position: absolute;
-        content: "";
         width: 100vw;
-        top: 70px;
+        height: 100%;
+        top: 50%;
         right: 0;
-        left: 0;
-        height: 2px;
-        outline: none;
-        border: none;
-        background: var(--color-gray-dark);
+        transform: translateY(-50%);
+        z-index: 0;
+        border-radius: 35px;
+        background: linear-gradient(180deg, #2D4E4A, #212F2D);
       }
-    }
+    ;
 
-    .platform__name {
-      @include mixin.flex-column;
-      position: relative;
-    }
+      .platform__footer {
 
-    .platform__description {
-      max-width: 1000px;
-      @include mixin.flex-column;
-      gap: 20px;
+        @include mixin.flex-column;
+        gap: 30px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .benefits {
+        @include mixin.flex-column;
+        gap: inherit;
+
+        .benefits__description {
+          @include mixin.flex-column;
+          gap: inherit;
+        }
+
+        .benefits__list {
+          @include mixin.flex-column;
+          gap: inherit;
+        }
+
+        .benefit__item {
+          @include mixin.flex-row;
+          gap: 24px;
+        }
+
+        .circular__marker {
+          height: 33px;
+          width: 33px;
+          border-radius: 50%;
+          flex-shrink: 0;
+          border: 3px solid var(--color-primary);
+        }
+      }
+
+      .additional__info {
+        color: #97FCF0;
+      }
     }
   }
 
-  .platform__footer__wrapper {
-    padding: 18px;
-    position: relative;
-    max-width: 980px;
+  .background__image__before,
+  .background__image__after {
+    display: none;
+    position: absolute;
+    right: 0;
+    width: 210px;
+    height: 100%;
 
-    &:before {
-      position: absolute;
-      content: "";
-      width: 100vw;
+    @include mixin.desktop {
+      display: block;
+    }
+  }
+
+  .background__image__before {
+    opacity: 1;
+  }
+
+  .background__image__after {
+    opacity: 0;
+  }
+}
+
+
+.platform__card__wrapper {
+  &:nth-last-child(1) {
+    .background__image__before,
+    .background__image__after {
+      height: 88%;
+      top: 159px;
+    }
+  }
+
+  &:nth-last-child(2) {
+    .background__image__before,
+    .background__image__after {
       height: 100%;
-      top: 50%;
-      right: 0;
-      transform: translateY(-50%);
-      z-index: 0;
-      border-radius: 35px;
-      background: linear-gradient(180deg, #2D4E4A, #212F2D);
-    };
-
-    .platform__footer {
-
-      @include mixin.flex-column;
-      gap: 30px;
-      position: relative;
-      z-index: 2;
+      top: 170px;
     }
+  }
 
-    .benefits {
-      @include mixin.flex-column;
-      gap: inherit;
-
-      .benefits__description {
-        @include mixin.flex-column;
-        gap: inherit;
-      }
-
-      .benefits__list {
-        @include mixin.flex-column;
-        gap: inherit;
-      }
-
-      .benefit__item {
-        @include mixin.flex-row;
-        gap: 24px;
-      }
-
-      .circular__marker {
-        height: 33px;
-        width: 33px;
-        border-radius: 50%;
-        flex-shrink: 0;
-        border: 3px solid var(--color-primary);
-      }
+  &:nth-last-child(3) {
+    .background__image__before,
+    .background__image__after {
+      height: 100%;
+      top: 180px;
     }
+  }
 
-    .additional__info {
-      color: #97FCF0;
+  &:nth-last-child(4) {
+    .background__image__before,
+    .background__image__after {
+      height: 100%;
+      top: 182px;
+    }
+  }
+
+  &:nth-child(1) {
+    .background__image__before,
+    .background__image__after {
+      height: 100%;
+      top: 149px;
+    }
+  }
+
+  &:nth-child(2) {
+    .background__image__before,
+    .background__image__after {
+      height: 100%;
+      top: 180px;
+    }
+  }
+
+  &:nth-child(3),
+  &:nth-child(4) {
+    .background__image__before,
+    .background__image__after {
+      height: 100%;
+      top: 170px;
     }
   }
 }

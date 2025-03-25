@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { InternshipRequestButton } from "@features/InternshipRequest";
 import { Icon } from "@shared/libs/icon/icon";
@@ -6,6 +7,8 @@ import { AppImage } from "@shared/ui/AppImage";
 import Container from "@shared/ui/Container/Container";
 
 import cls from "./InternshipScreen.module.scss";
+
+import { AnimationStageInternship } from "../AnimationStageInternship/AnimationStageInternship";
 
 export const InternshipScreen = React.memo(() => {
   const stageInternship = [
@@ -34,7 +37,7 @@ export const InternshipScreen = React.memo(() => {
   return (
     <section id="internship" className={cls.internship__wrapper}>
       <div className={cls.internship__background__img}>
-        <AppImage src="/gears-bg.svg" />
+        <AppImage src="/gears-bg.svg"/>
       </div>
       <Container>
         <div className={cls.internship__content}>
@@ -49,7 +52,7 @@ export const InternshipScreen = React.memo(() => {
               stageInternship.map((internship) => (
                 <li key={internship.id} className={cls.stage_internship__item}>
                   <div className={cls.check_mark}>
-                    <Icon name="arrow_bottom" color="primary" size={33} />
+                    <Icon name="arrow_bottom" color="primary" size={33}/>
                   </div>
                   <div className={cls.stage__name}>
                     <Typography variant="p" align="center">
@@ -59,6 +62,7 @@ export const InternshipScreen = React.memo(() => {
                 </li>
               ))
             }
+            <AnimationStageInternship />
           </ul>
           <InternshipRequestButton/>
         </div>

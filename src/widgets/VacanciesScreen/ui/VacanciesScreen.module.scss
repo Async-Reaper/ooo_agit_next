@@ -1,10 +1,37 @@
 @use "@shared/styles/_mixins.scss" as mixin;
 
 .vacancies__screen {
-    background-image: url("/wave-vacancy.webp");
-    background-size: cover;
     @include mixin.adaptive("margin-top", 80, 20);
+    position: relative;
+
+    &:before {
+        position: absolute;
+        content: "";
+        background-image: url("/wave-vacancy.webp");
+        height: 100%;
+        width: 100%;
+        opacity: 0.5;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    &:after {
+        position: absolute;
+        content: "";
+        top: 0;
+        height: 100%;
+        width: 45px;
+        background: linear-gradient(90deg, #276E66, #115850);
+        filter: blur(65px);
+    }
+
     b {
+        color: var(--color-primary);
+    }
+
+    .vacancies__title__wrapper {
+        z-index: 2;
         color: var(--color-primary);
     }
 
