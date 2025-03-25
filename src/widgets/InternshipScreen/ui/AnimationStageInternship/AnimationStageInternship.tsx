@@ -1,3 +1,4 @@
+"use client";
 import React, { useCallback, useLayoutEffect, useRef } from "react";
 import { ColoredIcon } from "@shared/libs/icon/colored-icon";
 import { animate } from "motion";
@@ -10,9 +11,11 @@ export const AnimationStageInternship = React.memo(() => {
   const contractRef = useRef(null);
   const bagRef = useRef(null);
   const moneyRef = useRef(null);
-
+  const [sizeIcon, setSizeIcon] = React.useState(60);
+  
   const animated = useCallback(() => {
     if (
+      typeof window !== "undefined" &&
       changeExperienceRef.current &&
       bookRef.current &&
       contractRef.current &&
@@ -20,6 +23,11 @@ export const AnimationStageInternship = React.memo(() => {
       moneyRef.current
     ) {
       //Change experience
+
+      (window.innerWidth > 1400)
+        ? setSizeIcon(102)
+        : setSizeIcon(60);
+
       const changeExperienceTop = window.getComputedStyle(changeExperienceRef.current).top;
       const changeExperienceLeft = window.getComputedStyle(changeExperienceRef.current).left;
 
@@ -92,9 +100,7 @@ export const AnimationStageInternship = React.memo(() => {
         ref={changeExperienceRef}
       >
         <ColoredIcon
-          size={(window.innerWidth > 1023 && window.innerWidth < 1400)
-            ? 60
-            : 102}
+          size={sizeIcon}
           name="change_experience"
         />
       </div>
@@ -103,9 +109,7 @@ export const AnimationStageInternship = React.memo(() => {
         ref={bookRef}
       >
         <ColoredIcon
-          size={(window.innerWidth > 1023 && window.innerWidth < 1400)
-            ? 60
-            : 102}
+          size={sizeIcon}
           name="book"/>
       </div>
       <div
@@ -113,29 +117,23 @@ export const AnimationStageInternship = React.memo(() => {
         ref={contractRef}
       >
         <ColoredIcon
-          size={(window.innerWidth > 1023 && window.innerWidth < 1400)
-            ? 60
-            : 102}
+          size={sizeIcon}
           name="contract"/>
       </div>
       <div
         className={cls.bag}
         ref={bagRef}
       >
-        <ColoredIcon 
-          size={(window.innerWidth > 1023 && window.innerWidth < 1400)
-            ? 60
-            : 102}
+        <ColoredIcon
+          size={sizeIcon}
           name="bag"/>
       </div>
       <div
         className={cls.money}
         ref={moneyRef}
       >
-        <ColoredIcon 
-          size={(window.innerWidth > 1023 && window.innerWidth < 1400)
-            ? 60
-            : 102}
+        <ColoredIcon
+          size={sizeIcon}
           name="money"/>
       </div>
     </div>
