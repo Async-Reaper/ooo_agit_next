@@ -3,7 +3,6 @@
 .activity {
   position: relative;
   border-top: 2px solid var(--color-primary);
-  padding: 0 20px;
   background: var(--color-secondary);
   z-index: 1;
 
@@ -16,13 +15,13 @@
   &:before {
     position: absolute;
     content: "";
-    top: 0;
-    left: 0;
-    right: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 60%;
     height: 60%;
     background: linear-gradient(45deg, rgba(108,227,213,1) 35%, rgba(185,243,187,1) 65%);
-    filter: blur(500px);
+    filter: blur(150px);
     z-index: 0;
   }
 

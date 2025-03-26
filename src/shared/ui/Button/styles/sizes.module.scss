@@ -1,4 +1,4 @@
-@use "@shared/styles/_mixins.scss" as mixins;
+@use "@shared/styles/mixins.scss" as mixins;
 
 .size {
     &--xs {
@@ -17,6 +17,6 @@
 
     &--xl {
         @include mixins.adaptive("padding-block", 27, 12);
-        @include mixins.adaptive("padding-inline", 60, 32);
+        @include mixins.adaptive("padding-inline", 40, 22);
     }
 }

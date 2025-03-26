@@ -18,17 +18,17 @@ export const PlatformScreen = React.memo(() => {
       <div className={cls.platform__vector__left}/>
       <div className={cls.platform__vector__right}/>
       <motion.div
-        // initial={{ opacity: 0, x: -100 }}
-        // animate={isVisible && { opacity: 1, x: 0 }}
-        // transition={{ type: "spring", duration: 2 }}
+        initial={{ opacity: 0, x: -100 }}
+        animate={isVisible && { opacity: 1, x: 0 }}
+        transition={{ type: "spring", duration: 2 }}
         ref={ref}
         className={cls.platform__wrapper}
       >
         <div className={cls.platform__header__wrapper}>
           <motion.div
-            // initial={{ opacity: 0, x: -100 }}
-            // animate={isVisible && { opacity: 1, x: 0 }}
-            // transition={{ type: "spring", duration: 0.5, delay: 0.3 }}
+            initial={{ opacity: 0, x: -100 }}
+            animate={isVisible && { opacity: 1, x: 0 }}
+            transition={{ type: "spring", duration: 0.5, delay: 0.3 }}
             className={cls.platform__header__title}
           >
             <Typography variant="h1" uppercase>

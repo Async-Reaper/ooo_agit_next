@@ -2,11 +2,8 @@
 
 .start_screen {
   position: relative;
-  padding: 0 20px;
 
   .start__wrapper {
-    max-width: 1800px;
-    margin: 0 auto;
 
     @include mixin.laptop {
       @include mixin.flex-row;

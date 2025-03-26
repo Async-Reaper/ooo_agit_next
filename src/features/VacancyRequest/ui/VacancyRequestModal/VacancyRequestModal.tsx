@@ -1,7 +1,7 @@
 import React from "react";
 import { Modal } from "@shared/ui/Modal/Modal";
 
-import { VacancyRequestForm } from "../VacancyRequestForm/VacancyRequestForm";
+import { VacancyRequestFormLazy as VacancyRequestForm } from "../VacancyRequestForm/VacancyRequestForm.lazy";
 
 interface VacancyRequestModalProps {
   isOpen: boolean;

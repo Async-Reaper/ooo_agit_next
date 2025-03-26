@@ -3,8 +3,6 @@ import { PlatformScreen } from "@widgets/PlatformScreen";
 import { ServicesScreen } from "@widgets/ServicesScreen";
 import { Metadata } from "next";
 
-import cls from "./page.module.scss";
-
 export const metadata: Metadata = {
   title: "Продукты и услуги",
   description: "Какие-то услуги",
@@ -20,10 +18,10 @@ export const metadata: Metadata = {
 
 const Page = () => {
   return (
-    <div className={cls.products}>
+    <>
       <ServicesScreen/>
       <PlatformScreen/>
-    </div>
+    </>
   );
 };
 

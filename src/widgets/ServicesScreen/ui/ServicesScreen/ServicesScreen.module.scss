@@ -1,7 +1,6 @@
 @use "@shared/styles/mixins" as mixin;
 
 .services {
-    padding: 0 20px;
     clip-path: inset(0);
     will-change: transform;
     overflow-x: hidden;
@@ -9,10 +8,6 @@
     @include mixin.adaptive("padding-block", 80, 30);
 
     .services__wrapper {
-        max-width: 1800px;
-        width: 100%;
-        margin: 0 auto;
-
         @include mixin.flex-column;
 
         b {

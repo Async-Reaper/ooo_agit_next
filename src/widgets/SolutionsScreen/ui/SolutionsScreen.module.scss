@@ -2,7 +2,6 @@
 
 .solutions {
   border-top: 2px solid var(--color-primary);
-  padding: 0 20px;
   position: relative;
 
   .solution__vector__left {
@@ -45,11 +44,8 @@
     align-items: center;
     @include mixin.adaptive("gap", 50, 20);
     border-radius: 20px;
-    width: 100%;
-    margin: 0 auto;
 
     @include mixin.adaptive("padding-block", 40, 20);
-    @include mixin.adaptive("padding-inline", 80, 20);
     @include mixin.adaptive("gap", 50, 20);
 
     @include mixin.tablets {

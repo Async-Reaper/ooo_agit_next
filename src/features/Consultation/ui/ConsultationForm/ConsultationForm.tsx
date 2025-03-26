@@ -13,7 +13,7 @@ interface ConsultationFormProps {
   close: () => void;
 }
 
-const Component = (props: ConsultationFormProps) => {
+const ConsultationForm = React.memo((props: ConsultationFormProps) => {
   const {
     close,
   } = props;
@@ -50,7 +50,7 @@ const Component = (props: ConsultationFormProps) => {
     setIsLoading(true);
     setIsSuccess(false);
     setIsError(false);
-    
+
     try {
       const response = await axios.post("/api/request-consultation", {
         full_name: fullName,
@@ -68,7 +68,7 @@ const Component = (props: ConsultationFormProps) => {
       setIsError(true);
       console.log(e);
     }
-    
+
     setIsLoading(false);
   }, [fullName, phoneNumber, consultationSelectValue]);
 
@@ -108,6 +108,6 @@ const Component = (props: ConsultationFormProps) => {
       }
     </div>
   );
-};
+});
 
-export const ConsultationForm = React.memo(Component);
+export default ConsultationForm;

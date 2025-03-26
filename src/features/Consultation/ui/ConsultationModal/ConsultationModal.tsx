@@ -4,7 +4,7 @@ import { Modal } from "@shared/ui/Modal/Modal";
 
 import cls from "./ConsultationModal.module.scss";
 
-import { ConsultationForm } from "../ConsultationForm/ConsultationForm";
+import { ConsultationFormLazy as ConsultationForm } from "../ConsultationForm/ConsultationForm.lazy";
 
 interface ConsultationModalProps {
   isOpen: boolean;

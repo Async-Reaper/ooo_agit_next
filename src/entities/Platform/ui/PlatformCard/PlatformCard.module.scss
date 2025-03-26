@@ -7,10 +7,6 @@
     @include mixin.flex-column;
     gap: 19px;
     position: relative;
-    max-width: 1840px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 20px;
 
     .platform__header {
       @include mixin.flex-column;

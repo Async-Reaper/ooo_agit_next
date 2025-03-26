@@ -2,6 +2,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { db } from "@main/FirebaseProvider";
 import { Button, Typography } from "@shared/ui";
+import Container from "@shared/ui/Container/Container";
 import { Skeleton } from "@shared/ui/Skeleton";
 import { collection, getDocs, query, where } from "firebase/firestore";
 
@@ -63,35 +64,37 @@ export const CasesList = React.memo(() => {
   
   return (
     <section className={cls.cases}>
-      <div className={cls.cases__title__wrapper}>
-        <Typography variant="h2" uppercase>
-          Кейсы
-        </Typography>
-      </div>
-      <div className={cls.buttons__group}>
-        {
-          groupCase.map(group => (
-            <Button
-              key={group.id}
-              variant="toggle"
-              active={group.active}
-              color="primary"
-              onClick={() => onHandleGroupCase(group)}
-            >
-              <Typography>{group.name}</Typography>
-            </Button>
-          ))
-        }
-      </div>
-      <div className={cls.cases__wrapper}>
-        {isLoading
-          ? <div className={cls.cases__skeleton__wrapper}>
-            {new Array(13).fill("").map((_, index) => <Skeleton key={index} className={cls.cases__skeleton}/>)}
-          </div>
-          : casesList.map((caseItem) =>
-            caseItem.type === currentGroupCase && <CaseCard key={caseItem.id} caseItem={caseItem}/>)
-        }
-      </div>
+      <Container>
+        <div className={cls.cases__title__wrapper}>
+          <Typography variant="h2" uppercase>
+            Кейсы
+          </Typography>
+        </div>
+        <div className={cls.buttons__group}>
+          {
+            groupCase.map(group => (
+              <Button
+                key={group.id}
+                variant="toggle"
+                active={group.active}
+                color="primary"
+                onClick={() => onHandleGroupCase(group)}
+              >
+                <Typography>{group.name}</Typography>
+              </Button>
+            ))
+          }
+        </div>
+        <div className={cls.cases__wrapper}>
+          {isLoading
+            ? <div className={cls.cases__skeleton__wrapper}>
+              {new Array(13).fill("").map((_, index) => <Skeleton key={index} className={cls.cases__skeleton}/>)}
+            </div>
+            : casesList.map((caseItem) =>
+              caseItem.type === currentGroupCase && <CaseCard key={caseItem.id} caseItem={caseItem}/>)
+          }
+        </div>
+      </Container>
     </section>
   );
 });

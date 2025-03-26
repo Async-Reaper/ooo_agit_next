@@ -2,7 +2,7 @@ import React from "react";
 import { Typography } from "@shared/ui";
 import { Modal } from "@shared/ui/Modal/Modal";
 
-import { MailingForm } from "../MailingForm/MailingForm";
+import { MailingFormLazy as MailingForm } from "../MailingForm/MailingForm.lazy";
 
 interface MailingModalProps {
   isOpen: boolean;

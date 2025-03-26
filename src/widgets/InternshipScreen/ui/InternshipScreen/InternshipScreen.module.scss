@@ -42,8 +42,6 @@
     @include mixin.flex-column;
     @include mixin.adaptive("gap", 30, 20);
 
-    padding: 20px;
-
     .stage_internship__list {
       @include mixin.flex-column;
       position: relative;

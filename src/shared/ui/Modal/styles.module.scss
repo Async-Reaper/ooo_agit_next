@@ -35,8 +35,7 @@
     pointer-events: auto;
     z-index: 99999;
     animation: opened 0.2s ease-in-out forwards;
-    backdrop-filter: blur(5px);
-    will-change: filter, transform;
+    background: rgba(53, 52, 52, 0.6);
     transform: translateZ(0);
 
     .content {

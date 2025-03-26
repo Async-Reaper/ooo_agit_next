@@ -9,7 +9,7 @@ interface MailingFormProps {
   close: () => void;
 }
 
-export const MailingForm = React.memo(({ close }: MailingFormProps) => {
+const MailingForm = React.memo(({ close }: MailingFormProps) => {
   const [email, setEmail] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const date = new Date();
@@ -50,3 +50,5 @@ export const MailingForm = React.memo(({ close }: MailingFormProps) => {
     </div>
   );
 });
+
+export default MailingForm;

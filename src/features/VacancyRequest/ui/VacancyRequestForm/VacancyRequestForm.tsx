@@ -12,7 +12,7 @@ interface VacancyRequestFormProps {
   close: () => void;
 }
 
-export const VacancyRequestForm = React.memo((props: VacancyRequestFormProps) => {
+const VacancyRequestForm = React.memo((props: VacancyRequestFormProps) => {
   const {
     close,
   } = props;
@@ -87,3 +87,5 @@ export const VacancyRequestForm = React.memo((props: VacancyRequestFormProps) =>
     </div>
   );
 });
+
+export default VacancyRequestForm;

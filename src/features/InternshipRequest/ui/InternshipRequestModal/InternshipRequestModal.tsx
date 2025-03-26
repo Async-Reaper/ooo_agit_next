@@ -4,7 +4,7 @@ import { Modal } from "@shared/ui/Modal/Modal";
 
 import cls from "./InternshipRequestModal.module.scss";
 
-import { InternshipRequestForm } from "../InternshipRequestForm/InternshipRequestForm";
+import { InternshipRequestFormLazy as InternshipRequestForm } from "../InternshipRequestForm/InternshipRequestForm.lazy";
 
 interface InternshipRequestModalProps {
   isOpen: boolean;
