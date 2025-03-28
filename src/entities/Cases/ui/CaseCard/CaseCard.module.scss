@@ -5,7 +5,6 @@
   @include mixin.flex-column;
   @include mixin.adaptive("gap", 22, 15);
   align-items: center;
-  min-height: 504px;
 
   &.primary .case__img:before,
   &.secondary .case__img:before,

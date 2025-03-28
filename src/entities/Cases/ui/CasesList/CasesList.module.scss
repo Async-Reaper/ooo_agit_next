@@ -32,6 +32,7 @@
     margin: 0 auto;
     position: relative;
     @include mixin.flex-column;
+    gap: 50px;
     @include mixin.adaptive("padding-block", 80, 30);
 
     .cases__skeleton__wrapper {
