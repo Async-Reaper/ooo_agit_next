@@ -6,10 +6,7 @@ import { Typography } from "@shared/ui";
 
 import cls from "./Select.module.scss";
 
-export interface SelectItem<T> {
-  id: number;
-  content: T;
-}
+import { SelectItem } from "./types/selectTypes";
 
 interface SelectProps<T> {
   selectTitle: string
@@ -44,9 +41,9 @@ const Component = (props: SelectProps<string>) => {
   return (
     <div className={classNames(cls.select__wrapper, mods)}>
       <div className={cls.select__name} onClick={onHandleVisibleSelect}>
-        <Typography variant="p">
+        <p>
           {selectTitle}
-        </Typography>
+        </p>
         <Icon
           name="arrow_bottom"
           color="primary"
@@ -57,9 +54,9 @@ const Component = (props: SelectProps<string>) => {
         {
           selectItems.map((selectItem) => (
             <div key={selectItem.id} className={cls.select__item} onClick={() => onHandleSetCurrentValue(selectItem.content)}>
-              <Typography variant="span" color="white-primary">
+              <p>
                 {selectItem.content}
-              </Typography>
+              </p>
             </div>
           ))
         }

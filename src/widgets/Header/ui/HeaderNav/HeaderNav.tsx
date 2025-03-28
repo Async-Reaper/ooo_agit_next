@@ -9,10 +9,11 @@ import cls from "./HeaderNav.module.scss";
 import { SelectLinks } from "../SelectLinks/SelectLinks";
 
 interface HeaderNavProps {
+  isMounted: boolean;
   isActiveScroll: boolean;
 }
 
-export const HeaderNav = React.memo(({ isActiveScroll }: HeaderNavProps) => {
+export const HeaderNav = React.memo(({ isActiveScroll, isMounted }: HeaderNavProps) => {
   const [isActiveBurger, setIsActiveBurger] = useState<boolean>(false);
   
   const onHandleClickBurger = useCallback(() => {
@@ -25,7 +26,7 @@ export const HeaderNav = React.memo(({ isActiveScroll }: HeaderNavProps) => {
         <div className={cls.header__links}>
           <motion.div
             initial={{ y: -200, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
+            animate={isMounted && { y: 0, opacity: 1 }}
             transition={{ type: "spring", duration: 0.3 }}
             className={cls.header__link}
           >

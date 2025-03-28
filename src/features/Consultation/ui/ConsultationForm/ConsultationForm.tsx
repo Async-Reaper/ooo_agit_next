@@ -1,8 +1,8 @@
 "use client";
 import React, { useCallback, useMemo, useState } from "react";
-import { Button, Input, InputPhone, Loader, Select, Typography, } from "@shared/ui";
+import type { SelectItem } from "@shared/ui";
+import { Button, Input, InputPhone, Loader, Select,Typography } from "@shared/ui";
 import Alert from "@shared/ui/Alert/Alert";
-import { SelectItem } from "@shared/ui/Select/Select";
 import axios from "axios";
 
 import cls from "./ConsultationForm.module.scss";

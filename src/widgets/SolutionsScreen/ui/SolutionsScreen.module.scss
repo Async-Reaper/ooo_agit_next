@@ -3,6 +3,7 @@
 .solutions {
   border-top: 2px solid var(--color-primary);
   position: relative;
+  overflow: hidden;
 
   .solution__vector__left {
     background-image: url("/vectors/vector.svg");

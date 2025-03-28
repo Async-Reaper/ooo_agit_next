@@ -1,11 +1,16 @@
 "use client";
 
-import { useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 export const useViewBox = (threshold = 0.4) => {
   const ref = useRef<any>(null);
+  const [isMounted, setIsMounted] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+  
   useLayoutEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -33,5 +38,6 @@ export const useViewBox = (threshold = 0.4) => {
   return {
     ref,
     isVisible,
+    isMounted
   };
 };

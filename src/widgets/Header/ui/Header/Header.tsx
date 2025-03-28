@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useLayoutEffect, useRef } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { classNames } from "@shared/libs/classNames/classNames";
 import { AppLogo } from "@shared/ui/AppLogo/AppLogo";
 import { motion } from "motion/react";
@@ -9,7 +9,13 @@ import cls from "./Header.module.scss";
 import { HeaderNav } from "../HeaderNav/HeaderNav";
 
 export const Header = React.memo(() => {
-  const [isActiveScroll, setIsActiveScroll] = React.useState<boolean>(true);
+  const [isActiveScroll, setIsActiveScroll] = useState<boolean>(true);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   const headerRef = useRef<HTMLDivElement>(null);
   
   useLayoutEffect(() => {
@@ -37,14 +43,14 @@ export const Header = React.memo(() => {
       <div className={cls.header__inner}>
         <motion.div
           initial={{ y: -100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
+          animate={isMounted && { y: 0, opacity: 1 }}
           transition={{ type: "spring", duration: 0.3 }}
           className={cls.header__logo}
         >
           <AppLogo/>
           <hr className={cls.header__vertical_line}/>
         </motion.div>
-        <HeaderNav isActiveScroll={isActiveScroll} />
+        <HeaderNav isMounted={isMounted} isActiveScroll={isActiveScroll} />
       </div>
     </header>
   );

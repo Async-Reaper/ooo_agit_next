@@ -4,6 +4,7 @@
   border-top: 2px solid var(--color-primary);
   position: relative;
   @include mixin.adaptive("padding-block", 80, 30);
+  overflow: hidden;
 
   b {
     color: var(--color-primary);
