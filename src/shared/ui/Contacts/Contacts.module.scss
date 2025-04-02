@@ -3,6 +3,9 @@
 .contacts__wrapper {
   @include mixin.flex-row;
   @include mixin.adaptive("gap", 20, 10);
+  background: linear-gradient(65deg, rgba(82, 81, 81, 0.2), rgba(151, 252, 240, 0.2));
+  border-radius: 20px;
+  padding: 8px 0;
 
   .contact__item {
     @include mixin.flex-row;
