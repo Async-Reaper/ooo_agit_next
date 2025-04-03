@@ -43,7 +43,7 @@ export const PlatformsList = React.memo(() => {
                   {platform.platformName}
                 </Typography>
                 <Typography color="primary" variant="p">
-                  {platform.platformPrice}
+                  {platform.platformPrice} ₽
                 </Typography>
                 <AppLink className={cls.platform__link} href={`/platform/${platform.id}`} target="_blank" isUnderline={false}>
                   <Typography variant="p">
