@@ -3,7 +3,7 @@
 .vacancies__list__wrapper {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, 100%);
+  grid-template-columns: repeat(auto-fill, minmax(200px, 400px));
   grid-auto-flow: row;
   justify-content: space-between;
   gap: 20px;

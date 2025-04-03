@@ -6,7 +6,8 @@ import { collection, getDocs, query } from "firebase/firestore";
 
 import cls from "./PlatformsList.module.scss";
 
-import { PlatformCard } from "../PlatformCard/PlatformCard";
+import { Typography } from "@shared/ui";
+import { AppLink } from "@shared/ui/AppLink";
 
 export const PlatformsList = React.memo(() => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -28,11 +29,32 @@ export const PlatformsList = React.memo(() => {
   
   return (
     <div className={cls.platform__list__wrapper}>
-      {
-        platforms.map((platform) => (
-          <PlatformCard key={platform.id} platform={platform} />
-        ))
-      }
+      {/*{*/}
+      {/*  platforms.map((platform) => (*/}
+      {/*    <PlatformCard key={platform.id} platform={platform} />*/}
+      {/*  ))*/}
+      {/*}*/}
+      <ul className={cls.platforms__list}>
+        {
+          platforms.map((platform) => (
+            <li key={platform.id} className={cls.platform__item}>
+              <div className={cls.platform__content}>
+                <Typography color="white-primary" variant="p">
+                  {platform.platformName}
+                </Typography>
+                <Typography color="primary" variant="p">
+                  {platform.platformPrice}
+                </Typography>
+                <AppLink className={cls.platform__link} href={`/platform/${platform.id}`} target="_blank" isUnderline={false}>
+                  <Typography variant="p">
+                    Подробнее
+                  </Typography>
+                </AppLink>
+              </div>
+            </li>
+          ))
+        }
+      </ul>
     </div>
   );
 });

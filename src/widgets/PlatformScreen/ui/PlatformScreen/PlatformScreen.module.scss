@@ -27,14 +27,6 @@
     .platform__header__wrapper {
       @include mixin.flex-row;
       position: relative;
-      max-width: 1800px;
-      width: 100%;
-      padding: 0 20px;
-      margin: 0 auto;
-    }
-
-    .platforms__list__wrapper {
-
     }
   }
 }
