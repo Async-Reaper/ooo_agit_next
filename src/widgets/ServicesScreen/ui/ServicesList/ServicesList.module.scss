@@ -1,9 +1,13 @@
 @use "@shared/styles/mixins" as mixin;
+$iconWrapperSizeMax: 150;
+$iconWrapperSizeMin: 95;
+$iconSizeMax: 100;
+$iconSizeMin: 67;
 
 .services__list {
   @include mixin.flex-wrap;
   justify-content: center;
-  gap: 40px;
+  gap: 50px;
   clip-path: inset(0);
 
   @include mixin.laptop {
@@ -14,11 +18,40 @@
   }
 
   .services__item {
+    width: 100%;
     transition: ease-in-out .3s;
-    @include mixin.adaptive("min-height", 400, 285);
+    @include mixin.adaptive("min-height", 350, 245);
     @include mixin.flex-column;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+
+    &:after {
+      position: absolute;
+      content: "";
+      width: 20vw;
+      height: 2px;
+      background: var(--color-primary);
+      bottom: -30px;
+      left: 0;
+    }
+
+    &:before {
+      position: absolute;
+      content: "";
+      width: 20vw;
+      height: 2px;
+      background: var(--color-primary);
+      bottom: -30px;
+      right: 0;
+    }
+
+    @include mixin.laptop {
+      &:after,
+      &:before {
+        display: none;
+      }
+    }
 
     &:hover .service__icon__wrapper {
       border: 2px solid var(--color-primary);
@@ -27,8 +60,8 @@
 
     .service__icon__wrapper {
       border: 2px solid var(--color-white-primary);
-      width: 150px;
-      height: 150px;
+      @include mixin.adaptive("width", $iconWrapperSizeMax, $iconWrapperSizeMin);
+      @include mixin.adaptive("height", $iconWrapperSizeMax, $iconWrapperSizeMin);
       border-radius: 50%;
       @include mixin.flex-center;
       flex-shrink: 1;
@@ -37,6 +70,8 @@
 
     .service__icon {
       transition: ease-in-out .3s;
+      @include mixin.adaptive("width", $iconSizeMax, $iconSizeMin);
+      @include mixin.adaptive("height", $iconSizeMax, $iconSizeMin);
 
       path {
         transition: ease-in-out .3s;
@@ -51,7 +86,6 @@
     .service__info {
       margin: 0 0 10px;
       text-align: center;
-      align-self: end;
     }
 
     .icon__link {
@@ -67,11 +101,8 @@
     }
 
     .service__link {
-      transition: ease-in-out .3s;
-    }
-
-    &:hover .service__link {
-      color: var(--color-primary);
+      @include mixin.adaptive("max-width", 320, 250);
+      width: 100%;
     }
   }
 }

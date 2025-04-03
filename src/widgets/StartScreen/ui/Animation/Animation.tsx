@@ -44,7 +44,7 @@ export const Animation = React.memo(() => {
         (relativeX < 476 && relativeX > 302 && relativeY < 469 && relativeY > 345) ||
         (relativeX < 706 && relativeX > 538 && relativeY < 311 && relativeY > 179)
       ) {
-        router.replace("/cases");
+        router.push("/cases");
       }
     }
   };

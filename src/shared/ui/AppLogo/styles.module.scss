@@ -1,9 +1,17 @@
-@use "@shared/styles/_mixins.scss" as mixins;
+@use "@shared/styles/mixins" as mixin;
+
+$iconSizeMax: 90;
+$iconSizeMin: 75;
 
 .logo {
     display: flex;
     align-items: center;
     gap: 15px;
     min-width: max-content;
+
+    svg {
+        @include mixin.adaptive("width", $iconSizeMax, $iconSizeMin);
+        @include mixin.adaptive("height", $iconSizeMax, $iconSizeMin);
+    }
 }
 

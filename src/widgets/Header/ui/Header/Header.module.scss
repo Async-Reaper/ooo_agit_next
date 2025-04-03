@@ -1,47 +1,53 @@
 @use "@shared/styles/_mixins.scss" as mixin;
 
 .header {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  padding: 5px 20px;
+  top: 0;
+  width: 100%;
+  height: mixin.$headerHeight + px;
+  z-index: 99;
+  transition: ease-in-out .3s;
+
+  &.active {
+    background: var(--color-secondary);
+  }
+
+  .header__inner {
+    @include mixin.flex-row;
+
+    padding: 0 20px;
+    border: 1px solid var(--color-primary);
+    border-radius: 10px;
+    max-width: 1800px;
+    z-index: 9;
+    margin: 0 auto;
+    position: relative;
     width: 100%;
-    height: mixin.$headerHeight + px;
-    z-index: 99;
-    transition: ease-in-out .3s;
+    color: var(--color-white-primary);
 
-    &.active {
-        background: var(--color-secondary);
+    @include mixin.adaptive("gap", 40, 15);
+    @include mixin.laptop {
+      padding: 0;
+      border: none;
     }
 
-    .header__inner {
-        @include mixin.flex-row;
-
-        max-width: 1800px;
-        z-index: 9;
-        margin: 0 auto;
-        position: relative;
-
-        @include mixin.adaptive("gap", 40, 15);
-
-        width: 100%;
-        padding: 5px 20px;
-        color: var(--color-white-primary);
-
-        .header__logo {
-            @include mixin.flex-row;
-            @include mixin.adaptive("gap", 40, 15);
-        }
-
-        .header__vertical_line {
-            height: 47px;
-            width: 2px;
-            background: var(--color-primary);
-            border: none;
-            display: none;
-
-            @include mixin.laptop {
-                display: block;
-            }
-        }
+    .header__logo {
+      @include mixin.flex-row;
+      @include mixin.adaptive("gap", 40, 15);
     }
+
+    .header__vertical_line {
+      height: 47px;
+      width: 2px;
+      background: var(--color-primary);
+      border: none;
+      display: none;
+
+      @include mixin.laptop {
+        display: block;
+      }
+    }
+  }
 }

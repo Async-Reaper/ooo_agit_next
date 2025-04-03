@@ -2,5 +2,5 @@
 
 .platform__list__wrapper {
   @include mixin.flex-column;
-  @include mixin.adaptive("gap", 40, 20);
+  @include mixin.adaptive("gap", 100, 40);
 }

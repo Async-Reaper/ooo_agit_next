@@ -1,0 +1,19 @@
+@use "@shared/styles/_mixins.scss" as mixin;
+
+.platform {
+  @include mixin.flex-column;
+  align-items: self-start;
+  gap: 30px;
+  @include mixin.adaptive("padding-block", 80, 30);
+
+  .link__back {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--color-white-primary);
+  }
+
+  .buy__button__wrapper {
+    max-width: 430px;
+  }
+}

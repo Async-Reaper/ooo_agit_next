@@ -1,6 +1,6 @@
 import React, { useLayoutEffect } from "react";
 import { Icon, IconName } from "@shared/libs/icon/icon";
-import { Typography } from "@shared/ui";
+import { Button, Typography } from "@shared/ui";
 import { AppLink } from "@shared/ui/AppLink";
 import { animate, stagger } from "motion";
 
@@ -64,7 +64,7 @@ export const ServicesList = React.memo(({ isVisible }: ServicesListProps) => {
       {services.map((service) => (
         <li className={cls.services__item} key={service.id}>
           <div className={cls.service__icon__wrapper}>
-            <Icon name={service.iconName} size={100} color="primary" className={cls.service__icon}/>
+            <Icon name={service.iconName} color="primary" className={cls.service__icon}/>
           </div>
           <div className={cls.services__name}>
             <Typography variant="span" bold color="primary" align="center">
@@ -76,11 +76,16 @@ export const ServicesList = React.memo(({ isVisible }: ServicesListProps) => {
               {service.serviceInfo}
             </Typography>
           </div>
-          <AppLink href={service.link} variant="secondary" isUnderline={false} className={cls.service__link}>
-            <Icon name="arrow_bottom" size={23} color="primary" className={cls.icon__link}/>
-            <Typography variant="span">
-              Подробнее
-            </Typography>
+          <AppLink target="_blank" href={service.link} className={cls.service__link}>
+            <Button
+              size="l"
+              variant="outlined"
+              fullWidth
+            >
+              <Typography variant="span" uppercase noWrap>
+                Подробнее
+              </Typography>
+            </Button>
           </AppLink>
         </li>
       ))}

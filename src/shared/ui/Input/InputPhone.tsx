@@ -24,8 +24,6 @@ const Component = (props: InputPhoneProps) => {
     placeholder = "Номер телефона",
   } = props;
 
-  const ref = useRef<any>();
-
   const mods = {
     [cls.full_width]: fullWidth,
   };

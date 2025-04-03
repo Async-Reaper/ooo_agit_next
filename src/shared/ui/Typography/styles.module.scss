@@ -41,7 +41,7 @@
     /* VARIANT */
     &.variant {
         &--h1 {
-            @include mixins.adaptive("font-size", 48, 28);
+            @include mixins.adaptive("font-size", 48, 21);
             @include mixins.adaptive("line-height", 54, 33);
 
             font-weight: 600;

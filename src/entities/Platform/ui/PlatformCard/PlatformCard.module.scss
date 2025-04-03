@@ -5,6 +5,7 @@
 
   .platform__card {
     @include mixin.flex-column;
+    min-height: 437px;
     gap: 19px;
     position: relative;
 
@@ -15,6 +16,7 @@
 
       @include mixin.tablets {
         @include mixin.flex-row;
+        align-items: self-start;
       }
 
       .platform__start__info {
@@ -64,13 +66,10 @@
         &:after {
           position: absolute;
           content: "";
-          width: 100vw;
           top: 70px;
-          right: 0;
+          right: -20px;
           left: 0;
           height: 2px;
-          outline: none;
-          border: none;
           background: var(--color-gray-dark);
         }
       }
@@ -85,66 +84,9 @@
         @include mixin.flex-column;
         gap: 20px;
       }
-    }
 
-    .platform__footer__wrapper {
-      padding: 18px;
-      position: relative;
-      max-width: 980px;
-      z-index: 2;
-
-      &:before {
-        position: absolute;
-        content: "";
-        width: 100vw;
-        height: 100%;
-        top: 50%;
-        right: 0;
-        transform: translateY(-50%);
-        z-index: 0;
-        border-radius: 35px;
-        background: linear-gradient(180deg, #2D4E4A, #212F2D);
-      }
-    ;
-
-      .platform__footer {
-
-        @include mixin.flex-column;
-        gap: 30px;
-        position: relative;
-        z-index: 2;
-      }
-
-      .benefits {
-        @include mixin.flex-column;
-        gap: inherit;
-
-        .benefits__description {
-          @include mixin.flex-column;
-          gap: inherit;
-        }
-
-        .benefits__list {
-          @include mixin.flex-column;
-          gap: inherit;
-        }
-
-        .benefit__item {
-          @include mixin.flex-row;
-          gap: 24px;
-        }
-
-        .circular__marker {
-          height: 33px;
-          width: 33px;
-          border-radius: 50%;
-          flex-shrink: 0;
-          border: 3px solid var(--color-primary);
-        }
-      }
-
-      .additional__info {
-        color: #97FCF0;
+      .additional__button__wrapper {
+        max-width: 434px;
       }
     }
   }
@@ -168,65 +110,5 @@
 
   .background__image__after {
     opacity: 0;
-  }
-}
-
-
-.platform__card__wrapper {
-  &:nth-last-child(1) {
-    .background__image__before,
-    .background__image__after {
-      height: 88%;
-      top: 159px;
-    }
-  }
-
-  &:nth-last-child(2) {
-    .background__image__before,
-    .background__image__after {
-      height: 100%;
-      top: 170px;
-    }
-  }
-
-  &:nth-last-child(3) {
-    .background__image__before,
-    .background__image__after {
-      height: 100%;
-      top: 180px;
-    }
-  }
-
-  &:nth-last-child(4) {
-    .background__image__before,
-    .background__image__after {
-      height: 100%;
-      top: 182px;
-    }
-  }
-
-  &:nth-child(1) {
-    .background__image__before,
-    .background__image__after {
-      height: 100%;
-      top: 149px;
-    }
-  }
-
-  &:nth-child(2) {
-    .background__image__before,
-    .background__image__after {
-      height: 100%;
-      top: 180px;
-    }
-  }
-
-  &:nth-child(3),
-  &:nth-child(4) {
-    .background__image__before,
-    .background__image__after {
-      height: 100%;
-      top: 170px;
-    }
   }
 }

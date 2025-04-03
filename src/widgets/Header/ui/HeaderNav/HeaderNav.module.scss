@@ -4,7 +4,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  transform: translateY(-100%) scaleY(0);
+  transform: scaleY(0);
   opacity: 0;
   @include mixin.flex-column;
   align-items: center;
@@ -14,7 +14,9 @@
   width: 100%;
 
   &.active {
-    transform: translateY(0) scaleY(1);
+    border: 2px solid var(--color-primary);
+    border-radius: 8px;
+    transform: scaleY(1);
     opacity: 1;
     background: var(--color-secondary);
     top: 0;
@@ -25,7 +27,7 @@
   @include mixin.laptop {
     position: relative;
     opacity: 1;
-    transform: translateY(0) scaleY(1);
+    transform: scaleY(1);
 
     @include mixin.flex-row;
   }

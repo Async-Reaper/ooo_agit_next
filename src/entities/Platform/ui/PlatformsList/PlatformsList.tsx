@@ -1,3 +1,4 @@
+"use client";
 import React, { useCallback, useEffect, useState } from "react";
 import { IPlatforms } from "@entities/Platform/model/types/types";
 import { db } from "@main/FirebaseProvider";

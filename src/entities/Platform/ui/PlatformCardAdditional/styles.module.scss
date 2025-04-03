@@ -1,0 +1,61 @@
+@use "@shared/styles/mixins" as mixin;
+
+.platform__footer__wrapper {
+  padding: 18px;
+  position: relative;
+  max-width: 980px;
+  z-index: 2;
+
+  &:before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    top: 50%;
+    right: 0;
+    left: -20px;
+    transform: translateY(-50%);
+    z-index: 0;
+    border-radius: 0 35px 35px 0;
+    background: linear-gradient(180deg, #2D4E4A, #212F2D);
+  }
+
+  .platform__footer {
+
+    @include mixin.flex-column;
+    gap: 30px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .benefits {
+    @include mixin.flex-column;
+    gap: inherit;
+
+    .benefits__description {
+      @include mixin.flex-column;
+      gap: inherit;
+    }
+
+    .benefits__list {
+      @include mixin.flex-column;
+      gap: inherit;
+    }
+
+    .benefit__item {
+      @include mixin.flex-row;
+      gap: 24px;
+    }
+
+    .circular__marker {
+      height: 33px;
+      width: 33px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      border: 3px solid var(--color-primary);
+    }
+  }
+
+  .additional__info {
+    color: #97FCF0;
+  }
+}

@@ -1,0 +1,12 @@
+@use "@shared/styles/_mixins.scss" as mixin;
+
+.buy_platform__form {
+    @include mixin.flex-column;
+
+    gap: 10px;
+
+    .buy_platform__button__wrapper {
+        text-align: center;
+        width: 100%;
+    }
+}
