@@ -7,6 +7,17 @@
   .platforms__list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(450px, 279px));
+    position: relative;
+
+    &:before {
+      position: absolute;
+      content: "";
+      width: 80%;
+      height: 100%;
+      background: var(--color-primary);
+      filter: blur(60px);
+      opacity: 0.2;
+    }
 
     @include mixin.adaptive("gap", 25, 10);
 

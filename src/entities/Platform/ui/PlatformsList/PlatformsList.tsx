@@ -1,13 +1,13 @@
 "use client";
 import React, { useCallback, useEffect, useState } from "react";
-import { IPlatforms } from "@entities/Platform/model/types/types";
 import { db } from "@main/FirebaseProvider";
+import { Typography } from "@shared/ui";
+import { AppLink } from "@shared/ui/AppLink";
 import { collection, getDocs, query } from "firebase/firestore";
 
 import cls from "./PlatformsList.module.scss";
 
-import { Typography } from "@shared/ui";
-import { AppLink } from "@shared/ui/AppLink";
+import { IPlatforms } from "../../model/types/types";
 
 export const PlatformsList = React.memo(() => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -29,11 +29,6 @@ export const PlatformsList = React.memo(() => {
   
   return (
     <div className={cls.platform__list__wrapper}>
-      {/*{*/}
-      {/*  platforms.map((platform) => (*/}
-      {/*    <PlatformCard key={platform.id} platform={platform} />*/}
-      {/*  ))*/}
-      {/*}*/}
       <ul className={cls.platforms__list}>
         {
           platforms.map((platform) => (
