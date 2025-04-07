@@ -38,7 +38,7 @@ export const CasesList = React.memo(() => {
       active: false
     },
   ]);
-  
+
   const onHandleGroupCase = (caseItem: IGroupCase) => {
     setCurrentGroupCase(caseItem.name);
     setGroupCase(prevState => prevState.map(group =>
@@ -47,7 +47,7 @@ export const CasesList = React.memo(() => {
         : { ...group, active: false }
     ));
   };
-  
+
   const fetchGetCases = useCallback(async () => {
     setIsLoading(true);
     const responseVacancies = query(collection(db, "cases"), where("type", "==", currentGroupCase));
@@ -57,11 +57,11 @@ export const CasesList = React.memo(() => {
     setCases(casesData);
     setIsLoading(false);
   }, [currentGroupCase]);
-  
+
   useEffect(() => {
     fetchGetCases();
   }, [fetchGetCases]);
-  
+
   return (
     <section className={cls.cases}>
       <Container>
@@ -85,16 +85,18 @@ export const CasesList = React.memo(() => {
             ))
           }
         </div>
-        <div className={cls.cases__wrapper}>
-          {isLoading
-            ? <div className={cls.cases__skeleton__wrapper}>
+      </Container>
+      <div className={cls.cases__wrapper}>
+        {isLoading
+          ? <Container>
+            <div className={cls.cases__skeleton__wrapper}>
               {new Array(13).fill("").map((_, index) => <Skeleton key={index} className={cls.cases__skeleton}/>)}
             </div>
-            : casesList.map((caseItem) =>
-              caseItem.type === currentGroupCase && <CaseCard key={caseItem.id} caseItem={caseItem}/>)
-          }
-        </div>
-      </Container>
+          </Container>
+          : casesList.map((caseItem) =>
+            caseItem.type === currentGroupCase && <CaseCard key={caseItem.id} caseItem={caseItem}/>)
+        }
+      </div>
     </section>
   );
 });

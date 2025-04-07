@@ -1,0 +1,1 @@
+export { InternshipScreen } from "./ui/InternshipScreen/InternshipScreen";

@@ -1,0 +1,21 @@
+@use "@shared/styles/mixins" as mixin;
+
+.pages__wrapper {
+  position: relative;
+
+  &:before {
+    position: absolute;
+    content: "";
+    background-image: url("/wave-internship.svg");
+    height: 100%;
+    width: 100%;
+    opacity: 0.1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    @include mixin.tablets {
+      display: none;
+    }
+  }
+}

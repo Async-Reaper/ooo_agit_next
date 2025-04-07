@@ -1,7 +1,9 @@
 import React from "react";
-import { InternshipScreen } from "@widgets/InternshipScreen/ui/InternshipScreen/InternshipScreen";
+import { InternshipScreen } from "@widgets/InternshipScreen";
 import { VacanciesScreen } from "@widgets/VacanciesScreen";
 import { Metadata } from "next";
+
+import cls from "./styles.module.scss";
 
 export const metadata: Metadata = {
   title: "О нас",
@@ -18,10 +20,10 @@ export const metadata: Metadata = {
 
 const Page = async () => {
   return (
-    <>
+    <div className={cls.pages__wrapper}>
       <VacanciesScreen />
       <InternshipScreen />
-    </>
+    </div>
   );
 };
 

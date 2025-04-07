@@ -40,7 +40,7 @@ export const Header = React.memo(() => {
   
   return (
     <header ref={headerRef} id="header" className={classNames(cls.header, { [cls.active]: !isActiveScroll })}>
-      <div className={cls.header__inner}>
+      <div className={classNames(cls.header__inner, { [cls.active]: !isActiveScroll })}>
         <motion.div
           initial={{ y: -100, opacity: 0 }}
           animate={isMounted && { y: 0, opacity: 1 }}

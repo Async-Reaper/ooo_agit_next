@@ -2,9 +2,14 @@
 
 .case_card__wrapper {
   position: relative;
-  @include mixin.flex-column;
   @include mixin.adaptive("gap", 22, 15);
+  padding-block: 20px;
+  @include mixin.flex-column;
   align-items: center;
+
+  @include mixin.phones {
+    @include mixin.flex-row;
+  }
 
   &.primary .case__img:before,
   &.secondary .case__img:before,
@@ -14,8 +19,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    @include mixin.adaptive("width", 215, 180);
-    @include mixin.adaptive("height", 215, 180);
+    @include mixin.adaptive("width", 150, 65);
+    @include mixin.adaptive("height", 150, 65);
     border-radius: 50px;
     filter: blur(40px);
     z-index: -1;
@@ -33,22 +38,44 @@
     background: #96BBB7;
   }
 
-  @include mixin.tablets {
-    @include mixin.flex-row;
-  }
+  & + .case_card__wrapper {
+    position: relative;
 
-  &+.case_card__wrapper {
-    border-top: 2px solid var(--color-primary);
+    &:after {
+      position: absolute;
+      content: "";
+      width: 20vw;
+      height: 2px;
+      background: var(--color-primary);
+      top: -40px;
+      left: 0;
+    }
+
+    &:before {
+      position: absolute;
+      content: "";
+      width: 20vw;
+      height: 2px;
+      background: var(--color-primary);
+      top: -13px;
+      right: 0;
+    }
+
+    @include mixin.tablets {
+      border-top: 2px solid var(--color-primary);
+
+      &:after,
+      &:before {
+        display: none;
+      }
+    }
   }
 
   .case__img {
-    @include mixin.adaptive("max-width", 350, 250);
-    padding: 0 20px;
-    width: 100%;
     position: relative;
 
     img {
-      width: 100%;
+      @include mixin.adaptive("width", 275, 125);
     }
   }
 

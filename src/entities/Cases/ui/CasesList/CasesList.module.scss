@@ -2,7 +2,7 @@
 
 .cases {
   position: relative;
-  margin: 70px auto 0;
+  @include mixin.adaptive("margin-top", 70, 35);
 
   .cases__title__wrapper {
     margin: 0 0 50px;
@@ -32,8 +32,12 @@
     margin: 0 auto;
     position: relative;
     @include mixin.flex-column;
-    gap: 50px;
     @include mixin.adaptive("padding-block", 80, 30);
+    gap: 45px;
+
+    @include mixin.tablets {
+      gap: 0;
+    }
 
     .cases__skeleton__wrapper {
       @include mixin.flex-column;

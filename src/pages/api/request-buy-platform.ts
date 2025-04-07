@@ -1,12 +1,20 @@
+import { IPlatforms } from "@entities/Platform";
 import { IBuyPlatformBodyRequest } from "@features/BuyPlatform";
+import { db } from "@main/FirebaseProvider";
+import { doc, getDoc } from "firebase/firestore";
 import nodemailer from "nodemailer";
 
-async function sendRequestConsultationToEmail(data: IBuyPlatformBodyRequest) {
+async function sendRequestBuyPlatformToEmail(data: IBuyPlatformBodyRequest) {
   const name = data?.full_name;
   const phone = data?.phone_number;
   const email = data?.email;
-  const platformName = data?.platformName;
-  
+
+  const responsePlatform = doc(db, "platforms", data.platformId);
+  const result = await getDoc(responsePlatform);
+  const platform = result.data() as IPlatforms;
+
+  const platformName = platform.platformName;
+
   const formattedBody = `
     <html>
       <body>
@@ -41,7 +49,7 @@ export default async function lead(req: any, res: any) {
     return res.status(200).json({ message: "Разрешены только POST-запросы" });
   }
   
-  const r2 = await sendRequestConsultationToEmail({ ...req.body });
+  const r2 = await sendRequestBuyPlatformToEmail({ ...req.body });
   if (r2?.messageId) {
     res.json({ ok: true });
   } else {

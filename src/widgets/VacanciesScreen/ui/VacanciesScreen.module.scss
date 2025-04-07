@@ -11,7 +11,7 @@
         height: 100%;
         width: 100%;
         opacity: 0.2;
-        background-size: contain;
+        background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
     }
@@ -41,8 +41,6 @@
         @include mixin.adaptive("gap", 80, 20);
 
         border-radius: 20px;
-
-        @include mixin.adaptive("padding-block", 100, 70);
         position: relative;
 
         &:before {

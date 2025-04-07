@@ -13,7 +13,6 @@ import {EmployeesIcon as employees} from './Employees';
 import {EnIcon as en} from './En';
 import {ExportIcoIcon as export_ico} from './ExportIco';
 import {FolderIcon as folder} from './Folder';
-import {LineIcon as line} from './Line';
 import {ManagerIcon as manager} from './Manager';
 import {MapsIcon as maps} from './Maps';
 import {MoneyIcon as money} from './Money';
@@ -42,7 +41,6 @@ export type IconName =
   | 'en'
   | 'export_ico'
   | 'folder'
-  | 'line'
   | 'manager'
   | 'maps'
   | 'money'
@@ -73,7 +71,6 @@ export const iconSet: {
   en,
   export_ico,
   folder,
-  line,
   manager,
   maps,
   money,

@@ -16,18 +16,23 @@
 
   .header__inner {
     @include mixin.flex-row;
-
+    @include mixin.adaptive("gap", 40, 15);
+    margin: 0 auto;
     padding: 0 20px;
+    max-width: 1800px;
+    width: 100%;
+    position: relative;
+    z-index: 9;
+    color: var(--color-white-primary);
     border: 1px solid var(--color-primary);
     border-radius: 10px;
-    max-width: 1800px;
-    z-index: 9;
-    margin: 0 auto;
-    position: relative;
-    width: 100%;
-    color: var(--color-white-primary);
+    transition: ease-in-out .3s;
 
-    @include mixin.adaptive("gap", 40, 15);
+    &.active {
+      padding: 0;
+      border: none;
+    }
+
     @include mixin.laptop {
       padding: 0;
       border: none;

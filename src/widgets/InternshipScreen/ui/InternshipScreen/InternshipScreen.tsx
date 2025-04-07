@@ -3,7 +3,6 @@ import React from "react";
 import { InternshipRequestButton } from "@features/InternshipRequest";
 import { Icon } from "@shared/libs/icon/icon";
 import { Typography } from "@shared/ui";
-import { AppImage } from "@shared/ui/AppImage";
 import Container from "@shared/ui/Container/Container";
 
 import cls from "./InternshipScreen.module.scss";
@@ -14,31 +13,28 @@ export const InternshipScreen = React.memo(() => {
   const stageInternship = [
     {
       id: 1,
-      stageName: "Подай заявку."
+      stageName: "Подай заявку"
     },
     {
       id: 2,
-      stageName: "Получи обратную связь."
+      stageName: "Получи обратную связь"
     },
     {
       id: 3,
-      stageName: "Освой новую профессию."
+      stageName: "Освой новую профессию"
     },
     {
       id: 4,
-      stageName: "Получи офицальное трудоустройство."
+      stageName: "Получи офицальное трудоустройство"
     },
     {
       id: 5,
-      stageName: "Зарабатывай."
+      stageName: "Зарабатывай"
     },
   ];
 
   return (
     <section id="internship" className={cls.internship__wrapper}>
-      <div className={cls.internship__background__img}>
-        <AppImage src="/gears-bg.svg"/>
-      </div>
       <Container>
         <div className={cls.internship__content}>
           <Typography variant="h1" uppercase color="white-primary">
@@ -52,7 +48,7 @@ export const InternshipScreen = React.memo(() => {
               stageInternship.map((internship) => (
                 <li key={internship.id} className={cls.stage_internship__item}>
                   <div className={cls.check_mark}>
-                    <Icon name="arrow_bottom" color="primary" size={33}/>
+                    <Icon name="arrow_bottom" color="white-primary" size={31}/>
                   </div>
                   <div className={cls.stage__name}>
                     <Typography variant="p" align="center">

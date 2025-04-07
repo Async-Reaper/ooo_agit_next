@@ -6,6 +6,7 @@ import Alert from "@shared/ui/Alert/Alert";
 import axios from "axios";
 
 import cls from "./BuyPlatformForm.module.scss";
+import { useParams } from "next/navigation";
 
 
 interface ConsultationFormProps {
@@ -23,7 +24,7 @@ const BuyPlatformForm = React.memo((props: ConsultationFormProps) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isError, setIsError] = useState<boolean>(false);
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
-
+  const params = useParams<{ id: string }>();
   const onHandleSendConsultation = useCallback(async () => {
     setIsLoading(true);
     setIsSuccess(false);
@@ -34,8 +35,8 @@ const BuyPlatformForm = React.memo((props: ConsultationFormProps) => {
         full_name: fullName,
         phone_number: phoneNumber,
         email: email,
-        platformName: platform,
-      } as IBuyPlatformBodyRequest );
+        platformId: params?.id,
+      } as IBuyPlatformBodyRequest);
       setFullName("");
       setPhoneNumber("");
       setEmail("");
@@ -58,13 +59,13 @@ const BuyPlatformForm = React.memo((props: ConsultationFormProps) => {
 
   return (
     <div className={cls.buy_platform__form}>
-      <Input fullWidth placeholder="Ваше ФИО" value={fullName} onChange={setFullName} onlyRu />
-      <Input fullWidth placeholder="Ваш email" value={email} onChange={setEmail} />
-      <InputPhone value={phoneNumber} onChange={setPhoneNumber} />
+      <Input fullWidth placeholder="Ваше ФИО" value={fullName} onChange={setFullName} onlyRu/>
+      <Input fullWidth placeholder="Ваш email" value={email} onChange={setEmail}/>
+      <InputPhone value={phoneNumber} onChange={setPhoneNumber}/>
       <div className={cls.buy_platform__button__wrapper}>
         {
           isLoading
-            ? <Loader />
+            ? <Loader/>
             : (
               <Button fullWidth variant="outlined" disabled={disabled} onClick={onHandleSendConsultation}>
                 <Typography variant="span" uppercase>
@@ -75,10 +76,10 @@ const BuyPlatformForm = React.memo((props: ConsultationFormProps) => {
         }
       </div>
       {
-        isError && <Alert variant="error" message="Ууупс... Произошла ошибка, повторите позже :(" />
+        isError && <Alert variant="error" message="Ууупс... Произошла ошибка, повторите позже :("/>
       }
       {
-        isSuccess && <Alert variant="success" message="Ваша заявка на консультацию успешно отправлена!" />
+        isSuccess && <Alert variant="success" message="Ваша заявка на консультацию успешно отправлена!"/>
       }
     </div>
   );

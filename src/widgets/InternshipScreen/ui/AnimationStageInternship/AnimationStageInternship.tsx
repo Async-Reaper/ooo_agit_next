@@ -1,5 +1,5 @@
 "use client";
-import React, { useCallback, useLayoutEffect, useRef } from "react";
+import React, { useCallback, useEffect, useRef } from "react";
 import { ColoredIcon } from "@shared/libs/icon/colored-icon";
 import { animate } from "motion";
 
@@ -87,7 +87,7 @@ export const AnimationStageInternship = React.memo(() => {
     }
   }, []);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     animated();
   }, [animated]);
 

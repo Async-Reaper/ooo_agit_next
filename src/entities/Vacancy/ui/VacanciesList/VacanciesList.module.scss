@@ -3,29 +3,39 @@
 .vacancies__list__wrapper {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 400px));
+  grid-template-columns: repeat(auto-fill, 100%);
   grid-auto-flow: row;
   justify-content: space-between;
-  gap: 20px;
+  grid-gap: 5px;
   z-index: 2;
+
+  @include mixin.phones {
+    grid-template-columns: repeat(auto-fill, minmax(165px, 200px));
+    grid-gap: 10px;
+  }
 
   @include mixin.tablets {
     grid-template-columns: repeat(auto-fill, minmax(270px, auto));
+    grid-gap: 20px;
   }
 
   @include mixin.laptop {
     grid-template-columns: repeat(3, auto);
   }
 
+  .skeleton {
+    @include mixin.adaptive("height", 230, 177);
+  }
+
   .vacancies__item {
-    max-width: 500px;
+    @include mixin.adaptive("height", 230, 177);
     margin: 0 auto;
     width: 100%;
     border: 1px solid #DBCACA;
     color: var(--color-white-primary);
     transition: all 0.3s;
     padding: 20px 0 0 0;
-    background: linear-gradient(45deg, rgb(47, 44, 44) 25%, rgba(51,138,128,1) 100%);
+    background: linear-gradient(45deg, rgb(47, 44, 44) 25%, rgba(51, 138, 128, 1) 100%);
 
     @include mixin.flex-column;
 
@@ -51,4 +61,5 @@
       @include mixin.adaptive("height", 141, 95);
     }
   }
+
 }

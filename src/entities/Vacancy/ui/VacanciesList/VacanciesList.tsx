@@ -34,7 +34,9 @@ export const VacanciesList = React.memo(() => {
   return (
     <div className={cls.vacancies__list__wrapper}>
       {isLoading
-        ? new Array(6).fill("").map((_, index) => <Skeleton key={index} width={270} height={230} border={5} />)
+        ? <>
+          {new Array(6).fill("").map((_, index) => <Skeleton key={index} className={cls.skeleton} border={5}/>)}
+        </>
         : vacancies.map(vacancy =>
           <AppLink
             key={vacancy.id}
@@ -42,9 +44,9 @@ export const VacanciesList = React.memo(() => {
             className={cls.vacancies__item}
             isUnderline={false}
           >
-            <AppImage src={vacancy.img} className={cls.vacancy_img} />
+            <AppImage src={vacancy.img} className={cls.vacancy_img}/>
             <div className={cls.vacancy__name}>
-              <Typography variant="span" bold uppercase noWrap>
+              <Typography variant="span" bold uppercase>
                 {vacancy.name}
               </Typography>
             </div>

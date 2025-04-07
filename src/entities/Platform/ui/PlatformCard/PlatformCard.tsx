@@ -1,8 +1,7 @@
 "use client";
-import React, { useCallback, useEffect, useLayoutEffect, useState } from "react";
+import React from "react";
 import { Button, Typography } from "@shared/ui";
 import Container from "@shared/ui/Container/Container";
-import { animate } from "motion";
 import { useParams, useRouter } from "next/navigation";
 
 import cls from "./PlatformCard.module.scss";

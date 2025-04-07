@@ -11,7 +11,7 @@
   .line__after {
     position: absolute;
     top: 0;
-    left: 340px;
+    left: 345px;
     object-fit: cover;
     @include mixin.adaptive("width", 1300, 150);
   }
