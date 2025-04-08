@@ -21,10 +21,10 @@ export const ActivityFooter = React.memo(({ isVisible }: ActivityFooterProps) =>
         }}
         className={cls.activity__desc}
       >
-        <Typography variant="p">
+        <Typography variant="p" bold>
           Также мы работаем
           {" "}
-          <b>дистанционно</b>
+          <span>дистанционно</span>
           , независимо от местонахождения Заказчика!
         </Typography>
       </motion.div>
@@ -37,9 +37,12 @@ export const ActivityFooter = React.memo(({ isVisible }: ActivityFooterProps) =>
         className={cls.activity__desc}
       >
         <Typography variant="p">
-          Закажите <b>бесплатную консультацию</b> и начните достигать целей уже сегодня!
+          Закажите <span>бесплатную консультацию</span> и начните достигать целей уже сегодня!
         </Typography>
-        <ConsultationButton />
+        <hr className={cls.activity__desc__line} />
+        <div className={cls.consultation__button__wrapper}>
+          <ConsultationButton />
+        </div>
       </motion.div>
     </div>
   );

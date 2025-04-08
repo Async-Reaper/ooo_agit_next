@@ -9,10 +9,7 @@
   height: mixin.$headerHeight + px;
   z-index: 99;
   transition: ease-in-out .3s;
-
-  &.active {
-    background: var(--color-secondary);
-  }
+  background: #212020;
 
   .header__inner {
     @include mixin.flex-row;

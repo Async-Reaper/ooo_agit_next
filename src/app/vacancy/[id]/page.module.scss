@@ -1,21 +1,22 @@
 @use "@shared/styles/_mixins.scss" as mixin;
 
 .vacancy {
-  border-top: 1px solid var(--color-gray-secondary);
-  padding: 0 20px;
+  position: relative;
+  @include mixin.adaptive("padding-block", 70, 30);
 
-  @include mixin.adaptive("padding-block", 80, 30);
+  &:before {
+    position: absolute;
+    content: "";
+    background-image: url("/wave-vacancy.webp");
+    height: 100%;
+    width: 100%;
+    opacity: 0.2;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
 
   .vacancy__wrapper {
-    background: var(--color-secondary);
-    max-width: 1800px;
-    box-shadow: 0 0 30px var(--color-secondary);
-    border-radius: 20px;
-    width: 100%;
-    margin: 0 auto;
-
-    @include mixin.adaptive("padding-block", 100, 20);
-    @include mixin.adaptive("padding-inline", 80, 20);
     @include mixin.flex-column;
     @include mixin.adaptive("gap", 30, 10);
   }
@@ -27,6 +28,14 @@
       display: flex;
       align-items: center;
       gap: 10px;
+    }
+  }
+
+  .vacancy__request__wrapper {
+    max-width: 445px;
+
+    @include mixin.tablets {
+      margin-left: 25%;
     }
   }
 }

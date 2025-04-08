@@ -3,6 +3,7 @@
 .activity__list {
   @include mixin.flex-column;
   @include mixin.adaptive("gap", 40, 20);
+  max-width: 614px;
 
   .activity__item {
     @include mixin.flex-row;
@@ -17,7 +18,7 @@
     .activity__text {
       width: 100%;
       @include mixin.adaptive("padding", 20, 10);
-      border: 1px dotted var(--color-primary);
+      border: 1px dashed var(--color-primary);
       border-radius: 20px 0 20px 0;
       color: var(--color-white-primary);
       background: linear-gradient(90deg, rgba(80,80,80,1) 80%, rgba(172,165,165,0.2) 100%);

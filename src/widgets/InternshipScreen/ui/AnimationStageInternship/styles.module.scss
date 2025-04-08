@@ -11,7 +11,8 @@
   .line__after {
     position: absolute;
     top: 0;
-    left: 345px;
+    @include mixin.adaptive("left", 350, 250);
+    //left: 345px;
     object-fit: cover;
     @include mixin.adaptive("width", 1300, 150);
   }
@@ -30,22 +31,22 @@
 
   .change_experience {
     @include mixin.adaptive("top", 80, 65);
-    @include mixin.adaptive("left", 385, 380);
+    @include mixin.adaptive("left", 400, 300);
   }
 
   .book {
-    @include mixin.adaptive("top", 250, 15);
-    @include mixin.adaptive("left", 595, 375);
+    @include mixin.adaptive("top", 250, 0);
+    @include mixin.adaptive("left", 595, 420);
   }
 
   .contract {
     @include mixin.adaptive("top", 310, 20);
-    @include mixin.adaptive("left", 970, 375);
+    @include mixin.adaptive("left", 970, 290);
   }
 
   .bag {
     @include mixin.adaptive("top", 130, 15);
-    @include mixin.adaptive("left", 1160, 460);
+    @include mixin.adaptive("left", 1200, 320);
   }
 
   .money {

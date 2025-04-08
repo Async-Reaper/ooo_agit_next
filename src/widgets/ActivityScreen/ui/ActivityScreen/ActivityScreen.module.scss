@@ -8,7 +8,7 @@
 
   @include mixin.adaptive("padding-block", 100, 30);
 
-  b {
+  span {
     color: var(--color-primary);
   }
 
@@ -40,7 +40,8 @@
     margin: 0 auto;
 
     @include mixin.adaptive("padding-block", 100, 20);
-    @include mixin.adaptive("padding-inline", 80, 20);
+    @include mixin.adaptive("padding-left", 80, 20);
+    @include mixin.adaptive("padding-right", 20, 10);
     @include mixin.adaptive("gap", 30, 20);
 
     .activity__header {

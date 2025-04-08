@@ -2,25 +2,53 @@
 
 .activity__footer {
   @include mixin.flex-column;
-  @include mixin.adaptive("gap", 100, 20);
+  gap: 20px;
 
   @include mixin.tablets {
     @include mixin.flex-row;
+    justify-content: space-between;
     align-items: self-start;
+  }
+
+  span {
+    color: var(--color-primary);
   }
 
   .activity__desc {
     color: var(--color-white-primary);
 
     &:nth-child(1) {
+      max-width: 614px;
       padding: 20px;
-      border: 1px solid var(--color-white-primary);
+      border: 2px solid var(--color-white-primary);
       border-radius: 20px 0 20px 0;
     }
 
     &:nth-child(2) {
       @include mixin.flex-column;
-      gap: 10px;
+      gap: 20px;
+    }
+
+    .activity__desc__line {
+      width: 95%;
+      height: 2px;
+      margin: 0 auto;
+      background: var(--color-primary);
+      border: none;
+      display: none;
+
+      @include mixin.laptop {
+        display: block;
+      }
+    }
+
+    .consultation__button__wrapper {
+      width: 100%;
+
+      @include mixin.tablets {
+        max-width: 460px;
+        margin: 0 auto;
+      }
     }
   }
 }

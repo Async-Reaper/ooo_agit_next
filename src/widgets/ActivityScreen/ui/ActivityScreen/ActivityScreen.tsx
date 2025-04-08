@@ -40,7 +40,7 @@ export const ActivityScreen = React.memo(() => {
               <Typography variant="h1" uppercase>
                 Направления
                 {" "}
-                <b> автоматизации</b>
+                <span> автоматизации</span>
               </Typography>
             </motion.div>
             <div className={cls.activity__content}>

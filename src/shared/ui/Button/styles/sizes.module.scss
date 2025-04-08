@@ -11,8 +11,8 @@
     }
 
     &--l {
-        padding-block: 10px;
-        padding-inline: 25px;
+        @include mixins.adaptive("padding-block", 17, 10);
+        @include mixins.adaptive("padding-inline", 20, 10);
     }
 
     &--xl {

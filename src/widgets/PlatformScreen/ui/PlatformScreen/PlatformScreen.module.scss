@@ -2,6 +2,7 @@
 
 .platform {
   position: relative;
+  border-top: 2px solid var(--color-primary);
   @include mixin.adaptive("padding-block", 80, 30);
   overflow: hidden;
 
@@ -25,6 +26,14 @@
     transform: rotate(-87deg);
     width: 541px;
     height: 261px;
+  }
+
+  .platform__run__stroke__wrapper {
+    display: none;
+
+    @include mixin.tablets {
+      display: block;
+    }
   }
 
   .platform__wrapper {

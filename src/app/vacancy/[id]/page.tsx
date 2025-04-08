@@ -46,18 +46,22 @@ const DynamicPage: FC<{ params: Params["params"] }> = async ({ params }) => {
 
   return (
     <div className={cls.vacancy}>
-      <div className={cls.link__back__wrapper}>
-        <AppLink href="/about#vacancy" variant="primary" className={cls.link__back}>
-          <Icon name="arrow_left" />
-          <Typography variant="p">
-            Назад
-          </Typography>
-        </AppLink>
-      </div>
-      <div className={cls.vacancy__wrapper}>
-        <VacancyCard vacancy={vacancy} isLoading={isLoading}/>
-        <VacancyRequestButton/>
-      </div>
+      <Container>
+        <div className={cls.link__back__wrapper}>
+          <AppLink href="/about#vacancy" variant="secondary" className={cls.link__back}>
+            <Icon name="arrow_left" color="white-primary" />
+            <Typography variant="p">
+              Назад
+            </Typography>
+          </AppLink>
+        </div>
+        <div className={cls.vacancy__wrapper}>
+          <VacancyCard vacancy={vacancy} isLoading={isLoading}/>
+          <div className={cls.vacancy__request__wrapper}>
+            <VacancyRequestButton/>
+          </div>
+        </div>
+      </Container>
     </div>
   );
 };

@@ -94,13 +94,13 @@
     .solution__item__text {
       position: relative;
       text-align: center;
-      padding: 60px 30px;
+      padding: 5px 10px;
     }
 
     .solution__item__icon {
       position: absolute;
-      @include mixin.adaptive("top", 25, 5);
-      @include mixin.adaptive("right", 25, 5);
+      @include mixin.adaptive("top", 10, 5);
+      @include mixin.adaptive("right", 10, 5);
       transform: rotate(45deg);
     }
 

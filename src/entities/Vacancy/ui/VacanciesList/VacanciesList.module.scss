@@ -9,7 +9,7 @@
   grid-gap: 5px;
   z-index: 2;
 
-  @include mixin.phones {
+  @include mixin.phones-xl {
     grid-template-columns: repeat(auto-fill, minmax(165px, 200px));
     grid-gap: 10px;
   }
@@ -28,7 +28,7 @@
   }
 
   .vacancies__item {
-    @include mixin.adaptive("height", 230, 177);
+    @include mixin.adaptive("height", 230, 185);
     margin: 0 auto;
     width: 100%;
     border: 1px solid #DBCACA;

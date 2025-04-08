@@ -9,13 +9,13 @@ export const VacancyRequestButton = React.memo(() => {
   const { open, isOpen, close } = useModal();
 
   return (
-    <div>
-      <Button onClick={open}>
-        <Typography variant="span" uppercase>
+    <>
+      <Button onClick={open} variant="outlined" size="xl" fullWidth>
+        <Typography variant="span" bold uppercase>
           Откликнуться
         </Typography>
       </Button>
       <VacancyRequestModal isOpen={isOpen} onClose={close} />
-    </div>
+    </>
   );
 });

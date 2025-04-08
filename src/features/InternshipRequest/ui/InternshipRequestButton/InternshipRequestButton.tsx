@@ -13,7 +13,7 @@ export const InternshipRequestButton = React.memo(() => {
   return (
     <>
       <div className={cls.internship__request__button}>
-        <Button onClick={open} variant="outlined" size="xl" fullWidth>
+        <Button onClick={open} variant="outlined" size="l" fullWidth>
           <Typography variant="span" bold uppercase>
             Хочу на стажировку!
           </Typography>
