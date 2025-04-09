@@ -2,12 +2,12 @@
 
 .activity__footer {
   @include mixin.flex-column;
-  gap: 20px;
+  @include mixin.adaptive("gap", 25, 10);
 
   @include mixin.tablets {
     @include mixin.flex-row;
     justify-content: space-between;
-    align-items: self-start;
+    align-items: self-end;
   }
 
   span {
@@ -18,35 +18,22 @@
     color: var(--color-white-primary);
 
     &:nth-child(1) {
+      @include mixin.flex-column;
+      gap: 10px;
       max-width: 614px;
-      padding: 20px;
-      border: 2px solid var(--color-white-primary);
-      border-radius: 20px 0 20px 0;
     }
 
     &:nth-child(2) {
-      @include mixin.flex-column;
-      gap: 20px;
-    }
-
-    .activity__desc__line {
-      width: 95%;
-      height: 2px;
-      margin: 0 auto;
-      background: var(--color-primary);
-      border: none;
-      display: none;
-
-      @include mixin.laptop {
-        display: block;
-      }
+      padding: 20px;
+      border: 2px solid var(--color-white-primary);
+      border-radius: 20px 0 20px 0;
     }
 
     .consultation__button__wrapper {
       width: 100%;
 
       @include mixin.tablets {
-        max-width: 460px;
+        max-width: 430px;
         margin: 0 auto;
       }
     }

@@ -4,8 +4,8 @@ import { db } from "@main/FirebaseProvider";
 import { useViewBox } from "@shared/hooks";
 import { Button, Typography } from "@shared/ui";
 import { Skeleton } from "@shared/ui/Skeleton";
-import { collection, DocumentData, getDocs, limit, query, startAfter, } from "firebase/firestore";
-import { motion } from "motion/react";
+import { collection, DocumentData, getDocs, limit, orderBy, query, startAfter } from "firebase/firestore";
+import { motion } from "framer-motion";
 
 import cls from "./NewsScreen.module.scss";
 
@@ -13,47 +13,97 @@ import { INews } from "../../model/types/newsType";
 import { NewsItem } from "../NewsItem/NewsItem";
 
 export const NewsScreen = React.memo(() => {
-  const [news, setNews] = useState<DocumentData[]>([]);
+  const [news, setNews] = useState<INews[]>([]);
   const [lastVisible, setLastVisible] = useState<DocumentData | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isLoadingInitialData, setIsLoadingInitialData] = useState<boolean>(false);
+  const [isLoadingMoreData, setIsLoadingMoreData] = useState<boolean>(false);
   const { ref, isVisible } = useViewBox(0.1);
 
-  const fetchData = useCallback(async () => {
-    setIsLoading(true);
-    const itemsRef = collection(db, "news");
-    let q;
+  // Функция для первоначальной загрузки данных
+  const fetchInitialData = useCallback(async () => {
+    setIsLoadingInitialData(true);
+    try {
+      const itemsRef = collection(db, "news");
+      const q = query(itemsRef, orderBy("createdAt", "desc"), limit(4));
 
-    if (lastVisible) {
-      q = query(itemsRef, startAfter(lastVisible), limit(5));
-    } else {
-      q = query(itemsRef, limit(5));
+      const documentSnapshots = await getDocs(q);
+
+      if (documentSnapshots.empty) {
+        console.log("No documents to load.");
+        return;
+      }
+
+      const newItems = documentSnapshots.docs.map((doc) => ({
+        id: doc.id,
+        path: doc.ref.path,
+        ...doc.data(),
+      })) as INews[];
+
+      console.log("Initial fetched documents:", newItems);
+
+      setNews(newItems);
+
+      // Обновляем lastVisible на последний документ
+      const lastDoc = documentSnapshots.docs[documentSnapshots.docs.length - 1];
+      console.log("Updating lastVisible to:", lastDoc.data());
+      setLastVisible(lastDoc);
+    } catch (error) {
+      console.error("Ошибка при первоначальной загрузке новостей:", error);
+    } finally {
+      setIsLoadingInitialData(false);
     }
+  }, []);
 
-    const documentSnapshots = await getDocs(q);
+  // Функция для подгрузки новых новостей
+  const fetchMoreData = useCallback(async () => {
+    if (!lastVisible) return;
 
-    if (documentSnapshots.empty) {
-      setIsLoading(false);
-      return;
+    setIsLoadingMoreData(true);
+    try {
+      const itemsRef = collection(db, "news");
+      const q = query(
+        itemsRef,
+        orderBy("createdAt", "desc"),
+        startAfter(lastVisible),
+        limit(4)
+      );
+
+      const documentSnapshots = await getDocs(q);
+
+      if (documentSnapshots.empty) {
+        console.log("No more documents to load.");
+        return;
+      }
+
+      const newItems = documentSnapshots.docs.map((doc) => ({
+        id: doc.id,
+        path: doc.ref.path,
+        ...doc.data(),
+      })) as INews[];
+
+      console.log("Fetched more documents:", newItems);
+
+      setNews((prevItems) => {
+        const existingIds = new Set(prevItems.map((item) => item.id));
+        const filteredNewItems = newItems.filter((item) => !existingIds.has(item.id));
+        return [...prevItems, ...filteredNewItems];
+      });
+
+      // Обновляем lastVisible на последний документ
+      const lastDoc = documentSnapshots.docs[documentSnapshots.docs.length - 1];
+      console.log("Updating lastVisible to:", lastDoc.data());
+      setLastVisible(lastDoc);
+    } catch (error) {
+      console.error("Ошибка при подгрузке новостей:", error);
+    } finally {
+      setIsLoadingMoreData(false);
     }
-
-    const newItems = documentSnapshots.docs.map((doc) => ({
-      id: doc.id,
-      ...doc.data(),
-    } as INews));
-
-    setNews((prevItems) => {
-      const existingIds = new Set(prevItems.map((item) => item.id));
-      const filteredNewItems = newItems.filter((item) => !existingIds.has(item.id));
-      return [...prevItems, ...filteredNewItems];
-    });
-
-    setLastVisible(documentSnapshots.docs[documentSnapshots.docs.length - 1]);
-    setIsLoading(false);
   }, [lastVisible]);
 
+  // Загрузка первых новостей при монтировании компонента
   useEffect(() => {
-    isVisible && fetchData();
-  }, [fetchData, isVisible]);
+    fetchInitialData();
+  }, [fetchInitialData]);
 
   return (
     <motion.section
@@ -68,7 +118,10 @@ export const NewsScreen = React.memo(() => {
           initial={{ y: 1000, opacity: 0 }}
           animate={isVisible && { y: 0, opacity: 1 }}
           transition={{
-            type: "spring", duration: 0.5, stiffness: 150, bounce: 0.5,
+            type: "spring",
+            duration: 0.5,
+            stiffness: 150,
+            bounce: 0.5,
           }}
           className={cls.news__title__wrapper}
         >
@@ -77,18 +130,20 @@ export const NewsScreen = React.memo(() => {
           </Typography>
         </motion.div>
         <ul className={cls.news__list}>
+          {isLoadingInitialData
+            ?
+            new Array(4).fill("").map((_, index) => <Skeleton className={cls.skeleton} key={index} border={5}/>)
+            :
+            news.map((newsItem) => (
+              <NewsItem key={newsItem.id} newsItem={newsItem}/>
+            ))
+          }
           {
-            isLoading
-              ? new Array(2).fill("").map((_, index) => <Skeleton key={index} border={5} />)
-              : (
-                news?.map((newsItem) => (
-                  <NewsItem key={newsItem.path} newsItem={newsItem as INews}/>
-                ))
-              )
+            isLoadingMoreData && new Array(4).fill("").map((_, index) => <Skeleton className={cls.skeleton} key={index} border={5}/>)
           }
         </ul>
         <div className={cls.news__button__wrapper}>
-          <Button variant="outlined" onClick={fetchData}>
+          <Button variant="outlined" onClick={fetchMoreData}>
             <Typography variant="span" uppercase>
               Еще
             </Typography>

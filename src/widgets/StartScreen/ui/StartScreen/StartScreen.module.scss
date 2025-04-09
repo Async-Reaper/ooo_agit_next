@@ -7,29 +7,30 @@
   .start__wrapper {
 
     @include mixin.laptop {
-      @include mixin.flex-row;
+      @include mixin.flex-space;
+      align-items: self-start;
     }
 
-    @include mixin.adaptive("padding-block", 84, 40);
+    .start__content {
+      @include mixin.flex-column;
+      align-items: self-start;
+      @include mixin.adaptive("gap", 30, 15);
+      @include mixin.adaptive("padding-block", 60, 30);
+    }
 
     .start__content__title {
       @include mixin.flex-column;
       @include mixin.adaptive("gap", 30, 15);
     }
 
-    .start__content {
-      @include mixin.flex-column;
-      @include mixin.adaptive("gap", 30, 15);
-
-      b {
-        color: var(--color-primary);
-      }
-    }
-
     .start__content__text {
       @include mixin.flex-column;
       @include mixin.adaptive("gap", 40, 20);
       max-width: 900px;
+
+      span {
+        color: var(--color-primary);
+      }
     }
 
     .start__content__desc {

@@ -6,7 +6,7 @@
   background: var(--color-secondary);
   z-index: 1;
 
-  @include mixin.adaptive("padding-block", 100, 30);
+  @include mixin.adaptive("padding-block", 60, 30);
 
   span {
     color: var(--color-primary);
@@ -35,17 +35,14 @@
     border-radius: 20px;
     background: var(--color-black-primary);
     box-shadow: 0 4px 10px #00000025;
-    max-width: 1800px;
-    width: 100%;
-    margin: 0 auto;
 
-    @include mixin.adaptive("padding-block", 100, 20);
-    @include mixin.adaptive("padding-left", 80, 20);
+    @include mixin.adaptive("padding-block", 40, 20);
+    @include mixin.adaptive("padding-left", 45, 20);
     @include mixin.adaptive("padding-right", 20, 10);
-    @include mixin.adaptive("gap", 30, 20);
+    @include mixin.adaptive("gap", 25, 10);
 
     .activity__header {
-      @include mixin.adaptive("gap", 50, 20);
+      @include mixin.adaptive("gap", 20, 10 );
       @include mixin.flex-column;
     }
 

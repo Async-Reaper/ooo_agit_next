@@ -51,6 +51,12 @@
     @include mixin.flex-column;
     @include mixin.adaptive("gap", 30, 20);
 
+    .internship__text {
+      @include mixin.flex-column;
+      gap: 5px;
+      //@include mixin.adaptive("gap", 15, 5);
+    }
+
     .stage_internship__list {
       @include mixin.flex-column;
       gap: 10px;
@@ -71,8 +77,8 @@
         .stage__name {
           position: relative;
           width: 100%;
-          @include mixin.adaptive("max-width", 320, 240);
-          padding: 15px 10px;
+          @include mixin.adaptive("max-width", 380, 240);
+          padding: 15px 5px;
           background: var(--color-black-primary);
 
           &:before {

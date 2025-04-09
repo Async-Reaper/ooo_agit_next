@@ -29,7 +29,7 @@ export const StartScreen = React.memo(() => {
                 className={cls.start__content__title}
               >
                 <Typography variant="h2" uppercase>
-                  Комплексная <b>автоматизация бизнеса</b> на базе 1С: от стратегии до внедрения и сопровождения
+                  Комплексная <span>автоматизация бизнеса</span> на базе 1С: от стратегии до внедрения и сопровождения
                 </Typography>
                 <Typography variant="p">
                   Мы не просто внедряем 1С — мы создаем индивидуальные ИТ-экосистемы для вашего бизнеса. Наш опыт и
@@ -44,7 +44,7 @@ export const StartScreen = React.memo(() => {
                 className={cls.start__content__desc}
               >
                 <Typography variant="p">
-                  Закажите <b>бесплатную консультацию</b> и начните достигать целей уже сегодня!
+                  Закажите <span>бесплатную консультацию</span> и начните достигать целей уже сегодня!
                 </Typography>
               </motion.div>
             </div>

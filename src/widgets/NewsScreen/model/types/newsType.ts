@@ -3,4 +3,5 @@ export interface INews {
   title: string;
   description: string;
   path: string;
+  createdAt: Date;
 }

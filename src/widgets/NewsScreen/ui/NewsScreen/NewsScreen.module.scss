@@ -42,8 +42,13 @@
     .news__list {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(auto, 350px));
-      justify-content: space-between;
+      justify-content: center;
       gap: 50px;
+
+      .skeleton {
+        max-width: 350px;
+        min-height: 350px;
+      }
     }
 
     .news__button__wrapper {

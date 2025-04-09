@@ -5,7 +5,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, 100%);
   grid-auto-flow: row;
-  justify-content: space-between;
   grid-gap: 5px;
   z-index: 2;
 
@@ -28,26 +27,22 @@
   }
 
   .vacancies__item {
-    @include mixin.adaptive("height", 230, 185);
+    @include mixin.flex-column;
+    gap: 10px;
     margin: 0 auto;
+    padding: 20px 0 0 0;
     width: 100%;
     border: 1px solid #DBCACA;
     color: var(--color-white-primary);
-    transition: all 0.3s;
-    padding: 20px 0 0 0;
     background: linear-gradient(45deg, rgb(47, 44, 44) 25%, rgba(51, 138, 128, 1) 100%);
-
-    @include mixin.flex-column;
-
-    gap: 10px;
+    transition: ease-in-out 0.3s;
 
     @include mixin.tablets {
       @include mixin.adaptive("width", 320, 270);
     }
 
     &:hover {
-      scale: 1.1;
-      box-shadow: 0 0 30px var(--color-black-primary);
+      box-shadow: 0 0 30px var(--color-primary);
     }
 
     .vacancy__name {

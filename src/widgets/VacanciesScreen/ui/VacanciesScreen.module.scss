@@ -38,7 +38,7 @@
     .vacancies__wrapper {
         @include mixin.flex-column;
         align-items: stretch;
-        @include mixin.adaptive("gap", 80, 20);
+        @include mixin.adaptive("gap", 25, 10);
 
         border-radius: 20px;
         position: relative;

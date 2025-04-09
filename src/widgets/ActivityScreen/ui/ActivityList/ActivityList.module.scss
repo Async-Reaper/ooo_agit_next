@@ -2,7 +2,7 @@
 
 .activity__list {
   @include mixin.flex-column;
-  @include mixin.adaptive("gap", 40, 20);
+  @include mixin.adaptive("gap", 15, 7);
   max-width: 614px;
 
   .activity__item {

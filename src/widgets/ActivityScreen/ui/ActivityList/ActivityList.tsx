@@ -56,12 +56,12 @@ export const ActivityList = React.memo(({ isVisible }: ActivityListProps) => {
       {activities.map((activity) => (
         <li key={activity.id} className={cls.activity__item}>
           <div className={cls.check_mark}>
-            <Typography variant="h1">
+            <Typography variant="h2">
               ✔
             </Typography>
           </div>
           <div className={cls.activity__text}>
-            <Typography variant="p">
+            <Typography variant="span">
               {activity.text}
             </Typography>
           </div>
