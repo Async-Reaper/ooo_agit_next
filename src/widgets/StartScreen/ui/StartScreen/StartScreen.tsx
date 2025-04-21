@@ -4,10 +4,11 @@ import { ConsultationButton } from "@features/Consultation";
 import { Typography } from "@shared/ui";
 import Container from "@shared/ui/Container/Container";
 import { motion } from "motion/react";
+import dynamic from "next/dynamic";
 
 import cls from "./StartScreen.module.scss";
 
-import { Animation } from "../Animation/Animation";
+const Animation = dynamic(() => import("../Animation/Animation"), { ssr: false });
 
 export const StartScreen = React.memo(() => {
   const [isMounted, setIsMounted] = useState(false);

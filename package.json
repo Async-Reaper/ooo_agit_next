@@ -20,6 +20,8 @@
     "axios": "^1.7.9",
     "firebase": "^11.1.0",
     "lodash": "^4.17.21",
+    "lottie-react": "^2.4.1",
+    "lottie-web": "^5.12.2",
     "motion": "^11.18.2",
     "next": "^13.5.8",
     "nodemailer": "^6.10.0",
