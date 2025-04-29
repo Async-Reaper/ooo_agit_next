@@ -20,7 +20,8 @@ $height: 925;
 
   .internship__content {
     @include mixin.flex-column;
-    @include mixin.adaptive("gap", 30, 15);
+    @include mixin.adaptive("gap", 60, 30);
+    margin: 0 auto;
 
     .stage__internship {
       @include mixin.flex-row;
@@ -30,18 +31,17 @@ $height: 925;
     .stage_internship__list {
       @include mixin.flex-row;
       align-items: self-end;
-      width: max-content;
       position: relative;
 
       &:before {
         position: absolute;
         content: "";
-        width: 140%;
+        left: 0;
+        bottom: 0;
+        width: 115%;
         height: 2px;
         background: var(--color-white-primary);
-        bottom: 0;
         z-index: 2;
-        left: -55px;
       }
 
       &:after {
@@ -60,11 +60,10 @@ $height: 925;
     .stage_internship__item {
       z-index: 1;
       @include mixin.flex-row;
-      padding: 60px 20px;
-      margin-left: -55px;
       gap: 20px;
+      width: 110px;
+      padding: 60px 20px;
       background: linear-gradient(90deg, #514F4F, #119686);
-      //opacity: 92%;
       clip-path: polygon(50% 0%, -410% 100%, 0% 100%, 100% 100%, 525% 100%);
 
       @for $i from 1 through 5 {
@@ -73,6 +72,10 @@ $height: 925;
         &:nth-child(#{$i}) {
           height: #{$height}px;
         }
+      }
+
+      &+.stage_internship__item {
+        margin-left: -55px;
       }
     }
 
@@ -121,6 +124,7 @@ $height: 925;
 
   .internship {
     @include mixin.flex-space;
+    gap: 60px;
   }
 
   .internship__background {
@@ -139,7 +143,7 @@ $height: 925;
       border-radius: 0 0 0 20px;
     }
 
-    @include mixin.laptop {
+    @include mixin.desktop {
       display: block;
 
       .internship__img {

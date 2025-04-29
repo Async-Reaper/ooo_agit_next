@@ -9,11 +9,15 @@
   &:before {
     position: absolute;
     content: "";
-    width: 990px;
-    height: 375px;
+    @include mixin.adaptive("top", -95, 60);
+    //top: -110px;
+    max-width: 990px;
+    min-width: 300px;
+    width: 100%;
+    height: 310px;
     background-image: url("/footer-contacts-background.svg");
     background-repeat: no-repeat;
-    top: -110px
+    background-size: contain;
   }
 
   .contact__item {

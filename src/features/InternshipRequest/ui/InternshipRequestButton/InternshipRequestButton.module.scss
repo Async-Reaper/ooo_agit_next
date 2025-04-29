@@ -1,5 +1,6 @@
 @use "@shared/styles/mixins" as mixin;
 
 .internship__request__button {
-  @include mixin.adaptive("width", 420, 270);
+  width: 385px;
+  //@include mixin.adaptive("width", 420, 270);
 }

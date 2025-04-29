@@ -21,13 +21,12 @@
     position: absolute;
     content: '';
     top: 0;
-    left: -40px;
+    @include mixin.adaptive("left", -95, -195);
     background-image: url("/header_background.svg");
     background-repeat: no-repeat;
     background-size: contain;
-    @include mixin.adaptive("width", 1400, 320);
+    @include mixin.adaptive("width", 1400, 400);
     height: 159px;
-    //width: 1500px;
 
     @include mixin.laptop {
       display: block;
@@ -39,12 +38,12 @@
     position: absolute;
     content: '';
     top: 0;
-    left: 170px;
+    @include mixin.adaptive("left", 135, -105);
     background-image: url("/header_line.svg");
     background-repeat: no-repeat;
     background-size: contain;
     height: 192px;
-    width: 100%;
+    @include mixin.adaptive("width", 1200, 300);
 
     @include mixin.laptop {
       display: block;
@@ -82,9 +81,8 @@
 
     @include mixin.laptop {
       @include mixin.flex-row;
-
       align-items: center;
-      margin: 0 0 0 160px;
+      @include mixin.adaptive("margin-left", 135, -95);
     }
 
     .header__link {

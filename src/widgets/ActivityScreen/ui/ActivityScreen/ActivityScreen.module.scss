@@ -3,7 +3,7 @@
 .activity {
   position: relative;
   z-index: 1;
-  @include mixin.adaptive("padding-block", 60, 30);
+  @include mixin.adaptive("padding-block", 90, 50);
 
   @include mixin.desktop {
     &:before {
@@ -26,8 +26,6 @@
     z-index: 2;
     will-change: transform, opacity;
     @include mixin.flex-column;
-
-    gap: 20px;
     @include mixin.adaptive("gap", 25, 10);
 
     .activity__header {
@@ -37,9 +35,15 @@
 
     .activity__content {
       @include mixin.flex-space;
+      flex-direction: column;
+
+      @include mixin.desktop {
+        flex-direction: row;
+      }
     }
 
     .activity__background {
+      display: none;
       position: relative;
 
       &:after {
@@ -51,6 +55,10 @@
         background-repeat: no-repeat;
         width: 103%;
         height: 285px;
+      }
+      
+      @include mixin.desktop {
+        display: block;
       }
     }
 

@@ -4,20 +4,24 @@ $left: 30;
 
 .activity__list {
   @include mixin.flex-column;
-  @include mixin.adaptive("gap", 51, 25);
+  justify-content: space-between;
   position: relative;
   background-image: url("/activity/activity-list-background.png");
   background-repeat: no-repeat;
-  background-size: contain;
-  width: 1100px;
+  background-size: cover;
+  min-width: 300px;
+  max-width: 1100px;
+  width: 100%;
   height: 532px;
   padding: 60px;
 
   &:after {
     position: absolute;
     content: "";
-    left: 3px;
-    bottom: 20px;
+    left: 10px;
+    bottom: -18px;
+    //left: 3px;
+    //bottom: 20px;
     background-image: url("/activity/activity-list-line.svg");
     background-repeat: no-repeat;
     width: 103%;
