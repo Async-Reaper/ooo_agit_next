@@ -1,8 +1,10 @@
 @use "@shared/styles/mixins" as mixin;
 
+$height: 925;
+
 .internship__wrapper {
   position: relative;
-  @include mixin.adaptive("padding-block", 80, 30);
+  @include mixin.adaptive("padding-block", 90, 40);
 
   &:before {
     position: absolute;
@@ -16,84 +18,132 @@
     filter: blur(100px);
   }
 
-  //&:after {
-    //position: absolute;
-    //content: "";
-  //}
-
-  &:after {
-    position: absolute;
-    content: "";
-    top: 60%;
-    right: 0;
-    transform: scaleX(-1) translateY(-50%);
-    width: 138px;
-    height: 300px;
-    opacity: 0.2;
-    background-image: url("/bubbleDecoration/bubble-for-news-left.webp");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
-
-    @include mixin.phones-xl {
-      top: 15px;
-      right: 5px;
-      width: 45px;
-      height: 95%;
-      background: linear-gradient(to bottom, #97FCF0, #338A80);
-      border-radius: 100px;
-      filter: blur(150px);
-      opacity: 1
-    }
-  }
-
   .internship__content {
     @include mixin.flex-column;
-    @include mixin.adaptive("gap", 30, 20);
+    @include mixin.adaptive("gap", 30, 15);
 
-    .internship__text {
-      @include mixin.flex-column;
-      gap: 5px;
-      //@include mixin.adaptive("gap", 15, 5);
+    .stage__internship {
+      @include mixin.flex-row;
+      gap: 60px;
     }
 
     .stage_internship__list {
-      @include mixin.flex-column;
-      gap: 10px;
-      position: relative;
+      @include mixin.flex-row;
+      align-items: self-end;
       width: max-content;
+      position: relative;
 
-      .stage_internship__item {
-        @include mixin.flex-row;
-        @include mixin.adaptive("gap", 24, 0);
-        z-index: 9;
-        color: var(--color-white-primary);
+      &:before {
+        position: absolute;
+        content: "";
+        width: 140%;
+        height: 2px;
+        background: var(--color-white-primary);
+        bottom: 0;
+        z-index: 2;
+        left: -55px;
+      }
 
-        .check_mark {
-          text-shadow: 0 5px 4px #53DFCF22;
-          transform: rotate(-90deg);
+      &:after {
+        position: absolute;
+        content: "";
+        right: -56px;
+        bottom: -7px;
+        width: 16px;
+        height: 16px;
+        background: var(--color-white-primary);
+        border-radius: 50%;
+        z-index: 1;
+      }
+    }
+
+    .stage_internship__item {
+      z-index: 1;
+      @include mixin.flex-row;
+      padding: 60px 20px;
+      margin-left: -55px;
+      gap: 20px;
+      background: linear-gradient(90deg, #514F4F, #119686);
+      //opacity: 92%;
+      clip-path: polygon(50% 0%, -410% 100%, 0% 100%, 100% 100%, 525% 100%);
+
+      @for $i from 1 through 5 {
+        $height: $height - 150; // Вычисляем padding для текущей итерации
+
+        &:nth-child(#{$i}) {
+          height: #{$height}px;
         }
+      }
+    }
 
-        .stage__name {
-          position: relative;
-          width: 100%;
-          @include mixin.adaptive("max-width", 380, 240);
-          padding: 15px 5px;
-          background: var(--color-black-primary);
+    .stage__icon {
+      margin: 0 0 auto;
+    }
 
-          &:before {
-            position: absolute;
-            content: "";
-            inset: 0;
-            border-radius: 5px;
-            border: 2px solid transparent;
-            background: linear-gradient(-45deg, #97FCF0, #87A19E) border-box;
-            -webkit-mask: linear-gradient(rgb(181, 83, 83) 0 0) padding-box, linear-gradient(rgb(214, 124, 124) 0 0);
-            mask: linear-gradient(rgb(181, 83, 83) 0 0) padding-box, linear-gradient(rgb(214, 124, 124) 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-          }
-        }
+    .stage_internship__text {
+      @include mixin.flex-column;
+      justify-content: space-around;
+      height: 775px;
+      align-items: self-start;
+    }
+  }
+
+  .internship__title {
+    @include mixin.flex-column;
+    gap: 5px;
+  }
+
+  .stage_internship__text__item {
+    position: relative;
+
+    &:before {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: -360px;
+      background: var(--color-white-primary);
+      width: 350px;
+      height: 2px;
+    }
+
+    &:after {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: -20px;
+      transform: translateY(-50%);
+      background: var(--color-white-primary);
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+    }
+  }
+
+  .internship {
+    @include mixin.flex-space;
+  }
+
+  .internship__background {
+    display: none;
+    position: relative;
+
+    &:before {
+      position: absolute;
+      content: "";
+      left: -20px;
+      bottom: -20px;
+      width: 103%;
+      height: 100%;
+      border-left: 5px solid var(--color-primary);
+      border-bottom: 5px solid var(--color-primary);
+      border-radius: 0 0 0 20px;
+    }
+
+    @include mixin.laptop {
+      display: block;
+
+      .internship__img {
+        width: 100%;
       }
     }
   }

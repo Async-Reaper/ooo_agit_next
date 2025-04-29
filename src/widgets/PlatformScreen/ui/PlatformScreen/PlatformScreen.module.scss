@@ -2,74 +2,59 @@
 
 .platform {
   position: relative;
-  border-top: 2px solid var(--color-primary);
-  @include mixin.adaptive("padding-block", 80, 30);
+  @include mixin.adaptive("padding-bottom", 80, 30);
   overflow: hidden;
-
-  .platform__vector__left {
-    background-image: url("/vectors/vector.svg");
-    background-size: cover;
-    position: absolute;
-    left: -295px;
-    top: 15%;
-    transform: rotate(90deg);
-    width: 541px;
-    height: 261px;
-  }
-
-  .platform__vector__right {
-    background-image: url("/vectors/vector.svg");
-    background-size: cover;
-    position: absolute;
-    right: -276px;
-    bottom: 10%;
-    transform: rotate(-87deg);
-    width: 541px;
-    height: 261px;
-  }
-
-  .platform__run__stroke__wrapper {
-    display: none;
-
-    @include mixin.tablets {
-      display: block;
-    }
-  }
 
   .platform__wrapper {
     @include mixin.flex-column;
-
-    border-radius: 20px;
-    max-width: 1800px;
-    width: 100%;
-    margin: 0 auto;
-
-    @include mixin.adaptive("padding-inline", 80, 20);
     @include mixin.adaptive("gap", 75, 20);
 
-    .platform__header__wrapper {
-      @include mixin.flex-row;
-      position: relative;
-    }
-
     .platform__header__content {
-      @include mixin.flex-column;
+      display: flex;
+      align-items: center;
       z-index: 2;
       flex-shrink: 0;
-      @include mixin.adaptive("padding-block", 65, 30);
       @include mixin.adaptive("padding-inline", 137, 80);
+      width: 954px;
+      height: 190px;
       position: relative;
-      background-image: url("/platforms-bg.webp");
-      background-size: cover;
-      border-radius: 10px;
-      gap: 10px;
-      width: 100%;
+
+      &:after {
+        position: absolute;
+        content: "";
+        background-image: url("/platforms/platforms-bg.png");
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        left: 0;
+      }
+
 
       @include mixin.phones-xl {
-        max-width: max-content;
         background-size: contain;
         background-repeat: no-repeat;
       }
+
+      @include mixin.desktop {
+        &:before {
+          position: absolute;
+          content: "";
+          background-image: url("/platforms/platform-line.svg");
+          background-repeat: no-repeat;
+          background-size: contain;
+          width: 100%;
+          height: 100%;
+          left: 20px;
+          top: 55px;
+        }
+      }
+    }
+
+    .platform__header__title {
+      @include mixin.flex-column;
+      gap: 10px;
+      width: max-content;
+      z-index: 1;
     }
   }
 }

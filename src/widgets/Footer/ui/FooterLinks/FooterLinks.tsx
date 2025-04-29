@@ -22,15 +22,15 @@ export const FooterLinks = React.memo(() => {
   
   return (
     <div className={cls.footer__links}>
+      <div className={cls.footer__line}/>
       <div className={cls.footer__link__wrapper}>
-        <hr/>
         <AppLink
           href="/#start"
           className={cls.footer__link}
           onClick={(e) => scrollToSection(e, "start")}
           variant="secondary"
         >
-          <Typography variant="span" noWrap>
+          <Typography variant="p" noWrap>
             О нас
           </Typography>
         </AppLink>
@@ -40,42 +40,37 @@ export const FooterLinks = React.memo(() => {
           onClick={(e) => scrollToSection(e, "solutions")}
           variant="secondary"
         >
-          <Typography variant="span" noWrap>
+          <Typography variant="p" noWrap>
             Чем занимаемся?
           </Typography>
         </AppLink>
-      </div>
-      <div className={cls.footer__link__wrapper}>
-        <hr/>
         <AppLink
           href="/products#services"
           className={cls.footer__link}
           onClick={(e) => scrollToSection(e, "services")}
           variant="secondary"
         >
-          <Typography variant="span" noWrap>
+          <Typography variant="p" noWrap>
             Услуги
           </Typography>
         </AppLink>
         <AppLink
-          href="/#activity"
+          href="/cases"
           className={cls.footer__link}
-          onClick={(e) => scrollToSection(e, "activity")}
           variant="secondary"
         >
-          <Typography variant="span" noWrap>
-            Деятельность
+          <Typography variant="p" noWrap>
+            Кейсы
           </Typography>
         </AppLink>
       </div>
       <div className={cls.footer__link__wrapper}>
-        <hr/>
         <AppLink
           href="/about#vacancies"
           className={cls.footer__link}
           variant="secondary"
         >
-          <Typography variant="span" noWrap>
+          <Typography variant="p" noWrap>
             Вакансии
           </Typography>
         </AppLink>
@@ -85,20 +80,18 @@ export const FooterLinks = React.memo(() => {
           onClick={(e) => scrollToSection(e, "platform")}
           variant="secondary"
         >
-          <Typography variant="span" noWrap>
+          <Typography variant="p" noWrap>
             Товары
           </Typography>
         </AppLink>
-      </div>
-      <div className={cls.footer__link__wrapper}>
-        <hr/>
         <AppLink
-          href="/cases"
+          href="/#activity"
           className={cls.footer__link}
+          onClick={(e) => scrollToSection(e, "activity")}
           variant="secondary"
         >
-          <Typography variant="span" noWrap>
-            Кейсы
+          <Typography variant="p" noWrap>
+            Деятельность
           </Typography>
         </AppLink>
       </div>

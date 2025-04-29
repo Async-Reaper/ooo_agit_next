@@ -23,10 +23,6 @@ export const SolutionsScreen = React.memo(() => {
       id: 3,
       text: "Экспертные консультации для компаний с целью оптимизации и эффективного использования их IT-инфраструктуры.",
     },
-    {
-      id: 4,
-      text: "Обучение использованию внедренных технологий, а также техническая поддержка для успешной интеграции и максимальной эффективности.",
-    },
   ]);
 
   const { ref, isVisible } = useViewBox(0.2);
@@ -42,8 +38,6 @@ export const SolutionsScreen = React.memo(() => {
 
   return (
     <section id="solutions" className={cls.solutions}>
-      <div className={cls.solution__vector__left}/>
-      <div className={cls.solution__vector__right}/>
       <Container>
         <motion.div
           initial={{ opacity: 0, x: -100 }}
@@ -59,7 +53,7 @@ export const SolutionsScreen = React.memo(() => {
             className={cls.solutions__title}
             ref={ref}
           >
-            <Typography color="white-primary" variant="h1" align="center" uppercase>
+            <Typography color="white-primary" variant="h2" align="center" uppercase>
               Чем мы
               {" "}
               Занимаемся?
@@ -72,13 +66,11 @@ export const SolutionsScreen = React.memo(() => {
                   key={solution.id}
                   className={cls.solution__item}
                 >
+                  <div className={cls.dot} />
                   <div className={cls.solution__item__text}>
                     <Typography variant="span" align="center">
                       {solution.text}
                     </Typography>
-                  </div>
-                  <div className={cls.solution__item__icon}>
-                    <Icon name="arrow_circular" size={51} color="primary"/>
                   </div>
                 </li>
               ))

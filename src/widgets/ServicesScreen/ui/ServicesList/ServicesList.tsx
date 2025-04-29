@@ -58,16 +58,20 @@ export const ServicesList = React.memo(({ isVisible }: ServicesListProps) => {
       }],
     ]);
   }, [isVisible]);
+
+  const onHandleNavigate = (url: string) => {
+    window.open(url);
+  };
   
   return (
     <ul className={cls.services__list}>
       {services.map((service) => (
         <li className={cls.services__item} key={service.id}>
           <div className={cls.service__icon__wrapper}>
-            <Icon name={service.iconName} color="primary" className={cls.service__icon}/>
+            <Icon name={service.iconName} color="white-primary" size={73} className={cls.service__icon}/>
           </div>
-          <div className={cls.services__name}>
-            <Typography variant="span" bold color="primary" align="center">
+          <div className={cls.service__name}>
+            <Typography variant="span" bold align="center">
               {service.serviceName}
             </Typography>
           </div>
@@ -76,17 +80,18 @@ export const ServicesList = React.memo(({ isVisible }: ServicesListProps) => {
               {service.serviceInfo}
             </Typography>
           </div>
-          <AppLink target="_blank" href={service.link} className={cls.service__link}>
+          <div className={cls.service__link}>
             <Button
               size="l"
               variant="outlined"
               fullWidth
+              onClick={() => onHandleNavigate(service.link)}
             >
               <Typography variant="span" uppercase noWrap>
                 Подробнее
               </Typography>
             </Button>
-          </AppLink>
+          </div>
         </li>
       ))}
     </ul>

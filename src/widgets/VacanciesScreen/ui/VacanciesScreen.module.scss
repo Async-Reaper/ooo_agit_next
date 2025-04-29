@@ -1,59 +1,56 @@
 @use "@shared/styles/_mixins.scss" as mixin;
 
 .vacancies__screen {
-    @include mixin.adaptive("margin-top", 80, 20);
+  @include mixin.adaptive("margin-top", 80, 20);
+  position: relative;
+
+  @include mixin.desktop {
+    &:before {
+      position: absolute;
+      content: "";
+      top: 10px;
+      width: 150px;
+      height: 25px;
+      background: var(--color-primary);
+      opacity: 50%;
+    }
+  }
+
+  .vacancies__title__wrapper {
+    margin: 0 0 50px;
+  }
+
+  .vacancies__wrapper {
+    @include mixin.flex-column;
+    align-items: stretch;
+    @include mixin.adaptive("gap", 25, 10);
+
+    border-radius: 20px;
     position: relative;
 
-    &:before {
-        position: absolute;
-        content: "";
-        background-image: url("/wave-vacancy.webp");
-        height: 100%;
-        width: 100%;
-        opacity: 0.2;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;
-    }
-
     &:after {
-        position: absolute;
-        content: "";
-        top: 0;
-        height: 100%;
-        width: 45px;
-        background: linear-gradient(90deg, #276E66, #115850);
-        filter: blur(65px);
+      position: absolute;
+      content: "";
+      background-image: url("/vacancies/wave-vacancy.png");
+      height: 100%;
+      width: 100%;
+      opacity: 0.02;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
     }
 
-    b {
-        color: var(--color-primary);
+    &:before {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      height: 60%;
+      background: linear-gradient(to right, #276E66, #115850);
+      opacity: 0.3;
+      filter: blur(100px);
     }
-
-    .vacancies__title__wrapper {
-        z-index: 2;
-        color: var(--color-primary);
-    }
-
-    .vacancies__wrapper {
-        @include mixin.flex-column;
-        align-items: stretch;
-        @include mixin.adaptive("gap", 25, 10);
-
-        border-radius: 20px;
-        position: relative;
-
-        &:before {
-            position: absolute;
-            content: "";
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80%;
-            height: 60%;
-            background: linear-gradient(to right, #276E66, #115850);
-            opacity: 0.3;
-            filter: blur(100px);
-        }
-    }
+  }
 }

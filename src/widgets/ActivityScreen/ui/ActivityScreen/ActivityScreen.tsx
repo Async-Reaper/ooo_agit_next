@@ -7,12 +7,9 @@ import { motion } from "motion/react";
 
 import cls from "./ActivityScreen.module.scss";
 
-import { ActivityFooter } from "../ActivityFooter/ActivityFooter";
 import { ActivityList } from "../ActivityList/ActivityList";
-import { AnimationImages } from "../AnimationImages/AnimationImages";
 
 export const ActivityScreen = React.memo(() => {
-  
   const { ref, isVisible } = useViewBox(0.1);
 
   return (
@@ -20,15 +17,15 @@ export const ActivityScreen = React.memo(() => {
       id="activity"
       className={cls.activity}
     >
-      <Container>
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, x: -100 }}
-          animate={isVisible && { opacity: 1, x: 0 }}
-          transition={{ type: "spring", duration: 2 }}
-          className={cls.activity__wrapper}
-        >
-          <div className={cls.activity__header}>
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, x: -100 }}
+        animate={isVisible && { opacity: 1, x: 0 }}
+        transition={{ type: "spring", duration: 2 }}
+        className={cls.activity__wrapper}
+      >
+        <div className={cls.activity__header}>
+          <Container>
             <motion.div
               initial={{ y: -100 }}
               animate={isVisible && { y: 0 }}
@@ -37,22 +34,21 @@ export const ActivityScreen = React.memo(() => {
               }}
               className={cls.activity__title}
             >
-              <Typography variant="h1" uppercase>
+              <Typography variant="h2" uppercase>
                 Направления
                 {" "}
-                <span> автоматизации</span>
+                <span>автоматизации</span>
               </Typography>
             </motion.div>
-            <div className={cls.activity__content}>
-              <ActivityList isVisible={isVisible} />
-              <AnimationImages />
+          </Container>
+          <div className={cls.activity__content}>
+            <div className={cls.activity__background}>
+              <img src="/activity/activity-background.png" className={cls.activity__background__img}/>
             </div>
+            <ActivityList isVisible={isVisible}/>
           </div>
-          <ActivityFooter isVisible={isVisible} />
-        </motion.div>
-      </Container>
+        </div>
+      </motion.div>
     </section>
   );
 });
-
-ActivityScreen.displayName = "ActivityScreen";

@@ -8,7 +8,7 @@ import cls from "./styles.module.scss";
 const Component = () => {
   return (
     <AppLink href="/" className={cls.logo} isUnderline={false}>
-      <Icon name="logo" size={90} color="primary" />
+      <Icon name="logo" size={205} color="white-primary" />
     </AppLink>
   );
 };

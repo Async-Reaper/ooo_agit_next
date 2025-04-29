@@ -32,10 +32,8 @@ export const ServicesScreen = React.memo(() => {
               transition={{ type: "spring", duration: 0.3, delay: 0.3 }}
               className={cls.services__title}
             >
-              <Typography variant="h1" uppercase>
-                <b>услуги</b>
-                {" "}
-                нашей компании
+              <Typography variant="h2" uppercase>
+                услуги нашей компании
               </Typography>
             </motion.div>
             <ServicesList isVisible={isVisible} />

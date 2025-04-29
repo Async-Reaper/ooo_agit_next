@@ -1,6 +1,7 @@
 @use "@shared/styles/_mixins.scss" as mixin;
 
 .vacancies__list__wrapper {
+  position: relative;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, 100%);
@@ -20,6 +21,21 @@
 
   @include mixin.laptop {
     grid-template-columns: repeat(3, auto);
+    grid-gap: 50px;
+  }
+
+  @include mixin.desktop {
+    &:before {
+      position: absolute;
+      content: "";
+      width: 115%;
+      height: 100%;
+      background-image: url("/vacancies/vacancies-line.svg");
+      background-repeat: no-repeat;
+      background-position: center center;
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 
   .skeleton {
@@ -32,17 +48,29 @@
     margin: 0 auto;
     padding: 20px 0 0 0;
     width: 100%;
-    border: 1px solid #DBCACA;
     color: var(--color-white-primary);
     background: linear-gradient(45deg, rgb(47, 44, 44) 25%, rgba(51, 138, 128, 1) 100%);
     transition: ease-in-out 0.3s;
+    border-radius: 20px;
+    position: relative;
+
+    &:after {
+      position: absolute;
+      content: "";
+      height: 2px;
+      width: 70%;
+      background: var(--color-primary);
+      bottom: -2px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
 
     @include mixin.tablets {
       @include mixin.adaptive("width", 320, 270);
     }
 
     &:hover {
-      box-shadow: 0 0 30px var(--color-primary);
+      box-shadow: 0 0 10px var(--color-primary);
     }
 
     .vacancy__name {

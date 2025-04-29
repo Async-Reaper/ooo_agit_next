@@ -1,27 +1,64 @@
 @use "@shared/styles/mixins" as mixin;
+$padding: 0;
+$left: 30;
 
 .activity__list {
   @include mixin.flex-column;
-  @include mixin.adaptive("gap", 15, 7);
-  max-width: 614px;
+  @include mixin.adaptive("gap", 51, 25);
+  position: relative;
+  background-image: url("/activity/activity-list-background.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 1100px;
+  height: 532px;
+  padding: 60px;
+
+  &:after {
+    position: absolute;
+    content: "";
+    left: 3px;
+    bottom: 20px;
+    background-image: url("/activity/activity-list-line.svg");
+    background-repeat: no-repeat;
+    width: 103%;
+    height: 423px;
+  }
 
   .activity__item {
     @include mixin.flex-row;
-    gap: 23px;
+    gap: 51px;
     position: relative;
+    z-index: 2;
+    width: max-content;
 
-    .check_mark {
-      color: var(--color-primary);
-      text-shadow: 0 5px 4px #53DFCF22;
-    }
+      &:after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: -10px;
+        width: 105%;
+        height: 31px;
+        background-image: url("/activity/activity-item-line.svg");
+        background-repeat: no-repeat;
+      }
+  }
 
-    .activity__text {
-      width: 100%;
-      @include mixin.adaptive("padding", 20, 10);
-      border: 1px dashed var(--color-primary);
-      border-radius: 20px 0 20px 0;
-      color: var(--color-white-primary);
-      background: linear-gradient(90deg, rgba(80,80,80,1) 80%, rgba(172,165,165,0.2) 100%);
+  @for $i from 1 through 6 {
+    $padding: $i * 19; // Вычисляем padding для текущей итерации
+
+    .activity__item:nth-child(#{$i}) {
+      margin: 0 #{$padding}px;
     }
   }
+
+  .check_mark {
+    position: absolute;
+    bottom: 22px;
+    left: -21px;
+  }
+
+  .activity__text {
+    width: 100%;
+  }
 }
+

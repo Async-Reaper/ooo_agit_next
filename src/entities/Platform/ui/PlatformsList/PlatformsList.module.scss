@@ -9,16 +9,6 @@
     grid-template-columns: repeat(auto-fit, minmax(450px, 279px));
     position: relative;
 
-    &:before {
-      position: absolute;
-      content: "";
-      width: 80%;
-      height: 100%;
-      background: var(--color-primary);
-      filter: blur(60px);
-      opacity: 0.2;
-    }
-
     @include mixin.adaptive("gap", 25, 10);
 
     .platform__item {
@@ -27,21 +17,20 @@
       transition: all .5s;
       @include mixin.flex-column;
       justify-content: center;
-      background: url("/vectors/platform-frame.svg") no-repeat;
-      background-size: cover;
-      @include mixin.adaptive("width", 451, 279);
-      @include mixin.adaptive("height", 166, 103);
+      background: linear-gradient(180deg, rgba(44, 44, 44, 1) 20%, rgba(0, 0, 0, 1) 100%);
+      min-height: 192px;
+      border-radius: 20px;
 
       &:after {
         position: absolute;
         content: "";
-        width: 28px;
-        height: 24px;
-        top: -5px;
-        left: 5px;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        width: 2px;
+        height: 120px;
         border-radius: 5px;
-        background: linear-gradient(45deg, rgba(108,207,207,1) 0%, rgba(49,253,224,1) 50%, rgba(108,207,207,1) 100%);
-        opacity: 80%;
+        background: var(--color-primary);
       }
     }
 
@@ -52,17 +41,19 @@
       position: relative;
       z-index: 3;
       max-width: 80%;
-      margin-left: 10%;
+      padding: 20px 30px;
     }
   }
 
-  .platform__link {;
+  .platform__link {
     border-radius: 15px;
     transition: ease-in 0.3s;
     color: var(--color-white-primary);
+    border: 2px solid var(--color-primary);
+    padding: 10px 20px;
 
     &:hover {
-      text-shadow: 0 0 10px var(--color-primary);
+      box-shadow: 0 0 10px var(--color-primary);
       color: var(--color-primary);
     }
   }

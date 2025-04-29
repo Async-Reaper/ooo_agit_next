@@ -28,7 +28,7 @@ const RootLayout = (props: RootLayoutProps) => {
         <Suspense fallback={<PageLoader />}>
           <ConsultationFlag />
           <ScrollButton />
-          <RunStroke/>
+          {/*<RunStroke/>*/}
           <Header/>
           {children}
           <Footer/>

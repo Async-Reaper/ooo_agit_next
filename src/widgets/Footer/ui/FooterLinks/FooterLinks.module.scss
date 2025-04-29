@@ -1,30 +1,33 @@
 @use "@shared/styles/mixins" as mixin;
 
 .footer__links {
+  position: relative;
   @include mixin.flex-row;
   justify-content: space-between;
-  flex-wrap: wrap;
   align-items: self-start;
-  margin: 0 auto;
   gap: 20px 0;
-  padding: 20px 0;
-  row-gap: 20px;
-  max-width: 550px;
+  max-width: 580px;
   width: 100%;
+  @include mixin.adaptive("padding-inline", 80, 20);
 
   @include mixin.tablets {
     gap: 0 40px;
   }
 
-  @include mixin.desktop {
-    margin: 0;
+  .footer__line {
+    position: absolute;
+    top: -12px;
+    max-width: 450px;
+    width: 100%;
+    height: 3px;
+    background: var(--color-green-dark);
   }
 
   .footer__link__wrapper {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 20px 0;
+    gap: 35px 0;
 
     @include mixin.laptop {
       @include mixin.flex-start;

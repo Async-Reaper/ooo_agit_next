@@ -2,18 +2,24 @@
 
 .footer__contacts {
   @include mixin.flex-column;
-
-  width: max-content;
-  margin: 0 auto;
+  width: 935px;
   gap: 20px;
+  position: relative;
 
-  @include mixin.desktop {
-    align-items: self-start;
+  &:before {
+    position: absolute;
+    content: "";
+    width: 990px;
+    height: 375px;
+    background-image: url("/footer-contacts-background.svg");
+    background-repeat: no-repeat;
+    top: -110px
   }
 
   .contact__item {
     @include mixin.flex-row;
-
     gap: 15px;
+    @include mixin.adaptive("padding-inline", 80, 20);
+    z-index: 1;
   }
 }

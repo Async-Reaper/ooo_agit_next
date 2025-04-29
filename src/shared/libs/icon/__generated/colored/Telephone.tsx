@@ -193,11 +193,6 @@ export const TelephoneIcon = React.memo(
             clipRule="evenodd"
           />
         </g>
-        <defs>
-          <clipPath id="telephone_svg__a">
-            <path fill="#fff" d="M0 0h24v24H0z" />
-          </clipPath>
-        </defs>
       </svg>
     );
   }

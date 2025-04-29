@@ -2,27 +2,23 @@
 
 .activity {
   position: relative;
-  border-top: 2px solid var(--color-primary);
-  background: var(--color-secondary);
   z-index: 1;
-
   @include mixin.adaptive("padding-block", 60, 30);
+
+  @include mixin.desktop {
+    &:before {
+      position: absolute;
+      content: "";
+      top: 72px;
+      width: 150px;
+      height: 25px;
+      background: var(--color-primary);
+      opacity: 50%;
+    }
+  }
 
   span {
     color: var(--color-primary);
-  }
-
-  &:before {
-    position: absolute;
-    content: "";
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 60%;
-    height: 60%;
-    background: linear-gradient(45deg, rgba(108,227,213,1) 35%, rgba(185,243,187,1) 65%);
-    filter: blur(150px);
-    z-index: 0;
   }
 
   .activity__wrapper {
@@ -32,13 +28,6 @@
     @include mixin.flex-column;
 
     gap: 20px;
-    border-radius: 20px;
-    background: var(--color-black-primary);
-    box-shadow: 0 4px 10px #00000025;
-
-    @include mixin.adaptive("padding-block", 40, 20);
-    @include mixin.adaptive("padding-left", 45, 20);
-    @include mixin.adaptive("padding-right", 20, 10);
     @include mixin.adaptive("gap", 25, 10);
 
     .activity__header {
@@ -50,8 +39,24 @@
       @include mixin.flex-space;
     }
 
+    .activity__background {
+      position: relative;
+
+      &:after {
+        position: absolute;
+        content: "";
+        right: -25px;
+        bottom: -12px;
+        background-image: url("/activity/activity-background-line.svg");
+        background-repeat: no-repeat;
+        width: 103%;
+        height: 285px;
+      }
+    }
+
     .activity__title {
       color: var(--color-white-primary);
+      margin: 0 0 40px;
     }
 
     hr {

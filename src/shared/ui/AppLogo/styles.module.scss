@@ -1,13 +1,15 @@
 @use "@shared/styles/mixins" as mixin;
 
-$iconSizeMax: 90;
-$iconSizeMin: 75;
+$iconSizeMax: 205;
+$iconSizeMin: 105;
 
 .logo {
     display: flex;
     align-items: center;
     gap: 15px;
     min-width: max-content;
+    position: relative;
+    z-index: 9999;
 
     svg {
         @include mixin.adaptive("width", $iconSizeMax, $iconSizeMin);

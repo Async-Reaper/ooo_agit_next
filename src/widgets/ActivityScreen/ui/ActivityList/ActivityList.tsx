@@ -1,4 +1,5 @@
 import React, { useLayoutEffect } from "react";
+import { Icon } from "@shared/libs/icon/icon";
 import { Typography } from "@shared/ui";
 import { animate, stagger } from "motion";
 
@@ -56,9 +57,7 @@ export const ActivityList = React.memo(({ isVisible }: ActivityListProps) => {
       {activities.map((activity) => (
         <li key={activity.id} className={cls.activity__item}>
           <div className={cls.check_mark}>
-            <Typography variant="h2">
-              ✔
-            </Typography>
+            <Icon name="rhomb" size={24} color="white-primary" />
           </div>
           <div className={cls.activity__text}>
             <Typography variant="span">

@@ -1,44 +1,33 @@
 @use "@shared/styles/_mixins.scss" as mixin;
 
 .solutions {
-  border-top: 2px solid var(--color-primary);
   position: relative;
   overflow: hidden;
-
-  .solution__vector__left {
-    background-image: url("/vectors/vector.svg");
-    background-size: cover;
-    position: absolute;
-    left: -325px;
-    top: 15%;
-    transform: rotate(90deg);
-    width: 725px;
-    height: 311px;
-  }
-
-  .solution__vector__right {
-    background-image: url("/vectors/vector.svg");
-    background-size: cover;
-    position: absolute;
-    right: -205px;
-    bottom: 5%;
-    transform: rotate(-80deg);
-    width: 541px;
-    height: 261px;
-  }
+  min-height: 550px;
 
   &:after {
     position: absolute;
-    content: '';
-    top: 0;
+    content: "";
+    background-image: url("/gear-solutions.png");
+    width: 121px;
+    height: 189px;
     right: 0;
-    background: linear-gradient(10deg, #6CE3D5 35%, #B9F3BB 65%);
-    filter: blur(150px);
-    height: 46%;
-    width: 5%;
+    bottom: 0;
   }
 
-  @include mixin.adaptive("padding-block", 80, 30);
+  @include mixin.adaptive("padding-top", 80, 30);
+
+  @include mixin.desktop {
+    &:before {
+      position: absolute;
+      content: "";
+      top: 135px;
+      width: 150px;
+      height: 25px;
+      background: var(--color-primary);
+      opacity: 50%;
+    }
+  }
 
   .solutions__wrapper {
     @include mixin.flex-column;
@@ -51,25 +40,59 @@
 
     @include mixin.tablets {
       @include mixin.flex-column;
-      align-items: center;
+      align-items: self-start;
     }
 
     .solutions__title {
       @include mixin.flex-column;
-      align-items: center;
-      padding: 25px;
       flex-shrink: 0;
       position: relative;
       z-index: 9;
+      width: max-content;
+      margin: 0 0 40px;
     }
 
     .solutions__list {
+      position: relative;
       display: flex;
       flex-direction: row;
-      align-items: stretch;
       justify-content: center;
+      align-items: center;
       flex-wrap: wrap;
       @include mixin.adaptive("gap", 15, 15);
+      height: 195px;
+      width: 100vw;
+      background: var(--color-green-dark);
+
+      @include mixin.laptop {
+        background: url("/solutions-background.svg"), no-repeat;
+        background-size: cover;
+      }
+
+      &:before {
+        position: absolute;
+        content: "";
+        top: -20px;
+        height: 5px;
+        width: 100%;
+        background: #035B51;
+      }
+
+      &:after {
+        display: none;
+        position: absolute;
+        content: "";
+        top: 125px;
+        left: -50px;
+        height: 5px;
+        width: 10%;
+        transform: rotate(53deg);
+        background: #0FB29F;
+
+        @include mixin.desktop {
+          display: block;
+        }
+      }
 
       @include mixin.laptop {
         flex-wrap: nowrap;
@@ -77,35 +100,26 @@
     }
 
     .solution__item {
-      @include mixin.flex-column;
-      justify-content: center;
-      align-items: center;
-      @include mixin.adaptive("gap", 25, 10);
-      @include mixin.adaptive("max-width", 320, 230);
-      width: 100%;
-      position: relative;
-      color: var(--color-white-primary);
-      box-shadow: inset 0 5px 10px 5px rgba(0,0,0,0.25), inset 0 0 10px #FDFDFD;
-      filter: drop-shadow(0 10px 5px var(--color-black-primary));
-      @include mixin.adaptive("min-height", 280, 250);
-      backdrop-filter: blur(3px);
+      @include mixin.flex-row;
+      gap: 30px;
+      max-width: 300px;
+
+      @include mixin.desktop {
+        max-width: 400px;
+      }
+
+      .dot {
+        width: 21px;
+        height: 21px;
+        flex-shrink: 0;
+        background: linear-gradient(190deg, #D9D9D9, #2F3333);
+        border-radius: 50px;
+      }
     }
 
     .solution__item__text {
       position: relative;
-      text-align: center;
       padding: 5px 10px;
-    }
-
-    .solution__item__icon {
-      position: absolute;
-      @include mixin.adaptive("top", 10, 5);
-      @include mixin.adaptive("right", 10, 5);
-      transform: rotate(45deg);
-    }
-
-    b {
-      color: var(--color-primary);
     }
   }
 }

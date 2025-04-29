@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from "react";
 import { classNames } from "@shared/libs/classNames/classNames";
-import { Contacts, Typography } from "@shared/ui";
+import { Typography } from "@shared/ui";
 import { AppLink } from "@shared/ui/AppLink";
 import { motion } from "motion/react";
 
@@ -15,11 +15,11 @@ interface HeaderNavProps {
 
 export const HeaderNav = React.memo(({ isActiveScroll, isMounted }: HeaderNavProps) => {
   const [isActiveBurger, setIsActiveBurger] = useState<boolean>(false);
-  
+
   const onHandleClickBurger = useCallback(() => {
     setIsActiveBurger(!isActiveBurger);
   }, [isActiveBurger, setIsActiveBurger]);
-  
+
   return (
     <>
       <div className={classNames(cls.header__nav, { [cls.active]: isActiveBurger })}>
@@ -80,14 +80,6 @@ export const HeaderNav = React.memo(({ isActiveScroll, isMounted }: HeaderNavPro
             <SelectLinks/>
           </motion.div>
         </div>
-        <motion.div
-          initial={{ y: -600, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ type: "spring", duration: 0.3 }}
-          className={cls.header__button}
-        >
-          <Contacts/>
-        </motion.div>
       </div>
       <motion.div
         initial={{ y: -200, opacity: 0 }}

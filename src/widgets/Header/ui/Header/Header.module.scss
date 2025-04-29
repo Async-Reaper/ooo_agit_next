@@ -1,27 +1,22 @@
 @use "@shared/styles/_mixins.scss" as mixin;
 
 .header {
-  position: -webkit-sticky;
-  position: sticky;
-  padding: 5px 20px;
+  //position: -webkit-sticky;
+  //position: sticky;
   top: 0;
   width: 100%;
-  height: mixin.$headerHeight + px;
+  height: 100%;
   z-index: 99;
   transition: ease-in-out .3s;
-  background: #212020;
 
   .header__inner {
     @include mixin.flex-row;
-    @include mixin.adaptive("gap", 40, 15);
-    margin: 0 auto;
-    padding: 0 20px;
-    max-width: 1800px;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     position: relative;
     z-index: 9;
     color: var(--color-white-primary);
-    border: 1px solid var(--color-primary);
     border-radius: 10px;
     transition: ease-in-out .3s;
 
@@ -33,23 +28,38 @@
     @include mixin.laptop {
       padding: 0;
       border: none;
+      align-items: self-start;
+    }
+
+    .header__logo__wrapper {
+      position: relative;
+      &:before {
+        position: absolute;
+        content: '';
+        top: 0;
+        right: -15px;
+        background-image: url("/logo-background.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        @include mixin.adaptive("height", 220, 110);
+        @include mixin.adaptive("width", 700, 345);
+      }
+
+      &:after {
+        position: absolute;
+        content: '';
+        background-image: url("/logo-line.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        bottom: -35px;
+        right: -31px;
+        @include mixin.adaptive("height", 93, 75);
+        @include mixin.adaptive("width", 600, 300);
+      }
     }
 
     .header__logo {
-      @include mixin.flex-row;
-      @include mixin.adaptive("gap", 40, 15);
-    }
-
-    .header__vertical_line {
-      height: 47px;
-      width: 2px;
-      background: var(--color-primary);
-      border: none;
-      display: none;
-
-      @include mixin.laptop {
-        display: block;
-      }
+      margin: 0 140px;
     }
   }
 }

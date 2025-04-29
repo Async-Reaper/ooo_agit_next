@@ -12,37 +12,24 @@ import { FooterContacts } from "../FooterContacts/FooterContacts";
 import { FooterLinks } from "../FooterLinks/FooterLinks";
 
 export const Footer = React.memo(() => {
-  
+
   return (
     <footer className={cls.footer}>
-      <Container>
-        <div className={cls.footer__inner}>
-          <div className={cls.default__info}>
-            <div className={cls.footer__logo}>
-              <AppLogo/>
-            </div>
-            <FooterLinks/>
-            <FooterContacts/>
-            <div className={cls.footer__social}>
-              <Social/>
-              <MailingButton/>
-            </div>
-          </div>
-        </div>
-      </Container>
+      <div className={cls.footer__inner}>
+        <FooterContacts/>
+        <FooterLinks/>
+      </div>
       <div className={cls.other__info}>
-        <Container>
-          <AppLink href="/privacy" target="_blank" variant="secondary">
-            <Typography variant="span" noWrap>
-              Политика конфиденциальности
-            </Typography>
-          </AppLink>
-          <Typography variant="span" color="white-primary">
-            © 2024 654005, ООО «АГИТ-Плюс», г. Новокузнецк, пр-т Строителей, д. 19.
-            Все указанные на сайте цены носят информационный характер и не являются публичной офертой
-            (ст. 437 ГК РФ), если явно не указано иное.
+        <AppLink href="/privacy" target="_blank" variant="secondary">
+          <Typography variant="span" noWrap>
+            Политика конфиденциальности
           </Typography>
-        </Container>
+        </AppLink>
+        <Typography variant="span" color="white-primary">
+          © 2024 654005, ООО «АГИТ-Плюс», г. Новокузнецк, пр-т Строителей, д. 19.
+          Все указанные на сайте цены носят информационный характер и не являются публичной офертой
+          (ст. 437 ГК РФ), если явно не указано иное.
+        </Typography>
       </div>
     </footer>
   );

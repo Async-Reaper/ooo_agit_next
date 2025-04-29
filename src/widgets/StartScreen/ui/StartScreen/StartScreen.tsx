@@ -57,9 +57,9 @@ export const StartScreen = React.memo(() => {
               <ConsultationButton/>
             </motion.div>
           </div>
-          <div className={cls.start__animation__wrapper}>
-            <Animation/>
-          </div>
+          {/*<div className={cls.start__animation__wrapper}>*/}
+          {/*  <Animation/>*/}
+          {/*</div>*/}
         </div>
       </Container>
     </section>

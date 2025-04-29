@@ -9,7 +9,7 @@ export const ConsultationButton = React.memo(() => {
   const { isOpen, open, close } = useModal();
   return (
     <>
-      <Button size="xl" variant="outlined" fullWidth onClick={open}>
+      <Button size="l" variant="outlined" fullWidth onClick={open}>
         <Typography variant="span" uppercase noWrap>
           Получить консультацию
         </Typography>

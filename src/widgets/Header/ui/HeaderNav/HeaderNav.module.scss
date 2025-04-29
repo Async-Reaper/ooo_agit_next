@@ -12,13 +12,51 @@
   will-change: transform, opacity;
   transition: ease-in-out .3s;
   width: 100%;
+  border-left: 0 solid transparent;
+  border-right: 50px solid transparent;
+  z-index: 1;
+
+  &:before {
+    display: none;
+    position: absolute;
+    content: '';
+    top: 0;
+    left: -40px;
+    background-image: url("/header_background.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    @include mixin.adaptive("width", 1400, 320);
+    height: 159px;
+    //width: 1500px;
+
+    @include mixin.laptop {
+      display: block;
+    }
+  }
+
+  &:after {
+    display: none;
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 170px;
+    background-image: url("/header_line.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 192px;
+    width: 100%;
+
+    @include mixin.laptop {
+      display: block;
+    }
+  }
 
   &.active {
     border: 2px solid var(--color-primary);
+    background: var(--color-black-primary);
     border-radius: 8px;
     transform: scaleY(1);
     opacity: 1;
-    background: var(--color-secondary);
     top: 0;
     left: 0;
     padding: 20px 0;
@@ -34,21 +72,19 @@
 
   .header__links {
     @include mixin.flex-column;
-
+    @include mixin.adaptive("gap", 40, 15);
+    z-index: 2;
     border-radius: 25px;
-    @include mixin.adaptive("padding-block", 20, 5);
+    @include mixin.adaptive("padding-block", 30, 20);
     align-items: flex-start;
     width: max-content;
-
-    @include mixin.adaptive("gap", 40, 15);
-
     margin: 0 auto 20px;
 
     @include mixin.laptop {
       @include mixin.flex-row;
 
       align-items: center;
-      margin: 0;
+      margin: 0 0 0 160px;
     }
 
     .header__link {
@@ -60,7 +96,7 @@
       opacity: 0;
       height: 47px;
       width: 2px;
-      background: var(--color-primary);
+      background: var(--color-white-primary);
       border: none;
       transition: ease-in-out .3s;
 
@@ -85,7 +121,7 @@
 .header__burger__wrapper {
   cursor: pointer;
   display: block;
-  margin: 0 0 0 auto;
+  margin: 0 0 0 20px;
   z-index: 1;
   height: 15px;
 
