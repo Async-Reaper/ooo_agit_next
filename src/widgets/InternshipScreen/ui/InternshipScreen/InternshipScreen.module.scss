@@ -21,7 +21,6 @@ $height: 925;
   .internship__content {
     @include mixin.flex-column;
     @include mixin.adaptive("gap", 60, 30);
-    margin: 0 auto;
 
     .stage__internship {
       @include mixin.flex-row;
