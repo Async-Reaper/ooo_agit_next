@@ -1,10 +1,8 @@
-import React, { Suspense } from "react";
+import React from "react";
 import { ConsultationFlag } from "@features/Consultation";
 import { ScrollButton } from "@features/ScrollButton";
-import { PageLoader } from "@shared/ui";
 import { Footer } from "@widgets/Footer";
 import { Header } from "@widgets/Header";
-import { RunStroke } from "@widgets/NewsScreen";
 
 import "@shared/styles/index.scss";
 
@@ -17,22 +15,20 @@ const RootLayout = (props: RootLayoutProps) => {
   return (
     <html lang="ru">
       <head>
-        <meta charSet="UTF-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+        <meta charSet="UTF-8"/>
+        <link rel="icon" type="image/svg+xml" href="/favicon.ico"/>
         <meta
           name="viewport"
           content="width=device-width, user-scalable=0, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
         />
       </head>
       <body>
-        <Suspense fallback={<PageLoader />}>
-          <ConsultationFlag />
-          <ScrollButton />
-          {/*<RunStroke/>*/}
-          <Header/>
-          {children}
-          <Footer/>
-        </Suspense>
+        <ConsultationFlag/>
+        <ScrollButton/>
+        {/*<RunStroke/>*/}
+        <Header/>
+        {children}
+        <Footer/>
       </body>
     </html>
   );

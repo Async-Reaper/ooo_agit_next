@@ -1,8 +1,6 @@
-import React, { Suspense } from "react";
+import React from "react";
 import { MainPage } from "@pagesTemplate/MainPage";
-import { PageLoader } from "@shared/ui";
 import { Metadata } from "next";
-import Head from "next/head";
 
 export const metadata: Metadata = {
   title: "Автоматизация бизнеса",

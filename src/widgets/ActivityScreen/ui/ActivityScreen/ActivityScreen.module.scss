@@ -34,7 +34,6 @@
 
     .activity__content {
       @include mixin.flex-space;
-      flex-direction: column;
 
       @include mixin.desktop {
         flex-direction: row;
@@ -56,8 +55,18 @@
         height: 285px;
       }
       
-      @include mixin.desktop {
+      @include mixin.laptop {
         display: block;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      @include mixin.desktop {
+        img {
+          width: max-content;
+        }
       }
     }
 

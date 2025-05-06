@@ -6,26 +6,28 @@ $left: 30;
   @include mixin.flex-column;
   justify-content: space-between;
   position: relative;
-  background-image: url("/activity/activity-list-background.png");
+  background-image: url("/activity/activity-list-background-mobile.png");
   background-repeat: no-repeat;
   background-size: cover;
   min-width: 300px;
   max-width: 1100px;
   width: 100%;
   height: 532px;
-  padding: 60px;
+  @include mixin.adaptive("padding", 60, 35);
 
-  &:after {
-    position: absolute;
-    content: "";
-    left: 10px;
-    bottom: -18px;
-    //left: 3px;
-    //bottom: 20px;
-    background-image: url("/activity/activity-list-line.svg");
-    background-repeat: no-repeat;
-    width: 103%;
-    height: 423px;
+  @include mixin.laptop {
+    background-image: url("/activity/activity-list-background.png");
+
+    &:after {
+      position: absolute;
+      content: "";
+      left: 10px;
+      bottom: -18px;
+      background-image: url("/activity/activity-list-line.svg");
+      background-repeat: no-repeat;
+      width: 103%;
+      height: 423px;
+    }
   }
 
   .activity__item {
@@ -33,12 +35,11 @@ $left: 30;
     gap: 51px;
     position: relative;
     z-index: 2;
-    width: max-content;
 
       &:after {
         position: absolute;
         content: "";
-        top: 0;
+        bottom: -10px;
         left: -10px;
         width: 105%;
         height: 31px;
@@ -47,17 +48,19 @@ $left: 30;
       }
   }
 
-  @for $i from 1 through 6 {
-    $padding: $i * 19; // Вычисляем padding для текущей итерации
+  @include mixin.laptop {
+    @for $i from 1 through 6 {
+      $padding: $i * 19; // Вычисляем padding для текущей итерации
 
-    .activity__item:nth-child(#{$i}) {
-      margin: 0 #{$padding}px;
+      .activity__item:nth-child(#{$i}) {
+        margin: 0 #{$padding}px;
+      }
     }
   }
 
   .check_mark {
     position: absolute;
-    bottom: 22px;
+    bottom: 25px;
     left: -21px;
   }
 

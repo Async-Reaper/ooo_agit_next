@@ -41,19 +41,21 @@ export const Header = React.memo(() => {
 
   return (
     <header ref={headerRef} id="header" className={classNames(cls.header, { [cls.active]: !isActiveScroll })}>
-      <div className={classNames(cls.header__inner, { [cls.active]: !isActiveScroll })}>
-        <HeaderNav isMounted={isMounted} isActiveScroll={isActiveScroll}/>
-        <motion.div
-          initial={{ y: -100, opacity: 0 }}
-          animate={isMounted && { y: 0, opacity: 1 }}
-          transition={{ type: "spring", duration: 0.3 }}
-          className={cls.header__logo__wrapper}
-        >
-          <div className={cls.header__logo}>
-            <AppLogo/>
-          </div>
-        </motion.div>
-      </div>
+      <Container>
+        <div className={classNames(cls.header__inner, { [cls.active]: !isActiveScroll })}>
+          <HeaderNav isMounted={isMounted} isActiveScroll={isActiveScroll}/>
+          <motion.div
+            initial={{ y: -100, opacity: 0 }}
+            animate={isMounted && { y: 0, opacity: 1 }}
+            transition={{ type: "spring", duration: 0.3 }}
+            className={cls.header__logo__wrapper}
+          >
+            <div className={cls.header__logo}>
+              <AppLogo/>
+            </div>
+          </motion.div>
+        </div>
+      </Container>
     </header>
   );
 });

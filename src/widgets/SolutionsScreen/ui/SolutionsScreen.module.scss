@@ -8,11 +8,13 @@
   &:after {
     position: absolute;
     content: "";
-    background-image: url("/gear-solutions.png");
-    width: 121px;
-    height: 189px;
     right: 0;
     bottom: 0;
+    background-image: url("/gear-solutions.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    @include mixin.adaptive("width", 121, 56);
+    @include mixin.adaptive("height", 189, 88);
   }
 
   @include mixin.adaptive("padding-top", 80, 30);
@@ -59,36 +61,7 @@
       align-items: center;
       flex-wrap: wrap;
       @include mixin.adaptive("gap", 15, 15);
-
-      //@include mixin.laptop {
-      //  background: url("/solutions-background.svg"), no-repeat;
-      //  background-size: cover;
-      //}
-
-      //&:before {
-      //  position: absolute;
-      //  content: "";
-      //  top: -20px;
-      //  height: 5px;
-      //  width: 100%;
-      //  background: #035B51;
-      //}
-      //
-      //&:after {
-      //  display: none;
-      //  position: absolute;
-      //  content: "";
-      //  top: 125px;
-      //  left: -50px;
-      //  height: 5px;
-      //  width: 10%;
-      //  transform: rotate(53deg);
-      //  background: #0FB29F;
-      //
-      //  @include mixin.desktop {
-      //    display: block;
-      //  }
-      //}
+      padding: 0 20px;
 
       @include mixin.laptop {
         flex-wrap: nowrap;
@@ -97,6 +70,10 @@
 
     .solution__item {
       @include mixin.flex-row;
+      @include mixin.adaptive("gap", 25, 15);
+      background: linear-gradient(90deg, rgba(15, 178, 159, 0.48), rgba(53, 53, 53, 0.48));
+      padding: 20px 25px;
+      border-radius: 10px;
     }
 
     .solution__item__text {
