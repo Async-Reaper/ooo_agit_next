@@ -22,23 +22,22 @@ export const CaseCard = React.memo(({ caseItem }: CaseCardProps) => {
 
   return (
     <Container className={classNames(cls.case_card__wrapper, mods)}>
-      {/*<div >*/}
-      <div className={cls.case__img}>
-        <img src={caseItem.img} alt=""/>
+      <div className={cls.case__decoration__dots}></div>
+      <div className={cls.case__img__wrapper}>
+        <img src={caseItem.img} alt="" className={cls.case__img}/>
       </div>
       <div className={cls.case__content}>
         <div className={cls.case__title}>
-          <Typography variant="h3" bold>
+          <Typography variant="h2" bold>
             {caseItem?.title}
           </Typography>
         </div>
         <div className={cls.result__text}>
-          <Typography variant="p" color="white-primary">
+          <Typography variant="body" color="white-primary">
             {caseItem?.result}
           </Typography>
         </div>
       </div>
-      {/*</div>*/}
     </Container>
   );
 });

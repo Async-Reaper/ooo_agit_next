@@ -9,3 +9,5 @@ type DesignSystemColors =
 | "white-primary"
 | "white-secondary"
 | "gray-dark"
+| "green-light"
+| "green-dark"

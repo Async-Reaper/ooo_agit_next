@@ -2,11 +2,13 @@
 
 .platform__card__wrapper {
   position: relative;
+  margin: 0 auto;
+  width: 100%;
 
   .platform__card {
     @include mixin.flex-column;
     min-height: 437px;
-    gap: 19px;
+    gap: 45px;
     position: relative;
 
     .platform__header {
@@ -22,32 +24,43 @@
       .platform__start__info {
         @include mixin.flex-column;
         justify-content: space-between;
-        border-radius: 30px;
-        padding: 30px;
+        align-items: center;
+        border-radius: 20px;
+        padding: 30px 9px;
         background: #2D2C2C;
-        @include mixin.adaptive("height", 368, 244);
-        @include mixin.adaptive("width", 467, 270);
+        @include mixin.adaptive("width", 370, 260);
+        @include mixin.adaptive("height", 311, 230);
         position: relative;
 
         &:before {
           position: absolute;
           content: "";
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          @include mixin.adaptive("height", 218, 100);
-          @include mixin.adaptive("width", 169, 50);
-          height: 218px;
-          width: 169px;
-          background: #97FCF0;
-          filter: blur(100px);
-          z-index: -1;
+          top: -3px;
+          left: -3px;
+          background-image: url("/platforms/platform-bg.png");
+          background-repeat: no-repeat;
+          background-size: contain;
+          width: 100%;
+          height: 100%;
+        }
+
+        &:after {
+          position: absolute;
+          content: "";
+          bottom: -15px;
+          left: -15px;
+          border-radius: 0 0 0 30px;
+          height: 100%;
+          width: 100%;
+          border-bottom: 4px solid var(--color-green-light);
+          border-left: 4px solid var(--color-green-light);
         }
       }
 
       .start__info__img {
-        @include mixin.adaptive("width", 267, 177);
+        @include mixin.adaptive("width", 206, 170);
         margin: auto;
+        z-index: 1;
 
         img {
           width: 100%;
@@ -55,7 +68,11 @@
       }
 
       .start__info__name {
-        color: #97FCF0;
+        max-width: 100%;
+        width: max-content;
+        text-align: center;
+        color: #0FB29F;
+        z-index: 1;
       }
 
       .platform__main__info {
@@ -69,8 +86,21 @@
           top: 70px;
           right: -20px;
           left: 0;
+          width: 100%;
           height: 2px;
           background: var(--color-gray-dark);
+        }
+
+        &:before {
+          position: absolute;
+          content: "";
+          top: 66px;
+          right: 0;
+          width: 10px;
+          height: 10px;
+          background: var(--color-white-secondary);
+          border-radius: 50px;
+          z-index: 2;
         }
       }
 
@@ -79,10 +109,17 @@
         position: relative;
       }
 
+      .platform__price {
+        color: #0FB29F;
+      }
+
       .platform__description {
         max-width: 1000px;
         @include mixin.flex-column;
-        gap: 20px;
+
+        span {
+          line-height: 30px;
+        }
       }
 
       .additional__button__wrapper {

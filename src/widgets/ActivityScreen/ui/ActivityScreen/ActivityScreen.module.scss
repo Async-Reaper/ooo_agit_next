@@ -5,15 +5,14 @@
   z-index: 1;
   @include mixin.adaptive("padding-block", 90, 50);
 
-  @include mixin.desktop {
+  @include mixin.desktop-xl {
     &:before {
       position: absolute;
       content: "";
-      top: 72px;
+      top: 100px;
       width: 150px;
       height: 25px;
-      background: var(--color-primary);
-      opacity: 50%;
+      background: var(--color-green-light);
     }
   }
 

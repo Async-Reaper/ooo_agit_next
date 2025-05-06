@@ -1,7 +1,6 @@
 import React, { useLayoutEffect } from "react";
 import { Icon, IconName } from "@shared/libs/icon/icon";
 import { Button, Typography } from "@shared/ui";
-import { AppLink } from "@shared/ui/AppLink";
 import { animate, stagger } from "motion";
 
 import cls from "./ServicesList.module.scss";
@@ -67,13 +66,15 @@ export const ServicesList = React.memo(({ isVisible }: ServicesListProps) => {
     <ul className={cls.services__list}>
       {services.map((service) => (
         <li className={cls.services__item} key={service.id}>
-          <div className={cls.service__icon__wrapper}>
-            <Icon name={service.iconName} color="white-primary" size={73} className={cls.service__icon}/>
-          </div>
-          <div className={cls.service__name}>
-            <Typography variant="span" bold align="center">
-              {service.serviceName}
-            </Typography>
+          <div className={cls.service__header}>
+            <div className={cls.service__icon__wrapper}>
+              <Icon name={service.iconName} color="white-primary" size={73} className={cls.service__icon}/>
+            </div>
+            <div className={cls.service__name}>
+              <Typography variant="span" bold align="left">
+                {service.serviceName}
+              </Typography>
+            </div>
           </div>
           <div className={cls.service__info}>
             <Typography variant="span" align="center">

@@ -38,12 +38,12 @@ const Component = () => {
         onClick={onHandleVisibleSelect}
         onMouseOver={() => setIsVisibleSelect(true)}
       >
-        <Typography variant="span" noWrap>
+        <Typography variant="p" noWrap>
           О нас
         </Typography>
         <Icon
           name="arrow_bottom"
-          color="primary"
+          color="white-primary"
           className={classNames(cls.select__arrow, { [cls.active]: isVisibleSelect })}
         />
       </div>

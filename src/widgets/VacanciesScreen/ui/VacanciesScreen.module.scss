@@ -4,15 +4,14 @@
   @include mixin.adaptive("margin-top", 80, 20);
   position: relative;
 
-  @include mixin.desktop {
+  @include mixin.desktop-xl {
     &:before {
       position: absolute;
       content: "";
-      top: 10px;
+      top: 6px;
       width: 150px;
       height: 25px;
-      background: var(--color-primary);
-      opacity: 50%;
+      background: var(--color-green-light);
     }
   }
 

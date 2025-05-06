@@ -39,8 +39,12 @@ $iconSizeMin: 40;
       background: var(--color-primary);
     }
 
-    .service__icon__wrapper {
-      margin: 0 auto 30px 0;
+    .service__header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      margin: 0 0 30px;
     }
 
     .service__icon {
@@ -50,7 +54,6 @@ $iconSizeMin: 40;
 
     .service__name {
       margin: 0 0 10px;
-      text-align: center;
     }
 
     .service__info {

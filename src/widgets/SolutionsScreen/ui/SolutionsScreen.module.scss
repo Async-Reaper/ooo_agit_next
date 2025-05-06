@@ -17,15 +17,14 @@
 
   @include mixin.adaptive("padding-top", 80, 30);
 
-  @include mixin.desktop {
+  @include mixin.desktop-xl {
     &:before {
       position: absolute;
       content: "";
       top: 135px;
       width: 150px;
       height: 25px;
-      background: var(--color-primary);
-      opacity: 50%;
+      background: var(--color-green-light);
     }
   }
 
@@ -60,39 +59,36 @@
       align-items: center;
       flex-wrap: wrap;
       @include mixin.adaptive("gap", 15, 15);
-      height: 195px;
-      width: 100vw;
-      background: var(--color-green-dark);
 
-      @include mixin.laptop {
-        background: url("/solutions-background.svg"), no-repeat;
-        background-size: cover;
-      }
+      //@include mixin.laptop {
+      //  background: url("/solutions-background.svg"), no-repeat;
+      //  background-size: cover;
+      //}
 
-      &:before {
-        position: absolute;
-        content: "";
-        top: -20px;
-        height: 5px;
-        width: 100%;
-        background: #035B51;
-      }
-
-      &:after {
-        display: none;
-        position: absolute;
-        content: "";
-        top: 125px;
-        left: -50px;
-        height: 5px;
-        width: 10%;
-        transform: rotate(53deg);
-        background: #0FB29F;
-
-        @include mixin.desktop {
-          display: block;
-        }
-      }
+      //&:before {
+      //  position: absolute;
+      //  content: "";
+      //  top: -20px;
+      //  height: 5px;
+      //  width: 100%;
+      //  background: #035B51;
+      //}
+      //
+      //&:after {
+      //  display: none;
+      //  position: absolute;
+      //  content: "";
+      //  top: 125px;
+      //  left: -50px;
+      //  height: 5px;
+      //  width: 10%;
+      //  transform: rotate(53deg);
+      //  background: #0FB29F;
+      //
+      //  @include mixin.desktop {
+      //    display: block;
+      //  }
+      //}
 
       @include mixin.laptop {
         flex-wrap: nowrap;
@@ -101,25 +97,10 @@
 
     .solution__item {
       @include mixin.flex-row;
-      gap: 30px;
-      max-width: 300px;
-
-      @include mixin.desktop {
-        max-width: 400px;
-      }
-
-      .dot {
-        width: 21px;
-        height: 21px;
-        flex-shrink: 0;
-        background: linear-gradient(190deg, #D9D9D9, #2F3333);
-        border-radius: 50px;
-      }
     }
 
     .solution__item__text {
       position: relative;
-      padding: 5px 10px;
     }
   }
 }

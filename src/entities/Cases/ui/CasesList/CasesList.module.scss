@@ -3,6 +3,30 @@
 .cases {
   position: relative;
   @include mixin.adaptive("margin-top", 70, 35);
+  @include mixin.adaptive("margin-bottom", 80, 15);
+
+  @include mixin.desktop {
+    &:before {
+      position: absolute;
+      content: "";
+      top: 6px;
+      width: 150px;
+      height: 25px;
+      background: var(--color-primary);
+      opacity: 50%;
+    }
+  }
+
+  &:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 20px;
+    background: var(--color-primary);
+    filter: blur(50px);
+  }
 
   .cases__title__wrapper {
     margin: 0 0 50px;
@@ -12,6 +36,27 @@
     @include mixin.flex-row;
     flex-wrap: wrap;
     gap: 15px;
+    margin: 0 0 30px;
+  }
+
+  @include mixin.desktop {
+    .dot {
+      position: absolute;
+      left: 106px;
+      width: 18px;
+      height: 18px;
+      background: var(--color-black-secondary);
+      border-radius: 50px;
+      z-index: 9;
+    }
+
+    .dot__first {
+      top: 195px;
+    }
+
+    .dot__second {
+      bottom: 10px;
+    }
   }
 
   .cases__background__wrapper {
@@ -29,14 +74,24 @@
   }
 
   .cases__wrapper {
-    margin: 0 auto;
     position: relative;
     @include mixin.flex-column;
+    @include mixin.adaptive("gap", 60, 30);
     @include mixin.adaptive("padding-block", 80, 30);
-    gap: 45px;
+    padding-inline: 15px;
+    margin: 0 auto;
 
-    @include mixin.tablets {
-      gap: 0;
+    @include mixin.desktop {
+      &:before {
+        position: absolute;
+        content: "";
+        width: 1px;
+        height: 98%;
+        left: 94px;
+        top: 30px;
+        background: var(--color-gray-dark);
+        z-index: 2;
+      }
     }
 
     .cases__skeleton__wrapper {

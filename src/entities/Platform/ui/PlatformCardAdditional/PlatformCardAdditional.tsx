@@ -22,7 +22,7 @@ export const PlatformCardAdditional = React.memo((props: PlatformCardAdditionalP
         <div className={cls.benefits}>
           <div className={cls.benefits__description}>
             {benefitsDescription.map((description, index) => (
-              <Typography key={index} variant="p" bold>{description}</Typography>
+              <Typography key={index} variant="span" bold>{description}</Typography>
             ))}
           </div>
           {
@@ -31,7 +31,7 @@ export const PlatformCardAdditional = React.memo((props: PlatformCardAdditionalP
               {benefitsList.map((benefits, index) => (
                 <li key={index} className={cls.benefit__item}>
                   <div className={cls.circular__marker}></div>
-                  <Typography variant="p" bold>{benefits}</Typography>
+                  <Typography variant="span" bold>{benefits}</Typography>
                 </li>
               ))}
             </ul>
@@ -40,7 +40,7 @@ export const PlatformCardAdditional = React.memo((props: PlatformCardAdditionalP
         {
           additionalInfo &&
           <div className={cls.additional__info}>
-            <Typography variant="p" bold>{additionalInfo}</Typography>
+            <Typography variant="span" bold>{additionalInfo}</Typography>
           </div>
         }
       </div>

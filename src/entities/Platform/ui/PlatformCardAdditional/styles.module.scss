@@ -1,7 +1,7 @@
 @use "@shared/styles/mixins" as mixin;
 
 .platform__footer__wrapper {
-  padding: 18px;
+  padding: 18px 0;
   position: relative;
   max-width: 980px;
   z-index: 2;
@@ -9,22 +9,36 @@
   &:before {
     position: absolute;
     content: "";
-    height: 100%;
-    top: 50%;
+    top: 0;
     right: 0;
-    left: -20px;
-    transform: translateY(-50%);
-    z-index: 0;
-    border-radius: 0 35px 35px 0;
-    background: linear-gradient(180deg, #2D4E4A, #212F2D);
+    left: -100%;
+    border-radius: 0 20px 20px 0;
+    height: 100%;
+    background: linear-gradient(175deg, #363636 20%, rgba(4, 91, 81, 0.7));
+  }
+
+  &:after {
+    position: absolute;
+    content: "";
+    top: -15px;
+    right: -15px;
+    border-radius: 0 30px 0 0;
+    height: 100%;
+    width: 100%;
+    border-top: 5px solid var(--color-green-light);
+    border-right: 5px solid var(--color-green-light);
+
+    @include mixin.tablets {
+      width: 50%;
+    }
   }
 
   .platform__footer {
-
     @include mixin.flex-column;
-    gap: 30px;
+    gap: 20px;
     position: relative;
     z-index: 2;
+    max-width: 90%;
   }
 
   .benefits {
@@ -47,11 +61,11 @@
     }
 
     .circular__marker {
-      height: 33px;
-      width: 33px;
+      height: 15px;
+      width: 15px;
       border-radius: 50%;
       flex-shrink: 0;
-      border: 3px solid var(--color-primary);
+      background: linear-gradient(90deg, #D9D9D9, #9E9B9B);
     }
   }
 

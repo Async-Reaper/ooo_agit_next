@@ -1,10 +1,7 @@
 "use client";
 import React from "react";
-import { MailingButton } from "@features/Mailing";
-import { Social, Typography } from "@shared/ui";
+import { Typography } from "@shared/ui";
 import { AppLink } from "@shared/ui/AppLink";
-import { AppLogo } from "@shared/ui/AppLogo/AppLogo";
-import Container from "@shared/ui/Container/Container";
 
 import cls from "./Footer.module.scss";
 
@@ -34,5 +31,3 @@ export const Footer = React.memo(() => {
     </footer>
   );
 });
-
-Footer.displayName = "Footer";

@@ -22,6 +22,7 @@
   @include mixin.laptop {
     grid-template-columns: repeat(3, auto);
     grid-gap: 50px;
+    justify-content: space-between;
   }
 
   @include mixin.desktop {

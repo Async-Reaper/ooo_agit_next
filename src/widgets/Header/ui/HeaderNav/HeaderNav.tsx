@@ -34,7 +34,7 @@ export const HeaderNav = React.memo(({ isActiveScroll, isMounted }: HeaderNavPro
               href="/"
               variant="primary-green"
             >
-              <Typography variant="span">
+              <Typography variant="p">
                 Главная
               </Typography>
             </AppLink>
@@ -50,7 +50,7 @@ export const HeaderNav = React.memo(({ isActiveScroll, isMounted }: HeaderNavPro
               href="/products"
               variant="primary-green"
             >
-              <Typography variant="span">
+              <Typography variant="p">
                 Продукты и услуги
               </Typography>
             </AppLink>
@@ -66,7 +66,7 @@ export const HeaderNav = React.memo(({ isActiveScroll, isMounted }: HeaderNavPro
               href="/cases"
               variant="primary-green"
             >
-              <Typography variant="span">
+              <Typography variant="p">
                 Наши кейсы
               </Typography>
             </AppLink>

@@ -51,7 +51,7 @@
         background-image: url("/logo-line.svg");
         background-repeat: no-repeat;
         background-size: contain;
-        bottom: -35px;
+        bottom: -45px;
         right: -31px;
         @include mixin.adaptive("height", 93, 75);
         @include mixin.adaptive("width", 600, 300);

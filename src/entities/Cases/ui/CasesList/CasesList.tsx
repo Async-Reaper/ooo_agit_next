@@ -1,6 +1,7 @@
 "use client";
 import React, { useCallback, useEffect, useState } from "react";
 import { db } from "@main/FirebaseProvider";
+import { classNames } from "@shared/libs/classNames/classNames";
 import { Button, Typography } from "@shared/ui";
 import Container from "@shared/ui/Container/Container";
 import { Skeleton } from "@shared/ui/Skeleton";
@@ -43,8 +44,10 @@ export const CasesList = React.memo(() => {
     setCurrentGroupCase(caseItem.name);
     setGroupCase(prevState => prevState.map(group =>
       group.id === caseItem.id
-        ? { ...group, active: true }
-        : { ...group, active: false }
+        ?
+        { ...group, active: true }
+        :
+        { ...group, active: false }
     ));
   };
 
@@ -80,23 +83,25 @@ export const CasesList = React.memo(() => {
                 color="primary"
                 onClick={() => onHandleGroupCase(group)}
               >
-                <Typography>{group.name}</Typography>
+                <Typography variant="p">{group.name}</Typography>
               </Button>
             ))
           }
         </div>
+        <div className={classNames(cls.dot, {}, [cls.dot__first])}></div>
+        <div className={cls.cases__wrapper}>
+          {isLoading
+            ? <Container>
+              <div className={cls.cases__skeleton__wrapper}>
+                {new Array(13).fill("").map((_, index) => <Skeleton key={index} className={cls.cases__skeleton}/>)}
+              </div>
+            </Container>
+            : casesList.map((caseItem) =>
+              caseItem.type === currentGroupCase && <CaseCard key={caseItem.id} caseItem={caseItem}/>)
+          }
+        </div>
+        <div className={classNames(cls.dot, {}, [cls.dot__second])}></div>
       </Container>
-      <div className={cls.cases__wrapper}>
-        {isLoading
-          ? <Container>
-            <div className={cls.cases__skeleton__wrapper}>
-              {new Array(13).fill("").map((_, index) => <Skeleton key={index} className={cls.cases__skeleton}/>)}
-            </div>
-          </Container>
-          : casesList.map((caseItem) =>
-            caseItem.type === currentGroupCase && <CaseCard key={caseItem.id} caseItem={caseItem}/>)
-        }
-      </div>
     </section>
   );
 });

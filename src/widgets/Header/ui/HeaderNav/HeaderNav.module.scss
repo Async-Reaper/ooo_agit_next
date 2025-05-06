@@ -15,6 +15,7 @@
   border-left: 0 solid transparent;
   border-right: 50px solid transparent;
   z-index: 1;
+  min-height: 140px;
 
   &:before {
     display: none;
@@ -45,9 +46,9 @@
     height: 192px;
     @include mixin.adaptive("width", 1200, 300);
 
-    @include mixin.laptop {
-      display: block;
-    }
+    //@include mixin.laptop {
+    //  display: block;
+    //}
   }
 
   &.active {
@@ -71,13 +72,12 @@
 
   .header__links {
     @include mixin.flex-column;
-    @include mixin.adaptive("gap", 40, 15);
+    @include mixin.adaptive("gap", 30, 15);
     z-index: 2;
     border-radius: 25px;
     @include mixin.adaptive("padding-block", 30, 20);
     align-items: flex-start;
     width: max-content;
-    margin: 0 auto 20px;
 
     @include mixin.laptop {
       @include mixin.flex-row;
@@ -87,11 +87,11 @@
 
     .header__link {
       @include mixin.flex-row;
-      @include mixin.adaptive("gap", 40, 15);
+      @include mixin.adaptive("gap", 20, 15);
     }
 
     .header__vertical_line {
-      opacity: 0;
+      opacity: 1;
       height: 47px;
       width: 2px;
       background: var(--color-white-primary);

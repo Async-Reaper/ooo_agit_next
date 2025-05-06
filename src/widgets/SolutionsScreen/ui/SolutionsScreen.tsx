@@ -1,7 +1,6 @@
 "use client";
 import React, { useLayoutEffect, useState } from "react";
 import { useViewBox } from "@shared/hooks";
-import { Icon } from "@shared/libs/icon/icon";
 import { Typography } from "@shared/ui";
 import Container from "@shared/ui/Container/Container";
 import { animate, stagger } from "motion";
@@ -68,7 +67,7 @@ export const SolutionsScreen = React.memo(() => {
                 >
                   <div className={cls.dot} />
                   <div className={cls.solution__item__text}>
-                    <Typography variant="span" align="center">
+                    <Typography variant="p" align="left">
                       {solution.text}
                     </Typography>
                   </div>

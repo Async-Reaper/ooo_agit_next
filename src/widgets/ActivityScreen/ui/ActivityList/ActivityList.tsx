@@ -11,35 +11,36 @@ interface ActivityListProps {
 
 export const ActivityList = React.memo(({ isVisible }: ActivityListProps) => {
   const activities = [
+
     {
       id: 1,
-      text: "Горнодобывающая промышленность, металлургия.",
-      img: "https://static-agit.onrender.com/activity/mining.svg"
-    },
-    {
-      id: 2,
-      text: "Строительство и эксплуатация зданий и сооружений.",
-      img: "https://static-agit.onrender.com/activity/building.svg"
+      text: "Управление качеством и учёт деятельности химических лабораторий.",
+      img: "https://static-agit.onrender.com/activity/lab.svg"
     },
     {
       id: 3,
+      text: "Учёт предоставления различных услуг и работы с клиентами (CRM).",
+      img: "https://static-agit.onrender.com/activity/crm.svg"
+    },
+    {
+      id: 2,
       text: "Производство электротехнического и инженерного оборудования.",
       img: "https://static-agit.onrender.com/activity/light.svg"
     },
     {
       id: 4,
-      text: "Управление качеством и учёт деятельности химических лабораторий.",
-      img: "https://static-agit.onrender.com/activity/lab.svg"
-    },
-    {
-      id: 5,
       text: "Оптово-розничная торговля и производство продуктов питания.",
       img: "https://static-agit.onrender.com/activity/food-production.svg"
     },
     {
+      id: 5,
+      text: "Строительство и эксплуатация зданий и сооружений.",
+      img: "https://static-agit.onrender.com/activity/building.svg"
+    },
+    {
       id: 6,
-      text: "Учёт предоставления различных услуг и работы с клиентами (CRM).",
-      img: "https://static-agit.onrender.com/activity/crm.svg"
+      text: "Горнодобывающая промышленность, металлургия.",
+      img: "https://static-agit.onrender.com/activity/mining.svg"
     },
   ];
   

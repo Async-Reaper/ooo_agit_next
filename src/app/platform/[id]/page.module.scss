@@ -1,10 +1,13 @@
 @use "@shared/styles/_mixins.scss" as mixin;
 
-.platform {
-  @include mixin.flex-column;
-  align-items: self-start;
-  gap: 30px;
+.platform__wrapper {
   @include mixin.adaptive("padding-block", 80, 30);
+
+  .platform {
+    @include mixin.flex-column;
+    align-items: self-start;
+    gap: 30px;
+  }
 
   .link__back {
     display: flex;
