@@ -17,6 +17,7 @@
   }
 
   .buy__button__wrapper {
-    max-width: 430px;
+    @include mixin.adaptive("max-width", 370, 260);
+    width: 100%;
   }
 }

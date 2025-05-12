@@ -1,8 +1,7 @@
 "use client";
 import React, { useCallback, useEffect, useState } from "react";
 import { db } from "@main/FirebaseProvider";
-import { Typography } from "@shared/ui";
-import { AppLink } from "@shared/ui/AppLink";
+import { Button, Typography } from "@shared/ui";
 import { collection, getDocs, query } from "firebase/firestore";
 
 import cls from "./PlatformsList.module.scss";
@@ -40,11 +39,18 @@ export const PlatformsList = React.memo(() => {
                 <Typography color="primary" variant="p">
                   {platform.platformPrice} ₽
                 </Typography>
-                <AppLink className={cls.platform__link} href={`/platform/${platform.id}`} target="_blank" isUnderline={false}>
-                  <Typography variant="p">
-                    Подробнее
-                  </Typography>
-                </AppLink>
+                <div className={cls.platform__link}>
+                  <Button variant="outlined" size="s" fullWidth onClick={() => window.open(`/platform/${platform.id}`)}>
+                    <Typography variant="span" uppercase>
+                      Подробнее
+                    </Typography>
+                  </Button>
+                </div>
+                {/*<AppLink  href= target="_blank" isUnderline={false}>*/}
+                {/*  <Typography variant="p">*/}
+                {/*    Подробнее*/}
+                {/*  </Typography>*/}
+                {/*</AppLink>*/}
               </div>
             </li>
           ))

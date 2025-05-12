@@ -64,10 +64,15 @@
       padding: 0;
       border: none;
       align-items: self-start;
+      @include mixin.adaptive("height", 125, 45);
     }
 
     .header__logo {
-      //margin: 0 140px;
+      @include mixin.adaptive("margin-right", 120, 0);
+
+      @include mixin.laptop {
+        @include mixin.adaptive("margin-right", -40, 120);
+      }
     }
   }
 }

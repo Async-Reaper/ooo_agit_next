@@ -3,7 +3,7 @@
 .platform__footer__wrapper {
   padding: 18px 0;
   position: relative;
-  max-width: 980px;
+  width: 100%;
   z-index: 2;
 
   &:before {
@@ -11,26 +11,9 @@
     content: "";
     top: 0;
     right: 0;
-    left: -100%;
-    border-radius: 0 20px 20px 0;
+    left: 0;
     height: 100%;
     background: linear-gradient(175deg, #363636 20%, rgba(4, 91, 81, 0.7));
-  }
-
-  &:after {
-    position: absolute;
-    content: "";
-    top: -15px;
-    right: -15px;
-    border-radius: 0 30px 0 0;
-    height: 100%;
-    width: 100%;
-    border-top: 5px solid var(--color-green-light);
-    border-right: 5px solid var(--color-green-light);
-
-    @include mixin.tablets {
-      width: 50%;
-    }
   }
 
   .platform__footer {
@@ -48,6 +31,10 @@
     .benefits__description {
       @include mixin.flex-column;
       gap: inherit;
+
+      //* {
+      //  text-align: j;
+      //}
     }
 
     .benefits__list {

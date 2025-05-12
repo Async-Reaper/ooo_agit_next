@@ -36,6 +36,10 @@
         &--center {
             text-align: center;
         }
+
+        &--justify {
+            text-align: justify;
+        }
     }
 
     /* VARIANT */
@@ -91,7 +95,7 @@
             font-weight: 400;
 
             &.bold {
-                font-weight: 600;
+                font-weight: 500;
             }
         }
 

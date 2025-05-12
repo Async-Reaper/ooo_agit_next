@@ -15,6 +15,8 @@
   border-left: 0 solid transparent;
   border-right: 50px solid transparent;
   z-index: 1;
+  margin: auto 0;
+  @include mixin.adaptive("height", 125, 45);
 
   &.active {
     border: 2px solid var(--color-primary);
@@ -56,7 +58,7 @@
 
     .header__vertical_line {
       opacity: 1;
-      height: 47px;
+      height: 30px;
       width: 2px;
       background: var(--color-white-primary);
       border: none;

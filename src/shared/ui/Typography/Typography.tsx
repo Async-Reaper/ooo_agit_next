@@ -5,7 +5,7 @@ import cls from "./styles.module.scss";
 
 export type Variant = "h1" | "h2" | "h3" | "body" | "p" | "span" | "small";
 
-type Align = "center" | "right" | "left";
+type Align = "center" | "right" | "left" | "justify";
 
 const mapTag = {
   h1: "h1",

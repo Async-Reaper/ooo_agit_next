@@ -46,20 +46,22 @@ const DynamicPage: FC<{ params: Params["params"] }> = async ({ params }) => {
 
   return (
     <div className={cls.platform__wrapper}>
-      <Container className={cls.platform}>
-        <div className={cls.link__back__wrapper}>
+      <div className={cls.platform}>
+        <Container className={cls.link__back__wrapper}>
           <AppLink href="/products#platform" variant="primary-green" className={cls.link__back}>
             <Icon name="arrow_left" color="white-primary"/>
             <Typography variant="p">
               Назад
             </Typography>
           </AppLink>
-        </div>
+        </Container>
         <PlatformCard platform={platform}/>
-        <div className={cls.buy__button__wrapper}>
-          <BuyPlatformButton/>
-        </div>
-      </Container>
+        <Container>
+          <div className={cls.buy__button__wrapper}>
+            <BuyPlatformButton/>
+          </div>
+        </Container>
+      </div>
     </div>
   );
 };

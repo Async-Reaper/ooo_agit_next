@@ -13,11 +13,10 @@
 
     .platform__item {
       position: relative;
-      cursor: pointer;
       transition: all .5s;
       @include mixin.flex-column;
       justify-content: center;
-      background: linear-gradient(180deg, rgba(44, 44, 44, 1) 20%, rgba(0, 0, 0, 1) 100%);
+      background: linear-gradient(180deg, rgba(91, 91, 91, 0.5), rgba(44, 44, 44, 0.5));
       min-height: 192px;
       border-radius: 20px;
 
@@ -46,15 +45,6 @@
   }
 
   .platform__link {
-    border-radius: 15px;
-    transition: ease-in 0.3s;
-    color: var(--color-white-primary);
-    border: 2px solid var(--color-primary);
-    padding: 10px 20px;
-
-    &:hover {
-      box-shadow: 0 0 10px var(--color-primary);
-      color: var(--color-primary);
-    }
+    width: 194px;
   }
 }

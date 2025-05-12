@@ -40,11 +40,10 @@ $iconSizeMin: 40;
     }
 
     .service__header {
-      display: flex;
+      @include mixin.flex-column;
       align-items: center;
-      gap: 10px;
+      gap: 25px;
       width: 100%;
-      margin: 0 0 30px;
     }
 
     .service__icon {
@@ -53,7 +52,9 @@ $iconSizeMin: 40;
     }
 
     .service__name {
-      margin: 0 0 10px;
+      max-width: 245px;
+      text-align: center;
+      margin: 0 0 25px;
     }
 
     .service__info {

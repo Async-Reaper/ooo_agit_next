@@ -1,6 +1,6 @@
 @use "@shared/styles/mixins" as mixin;
 
-$height: 925;
+$marginRight: 190;
 
 .internship__wrapper {
   position: relative;
@@ -18,112 +18,76 @@ $height: 925;
     filter: blur(100px);
   }
 
-  .internship__content {
-    @include mixin.flex-column;
-    @include mixin.adaptive("gap", 60, 30);
-
-    .stage__internship {
-      @include mixin.flex-row;
-      gap: 60px;
-    }
-
-    .stage_internship__list {
-      @include mixin.flex-row;
-      align-items: self-end;
-      position: relative;
-
-      &:before {
-        position: absolute;
-        content: "";
-        left: 0;
-        bottom: 0;
-        width: 115%;
-        height: 2px;
-        background: var(--color-white-primary);
-        z-index: 2;
-      }
-
-      &:after {
-        position: absolute;
-        content: "";
-        right: -56px;
-        bottom: -7px;
-        width: 16px;
-        height: 16px;
-        background: var(--color-white-primary);
-        border-radius: 50%;
-        z-index: 1;
-      }
-    }
-
-    .stage_internship__item {
-      z-index: 1;
-      @include mixin.flex-row;
-      gap: 20px;
-      width: 110px;
-      padding: 60px 20px;
-      background: linear-gradient(90deg, #514F4F, #119686);
-      clip-path: polygon(50% 0%, -410% 100%, 0% 100%, 100% 100%, 525% 100%);
-
-      @for $i from 1 through 5 {
-        $height: $height - 150; // Вычисляем padding для текущей итерации
-
-        &:nth-child(#{$i}) {
-          height: #{$height}px;
-        }
-      }
-
-      &+.stage_internship__item {
-        margin-left: -55px;
-      }
-    }
-
-    .stage__icon {
-      margin: 0 0 auto;
-    }
-
-    .stage_internship__text {
-      @include mixin.flex-column;
-      justify-content: space-around;
-      height: 775px;
-      align-items: self-start;
-    }
-  }
-
   .internship__title {
     @include mixin.flex-column;
     gap: 5px;
   }
 
-  .stage_internship__text__item {
+  .internship {
+    @include mixin.flex-space;
+    gap: 60px;
+  }
+
+  .internship__content {
+    @include mixin.flex-column;
+    @include mixin.adaptive("gap", 60, 30);
+  }
+
+  .stage_internship__list {
+    @include mixin.flex-row;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: self-end;
+    position: relative;
+    background-image: url("/internship/internship-list-background.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 757px;
+    height: 458px;
+    padding: 50px 60px;
+
+    &:before {
+      position: absolute;
+      content: "";
+      bottom: -20px;
+      left: 10px;
+      background-image: url("/internship/internship-list-line.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 783px;
+      height: 412px;
+    }
+  }
+
+  @include mixin.laptop {
+    @for $i from 1 through 6 {
+      $padding: $marginRight - $i * 30; // Вычисляем padding для текущей итерации
+
+      .stage_internship__item:nth-child(#{$i}) {
+        margin-right: #{$padding}px;
+      }
+    }
+  }
+
+  .stage_internship__item {
     position: relative;
 
     &:before {
       position: absolute;
       content: "";
-      top: 50%;
-      left: -360px;
-      background: var(--color-white-primary);
-      width: 350px;
-      height: 2px;
+      top: 5px;
+      right: -13px;
+      border-bottom: 2px solid var(--color-white-primary);
+      border-right: 2px solid var(--color-white-primary);
+      width: 120%;
+      height: 120%;
     }
 
-    &:after {
+    .stage__icon {
       position: absolute;
-      content: "";
-      top: 50%;
-      left: -20px;
-      transform: translateY(-50%);
-      background: var(--color-white-primary);
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
+      top: -22px;
+      right: -23px;
     }
-  }
-
-  .internship {
-    @include mixin.flex-space;
-    gap: 60px;
   }
 
   .internship__background {

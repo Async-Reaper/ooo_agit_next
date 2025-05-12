@@ -9,9 +9,9 @@ export const BuyPlatformButton = React.memo(() => {
   const { isOpen, open, close } = useModal();
   return (
     <>
-      <Button size="xl" variant="outlined" fullWidth onClick={open}>
+      <Button size="l" variant="outlined" fullWidth onClick={open}>
         <Typography variant="span" uppercase noWrap>
-          Купить платформу
+          Купить конфигурацию
         </Typography>
       </Button>
       <BuyPlatformModal isOpen={isOpen} onClose={close} />
