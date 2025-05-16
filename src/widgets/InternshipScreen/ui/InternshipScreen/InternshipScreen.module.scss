@@ -25,6 +25,7 @@ $marginRight: 190;
 
   .internship {
     @include mixin.flex-space;
+    align-items: self-start;
     gap: 60px;
   }
 
@@ -71,6 +72,7 @@ $marginRight: 190;
 
   .stage_internship__item {
     position: relative;
+    cursor: pointer;
 
     &:before {
       position: absolute;
@@ -94,24 +96,47 @@ $marginRight: 190;
     display: none;
     position: relative;
 
-    &:before {
-      position: absolute;
-      content: "";
-      left: -20px;
-      bottom: -20px;
-      width: 103%;
-      height: 100%;
-      border-left: 5px solid var(--color-primary);
-      border-bottom: 5px solid var(--color-primary);
-      border-radius: 0 0 0 20px;
-    }
-
     @include mixin.desktop {
       display: block;
+      max-width: 811px;
+      width: 100%;
+      height: 458px;
 
       .internship__img {
-        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 811px;
+        height: 458px;
+        object-fit: contain;
+        animation: fadeIn 1s ease-in-out forwards;
+      }
+
+      .internship__img.prev {
+        animation: fadeOut 1s ease-in-out forwards;
       }
     }
+  }
+
+  .internship__button__wrapper {
+    margin: 0 auto;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }

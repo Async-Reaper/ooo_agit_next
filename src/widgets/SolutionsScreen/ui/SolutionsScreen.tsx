@@ -86,6 +86,7 @@ export const SolutionsScreen = React.memo(() => {
             ))
           }
         </ul>
+        <img src="/gear-solutions.png" className={cls.solutions__image} />
       </motion.div>
     </section>
   );

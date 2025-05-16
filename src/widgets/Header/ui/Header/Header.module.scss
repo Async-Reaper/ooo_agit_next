@@ -1,8 +1,6 @@
 @use "@shared/styles/_mixins.scss" as mixin;
 
 .header {
-  //position: -webkit-sticky;
-  //position: sticky;
   top: 0;
   width: 100%;
   height: 100%;
@@ -23,6 +21,7 @@
     z-index: 1;
 
     @include mixin.laptop {
+      @include mixin.adaptive("top", -35, 25);
       background-image: url("/header/header-background.svg");
     }
   }
@@ -42,6 +41,10 @@
       background-image: url("/header/logo-background.svg");
       @include mixin.adaptive("width", 650, 230);
     }
+  }
+
+  @include mixin.laptop {
+    height: 140px;
   }
 
   .header__inner {
@@ -64,7 +67,7 @@
       padding: 0;
       border: none;
       align-items: self-start;
-      @include mixin.adaptive("height", 125, 45);
+      @include mixin.adaptive("height", 90, 55);
     }
 
     .header__logo {

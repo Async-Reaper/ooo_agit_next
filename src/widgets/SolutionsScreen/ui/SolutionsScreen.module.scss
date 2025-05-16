@@ -8,13 +8,12 @@
   &:after {
     position: absolute;
     content: "";
-    right: 0;
+    top: 0;
     bottom: 0;
-    background-image: url("/gear-solutions.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    @include mixin.adaptive("width", 121, 56);
-    @include mixin.adaptive("height", 189, 88);
+    left: 20px;
+    background: var(--color-green-dark);
+    width: 40px;
+    filter: blur(100px);
   }
 
   @include mixin.adaptive("padding-top", 80, 30);
@@ -28,6 +27,17 @@
       height: 25px;
       background: var(--color-green-light);
     }
+  }
+
+  .solutions__image {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-image: url("/gear-solutions.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    @include mixin.adaptive("width", 121, 56);
+    @include mixin.adaptive("height", 189, 88);
   }
 
   .solutions__wrapper {

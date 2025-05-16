@@ -46,11 +46,6 @@ export const PlatformsList = React.memo(() => {
                     </Typography>
                   </Button>
                 </div>
-                {/*<AppLink  href= target="_blank" isUnderline={false}>*/}
-                {/*  <Typography variant="p">*/}
-                {/*    Подробнее*/}
-                {/*  </Typography>*/}
-                {/*</AppLink>*/}
               </div>
             </li>
           ))

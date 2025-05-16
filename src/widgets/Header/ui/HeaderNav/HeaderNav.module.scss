@@ -16,7 +16,10 @@
   border-right: 50px solid transparent;
   z-index: 1;
   margin: auto 0;
-  @include mixin.adaptive("height", 125, 45);
+
+  @include mixin.laptop {
+    @include mixin.adaptive("height", 90, 55);
+  }
 
   &.active {
     border: 2px solid var(--color-primary);
