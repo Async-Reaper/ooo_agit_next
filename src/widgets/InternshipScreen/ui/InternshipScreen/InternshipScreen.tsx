@@ -23,27 +23,27 @@ export const InternshipScreen = React.memo(() => {
     {
       id: 1,
       stageName: "Подай заявку",
-      image: "/internship/internship-background-1.png"
+      image: "/internship/internship-background-1.webp"
     },
     {
       id: 2,
       stageName: "Получи обратную связь",
-      image: "/internship/internship-background-2.png"
+      image: "/internship/internship-background-2.webp"
     },
     {
       id: 3,
-      stageName: "Освой новую профессию",
-      image: "/internship/internship-background-3.png"
+      stageName: "Обучись новой профессии",
+      image: "/internship/internship-background-3.webp"
     },
     {
       id: 4,
       stageName: "Получи офицальное трудоустройство",
-      image: "/internship/internship-background-4.png"
+      image: "/internship/internship-background-4.webp"
     },
     {
       id: 5,
       stageName: "Зарабатывай, развивайся и достигай большего",
-      image: "/internship/internship-background-5.png"
+      image: "/internship/internship-background-5.webp"
     },
   ];
 

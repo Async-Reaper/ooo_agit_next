@@ -35,38 +35,27 @@ $marginRight: 190;
   }
 
   .stage_internship__list {
-    @include mixin.flex-row;
-    flex-direction: column;
+    @include mixin.flex-column;
+    align-items: center;
     justify-content: space-between;
-    align-items: self-end;
     position: relative;
-    background-image: url("/internship/internship-list-background.png");
+    background-image: url("/internship/internship-list-background.webp");
     background-repeat: no-repeat;
     background-size: contain;
-    width: 757px;
-    height: 458px;
+    width: 707px;
+    height: 444px;
     padding: 50px 60px;
 
     &:before {
       position: absolute;
       content: "";
-      bottom: -20px;
-      left: 10px;
-      background-image: url("/internship/internship-list-line.svg");
-      background-repeat: no-repeat;
-      background-size: contain;
-      width: 783px;
-      height: 412px;
-    }
-  }
-
-  @include mixin.laptop {
-    @for $i from 1 through 6 {
-      $padding: $marginRight - $i * 30; // Вычисляем padding для текущей итерации
-
-      .stage_internship__item:nth-child(#{$i}) {
-        margin-right: #{$padding}px;
-      }
+      bottom: -15px;
+      right: -15px;
+      width: 100%;
+      height: 100%;
+      border-bottom: 5px solid var(--color-primary-hover);
+      border-right: 5px solid var(--color-primary-hover);
+      border-radius: 0 0 25px;
     }
   }
 
@@ -81,8 +70,8 @@ $marginRight: 190;
       right: -13px;
       border-bottom: 2px solid var(--color-white-primary);
       border-right: 2px solid var(--color-white-primary);
-      width: 120%;
-      height: 120%;
+      width: 105%;
+      height: 100%;
     }
 
     .stage__icon {
@@ -96,18 +85,30 @@ $marginRight: 190;
     display: none;
     position: relative;
 
+    &:before {
+      position: absolute;
+      content: "";
+      bottom: -15px;
+      left: -15px;
+      width: 100%;
+      height: 100%;
+      border-bottom: 5px solid var(--color-gray-primary);
+      border-left: 5px solid var(--color-gray-primary);
+      border-radius: 0 0 0 25px;
+    }
+
     @include mixin.desktop {
       display: block;
-      max-width: 811px;
+      max-width: 782px;
       width: 100%;
-      height: 458px;
+      height: 444px;
 
       .internship__img {
         position: absolute;
         top: 0;
         left: 0;
-        width: 811px;
-        height: 458px;
+        width: 782px;
+        height: 444px;
         object-fit: contain;
         animation: fadeIn 1s ease-in-out forwards;
       }

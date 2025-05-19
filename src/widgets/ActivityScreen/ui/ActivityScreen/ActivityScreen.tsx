@@ -43,7 +43,7 @@ export const ActivityScreen = React.memo(() => {
           </Container>
           <div className={cls.activity__content}>
             <div className={cls.activity__background}>
-              <img src="/activity/activity-background.png" className={cls.activity__background__img}/>
+              <img src="/activity/activity-background.webp" className={cls.activity__background__img}/>
             </div>
             <ActivityList isVisible={isVisible}/>
           </div>

@@ -6,7 +6,7 @@ $left: 30;
   @include mixin.flex-column;
   justify-content: space-between;
   position: relative;
-  background-image: url("/activity/activity-list-background-mobile.png");
+  background-image: url("/activity/activity-list-background-mobile.webp");
   background-repeat: no-repeat;
   background-size: cover;
   min-width: 300px;
@@ -16,7 +16,7 @@ $left: 30;
   @include mixin.adaptive("padding", 60, 35);
 
   @include mixin.laptop {
-    background-image: url("/activity/activity-list-background.png");
+    background-image: url("/activity/activity-list-background.webp");
 
     &:after {
       position: absolute;
