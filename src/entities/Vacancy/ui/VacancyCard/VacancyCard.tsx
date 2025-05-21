@@ -1,5 +1,6 @@
 import React from "react";
 import { IVacancy } from "@entities/Vacancy";
+import { VacancyRequestButton } from "@features/VacancyRequest";
 import { Loader, Typography } from "@shared/ui";
 import { AppImage } from "@shared/ui/AppImage";
 
@@ -15,12 +16,19 @@ export const VacancyCard = React.memo(({ vacancy, isLoading }: VacancyCardProps)
     <div className={cls.card__wrapper}>
       {
         isLoading
-          ? <Loader/>
+          ?
+          <Loader/>
           :
           (
             <>
-              <div className={cls.card__img}>
-                <AppImage src={vacancy?.img} alt=""/>
+              <div className={cls.vacancy__header}>
+                <div className={cls.card__img}>
+                  <AppImage src={vacancy?.img} alt=""/>
+                  <Typography variant="h3" align="center" uppercase bold>{vacancy.name}</Typography>
+                </div>
+                <div className={cls.vacancy__request__wrapper}>
+                  <VacancyRequestButton/>
+                </div>
               </div>
               <div className={cls.card__content}>
                 <div className={cls.content__point}>

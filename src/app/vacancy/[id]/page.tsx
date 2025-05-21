@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 import { IVacancy, VacancyCard } from "@entities/Vacancy";
-import { VacancyRequestButton } from "@features/VacancyRequest";
 import { db } from "@main/FirebaseProvider";
 import { Icon } from "@shared/libs/icon/icon";
 import { Typography } from "@shared/ui";
@@ -57,9 +56,6 @@ const DynamicPage: FC<{ params: Params["params"] }> = async ({ params }) => {
         </div>
         <div className={cls.vacancy__wrapper}>
           <VacancyCard vacancy={vacancy} isLoading={isLoading}/>
-          <div className={cls.vacancy__request__wrapper}>
-            <VacancyRequestButton/>
-          </div>
         </div>
       </Container>
     </div>

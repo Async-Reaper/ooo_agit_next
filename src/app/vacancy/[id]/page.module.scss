@@ -2,7 +2,7 @@
 
 .vacancy {
   position: relative;
-  @include mixin.adaptive("padding-block", 70, 30);
+  @include mixin.adaptive("margin-block", 100, 30);
 
   &:before {
     position: absolute;
@@ -28,14 +28,6 @@
       display: flex;
       align-items: center;
       gap: 10px;
-    }
-  }
-
-  .vacancy__request__wrapper {
-    max-width: 445px;
-
-    @include mixin.tablets {
-      margin-left: 25%;
     }
   }
 }
