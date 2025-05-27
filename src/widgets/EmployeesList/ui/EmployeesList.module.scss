@@ -1,0 +1,29 @@
+@use "@shared/styles/_mixins.scss" as mixin;
+
+.employees__list__wrapper {
+  @include mixin.flex-column;
+  margin: 20px 0;
+  gap: 20px;
+
+  .employee__wrapper {
+    @include mixin.flex-column;
+    gap: 5px;
+    border: 1px solid var(--color-green-light);
+    border-radius: 20px;
+    padding: 10px 5px;
+  }
+
+  .employee__info {
+    @include mixin.flex-space;
+  }
+
+  .employee__status {
+    &.primary {
+      color: #8989ed;
+    }
+
+    &.secondary {
+      color: var(--color-green-light);
+    }
+  }
+}

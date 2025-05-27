@@ -52,7 +52,7 @@ const VacancyRequestForm = React.memo((props: VacancyRequestFormProps) => {
     
     setIsLoading(false);
     
-  }, [fullName, phoneNumber, aboutMyself, email]);
+  }, [fullName, phoneNumber, email, aboutMyself, close]);
 
   const disabled = useMemo(
     () => !fullName || !phoneNumber,
@@ -82,7 +82,7 @@ const VacancyRequestForm = React.memo((props: VacancyRequestFormProps) => {
         isError && <Alert variant="error" message="Ууупс... Произошла ошибка, повторите позже :(" />
       }
       {
-        isSuccess && <Alert variant="success" message="Ваша заявка на консультацию успешно отправлена!" />
+        isSuccess && <Alert variant="success" message="Ваша заявка на вакансию успешно отправлена!" />
       }
     </div>
   );

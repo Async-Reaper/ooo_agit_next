@@ -16,7 +16,7 @@ const RootLayout = (props: RootLayoutProps) => {
     <html lang="ru">
       <head>
         <meta charSet="UTF-8"/>
-        <link rel="icon" type="image/svg+xml" href="/favicon.ico"/>
+        <link rel="icon" type="image/svg+xml" href="../favicon.ico"/>
         <meta
           name="viewport"
           content="width=device-width, user-scalable=0, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
@@ -25,7 +25,6 @@ const RootLayout = (props: RootLayoutProps) => {
       <body>
         <ConsultationFlag/>
         <ScrollButton/>
-        {/*<RunStroke/>*/}
         <Header/>
         {children}
         <Footer/>

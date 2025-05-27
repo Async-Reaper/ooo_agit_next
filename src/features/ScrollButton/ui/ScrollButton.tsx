@@ -29,8 +29,8 @@ const Component = () => {
   
   return (
     <div className={classNames(cls.scroll__button__wrapper, { [cls.active]: isActive })} onClick={onHandleClick}>
-      <Button>
-        <Icon name="arrow_bottom" size={24} />
+      <Button variant="outlined" size="l" fullWidth>
+        <Icon name="arrow_bottom" size={24} color="white-primary" />
       </Button>
     </div>
   );

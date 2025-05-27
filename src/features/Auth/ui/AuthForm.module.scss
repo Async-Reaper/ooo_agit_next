@@ -1,0 +1,12 @@
+@use "@shared/styles/_mixins.scss" as mixin;
+
+.auth__form {
+  @include mixin.flex-column;
+
+  gap: 10px;
+
+  .auth__button__wrapper {
+    text-align: center;
+    width: 100%;
+  }
+}

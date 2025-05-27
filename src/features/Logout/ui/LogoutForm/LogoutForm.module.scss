@@ -1,0 +1,15 @@
+@use "@shared/styles/_mixins.scss" as mixin;
+
+.consultation__form {
+    @include mixin.flex-column;
+    max-width: 400px;
+    width: 100%;
+    gap: 10px;
+
+    .consultation__button__wrapper {
+        @include mixin.flex-row;
+        gap: 10px;
+        text-align: center;
+        width: 100%;
+    }
+}

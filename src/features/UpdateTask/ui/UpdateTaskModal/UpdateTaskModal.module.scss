@@ -1,0 +1,7 @@
+@use "@shared/styles/_mixins.scss" as mixin;
+
+.update_task__wrapper {
+    @include mixin.flex-column;
+    gap: 20px;
+    color: var(--color-white-primary);
+}

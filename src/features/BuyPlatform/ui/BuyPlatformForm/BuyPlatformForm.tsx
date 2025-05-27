@@ -1,13 +1,13 @@
 "use client";
 import React, { useCallback, useMemo, useState } from "react";
-import { IBuyPlatformBodyRequest } from "@features/BuyPlatform";
 import { Button, Input, InputPhone, Loader, Typography } from "@shared/ui";
 import Alert from "@shared/ui/Alert/Alert";
 import axios from "axios";
-
-import cls from "./BuyPlatformForm.module.scss";
 import { useParams } from "next/navigation";
 
+import cls from "./BuyPlatformForm.module.scss";
+
+import { IBuyPlatformBodyRequest } from "../../model/types/buyPlatformTypes";
 
 interface ConsultationFormProps {
   close: () => void;
@@ -20,7 +20,6 @@ const BuyPlatformForm = React.memo((props: ConsultationFormProps) => {
   const [fullName, setFullName] = useState<string>("");
   const [phoneNumber, setPhoneNumber] = useState<string>("");
   const [email, setEmail] = useState<string>("");
-  const [platform, setPlatform] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isError, setIsError] = useState<boolean>(false);
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
@@ -79,7 +78,7 @@ const BuyPlatformForm = React.memo((props: ConsultationFormProps) => {
         isError && <Alert variant="error" message="Ууупс... Произошла ошибка, повторите позже :("/>
       }
       {
-        isSuccess && <Alert variant="success" message="Ваша заявка на консультацию успешно отправлена!"/>
+        isSuccess && <Alert variant="success" message="Ваша заявка на покупку успешно отправлена!"/>
       }
     </div>
   );

@@ -42,7 +42,7 @@ const InternshipRequestForm = (props: InternshipRequestFormProps) => {
       setIsError(true);
       console.log(e);
     }
-  }, [email, fullName, phoneNumber]);
+  }, [close, email, fullName, phoneNumber]);
 
   const disabled = useMemo(
     () => !fullName || !phoneNumber || !email,
@@ -71,7 +71,7 @@ const InternshipRequestForm = (props: InternshipRequestFormProps) => {
         isError && <Alert variant="error" message="Ууупс... Произошла ошибка, повторите позже :(" />
       }
       {
-        isSuccess && <Alert variant="success" message="Ваша заявка на консультацию успешно отправлена!" />
+        isSuccess && <Alert variant="success" message="Сотрудник добавлен!" />
       }
     </div>
   );

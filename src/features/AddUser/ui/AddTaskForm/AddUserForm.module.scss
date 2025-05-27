@@ -1,0 +1,16 @@
+@use "@shared/styles/_mixins.scss" as mixin;
+
+.add_task__form {
+    @include mixin.flex-column;
+    gap: 15px;
+
+    .form__input__wrapper {
+        @include mixin.flex-column;
+        gap: 10px;
+    }
+
+    .add_task__button__wrapper {
+        text-align: center;
+        width: 100%;
+    }
+}

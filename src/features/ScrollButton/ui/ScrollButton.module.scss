@@ -6,6 +6,7 @@
   opacity: 0;
   transition: opacity 0.4s;
   rotate: 180deg;
+  width: 84px;
 
   &.active {
     opacity: 1;

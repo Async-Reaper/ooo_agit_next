@@ -1,0 +1,19 @@
+@use "@shared/styles/_mixins.scss" as mixin;
+
+.header__wrapper {
+  @include mixin.flex-space;
+  padding: 20px;
+  background: var(--color-black-secondary);
+  border-radius: 0 0 20px 20px;
+  margin: 0 0 50px;
+
+  .header__links {
+    @include mixin.flex-row;
+    gap: 40px;
+  }
+
+  .header__auth__control {
+    @include mixin.flex-row;
+    gap: 10px;
+  }
+}
