@@ -20,8 +20,6 @@ const DeleteUserForm = React.memo((props: ConsultationFormProps) => {
   const [error, setError] = useState<string>("");
 
   const onHandleDeleteUser = async () => {
-
-    console.log(userId.toString());
     try {
       setIsLoading(true);
       setError("");

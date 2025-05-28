@@ -1,43 +1,15 @@
 "use client";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useState } from "react";
 import { IUser } from "@entities/User";
 import { UserRole } from "@entities/User/model/types/user";
 import { LogoutButton } from "@features/Logout";
-import { db } from "@main/FirebaseProvider";
 import { Typography } from "@shared/ui";
 import { AppLink } from "@shared/ui/AppLink";
-import { doc, getDoc } from "firebase/firestore";
-import { useRouter, useSearchParams } from "next/navigation";
 
 import cls from "./HeaderAdmin.module.scss";
 
 export const HeaderAdmin = React.memo(() => {
-  const [user, setUser] = useState<IUser>();
-  const userId = localStorage.getItem("userId")!;
-  const router = useRouter();
-  const searchParams = useSearchParams();
-  const userRole = searchParams?.get("role");
-
-  const onHandleUser = useCallback(async () => {
-    try {
-      const userDocRef = doc(db, "users", userId);
-      const userDocSnap = await getDoc(userDocRef);
-      const userData = userDocSnap.data() as IUser; // данные без id
-      setUser(userData);
-    } catch (err) {
-      console.error("Ошибка при загрузке пользователя:", err);
-    }
-  }, [userId]);
-
-  // useEffect(() => {
-  //   if (user?.role === UserRole.ADMIN) {
-  //     router.push("/admin?role=admin");
-  //   }
-  // }, [router, user?.role]);
-  
-  useEffect(() => {
-    onHandleUser();
-  }, [onHandleUser]);
+  const [user] = useState<IUser>(JSON.parse(localStorage.getItem("user")!));
 
   return (
     <div className={cls.header__wrapper}>

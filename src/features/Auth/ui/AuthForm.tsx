@@ -1,8 +1,10 @@
 "use client";
 import React, { useMemo, useState } from "react";
+import { IUser, UserRole } from "@entities/User";
 import { signInWithEmailAndPassword } from "@firebase/auth";
-import { auth } from "@main/FirebaseProvider/config/firebase";
+import { auth, db } from "@main/FirebaseProvider/config/firebase";
 import { Button, Input, Loader, Typography } from "@shared/ui";
+import { doc, getDoc } from "firebase/firestore";
 import { useRouter } from "next/navigation";
 
 import cls from "./AuthForm.module.scss";
@@ -18,14 +20,21 @@ const AuthForm = React.memo(() => {
     setIsLoading(true);
     setError("");
     signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        localStorage.setItem("userId", user.uid);
-        router.push("/admin");
+      .then(async (userCredential) => {
+        const userAuth = userCredential.user;
+        const userDBDocRef = doc(db, "users", userAuth.uid);
+        const userDBDocSnap = await getDoc(userDBDocRef);
+        const userData = userDBDocSnap.data() as IUser; // данные без id
+        localStorage.setItem("userId", userAuth.uid);
+        localStorage.setItem("user", JSON.stringify(userData));
+
+        if (userData.role === UserRole.ADMIN) {
+          router.push("/admin?role=admin");
+        } else {
+          router.push("/admin");
+        }
       })
       .catch((error) => {
-        const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorMessage);
         errorMessage === "Firebase: Error (auth/invalid-email)." && setError("Такого пользователя не существует");

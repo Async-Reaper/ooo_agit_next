@@ -18,6 +18,7 @@ const LogoutForm = React.memo((props: LogoutFormProps) => {
 
   const onHandleLogout =  () => {
     localStorage.removeItem("userId");
+    localStorage.removeItem("user");
     router.push("/admin/login");
     close();
   };
