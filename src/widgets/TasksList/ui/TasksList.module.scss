@@ -36,4 +36,8 @@
     @include mixin.flex-column;
     gap: 5px;
   }
+
+  .tasks__empty__wrapper {
+    margin: 0 auto;
+  }
 }

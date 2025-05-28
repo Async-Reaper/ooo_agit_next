@@ -5,7 +5,7 @@ import Link, { LinkProps } from "next/link";
 
 import cls from "./AppLink.module.scss";
 
-export type AppLinkVariant = "primary" | "secondary" | "primary-green";
+export type AppLinkVariant = "primary" | "secondary" | "primary-green" | "inherit";
 
 interface AppLinkProps extends LinkProps {
   href: string;

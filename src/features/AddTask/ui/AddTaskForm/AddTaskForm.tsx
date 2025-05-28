@@ -21,7 +21,6 @@ const AddTaskForm = React.memo((props: ConsultationFormProps) => {
     close,
   } = props;
 
-
   const [userName, setUserName] = useState<string>("");
   const [userId, setUserId] = useState<string>("");
 
@@ -47,12 +46,20 @@ const AddTaskForm = React.memo((props: ConsultationFormProps) => {
     fetchEmployeesList();
   }, [fetchEmployeesList]);
 
-  const onHandleChangeUser = (event: React.ChangeEvent<HTMLSelectElement>) => {
+  useEffect(() => {
+    if (employeeId) {
+      setUserId(employeeId);
+      const foundUser = employeesList.find(employee => employee.id === employeeId);
+      setUserName(foundUser?.userName || "");
+    }
+  }, [employeeId, employeesList]);
+
+  const onHandleChangeUser = useCallback((event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedUserId = event.target.value;
     setUserId(selectedUserId);
     const foundUser = employeesList.find(employee => employee.id === selectedUserId);
     setUserName(foundUser?.userName || "");
-  };
+  }, [employeeId]);
   
   const onHandleAddTask = async () => {
     try {
@@ -79,15 +86,9 @@ const AddTaskForm = React.memo((props: ConsultationFormProps) => {
   };
 
   const disabled = useMemo(
-    () => !userName || !userId || !taskStatus || !taskName,
-    [userName, userId, taskStatus, taskName],
+    () => !userName || (!userId || !employeeId) || !taskStatus || !taskName,
+    [userName, userId, employeeId, taskStatus, taskName],
   );
-
-  useEffect(() => {
-    if (employeeId) {
-      setUserId(employeeId);
-    }
-  }, [employeeId]);
 
   return (
     <div className={cls.add_task__form}>

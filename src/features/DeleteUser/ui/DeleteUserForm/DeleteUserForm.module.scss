@@ -3,6 +3,7 @@
 .delete_user__form {
     @include mixin.flex-column;
     align-items: center;
+    max-width: 245px;
     width: 100%;
     gap: 10px;
 

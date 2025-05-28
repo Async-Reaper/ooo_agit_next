@@ -3,6 +3,7 @@
 .add_task__form {
     @include mixin.flex-column;
     gap: 15px;
+    max-width: 245px;
 
     .form__input__wrapper {
         @include mixin.flex-column;

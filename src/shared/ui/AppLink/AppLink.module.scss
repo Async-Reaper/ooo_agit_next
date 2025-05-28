@@ -17,6 +17,10 @@
   &.variant {
     transition: all .3s;
 
+    &--inherit {
+      color: inherit;
+    }
+
     &--primary {
       color: var(--color-secondary);
       position: relative;

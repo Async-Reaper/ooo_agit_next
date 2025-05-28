@@ -35,7 +35,7 @@ const DeleteUserForm = React.memo((props: ConsultationFormProps) => {
   return (
     <div className={cls.delete_user__form}>
       <div className={cls.delete_user__title}>
-        <Typography variant="p" bold uppercase noWrap>
+        <Typography variant="p" bold uppercase>
           Вы уверены, что хотите удалить сотрудника?
         </Typography>
       </div>

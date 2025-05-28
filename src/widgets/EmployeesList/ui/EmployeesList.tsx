@@ -56,17 +56,17 @@ export const EmployeesList = React.memo(() => {
                   Все задачи
                 </Typography>
               </AppLink>
-              <AppLink className={classNames(cls.link, {}, [cls.at_work])} href={`/admin?role=admin&employeeId=${employee.id}&tasks=at_work`}>
+              <AppLink className={classNames(cls.link, {}, [cls.at_work])} variant="inherit" href={`/admin?role=admin&employeeId=${employee.id}&tasks=at_work`}>
                 <Typography variant="p">
                   Задачи в работе
                 </Typography>
               </AppLink>
-              <AppLink className={classNames(cls.link, {}, [cls.expired])} href={`/admin?role=admin&employeeId=${employee.id}&tasks=expired`}>
+              <AppLink className={classNames(cls.link, {}, [cls.expired])} variant="inherit" href={`/admin?role=admin&employeeId=${employee.id}&tasks=expired`}>
                 <Typography variant="p">
                   Просроченные задачи
                 </Typography>
               </AppLink>
-              <AppLink className={classNames(cls.link, {}, [cls.finish])} href={`/admin?role=admin&employeeId=${employee.id}&tasks=finish`}>
+              <AppLink className={classNames(cls.link, {}, [cls.finish])} variant="inherit" href={`/admin?role=admin&employeeId=${employee.id}&tasks=finish`}>
                 <Typography variant="p">
                   Выполненые задачи
                 </Typography>

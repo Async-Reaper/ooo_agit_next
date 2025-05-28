@@ -6,7 +6,7 @@ import { UpdateTaskButton } from "@features/UpdateTask";
 import { db } from "@main/FirebaseProvider";
 import { classNames } from "@shared/libs/classNames/classNames";
 import { Loader, Typography } from "@shared/ui";
-import { collection, onSnapshot, query, Timestamp, where } from "firebase/firestore";
+import { collection, onSnapshot, Query, query, Timestamp, where } from "firebase/firestore";
 import { useSearchParams } from "next/navigation";
 
 import cls from "./TasksList.module.scss";
@@ -22,7 +22,7 @@ export const TasksList = React.memo(() => {
   const employeeId = searchParams?.get("employeeId");
   const nowTimestamp = Timestamp.now();
 
-  const request = () => {
+  const request = (): Query => {
     if (userRole === UserRole.ADMIN && employeeId && !statusTask) {
       return query(collection(db, "tasks"),
         where("userId", "==", employeeId),
@@ -74,7 +74,7 @@ export const TasksList = React.memo(() => {
     return query(collection(db, "tasks"), where("userId", "==", localStorage.getItem("userId")));
   };
 
-  const fetchTasksList = useCallback(async () => {
+  const fetchTasksList = useCallback(() => {
     setIsLoading(true);
 
     const unsubscribe = onSnapshot(request(), (snapshot) => {
@@ -115,72 +115,78 @@ export const TasksList = React.memo(() => {
       {
         isLoading 
           ? <Loader />
-          : tasksList.map((task) =>
-            <div key={task.id} className={cls.task__wrapper}>
-              <div className={cls.task__name}>
-                <Typography variant="p">
-                  {task.name}
-                </Typography>
-              </div>
-              <div className={cls.task__info}>
-                {
-                  (task.status === TaskStatus.AT_WORK && (Number((Date.now() / 1000)) < task.endDate.seconds)) &&
-                  <div className={classNames(cls.task__status, {}, [cls.at__work])}>
-                    <Typography variant="span">
-                      В работе
-                    </Typography>
-                  </div>
-                }
-                {
-                  task.status === TaskStatus.FINISH &&
-                  <div className={classNames(cls.task__status, {}, [cls.finish])}>
-                    <Typography variant="span">
-                      Завершена
-                    </Typography>
-                  </div>
-                }
-                {
-                  ((Number((Date.now() / 1000)) > task.endDate.seconds) && task.status !== TaskStatus.FINISH) &&
-                  <div className={classNames(cls.task__status, {}, [cls.expired])}>
-                    <Typography variant="span">
-                      Просрочено
-                    </Typography>
-                  </div>
-                }
-                <div>
-                  <Typography>
-                    Исполнитель: {task.userName}
+          : tasksList.length === 0 ?
+            <div className={cls.tasks__empty__wrapper}>
+              <Typography variant="h1" uppercase>
+                Задач нет
+              </Typography>
+            </div>
+            : tasksList.map((task) =>
+              <div key={task.id} className={cls.task__wrapper}>
+                <div className={cls.task__name}>
+                  <Typography variant="p">
+                    {task.name}
                   </Typography>
                 </div>
-                <div className={cls.task__dates}>
+                <div className={cls.task__info}>
+                  {
+                    (task.status === TaskStatus.AT_WORK && (Number((Date.now() / 1000)) < task.endDate.seconds)) &&
+                    <div className={classNames(cls.task__status, {}, [cls.at__work])}>
+                      <Typography variant="span">
+                        В работе
+                      </Typography>
+                    </div>
+                  }
+                  {
+                    task.status === TaskStatus.FINISH &&
+                    <div className={classNames(cls.task__status, {}, [cls.finish])}>
+                      <Typography variant="span">
+                        Завершена
+                      </Typography>
+                    </div>
+                  }
+                  {
+                    ((Number((Date.now() / 1000)) > task.endDate.seconds) && task.status !== TaskStatus.FINISH) &&
+                    <div className={classNames(cls.task__status, {}, [cls.expired])}>
+                      <Typography variant="span">
+                        Просрочено
+                      </Typography>
+                    </div>
+                  }
                   <div>
                     <Typography>
-                      Дата создания: {formatDate(task.createdAt.seconds)}
+                      Исполнитель: {task.userName}
                     </Typography>
                   </div>
+                  <div className={cls.task__dates}>
+                    <div>
+                      <Typography>
+                        Дата создания: {formatDate(task.createdAt.seconds)}
+                      </Typography>
+                    </div>
+                    {
+                      task.dateFinish
+                        ? <div>
+                          <Typography>
+                            Выполнено: {formatDate(task.endDate.seconds)}
+                          </Typography>
+                        </div>
+                        : <div>
+                          <Typography>
+                            Выполнить до: {formatDate(task.endDate.seconds)}
+                          </Typography>
+                        </div>
+                    }
+                  </div>
                   {
-                    task.dateFinish
-                      ? <div>
-                        <Typography>
-                          Выполнено: {formatDate(task.endDate.seconds)}
-                        </Typography>
-                      </div>
-                      : <div>
-                        <Typography>
-                          Выполнить до: {formatDate(task.endDate.seconds)}
-                        </Typography>
-                      </div>
+                    (userRole !== UserRole.ADMIN && task.status !== TaskStatus.FINISH) &&
+                    <div>
+                      <UpdateTaskButton taskId={task.id} />
+                    </div>
                   }
                 </div>
-                {
-                  (userRole !== UserRole.ADMIN && task.status !== TaskStatus.FINISH) &&
-                  <div>
-                    <UpdateTaskButton taskId={task.id} />
-                  </div>
-                }
               </div>
-            </div>
-          )
+            )
       }
     </div>
   );
