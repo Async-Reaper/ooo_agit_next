@@ -1,0 +1,20 @@
+@use "@shared/styles/_mixins.scss" as mixin;
+
+.delete_user__form {
+    @include mixin.flex-column;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+
+    .action__wrapper {
+        @include mixin.flex-center;
+        width: 100%;
+    }
+
+    .delete_user__button__wrapper {
+        @include mixin.flex-row;
+        gap: 10px;
+        text-align: center;
+        width: 100%;
+    }
+}

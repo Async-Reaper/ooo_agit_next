@@ -19,15 +19,44 @@ export const TasksList = React.memo(() => {
   const searchParams = useSearchParams();
   const userRole = searchParams?.get("role");
   const statusTask = searchParams?.get("tasks");
+  const employeeId = searchParams?.get("employeeId");
+  const nowTimestamp = Timestamp.now();
 
   const request = () => {
+    if (userRole === UserRole.ADMIN && employeeId && !statusTask) {
+      return query(collection(db, "tasks"),
+        where("userId", "==", employeeId),
+      );
+    }
+
+    if (userRole === UserRole.ADMIN && employeeId && statusTask === TaskStatus.AT_WORK) {
+      return query(collection(db, "tasks"),
+        where("userId", "==", employeeId),
+        where("status", "==", statusTask),
+        where("endDate", ">", nowTimestamp)
+      );
+    }
+
+    if (userRole === UserRole.ADMIN && employeeId && statusTask === TaskStatus.FINISH) {
+      return query(collection(db, "tasks"),
+        where("userId", "==", employeeId),
+        where("status", "==", statusTask),
+      );
+    }
+
+    if (userRole === UserRole.ADMIN && employeeId && statusTask === "expired") {
+      return query(collection(db, "tasks"),
+        where("userId", "==", employeeId),
+        where("status", "!=", TaskStatus.FINISH),
+        where("endDate", "<", nowTimestamp)
+      );
+    }
+
     if (userRole === UserRole.ADMIN) {
       return query(collection(db, "tasks"));
     }
 
     if (userRole !== UserRole.ADMIN && statusTask === TaskStatus.AT_WORK) {
-      const nowTimestamp = Timestamp.now();
-
       return query(collection(db, "tasks"),
         where("userId", "==", localStorage.getItem("userId")),
         where("status", "==", statusTask),

@@ -36,6 +36,9 @@
       "@features/*": [
         "./src/features/*"
       ],
+      "@libs/*": [
+        "./src/libs/*"
+      ],
       "@pagesTemplate/*": [
         "./src/pagesTemplate/*"
       ],

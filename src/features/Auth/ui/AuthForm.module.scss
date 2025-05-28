@@ -2,7 +2,7 @@
 
 .auth__form {
   @include mixin.flex-column;
-
+  align-items: center;
   gap: 10px;
 
   .auth__button__wrapper {

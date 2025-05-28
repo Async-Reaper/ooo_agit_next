@@ -10,11 +10,13 @@ import cls from "./AuthForm.module.scss";
 const AuthForm = React.memo(() => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [error, setError] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const router = useRouter();
 
   const onHandleAuth = () => {
     setIsLoading(true);
+    setError("");
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
@@ -25,6 +27,9 @@ const AuthForm = React.memo(() => {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+        console.log(errorMessage);
+        errorMessage === "Firebase: Error (auth/invalid-email)." && setError("Такого пользователя не существует");
+        errorMessage === "Firebase: Error (auth/invalid-credential)." && setError("Неправильный пароль");
       });
     setIsLoading(false);
   };
@@ -37,7 +42,7 @@ const AuthForm = React.memo(() => {
   return (
     <div className={cls.auth__form}>
       <Input fullWidth placeholder="Email" value={email} onChange={setEmail}/>
-      <Input fullWidth placeholder="Пароль" value={password} onChange={setPassword}/>
+      <Input type="password" fullWidth placeholder="Пароль" value={password} onChange={setPassword}/>
       <div className={cls.auth__button__wrapper}>
         {
           isLoading
@@ -51,6 +56,14 @@ const AuthForm = React.memo(() => {
             )
         }
       </div>
+      {
+        error &&
+        <div>
+          <Typography variant="span" bold color="red-error">
+            * {error}
+          </Typography>
+        </div>
+      }
     </div>
   );
 });

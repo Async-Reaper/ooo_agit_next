@@ -11,3 +11,4 @@ type DesignSystemColors =
 | "gray-dark"
 | "green-light"
 | "green-dark"
+| "red-error"

@@ -5,6 +5,7 @@ import { setDoc } from "@firebase/firestore";
 import { db } from "@main/FirebaseProvider";
 import { Button, Input, Loader, Typography } from "@shared/ui";
 import { addDoc, collection, getDocs, query, where } from "firebase/firestore";
+import { useSearchParams } from "next/navigation";
 
 import cls from "./AddTaskForm.module.scss";
 
@@ -30,7 +31,9 @@ const AddTaskForm = React.memo((props: ConsultationFormProps) => {
   const [isLoadingEmployeesList, setIsLoadingEmployeesList] = useState<boolean>(false);
   const [endDate, setEndDate] = useState<string>("");
   const [employeesList, setEmployeesList] = useState<IUser[]>([]);
-
+  const searchParams = useSearchParams();
+  const employeeId = searchParams?.get("employeeId");
+  
   const fetchEmployeesList = useCallback(async () => {
     setIsLoadingEmployeesList(true);
     const responseEmployees = query(collection(db, "users"), where("role", "==", "employee"));
@@ -71,6 +74,7 @@ const AddTaskForm = React.memo((props: ConsultationFormProps) => {
       console.log(e);
     } finally {
       setIsLoadingAddTask(false);
+      setUserId("");
     }
   };
 
@@ -78,6 +82,12 @@ const AddTaskForm = React.memo((props: ConsultationFormProps) => {
     () => !userName || !userId || !taskStatus || !taskName,
     [userName, userId, taskStatus, taskName],
   );
+
+  useEffect(() => {
+    if (employeeId) {
+      setUserId(employeeId);
+    }
+  }, [employeeId]);
 
   return (
     <div className={cls.add_task__form}>
@@ -91,7 +101,7 @@ const AddTaskForm = React.memo((props: ConsultationFormProps) => {
         <Input id="endDate" value={endDate} onChange={setEndDate} fullWidth type="datetime-local"/>
       </div>
       {
-        isLoadingEmployeesList
+        isLoadingEmployeesList && !employeeId
           ? <Loader/>
           : <div className={cls.form__input__wrapper}>
             <label htmlFor="selectUser">
@@ -125,12 +135,6 @@ const AddTaskForm = React.memo((props: ConsultationFormProps) => {
             )
         }
       </div>
-      {/*{*/}
-      {/*  isError && <Alert variant="error" message="Ууупс... Произошла ошибка, повторите позже :("/>*/}
-      {/*}*/}
-      {/*{*/}
-      {/*  isSuccess && <Alert variant="success" message="Задача добавлена!"/>*/}
-      {/*}*/}
     </div>
   );
 });

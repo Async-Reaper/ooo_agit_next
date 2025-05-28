@@ -3,14 +3,14 @@ import { Modal } from "@shared/ui/Modal/Modal";
 
 import cls from "./AddUserModal.module.scss";
 
-import { AddUserFormLazy as AddUserForm } from "../AddTaskForm/AddUserForm.lazy";
+import { AddUserFormLazy as AddUserForm } from "../AddUserForm/AddUserForm.lazy";
 
-interface AddTaskModalProps {
+interface AddUserModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
-export const AddUserModal = React.memo(({ isOpen, onClose }: AddTaskModalProps) => {
+export const AddUserModal = React.memo(({ isOpen, onClose }: AddUserModalProps) => {
   return (
     <Modal
       isOpen={isOpen}

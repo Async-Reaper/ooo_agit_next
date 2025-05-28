@@ -24,21 +24,27 @@ const AddUserForm = React.memo((props: ConsultationFormProps) => {
   const [password, setPassword] = useState<string>("");
   const [repeatPassword, setRepeatPassword] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string>("");
 
-  const onHandleUserTask = async () => {
+  const onHandleAddUser = async () => {
     try {
       setIsLoading(true);
+      setError("");
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      const user = await userCredential.user;
-      await setDoc(doc(db, "users", user.uid), {
-        id: user.uid,
-        userName,
-        email,
-        role: UserRole.EMPLOYEE
-      } as IUser);
-      close();
-    } catch (e) {
-      console.log(e);
+      const user = userCredential.user;
+      if (user) {
+        await setDoc(doc(db, "users", user.uid), {
+          id: user.uid,
+          userName,
+          email,
+          role: UserRole.EMPLOYEE
+        } as IUser);
+        close();
+      }
+    } catch (e: unknown) {
+      if (e instanceof Error) {
+        e.message === "Firebase: Error (auth/email-already-in-use)." && setError("Пользователь с таким email уже существует.");
+      }
     } finally {
       setIsLoading(false);
     }
@@ -56,17 +62,17 @@ const AddUserForm = React.memo((props: ConsultationFormProps) => {
   );
 
   return (
-    <div className={cls.add_task__form}>
+    <div className={cls.add_user__form}>
       <Input fullWidth placeholder="Фамилия и имя:" value={userName} onChange={setUserName} />
       <Input fullWidth placeholder="Email:" value={email} onChange={setEmail} />
-      <Input fullWidth placeholder="Пароль:" value={password} onChange={setPassword} />
-      <Input fullWidth placeholder="Повторите пароль:" value={repeatPassword} onChange={setRepeatPassword} />
-      <div className={cls.add_task__button__wrapper}>
+      <Input type="password" fullWidth placeholder="Пароль:" value={password} onChange={setPassword} />
+      <Input type="password" fullWidth placeholder="Повторите пароль:" value={repeatPassword} onChange={setRepeatPassword} />
+      <div className={cls.add_user__button__wrapper}>
         {
           isLoading
             ? <Loader/>
             : (
-              <Button fullWidth variant="outlined" disabled={disabled} onClick={onHandleUserTask}>
+              <Button fullWidth variant="outlined" disabled={disabled} onClick={onHandleAddUser}>
                 <Typography variant="span" uppercase>
                   отправить
                 </Typography>
@@ -74,6 +80,14 @@ const AddUserForm = React.memo((props: ConsultationFormProps) => {
             )
         }
       </div>
+      {
+        error &&
+        <div>
+          <Typography variant="span" bold color="red-error">
+            * {error}
+          </Typography>
+        </div>
+      }
       {/*{*/}
       {/*  isError && <Alert variant="error" message="Ууупс... Произошла ошибка, повторите позже :("/>*/}
       {/*}*/}

@@ -7,7 +7,7 @@ import { db } from "@main/FirebaseProvider";
 import { Typography } from "@shared/ui";
 import { AppLink } from "@shared/ui/AppLink";
 import { doc, getDoc } from "firebase/firestore";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 import cls from "./HeaderAdmin.module.scss";
 
@@ -15,6 +15,8 @@ export const HeaderAdmin = React.memo(() => {
   const [user, setUser] = useState<IUser>();
   const userId = localStorage.getItem("userId")!;
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const userRole = searchParams?.get("role");
 
   const onHandleUser = useCallback(async () => {
     try {
@@ -27,11 +29,11 @@ export const HeaderAdmin = React.memo(() => {
     }
   }, [userId]);
 
-  useEffect(() => {
-    if (user?.role === UserRole.ADMIN) {
-      router.push("/admin?role=admin");
-    }
-  }, [router, user?.role]);
+  // useEffect(() => {
+  //   if (user?.role === UserRole.ADMIN) {
+  //     router.push("/admin?role=admin");
+  //   }
+  // }, [router, user?.role]);
   
   useEffect(() => {
     onHandleUser();
