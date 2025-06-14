@@ -58,8 +58,8 @@ const AddTaskForm = React.memo((props: ConsultationFormProps) => {
     const selectedUserId = event.target.value;
     setUserId(selectedUserId);
     const foundUser = employeesList.find(employee => employee.id === selectedUserId);
-    setUserName(foundUser?.userName || "");
-  }, [employeeId]);
+    foundUser && setUserName(foundUser?.userName);
+  }, [employeesList]);
   
   const onHandleAddTask = async () => {
     try {
@@ -86,8 +86,8 @@ const AddTaskForm = React.memo((props: ConsultationFormProps) => {
   };
 
   const disabled = useMemo(
-    () => !userName || (!userId || !employeeId) || !taskStatus || !taskName,
-    [userName, userId, employeeId, taskStatus, taskName],
+    () => !userName || !userId || !taskStatus || !taskName || !endDate,
+    [userName, userId, employeeId, taskStatus, taskName, endDate],
   );
 
   return (
