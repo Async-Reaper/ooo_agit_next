@@ -94,6 +94,15 @@ export const FooterLinks = React.memo(() => {
             Деятельность
           </Typography>
         </AppLink>
+        <AppLink
+          href="/admin"
+          className={cls.footer__link}
+          variant="secondary"
+        >
+          <Typography variant="p" noWrap>
+            Панель управления
+          </Typography>
+        </AppLink>
       </div>
     </div>
   );
