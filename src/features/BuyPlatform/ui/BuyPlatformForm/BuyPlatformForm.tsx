@@ -77,9 +77,6 @@ const BuyPlatformForm = React.memo((props: ConsultationFormProps) => {
       {
         isError && <Alert variant="error" message="Ууупс... Произошла ошибка, повторите позже :("/>
       }
-      {
-        isSuccess && <Alert variant="success" message="Ваша заявка на покупку успешно отправлена!"/>
-      }
     </div>
   );
 });

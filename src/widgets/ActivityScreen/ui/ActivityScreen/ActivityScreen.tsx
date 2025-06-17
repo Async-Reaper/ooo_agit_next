@@ -11,7 +11,6 @@ import { ActivityList } from "../ActivityList/ActivityList";
 
 export const ActivityScreen = React.memo(() => {
   const { ref, isVisible } = useViewBox(0.1);
-
   return (
     <section
       id="activity"

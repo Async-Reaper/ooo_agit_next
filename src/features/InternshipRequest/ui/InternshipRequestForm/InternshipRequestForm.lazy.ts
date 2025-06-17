@@ -1,3 +1,4 @@
 import { lazy } from "react";
 
-export const InternshipRequestFormLazy = lazy(() => import("./InternshipRequestForm"));
+export const InternshipRequestFormLazy = lazy(() =>
+  import("./InternshipRequestForm"));

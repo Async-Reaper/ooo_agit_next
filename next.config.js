@@ -2,6 +2,7 @@ module.exports = {
    eslint: {
       ignoreDuringBuilds: true,
    },
+   productionBrowserSourceMaps: false,
 
    images: {
       domains: ["static-agit.onrender.com"],

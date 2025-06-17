@@ -131,10 +131,8 @@ export const NewsScreen = React.memo(() => {
         </motion.div>
         <ul className={cls.news__list}>
           {isLoadingInitialData
-            ?
-            new Array(4).fill("").map((_, index) => <Skeleton className={cls.skeleton} key={index} border={5}/>)
-            :
-            news.map((newsItem) => (
+            ? new Array(4).fill("").map((_, index) => <Skeleton className={cls.skeleton} key={index} border={5}/>)
+            : news.map((newsItem) => (
               <NewsItem key={newsItem.id} newsItem={newsItem}/>
             ))
           }

@@ -30,7 +30,6 @@ export const VacanciesList = React.memo(() => {
     fetchVacanciesList();
   }, [fetchVacanciesList]);
 
-
   return (
     <div className={cls.vacancies__list__wrapper}>
       {isLoading

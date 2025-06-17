@@ -73,7 +73,6 @@
     &:hover {
       box-shadow: 0 0 10px var(--color-primary);
     }
-
     .vacancy__name {
       padding: 15px 12px;
       width: 100%;
@@ -85,5 +84,4 @@
       @include mixin.adaptive("height", 141, 95);
     }
   }
-
 }

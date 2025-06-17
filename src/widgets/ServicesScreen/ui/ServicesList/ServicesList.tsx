@@ -5,16 +5,16 @@ import { animate, stagger } from "motion";
 
 import cls from "./ServicesList.module.scss";
 
+interface ServicesListProps {
+  isVisible: boolean;
+}
+
 interface IService {
   id: number;
   iconName: IconName;
   serviceName: string;
   serviceInfo: string;
   link: string;
-}
-
-interface ServicesListProps {
-  isVisible: boolean;
 }
 
 export const ServicesList = React.memo(({ isVisible }: ServicesListProps) => {

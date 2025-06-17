@@ -81,9 +81,6 @@ const VacancyRequestForm = React.memo((props: VacancyRequestFormProps) => {
       {
         isError && <Alert variant="error" message="Ууупс... Произошла ошибка, повторите позже :(" />
       }
-      {
-        isSuccess && <Alert variant="success" message="Ваша заявка на вакансию успешно отправлена!" />
-      }
     </div>
   );
 });
