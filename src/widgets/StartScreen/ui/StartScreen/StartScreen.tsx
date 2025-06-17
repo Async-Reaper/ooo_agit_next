@@ -7,8 +7,6 @@ import { motion } from "motion/react";
 
 import cls from "./StartScreen.module.scss";
 
-// import { AnimationLazy as Animation } from "../Animation/Animation.lazy";
-
 export const StartScreen = React.memo(() => {
   const [isMounted, setIsMounted] = useState(false);
 
