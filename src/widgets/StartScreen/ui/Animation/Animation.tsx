@@ -6,7 +6,7 @@ import cls from "./Animation.module.scss";
 
 import StartAnimation from "../../animation/animation.json";
 
-export const Animation = React.memo(() => {
+const Animation = React.memo(() => {
   const options = {
     animationData: StartAnimation,
     loop: true,
@@ -20,3 +20,6 @@ export const Animation = React.memo(() => {
     </div>
   );
 });
+export default Animation;
+
+Animation.displayName = "Animation";
