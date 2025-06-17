@@ -7,6 +7,8 @@ import { motion } from "motion/react";
 
 import cls from "./StartScreen.module.scss";
 
+import { AnimationLazy as Animation } from "../Animation/Animation.lazy";
+
 export const StartScreen = React.memo(() => {
   const [isMounted, setIsMounted] = useState(false);
 
@@ -56,7 +58,7 @@ export const StartScreen = React.memo(() => {
             </motion.div>
           </div>
           <div className={cls.start__animation__wrapper}>
-            {/*<Animation/>*/}
+            <Animation/>
           </div>
         </div>
       </Container>
