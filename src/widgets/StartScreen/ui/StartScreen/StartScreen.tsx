@@ -58,7 +58,7 @@ export const StartScreen = React.memo(() => {
             </motion.div>
           </div>
           <div className={cls.start__animation__wrapper}>
-            <Animation/>
+            {/*<Animation/>*/}
           </div>
         </div>
       </Container>
