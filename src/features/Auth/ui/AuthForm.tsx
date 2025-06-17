@@ -1,5 +1,5 @@
 "use client";
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { IUser, UserRole } from "@entities/User";
 import { signInWithEmailAndPassword } from "@firebase/auth";
 import { auth, db } from "@main/FirebaseProvider/config/firebase";
@@ -14,7 +14,16 @@ const AuthForm = React.memo(() => {
   const [password, setPassword] = useState<string>("");
   const [error, setError] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
+
   const router = useRouter();
+
+  useEffect(() => {
+    if (localStorage.getItem("userId")) {
+      router.push("/admin/");
+    } else {
+      router.push("/admin/login");
+    }
+  }, [router]);
 
   const onHandleAuth = () => {
     setIsLoading(true);
