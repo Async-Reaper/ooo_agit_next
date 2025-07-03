@@ -23,23 +23,31 @@
   }
 
   .news__wrapper {
-    max-width: 1800px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 20px;
 
     .news__title__wrapper {
       position: relative;
       width: max-content;
+      margin: 0 0 40px;
+
+      &:before {
+        position: absolute;
+        content: "";
+        left: -160px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 150px;
+        height: 25px;
+        background: var(--color-green-light);
+      }
     }
 
-    @include mixin.adaptive("gap", 50, 20);
     @include mixin.flex-column;
 
     .news__list {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(auto, 350px));
-      justify-content: center;
+      justify-content: space-between;
+      @include mixin.adaptive("margin-bottom", 50, 20);
       gap: 50px;
 
       .skeleton {

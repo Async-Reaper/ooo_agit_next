@@ -3,8 +3,8 @@
 $marginRight: 190;
 
 .internship__wrapper {
+  @include mixin.adaptive("margin-block", 80, 40);
   position: relative;
-  @include mixin.adaptive("padding-block", 90, 40);
 
   &:before {
     position: absolute;
@@ -21,17 +21,19 @@ $marginRight: 190;
   .internship__title {
     @include mixin.flex-column;
     gap: 5px;
+    position: relative;
+    margin: 0 0 40px;
   }
 
   .internship {
     @include mixin.flex-space;
     align-items: self-start;
     gap: 60px;
+    @include mixin.adaptive("margin-bottom", 40, 30);
   }
 
   .internship__content {
     @include mixin.flex-column;
-    @include mixin.adaptive("gap", 60, 30);
   }
 
   .stage_internship__list {

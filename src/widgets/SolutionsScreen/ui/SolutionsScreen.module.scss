@@ -3,7 +3,7 @@
 .solutions {
   position: relative;
   overflow: hidden;
-  min-height: 550px;
+  @include mixin.adaptive("margin-top", 80, 40);
 
   &:after {
     position: absolute;
@@ -16,19 +16,6 @@
     filter: blur(100px);
   }
 
-  @include mixin.adaptive("padding-top", 80, 30);
-
-  @include mixin.desktop-xl {
-    &:before {
-      position: absolute;
-      content: "";
-      top: 135px;
-      width: 150px;
-      height: 25px;
-      background: var(--color-green-light);
-    }
-  }
-
   .solutions__image {
     position: absolute;
     right: 0;
@@ -38,6 +25,11 @@
     background-repeat: no-repeat;
     @include mixin.adaptive("width", 121, 56);
     @include mixin.adaptive("height", 189, 88);
+
+    @include mixin.desktop-xxl {
+      width: 121px;
+      height: 189px;
+    }
   }
 
   .solutions__wrapper {
@@ -46,7 +38,6 @@
     @include mixin.adaptive("gap", 50, 20);
     border-radius: 20px;
 
-    @include mixin.adaptive("padding-block", 40, 20);
     @include mixin.adaptive("gap", 50, 20);
 
     @include mixin.tablets {
@@ -61,6 +52,19 @@
       z-index: 9;
       width: max-content;
       margin: 0 0 40px;
+
+      @include mixin.desktop-xl {
+        &:before {
+          position: absolute;
+          content: "";
+          left: -160px;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 150px;
+          height: 25px;
+          background: var(--color-green-light);
+        }
+      }
     }
 
     .solutions__list {
@@ -68,10 +72,9 @@
       display: flex;
       flex-direction: row;
       justify-content: center;
-      align-items: center;
+      align-items: stretch;
       flex-wrap: wrap;
       @include mixin.adaptive("gap", 15, 15);
-      padding: 0 20px;
 
       @include mixin.laptop {
         flex-wrap: nowrap;

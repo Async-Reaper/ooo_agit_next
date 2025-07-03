@@ -23,8 +23,8 @@ export const ActivityScreen = React.memo(() => {
         transition={{ type: "spring", duration: 2 }}
         className={cls.activity__wrapper}
       >
-        <div className={cls.activity__header}>
-          <Container>
+        <Container>
+          <div className={cls.activity__header}>
             <motion.div
               initial={{ y: -100 }}
               animate={isVisible && { y: 0 }}
@@ -39,14 +39,14 @@ export const ActivityScreen = React.memo(() => {
                 <span>автоматизации</span>
               </Typography>
             </motion.div>
-          </Container>
-          <div className={cls.activity__content}>
-            <div className={cls.activity__background}>
-              <img src="/activity/activity-background.webp" className={cls.activity__background__img}/>
+            <div className={cls.activity__content}>
+              <div className={cls.activity__background}>
+                <img src="/activity/activity-background.webp" className={cls.activity__background__img}/>
+              </div>
+              <ActivityList isVisible={isVisible}/>
             </div>
-            <ActivityList isVisible={isVisible}/>
           </div>
-        </div>
+        </Container>
       </motion.div>
     </section>
   );

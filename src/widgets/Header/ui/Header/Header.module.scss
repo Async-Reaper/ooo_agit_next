@@ -1,7 +1,9 @@
 @use "@shared/styles/_mixins.scss" as mixin;
 
 .header {
-  top: 0;
+  position: relative;
+  max-width: 2160px;
+  margin: 0 auto;
   width: 100%;
   height: 100%;
   z-index: 99;
@@ -24,13 +26,17 @@
       @include mixin.adaptive("top", -35, 25);
       background-image: url("/header/header-background.svg");
     }
+
+    @include mixin.desktop-xxl {
+      top: 0;
+    }
   }
 
   &:after {
     position: absolute;
     content: '';
     top: 0;
-    right: 0;
+    right: -4px;
     background-image: url("/header/logo-background-mobile.svg");
     background-repeat: no-repeat;
     background-size: contain;
@@ -40,6 +46,10 @@
     @include mixin.laptop {
       background-image: url("/header/logo-background.svg");
       @include mixin.adaptive("width", 650, 230);
+    }
+
+    @include mixin.desktop-xxl {
+      width: 650px;
     }
   }
 

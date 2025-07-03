@@ -2,20 +2,7 @@
 
 .cases {
   position: relative;
-  @include mixin.adaptive("margin-top", 70, 35);
-  @include mixin.adaptive("margin-bottom", 80, 15);
-
-  @include mixin.desktop {
-    &:before {
-      position: absolute;
-      content: "";
-      top: 6px;
-      width: 150px;
-      height: 25px;
-      background: var(--color-primary);
-      opacity: 50%;
-    }
-  }
+  @include mixin.adaptive("margin-top", 80, 40);
 
   &:after {
     position: absolute;
@@ -30,6 +17,20 @@
 
   .cases__title__wrapper {
     margin: 0 0 50px;
+    position: relative;
+
+    @include mixin.desktop {
+      &:before {
+        position: absolute;
+        content: "";
+        left: -160px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 150px;
+        height: 25px;
+        background: var(--color-green-light);
+      }
+    }
   }
 
   .buttons__group {

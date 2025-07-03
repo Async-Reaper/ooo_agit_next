@@ -68,25 +68,25 @@ export const SolutionsScreen = React.memo(() => {
               Занимаемся?
             </Typography>
           </motion.div>
+          <ul className={cls.solutions__list}>
+            {
+              solutions.map((solution) => (
+                <li
+                  key={solution.id}
+                  className={cls.solution__item}
+                >
+                  <Icon name={solution.icon} size={86} color="white-primary"/>
+                  <div className={cls.solution__item__text}>
+                    <Typography variant="p" align="left">
+                      {solution.text}
+                    </Typography>
+                  </div>
+                </li>
+              ))
+            }
+          </ul>
         </Container>
-        <ul className={cls.solutions__list}>
-          {
-            solutions.map((solution) => (
-              <li
-                key={solution.id}
-                className={cls.solution__item}
-              >
-                <Icon name={solution.icon} size={86} color="white-primary" />
-                <div className={cls.solution__item__text}>
-                  <Typography variant="p" align="left">
-                    {solution.text}
-                  </Typography>
-                </div>
-              </li>
-            ))
-          }
-        </ul>
-        <img src="/gear-solutions.webp" className={cls.solutions__image} />
+        <img src="/gear-solutions.webp" className={cls.solutions__image}/>
       </motion.div>
     </section>
   );

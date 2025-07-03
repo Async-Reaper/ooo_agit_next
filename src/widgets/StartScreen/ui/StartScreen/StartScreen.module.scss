@@ -26,7 +26,6 @@
       @include mixin.flex-column;
       align-items: self-start;
       @include mixin.adaptive("gap", 30, 15);
-      @include mixin.adaptive("padding-block", 60, 30);
     }
 
     .start__content__title {
@@ -64,22 +63,6 @@
         height: 600px;
         width: 800px;
       }
-    }
-  }
-
-  .start__background {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: max-content;
-    height: 100%;
-    z-index: -1;
-
-    img {
-      position: relative;
-      height: 100%;
-      width: max-content;
-      object-fit: contain;
     }
   }
 }

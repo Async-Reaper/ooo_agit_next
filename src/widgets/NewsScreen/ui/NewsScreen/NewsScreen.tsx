@@ -3,6 +3,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import { db } from "@main/FirebaseProvider";
 import { useViewBox } from "@shared/hooks";
 import { Button, Typography } from "@shared/ui";
+import Container from "@shared/ui/Container/Container";
 import { Skeleton } from "@shared/ui/Skeleton";
 import { collection, DocumentData, getDocs, limit, orderBy, query, startAfter } from "firebase/firestore";
 import { motion } from "framer-motion";
@@ -113,7 +114,7 @@ export const NewsScreen = React.memo(() => {
       animate={{ opacity: 1 }}
       className={cls.news}
     >
-      <div className={cls.news__wrapper}>
+      <Container className={cls.news__wrapper}>
         <motion.div
           initial={{ y: 1000, opacity: 0 }}
           animate={isVisible && { y: 0, opacity: 1 }}
@@ -125,7 +126,7 @@ export const NewsScreen = React.memo(() => {
           }}
           className={cls.news__title__wrapper}
         >
-          <Typography variant="h1" uppercase>
+          <Typography variant="h2" uppercase>
             Новости от нас
           </Typography>
         </motion.div>
@@ -147,7 +148,7 @@ export const NewsScreen = React.memo(() => {
             </Typography>
           </Button>
         </div>
-      </div>
+      </Container>
     </motion.section>
   );
 });

@@ -12,6 +12,10 @@ $footerHeight: 175;
     #{$property}: calc($size + ($maxSize - $minSize) * ((100vw - $minScreenPx) / ($maxContainer - $minScreen)));
 }
 
+@function em($px) {
+    @return $px / 16 + 0em;
+}
+
 @mixin phones-xs {
     @media screen and (min-width: size.$xs) {
         @content;
@@ -50,6 +54,12 @@ $footerHeight: 175;
 
 @mixin desktop-xl {
     @media screen and (min-width: size.$xxl) {
+        @content;
+    }
+}
+
+@mixin desktop-xxl {
+    @media screen and (min-width: size.$xxxl) {
         @content;
     }
 }

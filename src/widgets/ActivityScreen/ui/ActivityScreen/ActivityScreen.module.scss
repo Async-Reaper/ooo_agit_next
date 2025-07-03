@@ -3,18 +3,8 @@
 .activity {
   position: relative;
   z-index: 1;
-  @include mixin.adaptive("padding-block", 90, 50);
+  @include mixin.adaptive("margin-block", 80, 40);
 
-  @include mixin.desktop-xl {
-    &:before {
-      position: absolute;
-      content: "";
-      top: 100px;
-      width: 150px;
-      height: 25px;
-      background: var(--color-green-light);
-    }
-  }
   span {
     color: var(--color-primary);
   }
@@ -32,8 +22,8 @@
     }
 
     .activity__content {
-      @include mixin.flex-space;
-
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       @include mixin.desktop {
         flex-direction: row;
       }
@@ -56,17 +46,6 @@
         filter: blur(400px);
         z-index: -1;
       }
-
-      &:after {
-        position: absolute;
-        content: "";
-        right: -25px;
-        bottom: -12px;
-        background-image: url("/activity/activity-background-line.svg");
-        background-repeat: no-repeat;
-        width: 103%;
-        height: 285px;
-      }
       
       @include mixin.laptop {
         display: block;
@@ -75,17 +54,25 @@
           width: 100%;
         }
       }
-
-      @include mixin.desktop {
-        img {
-          width: max-content;
-        }
-      }
     }
 
     .activity__title {
+      position: relative;
       color: var(--color-white-primary);
       margin: 0 0 40px;
+
+      @include mixin.desktop-xl {
+        &:before {
+          position: absolute;
+          content: "";
+          left: -160px;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 150px;
+          height: 25px;
+          background: var(--color-green-light);
+        }
+      }
     }
 
     hr {

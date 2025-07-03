@@ -69,7 +69,7 @@ export const CasesList = React.memo(() => {
     <section className={cls.cases}>
       <Container>
         <div className={cls.cases__title__wrapper}>
-          <Typography variant="h2" uppercase>
+          <Typography color="white-primary" variant="h2" uppercase>
             Кейсы
           </Typography>
         </div>
