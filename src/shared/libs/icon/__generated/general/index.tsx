@@ -12,7 +12,6 @@ import {ChangeExperienceIcon as change_experience} from './ChangeExperience';
 import {ConsultationIcon as consultation} from './Consultation';
 import {ContractIcon as contract} from './Contract';
 import {EmailIcon as email} from './Email';
-import {FavoriteIcon as favorite} from './Favorite';
 import {GearsIcon as gears} from './Gears';
 import {GearLaptopIcon as gear_laptop} from './GearLaptop';
 import {GearProcessesIcon as gear_processes} from './GearProcesses';
@@ -40,7 +39,6 @@ export type IconName =
   | 'consultation'
   | 'contract'
   | 'email'
-  | 'favorite'
   | 'gears'
   | 'gear_laptop'
   | 'gear_processes'
@@ -70,7 +68,6 @@ export const iconSet: {
   consultation,
   contract,
   email,
-  favorite,
   gears,
   gear_laptop,
   gear_processes,
